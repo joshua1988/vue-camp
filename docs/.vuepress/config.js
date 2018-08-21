@@ -1,7 +1,7 @@
 module.exports = {
   title: 'Cracking Vue.js',
   description: '자바스크립트 기초부터 탄탄한 Vue.js 개발 지식까지',
-  // base: "/es6-online-book/",
+  base: "/vue-camp/",
   head: [
     ['link', {
       rel: 'icon',
