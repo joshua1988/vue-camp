@@ -11,15 +11,10 @@ cd docs/.vuepress/dist
 
 # if you are deploying to a custom domain
 # echo 'www.example.com' > CNAME
-
-git init
+git checkout gh-pages
 git add -A
 git commit -m 'deploy'
-
-# if you are deploying to https://<USERNAME>.github.io
-# git push -f git@github.com:<USERNAME>/<USERNAME>.github.io.git master
-
-# if you are deploying to https://<USERNAME>.github.io/<REPO>
-git push -f git@github.com:joshua1988/vue-camp.git master:gh-pages
+git push -f origin gh-pages
+git checkout master
 
 cd -
