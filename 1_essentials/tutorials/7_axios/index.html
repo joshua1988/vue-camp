@@ -1,0 +1,30 @@
+<html>
+  <head>
+    <title>Vue Axios Sample</title>
+  </head>
+  <body>
+    <div id="app">
+      {{ message }}
+      <button v-on:click="getData">load weather info</button>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.2/dist/vue.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          message: 'Hello Vue.js!'
+        },
+        methods: {
+          getData: function() { 
+            axios.get('https://query.yahooapis.com/v1/public/yql?q=select%20*%20from%20weather.forecast%20where%20woeid%20in%20(select%20woeid%20from%20geo.places(1)%20where%20text%3D%22nome%2C%20ak%22)&format=json&env=store%3A%2F%2Fdatatables.org%2Falltableswithkeys')
+              .then(function(res) {
+                console.log(res);
+              });
+          }
+        }
+      })
+    </script>
+  </body>
+</html>

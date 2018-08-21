@@ -1,0 +1,28 @@
+{
+  "name": "vue-camp",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "doc": "vuepress dev docs",
+    "build": "vuepress build docs"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/joshua1988/vue-camp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/joshua1988/vue-camp/issues"
+  },
+  "homepage": "https://github.com/joshua1988/vue-camp#readme",
+  "devDependencies": {
+    "firebase": "^5.3.1",
+    "vuepress": "^0.14.1"
+  }
+}
