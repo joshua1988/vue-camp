@@ -1,0 +1,15 @@
+{
+  "name": "Cracking Vue.js",
+  "short_name": "Javascript, ES6, Vue, Vuex",
+  "icons": [
+    {
+      "src": "images/192x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "theme_color": "#3eaf7c",
+  "background_color": "#fcfefe",
+  "display": "standalone",
+  "start_url": "/"
+}

@@ -1,0 +1,5 @@
+---
+title: getters
+---
+
+# getters
