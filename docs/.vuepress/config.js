@@ -46,6 +46,7 @@ module.exports = {
         collapsable: false,
         children: [
           '/vue/instance',
+          '/vue/life-cycle',
           '/vue/template',
           '/vue/components',
           '/vue/components-communication',
@@ -53,16 +54,25 @@ module.exports = {
           '/vue/event-emit',
           '/vue/router',
           '/vue/axios',
-          '/vue/sfc',
-          '/vue/life-cycle',
           '/vue/cli',
+          '/vue/sfc',
         ]
       },
       {
-        title: 'Maximizing the reusability',
+        title: 'Template Syntax',
         collapsable: false,
         children: [
-          '/reuse/filter',
+          '/syntax/methods',
+          '/syntax/computed',
+          '/syntax/watch',
+          '/syntax/filter',
+          '/syntax/form',
+        ]
+      },
+      {
+        title: 'Maximizing Reusability',
+        collapsable: false,
+        children: [
           '/reuse/slot',
           '/reuse/scoped-slot',
           '/reuse/mixins',
