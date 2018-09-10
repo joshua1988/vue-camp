@@ -3,12 +3,74 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Reactivity Caveat 2</title>
 </head>
 <body>
-  vuex의 state에 선언한 객체에 
-  - 새로운 속성을 추가하거나
-  - delete로 특정 속성을 지우는 경우
-  화면에 반응성(computed 속성 포함)이 없다
+  <!-- state의 객체에 새로 property를 추가하거나 delete로 지우는 경우 화면이 갱신 되지 않는다(반응성이 없다) -->
+  <div id="app">
+    <div>
+      <h1>User Info</h1>
+      <p>Name : {{ this.$store.state.user.name }}</p>
+      <p>Email : {{ this.$store.state.user.email }}</p>
+      <button @click="removeName">Remove Name</button>
+      <button @click="addNewProperty">Add New Property</button>
+    </div>
+    <div>
+      <h1>User Data</h1>
+      <div>
+        {{ this.$store.state.user }}
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="https://unpkg.com/vuex"></script>
+  <script>
+    const store = new Vuex.Store({
+      state: {
+        user: {}
+      },
+      mutations: {
+        setUser(state, user) {
+          state.user = user;
+        },
+        deleteName(state) {
+          delete state.user.name;
+          // state.user.name = '';
+        },
+        addNum(state) {
+          state.user.num = 300;
+          // API 형식 - Vue.set(object, key, value)
+          // Vue.set(state.user, 'num', 300);
+        }
+      },
+      actions: {
+        fetchUser({ commit }) {
+          fetch('https://jsonplaceholder.typicode.com/users/1')
+            .then(response => response.json())
+            .then(data => commit('setUser', data))
+            .catch(error => console.log(error));
+        }
+      }
+    })
+
+    new Vue({
+      store,
+      el: '#app',
+      created() {
+        this.$store.dispatch('fetchUser');
+      },
+      methods: {
+        removeName() {
+          this.$store.commit('deleteName');
+          console.log('The name has been removed', this.$store.state.user);
+        },
+        addNewProperty() {
+          this.$store.commit('addNum');
+          console.log('A number has been added', this.$store.state.user);
+        }
+      }
+    })
+  </script>
 </body>
 </html>

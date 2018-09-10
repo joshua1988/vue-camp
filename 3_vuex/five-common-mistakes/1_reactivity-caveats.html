@@ -3,10 +3,57 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>Document</title>
+  <title>Reactivity Caveat 1</title>
 </head>
 <body>
-  axios로 데이터를 받아오고 나서 obj.newItem 형식으로 데이터를 추가했을 때
-  화면에 반응성이 없는 사례
+  <div id="app">
+    <div>
+      <h1>User Info</h1>
+      <p>Name : {{ user.name }}</p>
+      <p>Email : {{ user.email }}</p>
+      <p>Region : {{ user.region }}</p>
+      <button @click="changeName">change Email</button>
+      <button @click="changeEmail">change Email</button>
+    </div>
+    <div>
+      <h1>User Data</h1>
+      <div>
+        {{ user }}
+      </div>
+    </div>
+  </div>
+
+  <!-- axios로 데이터를 받아오고 나서 obj.newItem 형식으로 데이터를 추가했을 때
+  화면에 반응성이 없는 사례 -->
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        user: {}
+      },
+      created() {
+        this.fetchUsers();
+      },
+      methods: {
+        fetchUsers() {
+          fetch('https://jsonplaceholder.typicode.com/users/1')
+          .then(response => response.json())
+          .then(data => {
+            this.user = data;
+            this.user.region = 'Pangyo';
+          })
+          .catch(error => console.log(error));
+        },
+        changeName() {
+          this.user.name = 'Josh';
+        },
+        changeEmail() {
+          this.user.region = 'Seoul';
+          console.log('The region has been changed', this.user);
+        }
+      }
+    })
+  </script>
 </body>
 </html>
