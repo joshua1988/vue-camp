@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Reactivity under the hood</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      var viewModel = {};
+      var divElement = document.querySelector('#app');
+      var str = 10;
+      
+      // 할일 #1 - Object.defineProperty() API를 이용하여 viewModel에 반응성을 주입해보세요.
+      function init() {
+        // 객체의 기본 동작을 재정의하는 API
+        Object.defineProperty(동작을 정의할 대상 객체, 해당 객체의 대상 속성, {
+          get: function() {
+            해당 속성에 접근했을 때 실행할 로직
+          },
+          set: function(newValue) {
+            해당 속성에 값을 할당했을 때 실행할 로직
+          }
+        });
+      }
+
+      // 할일 #2 - app 아이디를 갖는 태그의 텍스트 값을 변경해보세요
+      function render() {
+        // 화면을 갱신하는 로직
+      }
+    </script>
+  </body>
+</html>
