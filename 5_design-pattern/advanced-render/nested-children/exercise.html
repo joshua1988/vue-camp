@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Nested Elements</title>
+</head>
+<body>
+  <div id="app">
+    <h1>Item List</h1>
+    <ul>
+      <li>item 1</li>
+      <li>item 2</li>
+      <li>item 3</li>
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        items: ['item 1', 'item 2', 'item 3']
+      },
+      render() {
+        // 위의 뷰 템플릿을 대체하는 렌더 함수를 구현하세요.
+      }
+    })
+  </script>
+</body>
+</html>
