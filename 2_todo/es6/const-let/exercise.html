@@ -1,0 +1,37 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Const & Let</title>
+</head>
+<body>
+  <script>
+    // 할일 #1 - 아래 example1 함수의 결과 값이 true가 되도록 ES6 변수 선언 방식을 적용해보세요
+    function example1() {
+      var sum = 0;
+      for (var i = 0; i < 5; i++) {
+        sum += i;
+      }
+
+      return i === undefined;
+    }
+
+    // 할일 #2 - 아래 example2 함수의 결과 값이 true가 되도록 로직을 변경해보세요. (두 줄만 제거하면 돌아갑니다)
+    function example2() {
+      let x;
+      {
+        const x = 10;
+        x = 30;
+      }
+      x = 20;
+      let x = 40;
+      
+      return x === 20;
+    }
+
+    console.log('example 1 :', example1());
+    console.log('example 2 :', example2());
+  </script>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Enhanced Object Literal</title>
+</head>
+<body>
+  <script>
+    var name = 'App';
+    var router = '';
+    
+    var obj = {
+      // 할일 #1 - 아래의 속성들을 축약해보세요.
+      name: name,
+      router: 'Vue Router',
+      // 할일 #2 - 아래의 속성 함수를 축약해보세요.
+      data: function() {
+        return {
+          id: 1
+        }
+      }
+    }
+
+    function example1() {
+      return obj.name === 'App' && obj.router === 'Vue Router' && obj.data().id === 1;
+    }
+    console.log('example 1 :', example1());
+  </script>
+</body>
+</html>

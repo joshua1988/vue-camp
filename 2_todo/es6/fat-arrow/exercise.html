@@ -1,0 +1,64 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Fat Arrow</title>
+</head>
+<body>
+  <button>show alert</button>
+
+  <script>
+    // 할일 #1 - 아래의 forEach() API에 화살표 함수를 적용해보세요.
+    function example1() {
+      var arr = [1,2,3,4];
+      var sum = 0;
+
+      arr.forEach(function(value) {
+        sum = sum + value;
+      });
+
+      return sum === 10;
+    }
+
+    // 할일 #2 - 아래의 addEventListener() API에 화살표 함수를 적용해보세요.
+    function example2() {
+      var buttonElement = document.querySelector('button');
+      buttonElement.addEventListener('click', function() {
+        alert('clicked');
+      });
+    }
+    
+    // 할일 #3 - 아래의 fetch() API에 화살표 함수를 적용해보세요.
+    function Vue() {
+      this.post = {};
+      this.validation = 1;
+      this.fetchData = function() {
+        var vm = this;
+        return new Promise(function(resolve, reject) {
+          fetch('https://jsonplaceholder.typicode.com/posts/1')
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(data) {
+            vm.post = data;
+            resolve();
+          })
+          .catch(function(error) {
+            console.error(error);
+          });
+        });
+      }
+    }
+    var app = new Vue();
+    
+    var example3 = function() {
+      return app.post.id === app.validation;
+    };
+
+    console.log('example 1 :', example1());
+    console.log('example 2 : show alert 버튼을 클릭해서 경고창이 뜨는지 확인해보세요', example2());
+    app.fetchData().then(() => console.log('example 3 :', example3()));
+  </script>
+</body>
+</html>
