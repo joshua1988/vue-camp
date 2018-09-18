@@ -438,63 +438,6 @@ end if
                 <td align="right">총&nbsp;<%=formatnumber(listcount,0)%>건</td>
               </tr>
             </table>
-
-<%
-  totpage = round(listcount/countview +0.4999999999)
-  prenext=""
-  
-  if pageno = 1 then
-  else
-    if logincheck=0 then
-      prenext = prenext & "<a href='javascript:loginpageview();' class='linkclass'><font color='#316be6' style='font-size:11pt'>이전</font></a>"                     
-    else
-      prenext = prenext & "<a href='javascript:paging(2)' class='linkclass'><font color='#316be6' style='font-size:11pt'>이전&nbsp;&nbsp;</font></a>"               
-    end if
-  end if
-  
-  if totpage <=10 then
-    startpage = 1
-  else
-    if pageno>6 then
-      startpage = pageno-5
-    else
-      startpage=1
-    end if
-  end if
-
-  for currentpage = startpage to startpage+page_list-1
-    
-    if currentpage > list.pagecount then
-      exit for
-    else
-      if currentpage = pageno then
-        prenext=prenext & "<font color='#666661' style='font-size:11pt'><b>&nbsp;"&currentpage&"&nbsp;</b></font>"               
-      ' else
-      '   if logincheck=0 then
-      '     prenext = prenext & "<a href='javascript:loginpageview();' class='linkclass'><font color='#316be6' style='10pt'>["&currentpage&"]</font></a>"             
-      '   else
-      '     prenext = prenext & "<a href='akonggosearch.asp?pageno="&currentpage&"&startpage="&startpage&searchparam&"' class='linkclass'><font color='#316be6' style='10pt'>["&currentpage&"]</font></a>"           
-      '   end if
-      elseif currentpage < pageno then
-         prenext = prenext & "<a href='javascript:checkfind(1)' class='linkclass'><font color='#316be6' style='font-size:11pt'>&nbsp;"&currentpage&"&nbsp;</font></a>"
-      end if
-    end if
-  next
-  if pageno = totpage then
-  else
-    if listcount > 0 then
-      if logincheck = 0 then
-        prenext = prenext & "&nbsp;&nbsp;<a href='javascript:loginpageview();' class='linkclass'><font color='#316be6' style='11pt'>다음</font></a>"      
-      else
-        prenext = prenext & "&nbsp;&nbsp;<a href='javascript:paging(1)' class='linkclass'><font color='#316be6' style='font-size:11pt'>&nbsp;&nbsp;+더보기</font></a>"     
-      end if
-    end if
-  end if
-%>
-
-<div style="text-align: center; font-size: 12pt;">
-<%=prenext%>
-</div>
         </div>
         <!-- ↑everytab div끝 -->
     </div>
