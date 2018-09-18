@@ -49,37 +49,6 @@
   Set rs_upjong = Nothing
  
 '###########자사업종구분처리
-  dim upjonggr(50,2500,2),upjonggbcnt(50),jsupjonggr(50,2500,2),jsupjonggbcnt(50)
-  for i = 1 to 20
-    upjonggbcnt(i) = 0
-    jsupjonggbcnt(i) = 0
-  next
-
-  set listupjonggr = server.createobject("adodb.recordset")
-  sqlgr = "select distinct sisulgrcode,sisulgrname from g2bupjong where sisulyn = '1'   order by sisulgrcode "
-  listupjonggr.open sqlgr,dbcon,1
-  upjonggrcnt = listupjonggr.recordcount
-  for i = 1 to upjonggrcnt
-    upjonggr(i,0,1) = "aa" & listupjonggr("sisulgrcode")
-    upjonggr(i,0,2) = i&"." & listupjonggr("sisulgrname")
-    sisulgrcode = listupjonggr("sisulgrcode")
-    set listupjong = server.createobject("adodb.recordset")
-    listupjongsql = "select g2bupjongcode,g2bupjongnamesm from g2bupjong where  sisulyn = '1' and  sisulgrcode = '"& sisulgrcode&"'   order by ordercode "
-    listupjong.open listupjongsql,dbcon,1
-    upjongcnt = listupjong.recordcount
-    upjonggbcnt(i) = upjongcnt
-    for isub = 1 to upjonggbcnt(i)
-      upjonggr(i,isub,1) = listupjong("g2bupjongcode")
-      upjonggr(i,isub,2) = listupjong("g2bupjongnamesm")
-      listupjong.movenext
-    next  
-    listupjong.Close
-    Set listupjong = Nothing
-    listupjonggr.movenext
-  next
-  listupjonggr.Close
-  Set listupjonggr = Nothing
-
   
   if upjongcode <> "" then
     upjongcode = request("upjongcode")
