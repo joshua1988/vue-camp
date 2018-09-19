@@ -8,7 +8,7 @@
 - 백엔드 : mssql, IIS
 
 ## 궁금한점
-1. 기존 include되어있는 파일들을 어떻게 include시키는 경우
+1. 기존 include되어있는 파일들을 vue에 include시키는 경우
 2. html과 ASP코드(<%=%>)분리
 3. 스크립트에 ASP코드가 들어가야하는 경우
 4. html 태그에 ASP코드가 섞여있는 경우
