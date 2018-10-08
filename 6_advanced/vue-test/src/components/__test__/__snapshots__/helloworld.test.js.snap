@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Hello World Component [Snapshot Testing] renders hello world message 1`] = `
+<div>
+  
+  Hello Vue.js
+
+</div>
+`;

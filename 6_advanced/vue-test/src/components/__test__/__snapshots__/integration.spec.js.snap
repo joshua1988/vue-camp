@@ -1,0 +1,8 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Component Integration Test [Rendered Output] snapshot test 1`] = `
+<div>
+  <p>a message from Child</p>
+  <div><button>test event</button></div>
+</div>
+`;
