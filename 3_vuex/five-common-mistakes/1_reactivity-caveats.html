@@ -12,8 +12,8 @@
       <p>Name : {{ user.name }}</p>
       <p>Email : {{ user.email }}</p>
       <p>Region : {{ user.region }}</p>
-      <button @click="changeName">change Email</button>
-      <button @click="changeEmail">change Email</button>
+      <button @click="changeName">change Name</button>
+      <button @click="changeRegion">change Region</button>
     </div>
     <div>
       <h1>User Data</h1>
@@ -48,7 +48,7 @@
         changeName() {
           this.user.name = 'Josh';
         },
-        changeEmail() {
+        changeRegion() {
           this.user.region = 'Seoul';
           console.log('The region has been changed', this.user);
         }
