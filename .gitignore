@@ -1,6 +1,9 @@
 # Visual Studio Code
 .vs
 
+# Vue Press
+docs
+
 # Logs
 logs
 *.log
