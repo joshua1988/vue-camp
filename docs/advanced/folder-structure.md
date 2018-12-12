@@ -2,7 +2,7 @@
 title: Vue Folder Structure
 ---
 
-# Vue Folder Structure
+# 뷰 프로젝트 폴더 구조
 
 뷰의 장점 중 하나는 빠른 프토토 타이핑이 가능하다는 점입니다. 뷰 CLI로 프로젝트를 생성하고 나면 npm으로 원하는 기능들을 빠르게 확장해 나갈 수 있습니다.
 

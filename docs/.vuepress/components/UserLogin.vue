@@ -1,24 +1,29 @@
 <template>
   <div>
     <transition name="fade" mode="out-in">
-      <p v-if="loggedIn">{{ name }}님 환영합니다. {{ email }}으로 로그인 하셨습니다.</p>
-      <button @click="login" class="login" v-else>login</button>
+      <div v-if="loggedIn">
+        <p>{{ name }}님 환영합니다. {{ email }}으로 로그인 하셨습니다.</p>
+        <button @click="logout" class="btn">logout</button>
+      </div>
+      <button v-else @click="login" class="btn">login</button>
     </transition>
   </div>
 </template>
 
 <script>
-import firebase from 'firebase';
+// import firebase from 'firebase';
 
-const config = {
-  apiKey: "AIzaSyA7y_ic_AHAp1o_3nXZJCTVmUnPqjXl48I",
-  authDomain: "friendlychat-34059.firebaseapp.com",
-  databaseURL: "https://friendlychat-34059.firebaseio.com",
-  projectId: "friendlychat-34059",
-  storageBucket: "friendlychat-34059.appspot.com",
-  messagingSenderId: "800635767370"
-};
-firebase.initializeApp(config);
+// const config = {
+//   apiKey: "AIzaSyAFUPTFCBaE_WgoqSFBL-Pe3yr_LhCZR10",
+//   authDomain: "vue-camp.firebaseapp.com",
+//   databaseURL: "https://vue-camp.firebaseio.com",
+//   projectId: "vue-camp",
+//   storageBucket: "",
+//   messagingSenderId: "168069510247"
+// };
+// firebase.initializeApp(config);
+
+// const storage = localStorage;
 
 export default {
   data() {
@@ -28,29 +33,47 @@ export default {
       loggedIn: false,
     }
   },
-  methods: {
-    login() {
-      var provider = new firebase.auth.GoogleAuthProvider();
+  // methods: {
+  //   login() {
+  //     var provider = new firebase.auth.GoogleAuthProvider();
 
-      firebase.auth().signInWithPopup(provider)
-        .then(({ user }) => {
-          const { displayName, email } = user;
-          this.name = displayName;
-          this.email = email;
-          this.$router.options.auth = true;
-          this.loggedIn = true;
-        })
-        .catch(error => {
-          console.log(error);
-          alert('login error');
-        });
-    },
-  },
+  //     firebase.auth().signInWithPopup(provider)
+  //       .then(({ user }) => {
+  //         // storage.setItem('VUE-CAMP', JSON.stringify(user));
+  //         this.loginSuccessHandler(user);
+  //       })
+  //       .catch(error => {
+  //         console.log(error);
+  //         alert('login error');
+  //       });
+  //   },
+  //   logout() {
+  //     firebase.auth().signOut()
+  //       .then(() => {
+  //         // storage.removeItem('VUE-CAMP');
+  //         this.loggedIn = false;
+  //       })
+  //       .catch(error => console.log(error));
+  //   },
+  //   loginSuccessHandler(user) {
+  //     const { displayName, email } = user;
+  //     this.name = displayName;
+  //     this.email = email;
+  //     this.$router.options.auth = true;
+  //     this.loggedIn = true;
+  //   }
+  // },
+  // created() {
+  //   // if (storage.getItem('VUE-CAMP')) {
+  //   //   const user = JSON.parse(storage.getItem('VUE-CAMP'));
+  //   //   this.loginSuccessHandler(user);
+  //   // }
+  // }
 }
 </script>
 
 <style scoped>
-.login {
+.btn {
   font-weight: 500;
   color: #3eaf7c;
   text-decoration: none;

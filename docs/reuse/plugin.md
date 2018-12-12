@@ -1,5 +1,0 @@
----
-title: Plugin
----
-
-# Plugin

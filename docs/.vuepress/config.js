@@ -1,6 +1,6 @@
 module.exports = {
   title: 'Cracking Vue.js',
-  description: '자바스크립트 기초부터 탄탄한 Vue.js 개발 지식까지',
+  description: 'Javascript, ES6, Advanced Vue.js',
   base: "/vue-camp/",
   head: [
     ['link', {
@@ -13,11 +13,11 @@ module.exports = {
       '/textbook',
       {
         title: 'Javascript Fundamentals',
-        collapsable: false,
+        collapsable: true,
         children: [
           '/js/variable',
           '/js/string',
-          '/js/number',
+          // '/js/number',
           '/js/object',
           '/js/array',
           '/js/loop',
@@ -31,7 +31,7 @@ module.exports = {
       },
       {
         title: 'ES6',
-        collapsable: false,
+        collapsable: true,
         children: [
           '/es6/const-let',
           '/es6/fat-arrow',
@@ -65,7 +65,7 @@ module.exports = {
           '/syntax/methods',
           '/syntax/computed',
           '/syntax/watch',
-          '/syntax/filter',
+          '/syntax/filters',
           '/syntax/form',
         ]
       },
@@ -73,10 +73,11 @@ module.exports = {
         title: 'Maximizing Reusability',
         collapsable: false,
         children: [
-          '/reuse/slot',
+          '/reuse/slots',
           '/reuse/scoped-slot',
           '/reuse/mixins',
-          '/reuse/plugin',
+          '/reuse/plugins',
+          '/reuse/mixins-vs-hoc'
         ]
       },
       {
@@ -110,8 +111,9 @@ module.exports = {
           '/advanced/folder-structure',
           '/advanced/code-splitting',
           '/advanced/navigation-guard',
-          '/advanced/router-hook',
           '/advanced/transition',
+          '/advanced/js-testing',
+          '/advanced/vue-testing',
         ]
       },
       {
@@ -148,5 +150,6 @@ module.exports = {
       }
     }
   },
-  serviceWorker: true
+  serviceWorker: true,
+  ga: 'UA-128482369-1'
 }

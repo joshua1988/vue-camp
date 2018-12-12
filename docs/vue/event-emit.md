@@ -11,14 +11,16 @@ title: Event Emit
 하위 컴포넌트의 메서드나 라이프 사이클 훅과 같은 곳에 아래와 같이 코드를 추가합니다.
 
 ```js
+// 하위 컴포넌트의 내용
 this.$emit('이벤트 명');
 ```
 
 그리고 나서 해당 이벤트를 수신하기 위해 상위 컴포넌트의 템플릿에 아래와 같이 구현합니다.
 
 ```html
+<!-- 상위 컴포넌트의 템플릿 -->
 <div id="app">
-  <child-component v-on:이벤트 명="실행할 메서드 명 또는 간단한 자바스크립트 연산"></child-component>
+  <child-component v-on:이벤트 명="상위 컴포넌트의 실행할 메서드 명 또는 연산"></child-component>
 </div>
 ```
 

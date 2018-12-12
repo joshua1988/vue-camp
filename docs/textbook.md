@@ -1,3 +1,7 @@
+---
+title: Introduction
+---
+
 # Vue.js 정복 캠프 수업 자료
 
 패스트 캠퍼스 [Vue.js 정복 캠프](https://www.fastcampus.co.kr/dev_camp_vue/)에 오신 것을 환영합니다.
@@ -8,15 +12,12 @@
 - [자바스크립트 기본](/js/object.html)
 - [자바스크립트 최신 스펙 (ES6)](/es6/const-let.html)
 - [Vue.js 기본](/vue/instance.html)
-- [재사용성을 높이는 개발 방법](/reuse/filter.html)
+- [재사용성을 높이는 개발 방법](/syntax/filters.html)
 - [레거시 프로젝트에서의 Vue.js 사용법](/legacy/jquery-to-vue.html)
 - [Vuex를 이용한 상태 관리](/vuex/concept.html)
+- [실무에서 알아야 하는 Vue.js 테크닉](advanced/folder-structure.html)
 - [고급 컴포넌트 디자인 패턴](/design/pattern1.html)
 
 ::: tip
 본 사이트는 수강생들에게만 제공됩니다.
-아래 버튼을 클릭하여 개인 이메일 계정으로 로그인해주세요 :)
 :::
-
-<user-login></user-login>
-
