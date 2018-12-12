@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Reactivity under the hood</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // 1. 속성 변화를 감지하지 못하는 자바스크립트
+      var data = { price: 10, quantity: 2 };
+      var total = data.price * data.quantity;
+      console.log(total); // 20
+      data.price = 100;
+      console.log(total); // 200이 아니라 20
+
+      // 2. 첫 번째 해결 방법
+      // 자바스크립트의 배열을 이용해 저장하는 동작(로직)을 기억해두었다가 다시 실행
+      var data = { price: 10, quantity: 2 };
+      var total = 0;
+
+      var runLogic = function() {
+        total = data.price * data.quantity;
+      };
+
+      var storage = [];
+      var saveLogic = function() {
+        storage.push(logic);
+      };
+      var rerun = function() {
+        storage.forEach(function(run) {
+          run();
+        });
+      };
+
+      // 로직을 실행하기 전에 saveLogic()으로 동작을 기억
+      saveLogic();
+      runLogic();
+      console.log(total); // 20
+      rerun();
+      console.log(total); // 40
+
+      // 3. 두 번째 해결 방법
+      // 위와 같이 로직을 저장(saveLogic), 실행(rerun)하는 코드들을 모두 encapsulation하고
+      // 여러 개의 로직을 한번에 관리할 수 있는 Dependency Tracker(Class)를 생성
+      function DependencyTracker() {
+        this.subscribers = [];
+        // 2번의 saveLogic()과 동일
+        this.depend = function() {
+          if (runLogic && !this.subscribers.includes(runLogic)) {
+            // Only if there is a runLogic & it's not already subscribed
+            this.subscribers.push(runLogic)
+          } 
+        };
+        // 2번의 rerun()과 동일
+        this.notify = function() {
+          this.subscribers.forEach(function(run) {
+            run();
+          });
+        }
+      }
+
+      // 디펜던시 트래커를 이용한 연산
+      var dep = new DependencyTracker();
+      var data = { price: 10, quantity: 2 };
+      var total = 0;
+
+      var runLogic = function() {
+        total = data.price * data.quantity;
+      };
+      // 실행 로직인 runLogic()을 디펜던시 트래커의 subscribers 배열에 추가해서 관리하기
+      dep.depend();
+      runLogic();
+      console.log(total); // 20
+
+      data.price = 100;
+      console.log(total); // 20, 아직 안바뀜
+
+      dep.notify(); // 갱신한 price 속성 값으로 로직을 다시 실행
+      console.log(total); // 200
+
+      // 4. 로직을 기억(runLogic), 디펜던시 트래킹에 추가(dep.depend), 로직을 실행(runLogic)하는 코드를
+      // 모두 watcher 함수로 분리
+      var data = { price: 10, quantity: 2 };
+      var total = 0;
+      
+      function watcher(myLogic) {
+        runLogic = myLogic;
+        dep.depend();
+        runLogic();
+        runLogic = null;
+      }
+
+      watcher(function() {
+        total = data.price * data.quantity;
+      });
+    </script>
+  </body>
+</html>

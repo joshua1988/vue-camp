@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue.js Reactivity in Depth</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      var data = { price: 10, quantity: 2 };
+      var runLogic = undefined;
+
+      function DependencyTracker() {
+        this.subscribers = [];
+        // 2번의 saveLogic()과 동일
+        this.depend = function() {
+          if (runLogic && !this.subscribers.includes(runLogic)) {
+            // Only if there is a runLogic & it's not already subscribed
+            this.subscribers.push(runLogic)
+          } 
+        };
+        // 2번의 rerun()과 동일
+        this.notify = function() {
+          this.subscribers.forEach(function(run) {
+            run();
+          });
+        }
+      }
+
+      Object.keys(data).forEach(key => {
+        var internalValue = data[key];
+        var dep = new DependencyTracker();
+        
+        Object.defineProperty(data, key, {
+          get() {
+            dep.depend(); // 모든 프로퍼티를 디펜던시 트래커에 추가하여 변화를 관리
+            return internalValue;
+          },
+          set(newVal) {
+            internalValue = newVal;
+            dep.notify(); // 값이 바뀌면 갱신하도록 알림
+          }
+        });
+      })
+      
+      function watcher(myLogic) {
+        runLogic = myLogic;
+        runLogic();
+        runLogic = undefined;
+      }
+
+      watcher(function() {
+        data.total = data.price * data.quantity;
+        document.querySelector('#app').innerHTML = data.total;
+      });
+    </script>
+  </body>
+</html>

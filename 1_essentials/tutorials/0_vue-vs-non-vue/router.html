@@ -1,0 +1,96 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Router</title>
+</head>
+<body>
+  <div id="app">
+    <!-- <header>
+      <h1>App Header</h1>
+    </header> -->
+    <router-link to="/main">Main Page</router-link>
+    <router-link to="/user">User Page</router-link>
+    <router-view></router-view>
+
+    <!-- Named View -->
+    <div>
+      <router-view name="header"></router-view>
+      <router-view name="content"></router-view>
+      <router-view name="footer"></router-view>
+    </div>
+  </div>
+  
+  <script>
+    routes: [
+      {
+        path: '/',
+        components: {
+          'header': {
+            template: '<div>header</div>',
+            methods,
+            el,
+            data,
+            
+          }
+        }
+      }
+    ]
+  </script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+  <script src="https://unpkg.com/vue-router/dist/vue-router.js"></script>
+  <script>
+    var MainPage = {
+      name: 'MainPage',
+      template: '<div>main</div>',
+    };
+    var UserPage = {
+      name: 'UserPage',
+      template: `
+        <div>
+          user
+          <router-view></router-view>
+        </div>`
+    };
+    var UserProfile = {
+      name: 'UserProfile',
+      template: `<div>profile</div>`
+    };
+    var UserPosts = {
+      name: 'UserPosts',
+      template: `<div>posts</div>`
+    };
+
+    var Router = new VueRouter({
+      routes: [
+        // 'http://localhost:8080/main'
+        {
+          path: '/main',
+          component: MainPage,
+        },
+        // 'http://localhost:8080/user'
+        {
+          path: '/user',
+          component: UserPage,
+          children: [
+            {
+              path: 'profile',
+              component: UserProfile
+            },
+            {
+              path: 'posts',
+              component: UserPosts
+            }
+          ]
+        },
+      ]
+    });
+
+    new Vue({
+      el: '#app',
+      router: Router,
+    });
+  </script>
+</body>
+</html>
