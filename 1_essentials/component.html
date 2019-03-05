@@ -1,0 +1,39 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Component</title>
+</head>
+<body>
+  <div id="app">
+    <!-- <app-header v-bind:프롭스 속성 이름="상위 컴포넌트의 데이터 이름"></app-header> -->
+    <app-header v-bind:propsdata="str"></app-header>
+    <app-contents></app-contents>
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    // 첫 번째 컴포넌트 등록 방법
+    Vue.component('app-header', {
+      props: ['propsdata'],
+      template: '<p>{{ propsdata }}</p>'
+    });
+    // Vue.component('컴포넌트 이름', 컴포넌트 내용)
+
+    new Vue({
+      el: '#app',
+      data: {
+        str: 'header'
+      },
+      // 두 번째 컴포넌트 등록 방법
+      components: {
+        // '컴포넌트 이름': 컴포넌트 내용,
+        'app-contents': {
+          template: '<p>contents</p>'
+        }
+      },
+    });
+  </script>
+</body>
+</html>
