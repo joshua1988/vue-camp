@@ -1,0 +1,54 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <div>
+      {{ user }}
+    </div>
+    <button v-on:click="fetchData">get data</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script><script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    // var Util = {
+    //   exceptionHandler: function(error) {
+    //     console.log(error);
+    //   }
+    // };
+
+    new Vue({
+      el: '#app',
+      data: {
+        user: null,
+      },
+      methods: {
+        // updateMessage: function() {
+        //   this.user = 10;
+        // },
+        fetchData: function() {
+          console.log('호출 전 ', this);
+          var vm = this;
+          axios.get('https://jsonplaceholder.typicode.com/users/1')
+            .then(function(response) {
+              // 성공하면 여기 실행
+              // console.log(response.data);
+              vm.user = response.data;
+              console.log('성공', this);
+            })
+            .catch(function(error) {
+              // 실패하면 여기 실행
+              // console.dir(error);
+              // Util.exceptionHandler(error);
+            });
+        }
+      }
+    })
+  </script>
+</body>
+</html>

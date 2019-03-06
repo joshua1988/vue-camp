@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <h1>Router</h1>
+    <div>
+      <!-- 이동할 URL -->
+      <!-- <a href="/main">Main</a> -->
+      <router-link to="/main">Main</router-link>
+      <router-link to="/list">List</router-link>
+    </div>
+    <!-- URL에 해당하는 컴포넌트가 표시될 영역 -->
+    <router-view></router-view>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script 
+    src="https://unpkg.com/vue-router@3.0.2/dist/vue-router.js"></script>
+  <script>
+    var MainComponent = {
+      template: '<p>main</p>'
+    };
+
+    var ListComponent = {
+      template: '<p>list</p>'
+    };
+
+    var appRouter = new VueRouter({
+      // 페이지 라우팅 정보
+      routes: [
+        {
+          // url 이름
+          path: '/main',
+          // 해당 url에서 표시될 컴포넌트
+          component: MainComponent
+        },
+        {
+          path: '/list',
+          component: ListComponent
+        }
+      ]
+    });
+
+    new Vue({
+      el: '#app',
+      router: appRouter,
+    })
+  </script>
+</body>
+</html>

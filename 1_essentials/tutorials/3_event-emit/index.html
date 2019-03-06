@@ -8,8 +8,9 @@
   <body>
     <div id="app">
       <p>{{ message }}</p>
-      <!-- #할일 2 - 하위 컴포넌트에서 이벤트를 받아 message의 값을 'Hello event'로 변경  -->
-      <child-component></child-component>
+    <!-- #할일 2 - 하위 컴포넌트에서 이벤트를 받아 message의 값을 'Hello event'로 변경  -->
+      <child-component
+        v-on:update="updateMessage"></child-component>
     </div>
 
     <script src="js/vendor/vue.js"></script>

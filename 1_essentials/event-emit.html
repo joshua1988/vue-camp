@@ -1,0 +1,57 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <!-- <app-header v-bind:프롭스 속성 명="상위 컴포넌트의 데이터"></app-header> -->
+    <app-header 
+      v-bind:propsdata="message"
+      v-on:refresh="logText"
+      ></app-header>
+      <!-- v-on:하위 컴포넌트에서 발생한 이벤트 명="상위 컴포넌트의 메서드 명" -->
+  </div>
+  
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>   
+    var appHeader = {
+      props: ['propsdata'],
+      template: `
+        <p>
+          {{ propsdata }}
+          <button v-on:click="sendEvent">send</button>
+        </p>`,
+      methods: {
+        sendEvent: function() {
+          this.$emit('refresh', 100);
+        },
+      }
+    };    
+  
+    new Vue({
+      el: '#app',
+      components: {
+        // '컴포넌트 이름': 컴포넌트 내용,
+        'app-header': appHeader
+      },
+      data: {
+        message: 'hi',
+        obj: {
+          num: {
+            
+          }
+        }
+      },
+      methods: {
+        logText: function(num) {
+          // console.log(this);
+          this.message = num;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

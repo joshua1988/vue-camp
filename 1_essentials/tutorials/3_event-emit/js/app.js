@@ -3,7 +3,7 @@ Vue.component('child-component', {
   methods: {
     clickBtn: function() {
       // 할일 #1 - 상위 컴포넌트로 이벤트를 발생
-      
+      this.$emit('update');
     }
   }
 });
@@ -13,4 +13,9 @@ var app = new Vue({
   data: {
     message: 'Hello Vue.js'
   },
+  methods: {
+    updateMessage: function() {
+      this.message = 'Hello event';
+    }
+  }
 });

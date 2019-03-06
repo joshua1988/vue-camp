@@ -1,0 +1,55 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .success {
+      color: blue;
+    }
+    .error {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <!-- {{ reversedMessage }} -->
+    <!-- <span v-bind:class="{ success: successData }"> -->
+    <span v-bind:class="spanClass">
+      log
+    </span>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        successData: false,
+        message: 'hello',
+        show: false,
+        divClass: "text-blue",
+        divId: 100,
+        items: [10, 20, 30]        
+      },
+      computed: {
+        exclaimHi: function() {
+          return this.message + '!!';
+        },
+        reversedMessage: function() {
+          return this.message.split('').reverse().join('');
+        },
+        spanClass: function() {
+          if (this.successData === true) {
+            return 'success';
+          } else {
+            return 'error';
+          }
+        }
+      }
+    });
+  </script>
+</body>
+</html>
