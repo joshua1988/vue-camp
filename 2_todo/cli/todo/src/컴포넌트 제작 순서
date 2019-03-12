@@ -1,0 +1,5 @@
+컴포넌트 등록하는 절차
+1) 컴포넌트 내용(.vue 파일) 작성
+2) 컴포넌트 내용 로딩 (import & export)
+3) 컴포넌트 내용 연결 (components 속성)
+4) 컴포넌트 태그 표시 (<todo-input></todo-input> 이런 식으로)
