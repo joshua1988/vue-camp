@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="(item, index) in items">
+      <li v-for="(item, index) in propsdata">
         {{ item }}
         <button v-on:click="removeItem(item, index)">
           remove
@@ -15,26 +15,31 @@
 import { bus } from '../utils/bus.js';
 
 export default {
-  data: function() {
-    return {
-      items: [],
-    }
-  },
+  props: ['propsdata'],
+  // data: function() {
+  //   return {
+  //     items: [],
+  //   }
+  // },
   methods: {
     removeItem: function(item, index) {
+      this.$emit('remove', item, index);
       // console.log(item, index);
-      this.items.splice(index, 1);
-      localStorage.removeItem(item);
-    }
+      // this.items.splice(index, 1);
+      // localStorage.removeItem(item);
+    },
+    // fetchData: function() {
+    //   for (var i = 0; i < localStorage.length; i++) {
+    //     if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
+    //       var item = localStorage.key(i);
+    //       this.items.push(item);
+    //     }
+    //   }
+    // }
   },
-  created: function() {
-    for (var i = 0; i < localStorage.length; i++) {
-      if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
-        var item = localStorage.key(i);
-        this.items.push(item);
-      }
-    }
-  },
+  // created: function() {
+  //   this.fetchData();
+  // },
   beforeMount: function() {
     // console.log(this);
     var vm = this;
@@ -48,9 +53,9 @@ export default {
   }
 }
 
-var button = document.querySelector('button');
-button.addEventListener('click', successCallback);
-button.removeEventListener('click', successCallback);
+// var button = document.querySelector('button');
+// button.addEventListener('click', successCallback);
+// button.removeEventListener('click', successCallback);
 </script>
 
 <style>

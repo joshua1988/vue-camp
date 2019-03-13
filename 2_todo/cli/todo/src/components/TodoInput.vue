@@ -14,9 +14,9 @@ export default {
   },
   methods: {
     addItem: function() {
-      // console.log(this.inputText);
       var value = this.inputText;
-      localStorage.setItem(value, value);
+      this.$emit('add', value);
+      // localStorage.setItem(value, value);
       this.initForm();
     },
     initForm: function() {
