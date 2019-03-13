@@ -1,14 +1,19 @@
 <template>
   <div>
-    <button>clear all</button>
+    <button v-on:click="clearItems">clear all</button>
   </div>
 </template>
 
 <script>
-localStorage.clear();
+import { bus } from '../utils/bus.js';
 
 export default {
-  
+  methods: {
+    clearItems: function() {
+      localStorage.clear();
+      bus.$emit('clear');
+    }
+  }
 }
 </script>
 

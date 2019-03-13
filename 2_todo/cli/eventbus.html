@@ -1,0 +1,59 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <child-cmp v-on:refresh="logText"></child-cmp>
+    <bro-cmp></bro-cmp>
+  </div>
+
+  <script 
+    src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var bus = new Vue();
+
+    var childComponent = {
+      template: `
+        <p>
+          child
+          <button v-on:click="sendEvent">send</button>
+        </p>
+      `,
+      methods: {
+        sendEvent: function() {
+          // this.$emit('refresh');
+          bus.$emit('new');
+        }
+      }
+    };
+    var broComponent = {
+      template: '<p>bro</p>',
+      created: function() {
+        bus.$on('new', function() {
+          console.log('receieved');
+        });
+      }
+    };
+
+    var app = new Vue({
+      el: '#app',
+      data: {
+        message: 'hi'
+      },
+      components: {
+        'child-cmp': childComponent,
+        'bro-cmp': broComponent,
+      },
+      methods: {
+        logText: function() {
+          console.log('refreshed');
+        }
+      }
+    });
+  </script>
+</body>
+</html>
