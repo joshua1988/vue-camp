@@ -8,7 +8,7 @@
     <todo-list 
       v-bind:propsdata="todoItems"
       v-on:remove="removeTodoItem"></todo-list>
-    <todo-footer></todo-footer>
+    <todo-footer v-on:clear="clearItems"></todo-footer>
   </div>
 </template>
 
@@ -49,6 +49,10 @@ export default {
     addTodoItem: function(value) {
       this.todoItems.push(value);
       localStorage.setItem(value, value);
+    },
+    clearItems: function() {
+      this.todoItems = [];
+      localStorage.clear();
     },
   },
   created: function() {

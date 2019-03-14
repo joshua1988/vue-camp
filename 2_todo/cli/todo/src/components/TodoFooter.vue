@@ -10,8 +10,9 @@ import { bus } from '../utils/bus.js';
 export default {
   methods: {
     clearItems: function() {
-      localStorage.clear();
-      bus.$emit('clear');
+      // localStorage.clear();
+      // bus.$emit('clear');
+      this.$emit('clear');
     }
   }
 }

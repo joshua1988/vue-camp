@@ -14,8 +14,12 @@ export default {
   },
   methods: {
     addItem: function() {
-      var value = this.inputText;
-      this.$emit('add', value);
+      var value = this.inputText;      
+      if (value !== '') {
+        this.$emit('add', value);
+      } else {
+        alert('type sth');
+      }
       // localStorage.setItem(value, value);
       this.initForm();
     },
