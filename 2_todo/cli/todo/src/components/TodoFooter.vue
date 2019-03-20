@@ -19,5 +19,7 @@ export default {
 </script>
 
 <style>
-
+.blue-text {
+  color: blue;
+}
 </style>

@@ -9,10 +9,12 @@
   <script>
     // 할일 #1 - 아래 example1 함수의 결과 값이 true가 되도록 ES6 변수 선언 방식을 적용해보세요
     function example1() {
-      var sum = 0;
+      let sum = 0;
+      let i;
       
-      for (var i = 0; i < 5; i++) {
+      for (let i = 0; i < 5; i++) {
         sum += i;
+        // debugger
       }
 
       return i === undefined;
@@ -23,10 +25,10 @@
       let x;
       {
         const x = 10;
-        x = 30;
+        // x = 30;
       }
       x = 20;
-      let x = 40;
+      // let x = 40;
       
       return x === 20;
     }

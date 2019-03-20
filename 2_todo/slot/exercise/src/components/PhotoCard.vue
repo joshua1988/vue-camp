@@ -1,14 +1,20 @@
 <template>
   <div class="media-card">
     <div class="media-card-image">
-      <img :src="image" alt="">
+      <!-- NOTE: 이미지 영역 -->
+      <!-- <img :src="image" alt=""> -->
+      <slot name="image"></slot>
     </div>
     <div class="media-card-content">
       <h4 class="media-card-heading">
-        {{ title }}
+        <!-- NOTE: 카드 헤더 영역 -->
+        <!-- {{ title }} -->
+        <slot name="title"></slot>
       </h4>
       <div class="media-card-body">
-        <p>{{ contents }}</p>
+        <!-- NOTE: 카드 본문 영역 -->
+        <!-- <p>{{ contents }}</p> -->
+        <slot name="contents"></slot>
       </div>
     </div>
   </div>
@@ -16,7 +22,7 @@
 
 <script>
 export default {
-  props: ['image', 'title', 'contents']
+  // props: ['image', 'title', 'contents']
 }
 </script>
 
