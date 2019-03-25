@@ -29,7 +29,9 @@ npm install vue-cli
 ```bash
 버전 3.x
 vue create helloworld
+```
 
+```bash
 버전 2.9
 vue init webpack-simple 파일 경로
 ```
@@ -43,5 +45,7 @@ vue init webpack-simple 파일 경로
 |           | Vue CLI 3.0                                                    | Vue CLI 2.9                       |
 |:-----------:|----------------------------------------------------------------|-----------------------------------|
 | **언어**      | ES6 기준                                                       | ES5 기준 (ES6 선택 가능)             |
-| **웹팩**    | 웹팩 설정 파일이 숨겨져 있음 (필요한 설정은 추가하는 형식) | 웹팩 설정 파일에서 바로 수정 가능         |
+| **웹팩**    | 웹팩 설정 파일이 숨겨져 있음 [(필요한 설정은 추가하는 형식)](https://cli.vuejs.org/guide/webpack.html#working-with-webpack) | 웹팩 설정 파일에서 바로 수정 가능         |
 | **GUI**       | GUI 툴 제공 (vue ui)                                           | X                                 |
+| **구성**       | 뷰 플러그인 형식                                    | [프로젝트 템플릿](https://github.com/vuejs-templates/webpack-simple)을 깃헙에서 다운로드                           |
+| **명령어**       | vue create '프로젝트 이름'                        | vue init '프로젝트 템플릿 이름' '프로젝트 폴더 경로'              |

@@ -1,0 +1,1 @@
+npm i express express-async-errors nodemon cors body-parser morgan mongoose detect-port chalk bcrypt jsonwebtoken passport passport-local -D
