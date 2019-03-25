@@ -14,7 +14,7 @@
       var arr = [1,2,3,4];
       var sum = 0;
 
-      arr.forEach((value) => {
+      arr.forEach(function(value) {
         sum = sum + value;
       });
 
@@ -24,7 +24,7 @@
     // 할일 #2 - 아래의 addEventListener() API에 화살표 함수를 적용해보세요.
     function example2() {
       var buttonElement = document.querySelector('button');
-      buttonElement.addEventListener('click', () => {
+      buttonElement.addEventListener('click', function() {
         alert('clicked');
       });
     }
@@ -34,17 +34,19 @@
       this.post = {};
       this.validation = 1;
       this.fetchData = function() {
-        // var vm = this;
-        console.log(this);
-        return new Promise((resolve, reject) => {
+        var vm = this;
+        return new Promise(function(resolve, reject) {
           fetch('https://jsonplaceholder.typicode.com/posts/1')
-          .then(response => response.json())
-          .then(data => {
-            console.log(this);
-            this.post = data;
+          .then(function(response) {
+            return response.json();
+          })
+          .then(function(data) {
+            vm.post = data;
             resolve();
           })
-          .catch(error => console.error(error));
+          .catch(function(error) {
+            console.error(error);
+          });
         });
       }
     }

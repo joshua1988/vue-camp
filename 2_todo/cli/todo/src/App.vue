@@ -28,13 +28,13 @@ export default {
     'todo-list': TodoList,
     'todo-footer': TodoFooter,
   },
-  data() {
+  data: function() {
     return {
       todoItems: [],
     }
   },
   methods: {
-    fetchData() {
+    fetchData: function() {
       for (var i = 0; i < localStorage.length; i++) {
         if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
           var item = localStorage.key(i);
@@ -55,7 +55,7 @@ export default {
       localStorage.clear();
     },
   },
-  created() {
+  created: function() {
     this.fetchData();
   },
 }
