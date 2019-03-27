@@ -34,14 +34,14 @@ export default {
     }
   },
   methods: {
-    fetchData: function() {
-      for (var i = 0; i < localStorage.length; i++) {
-        if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
-          var item = localStorage.key(i);
-          this.todoItems.push(item);
-        }
-      }
-    },
+    // fetchData: function() {
+    //   for (var i = 0; i < localStorage.length; i++) {
+    //     if (localStorage.key(i) !== 'loglevel:webpack-dev-server') {
+    //       var item = localStorage.key(i);
+    //       this.todoItems.push(item);
+    //     }
+    //   }
+    // },
     removeTodoItem: function(item, index) {
       this.todoItems.splice(index, 1);
       localStorage.removeItem(item);
@@ -56,7 +56,8 @@ export default {
     },
   },
   created: function() {
-    this.fetchData();
+    // this.fetchData();
+    // this.$store.commit('fetchTodoItems');
   },
 }
 </script>

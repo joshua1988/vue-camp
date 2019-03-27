@@ -1,7 +1,7 @@
 <template>
   <div>
     <ul>
-      <li v-for="(item, index) in propsdata">
+      <li v-for="(item, index) in this.$store.state.todoItems">
         {{ item }}
         <button v-on:click="removeItem(item, index)">
           remove
@@ -15,7 +15,7 @@
 import { bus } from '../utils/bus.js';
 
 export default {
-  props: ['propsdata'],
+  // props: ['propsdata'],
   // data: function() {
   //   return {
   //     items: [],
@@ -23,7 +23,12 @@ export default {
   // },
   methods: {
     removeItem: function(item, index) {
-      this.$emit('remove', item, index);
+      let todoItem = {
+        item,
+        index,
+      };
+      this.$store.commit('removeTodoItem', todoItem);
+      // this.$emit('remove', item, index);
       // console.log(item, index);
       // this.items.splice(index, 1);
       // localStorage.removeItem(item);
