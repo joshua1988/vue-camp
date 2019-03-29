@@ -1,15 +1,15 @@
 // libs
-const express = require('express');
-const cors = require('cors');
-const bodyParser = require('body-parser');
-const morgan = require('morgan');
-const mongoose = require('mongoose');
-const detectPort = require('detect-port');
-const chalk = require('chalk');
+import express from 'express';
+import cors from 'cors';
+import bodyParser from 'body-parser';
+import morgan from 'morgan';
+import mongoose from 'mongoose';
+import detectPort from 'detect-port';
+import chalk from 'chalk';
 
 // api
-const auth = require('./api/auth.js');
-const todos = require('./api/todos.js');
+import auth from './api/auth.js';
+import todos from './api/todos.js';
 
 // utils
 function log() {
