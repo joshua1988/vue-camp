@@ -40,6 +40,7 @@ export default {
         });
         console.log(response);
         this.logMessage = response.data.message;
+        this.$router.push('/main');
         this.initForm();
       } catch (error) {
         console.log(error);

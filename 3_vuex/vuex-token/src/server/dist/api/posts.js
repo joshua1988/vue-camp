@@ -49,5 +49,73 @@ router.get('/', async (req, res) => {
     });
   }
 });
+router.get('/:id', async (req, res) => {
+  try {
+    const doc = await _PostModel.default.findOne({
+      createdBy: req.user._id,
+      _id: req.params.id
+    }).lean().exec();
+
+    if (!doc) {
+      return res.status(400).json({
+        message: 'The data is not found'
+      });
+    }
+
+    res.status(200).json(_objectSpread({}, doc));
+  } catch (error) {
+    console.error(error);
+    res.status(400).json({
+      message: 'sth wrong',
+      error
+    });
+  }
+});
+router.put('/:id', async (req, res) => {
+  try {
+    const updatedDoc = await _PostModel.default.findOneAndUpdate({
+      createdBy: req.user._id,
+      _id: req.params.id
+    }, req.body, {
+      new: true
+    }).lean().exec();
+
+    if (!updatedDoc) {
+      return res.status(400).json({
+        message: 'cannot update the data'
+      });
+    }
+
+    res.status(200).json(_objectSpread({}, updatedDoc));
+  } catch (error) {
+    console.error(error);
+    res.status(400).json({
+      message: 'sth wrong',
+      error
+    });
+  }
+});
+router.delete('/:id', async (req, res) => {
+  try {
+    const removed = await _PostModel.default.findOneAndRemove({
+      createdBy: req.user._id,
+      _id: req.params.id
+    }).lean().exec();
+
+    if (!removed) {
+      return res.status(400).json({
+        message: 'cannot remove the data'
+      });
+    }
+
+    return res.status(200).json(_objectSpread({}, removed));
+  } catch (error) {
+    console.error(error);
+    res.status(400).json({
+      message: 'sth wrong',
+      error
+    });
+  }
+});
 var _default = router;
 exports.default = _default;

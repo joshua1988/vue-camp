@@ -4,6 +4,7 @@ import LoginView from '../views/LoginView';
 import SignupView from '../views/SignupView';
 import MainView from '../views/MainView';
 import PostAddView from '../views/PostAddView';
+import PostDetailView from '../views/PostDetailView';
 import store from '../store';
 
 Vue.use(Router);
@@ -17,22 +18,40 @@ export default new Router({
     },
     {
       path: '/login',
+      name: 'login',
       component: LoginView,
     },
     {
       path: '/signup',
+      name: 'signup',
       component: SignupView,
     },
     {
       path: '/main',
+      name: 'main',
       component: MainView,
-      beforeEnter: (to, from, next) => {
-        store.getters['isLoggedIn'] ? next() : alert('should log in');
-      }
+      beforeEnter,
     },
     {
       path: '/new',
+      name: 'new',
       component: PostAddView,
+      beforeEnter,
+    },
+    {
+      path: '/post/:id',
+      name: 'detail',
+      component: PostDetailView,
+      beforeEnter,
     },
   ]
-})
+});
+
+function beforeEnter(to, from, next) {
+  if (store.getters['isLoggedIn']) {
+    next();
+  } else {
+    alert('sign in please');
+    next('/login');
+  }
+}

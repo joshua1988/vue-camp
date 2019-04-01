@@ -63,9 +63,39 @@ function fetchPosts() {
   }
 }
 
+function fetchPostById(id) {
+  try {
+    return posts.get(id);
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+function editPostById(id, data) {
+  try {
+    return posts.put(id, data);
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+function deletePostById(id) {
+  try {
+    return posts.delete(id);
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
 export {
   loginUser,
   signupUser,
   createNewPost,
   fetchPosts,
+  fetchPostById,
+  editPostById,
+  deletePostById,
 }

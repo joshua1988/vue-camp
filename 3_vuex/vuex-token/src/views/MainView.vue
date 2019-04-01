@@ -4,7 +4,12 @@
     <div>
       <ul>
         <li v-for="item in postItems" :key="item._id">
-          {{ item.title }}
+          <router-link :to="`/post/${item._id}`">
+            {{ item.title }}
+          </router-link>
+          <button @click="removePost(item._id)">
+            delete
+          </button>
         </li>
       </ul>
     </div>
@@ -12,7 +17,7 @@
 </template>
 
 <script>
-import { fetchPosts } from '../api/index.js';
+import { fetchPosts, deletePostById } from '../api/index.js';
 
 export default {
   data() {
@@ -20,15 +25,28 @@ export default {
       postItems: [],
     }
   },
-  async created() {
-    try {
-      const response = await fetchPosts();
-      console.log(response);
-      this.postItems = response.data.posts;
-    } catch (error) {
-      console.log(error);
+  methods: {
+    async fetchData() {
+      try {
+        const { data: { posts: postItems } } = await fetchPosts();
+        this.postItems = postItems;
+        return;
+      } catch (error) {
+        console.log(error);
+      }
+    },
+    async removePost(id) {
+      try {
+        await deletePostById(id);
+        await this.fetchData();
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }
+  },
+  created() {
+    this.fetchData();
+  },
 }
 </script>
 

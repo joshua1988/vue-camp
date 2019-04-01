@@ -1,39 +1,40 @@
 <template>
   <div>
-    <form @submit.prevent="submitForm">
+    <form @submit.prevent="editForm">
       <div>
-        <label for="title">Title :</label>
+        <label for="title">Title: </label>
         <input id="title" type="text" v-model="title">
       </div>
       <div>
-        <label for="contents">Contents : </label>
+        <label for="contents">Contents: </label>
         <textarea name="contents" id="contents" cols="30" rows="10" v-model="contents"></textarea>
       </div>
       <div>
-        <button type="submit">create</button>
-      </div>
-      <div>
-        {{ resultMessage }}
+        <button type="submit">edit</button>
       </div>
     </form>
   </div>
 </template>
 
 <script>
-import { createNewPost } from '../api/';
+import { fetchPostById, editPostById } from '../api/index.js';
 
 export default {
   data() {
     return {
       title: '',
       contents: '',
-      resultMessage: '',
     }
   },
   methods: {
-    async submitForm() {
+    setForm({ title, contents }) {
+      this.title = title;
+      this.contents = contents;
+    },
+    async editForm() {
       try {
-        const response = await createNewPost({
+        const id = this.$route.params.id;
+        const response = await editPostById(id, {
           title: this.title,
           contents: this.contents,
         });
@@ -43,7 +44,16 @@ export default {
       }
     }
   },
-};
+  async created() {
+    try {
+      const id = this.$route.params.id;
+      const { data } = await fetchPostById(id);
+      this.setForm(data);
+    } catch (error) {
+      console.log(error);
+    }
+  }
+}
 </script>
 
 <style scoped>
