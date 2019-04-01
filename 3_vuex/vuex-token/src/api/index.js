@@ -1,0 +1,71 @@
+import axios from 'axios';
+import store from '../store/index.js';
+
+// basic config for axios
+const APP_URL = 'http://localhost:3000/';
+
+// instance & interceptor
+function create(url, options) {
+  const instance = axios.create(Object.assign({ baseURL: url }, options));
+  return instance;
+}
+
+function createWithAuth(url, options) {
+  const instance = axios.create(Object.assign({ baseURL: url }, options));
+  instance.interceptors.request.use(config => {
+    config.headers.Authorization = store.getters['userToken'];
+    return config;
+  }, error => {    
+    console.dir(error);
+    return Promise.reject(error.response);
+  });
+  return instance;
+}
+
+const auth = create(APP_URL);
+const posts = createWithAuth(`${APP_URL}posts/`);
+
+// users
+function loginUser(data) {
+  try {
+    return auth.post('login', data);
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+function signupUser(data) {
+  try {
+    return auth.post('signup', data);
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+// posts
+function createNewPost(data) {
+  try {
+    return posts.post('/', data);
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+function fetchPosts() {
+  try {
+    return posts.get('/');
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+}
+
+export {
+  loginUser,
+  signupUser,
+  createNewPost,
+  fetchPosts,
+}

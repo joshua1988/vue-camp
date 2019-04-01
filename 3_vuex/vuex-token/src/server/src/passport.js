@@ -1,12 +1,12 @@
-const passport = require('passport');
-const LocalStrategy = require('passport-local').Strategy;
+import passport from 'passport';
+import LocalStrategy from 'passport-local';
 
 const TEMP_USER = {
   username: 'admin',
   password: 1234,
 };
 
-passport.use(new LocalStrategy(
+passport.use(new LocalStrategy.Strategy(
   TEMP_USER,
   function(username, password, done) {
     User.findOne({ username: username }, function(err, user) {

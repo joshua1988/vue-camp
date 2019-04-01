@@ -1,12 +1,14 @@
 // libs
-const bcrypt = require('bcrypt');
-const jwt = require('jsonwebtoken');
-const router = require('express').Router();
+import bcrypt from 'bcrypt';
+import { Router } from 'express';
 
 // modules
-const SECRET_KEY = 'vuex-with-token';
-const passport = require('../passport.js');
-const UserModel = require('../models/UserModel.js');
+// import passport from '../passport.js';
+import { newToken } from '../utils/auth.js';
+import UserModel from '../models/UserModel.js';
+
+// router init
+const router = Router();
 
 // router
 router.post('/login', (req, res) => {
@@ -25,21 +27,20 @@ router.post('/login', (req, res) => {
       }
       if (result) {
         // create token with user info
-        const payload = {
-          username: user.username,
-          _id: user._id,
-        };
-        const token = jwt.sign(payload, SECRET_KEY);
-        // return the information including token as JSON
+        const token = newToken(user);
+        
+        // current logged-in user
         const loggedInUser = {
           username: user.username,
           nickname: user.nickname,
         };
+
+        // return the information including token as JSON
         res.status(200).json({
           success: true,
           user: loggedInUser,
           message: 'Login Success',
-          token: token
+          token: token,
         });
       } else {
         res.status(401).json('Authentication failed. Wrong password.');
@@ -83,4 +84,4 @@ router.post('/signup', (req, res) => {
   });
 });
 
-module.exports = router;
+export default router;

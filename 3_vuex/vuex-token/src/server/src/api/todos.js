@@ -1,8 +1,10 @@
-const router = require('express').Router();
+import { Router } from 'express';
 
 const controller = (req, res) => {
   res.send({ message: 'hi' });
 };
+
+const router = Router();
 
 router.route('/')
   .get(controller)
@@ -13,4 +15,4 @@ router.route('/:id')
   .delete(controller)
   .get(controller)
 
-module.exports = router;
+export default router;

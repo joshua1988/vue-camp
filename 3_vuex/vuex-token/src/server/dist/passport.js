@@ -1,14 +1,17 @@
 "use strict";
 
-const passport = require('passport');
+var _passport = _interopRequireDefault(require("passport"));
 
-const LocalStrategy = require('passport-local').Strategy;
+var _passportLocal = _interopRequireDefault(require("passport-local"));
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const TEMP_USER = {
   username: 'admin',
   password: 1234
 };
-passport.use(new LocalStrategy(TEMP_USER, function (username, password, done) {
+
+_passport.default.use(new _passportLocal.default.Strategy(TEMP_USER, function (username, password, done) {
   User.findOne({
     username: username
   }, function (err, user) {
@@ -31,4 +34,5 @@ passport.use(new LocalStrategy(TEMP_USER, function (username, password, done) {
     return done(null, user);
   });
 }));
-module.exports = passport;
+
+module.exports = _passport.default;

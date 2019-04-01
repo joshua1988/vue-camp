@@ -16,7 +16,11 @@ var _chalk = _interopRequireDefault(require("chalk"));
 
 var _auth = _interopRequireDefault(require("./api/auth.js"));
 
+var _posts = _interopRequireDefault(require("./api/posts.js"));
+
 var _todos = _interopRequireDefault(require("./api/todos.js"));
+
+var _auth2 = require("./utils/auth.js");
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -55,6 +59,7 @@ app.use((0, _morgan.default)('dev')); // log request
 // express routers
 
 app.use('/', _auth.default);
+app.use('/posts', _auth2.authenticateUser, _posts.default);
 app.use('/todos', _todos.default); // start
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

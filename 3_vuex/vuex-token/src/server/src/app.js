@@ -9,9 +9,11 @@ import chalk from 'chalk';
 
 // api
 import auth from './api/auth.js';
+import posts from './api/posts.js';
 import todos from './api/todos.js';
 
 // utils
+import { authenticateUser } from './utils/auth.js';
 function log() {
   [...arguments].forEach(val => console.log(chalk.cyan(val)));
 }
@@ -38,6 +40,7 @@ app.use(morgan('dev')); // log request
 
 // express routers
 app.use('/', auth);
+app.use('/posts', authenticateUser, posts);
 app.use('/todos', todos);
 
 // start
