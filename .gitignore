@@ -2,6 +2,7 @@
 .vs
 
 # Vue Press
+docs
 docs/.vuepress/dist
 
 # Logs
