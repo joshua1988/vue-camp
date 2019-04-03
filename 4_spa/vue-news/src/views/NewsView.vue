@@ -33,6 +33,7 @@
 
 <script>
 import { fetchNews } from '../api/index.js';
+import bus from '../utils/bus.js';
 
 export default {
   data() {
@@ -55,11 +56,21 @@ export default {
         });
     }
   },
-  created() {
-    // this.fetchData();
-    this.$store.dispatch('FETCH_NEWS')
-      .then(response => this.isLoading = true)
-      .catch(error => console.log(error));
+  async created() {
+    try {
+      bus.$emit('on:progress');
+      let response = await this.$store.dispatch('FETCH_NEWS');
+      this.isLoading = false;
+      bus.$emit('off:progress'); 
+    } catch (error) {
+      console.log(error);
+    }
+
+      // .then(response => {
+      //   this.isLoading = false;
+      //   bus.$emit('off:progress');
+      // })
+      // .catch(error => console.log(error));
   }
 }
 </script>

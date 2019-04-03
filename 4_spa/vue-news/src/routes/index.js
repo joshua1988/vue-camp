@@ -3,6 +3,7 @@ import VueRouter from 'vue-router';
 import NewsView from '../views/NewsView.vue';
 import AskView from '../views/AskView.vue';
 import UserView from '../views/UserView.vue';
+import ItemView from '../views/ItemView.vue';
 import NotFoundView from '../views/NotFoundView.vue';
 
 Vue.use(VueRouter);
@@ -27,6 +28,10 @@ export default new VueRouter({
     {
       path: '/user/:id',
       component: UserView,
+    },
+    {
+      path: '/item/:id',
+      component: ItemView,
     },
     {
       path: '*',

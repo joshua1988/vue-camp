@@ -20,8 +20,14 @@ function fetchUser(username) {
   return axios.get(`${config.baseUrl}user/${username}.json`);
 }
 
+function fetchItem(itemId) {
+  return axios.get(`${config.baseUrl}item/${itemId}.json`);
+  // 'https://api.hnpwa.com/v0/item/13831370.json'
+}
+
 export {
   fetchNews,
   fetchAsk,
   fetchUser,
+  fetchItem,
 }
