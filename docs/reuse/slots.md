@@ -54,7 +54,7 @@ TabContainer 컴포넌트에 ButtonTab 컴포넌트를 등록하고 ButtonTab �
 
 이처럼 슬롯을 사용하면 컴포넌트의 특정 마크업 영역을 재정의하여 같은 컴포넌트를 각기 다르게 표현할 수 있습니다.
 
-## Named Slot
+## Named Slots
 
 위에서는 슬롯의 개념을 이해하기 위해 1개의 슬롯만 사용했습니다. 슬롯은 name 속성을 지정하여 여러 개 사용할 수도 있습니다. 좀 전 예제에 네임드 슬롯을 적용해보겠습니다.
 
@@ -105,3 +105,21 @@ TabContainer 컴포넌트에 ButtonTab 컴포넌트를 등록하고 ButtonTab �
   </template>
 </button-tab>
 ```
+
+## 참고
+
+Vue.js 2.6 버전부터 Named Slots 문법이 바뀌었습니다.
+
+```html {2,7}
+<!-- 기존(2.5 이하) -->
+<template slot="header">
+  <h1>First Header</h1>
+</template>
+
+<!-- 이후(2.6 이상) -->
+<template v:slot:header>
+  <h1>First Header</h1>
+</template>
+```
+
+더 자세한 내용은 [여기](https://vuejs.org/v2/guide/components-slots.html#Named-Slots)를 참고하세요.
