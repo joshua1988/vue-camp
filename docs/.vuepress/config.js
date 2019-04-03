@@ -39,6 +39,8 @@ module.exports = {
           '/es6/spread-operator',
           '/es6/template-literal',
           '/es6/destructuring',
+          '/es6/async-await',
+          '/es6/modules',
         ]
       },
       {
@@ -113,7 +115,6 @@ module.exports = {
           '/advanced/navigation-guard',
           '/advanced/transition',
           '/advanced/js-testing',
-          '/advanced/vue-testing',
         ]
       },
       {
@@ -127,11 +128,42 @@ module.exports = {
           '/design/pattern5',
         ]
       },
+      {
+        title: 'Testing Applications',
+        collapsable: false,
+        children: [
+          '/testing/vue-test-util',
+          '/testing/getting-started',
+          '/testing/snapshots',
+          '/testing/api',
+          '/testing/coverage',
+        ]
+      },
+      {
+        title: 'Typescript',
+        collapsable: false,
+        children: [
+          '/ts/intro',
+          '/ts/with-vue',
+          '/ts/pdecorator',
+        ]
+      },
+      {
+        title: 'Nuxt',
+        collapsable: false,
+        children: [
+          '/nuxt/intro',
+        ]
+      }
     ],
     nav: [
       {
         text: 'Text Book',
         link: '/textbook'
+      },
+      {
+        text: 'FrontEnd Development',
+        link: '/front-dev'
       },
       {
         text: 'Online Courses',

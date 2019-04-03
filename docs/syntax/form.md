@@ -35,7 +35,7 @@ title: Form Handling
 위에서 작성한 폼의 사용자 입력을 처리하려면 아래와 같이 구현합니다.
 
 ```html {1,4,8}
-<form v-bind:submit.prevent="loginUser">
+<form v-on:submit.prevent="loginUser">
   <div>
     <label for="email">Email</label>
     <input id="email" type="text" ref="email">
@@ -50,7 +50,7 @@ title: Form Handling
 </form>
 ```
 
-각 인풋 박스의 입력 값을 가져오기 위해 `ref` 속성을 사용하였고, 로그인 버튼을 눌렀을 때의 처리를 위해 `v-bind:submit` 디렉티브를 사용하였습니다. `.prevent`는 폼의 기본적인 동작을 막기 위한 modifier로써 흔히 사용하는 `event.preventDefault()` 코드와 같은 효과를 가집니다.
+각 인풋 박스의 입력 값을 가져오기 위해 `ref` 속성을 사용하였고, 로그인 버튼을 눌렀을 때의 처리를 위해 `v-on:submit` 디렉티브를 사용하였습니다. `.prevent`는 폼의 기본적인 동작을 막기 위한 modifier로써 흔히 사용하는 `event.preventDefault()` 코드와 같은 효과를 가집니다.
 
 ### 3. 로그인 버튼을 눌렀을 때의 처리
 
