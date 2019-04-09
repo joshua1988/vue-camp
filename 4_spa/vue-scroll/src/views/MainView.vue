@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Main</h1>
-    <a href="#shoes"></a>
+    <a href="#shoes">Shoes 태그로 이동</a>
     <section>
       <div id="clothes">
         Clothes
