@@ -40,7 +40,7 @@ export default {
     return {
       newsItems: [],
       // loading status
-      isLoading: true,
+      isLoading: false,
     }
   },
   methods: {
@@ -57,14 +57,14 @@ export default {
     }
   },
   async created() {
-    try {
-      bus.$emit('on:progress');
-      let response = await this.$store.dispatch('FETCH_NEWS');
-      this.isLoading = false;
-      bus.$emit('off:progress'); 
-    } catch (error) {
-      console.log(error);
-    }
+    // try {
+    //   bus.$emit('on:progress');
+    //   let response = await this.$store.dispatch('FETCH_NEWS');
+    //   this.isLoading = false;
+    //   bus.$emit('off:progress'); 
+    // } catch (error) {
+    //   console.log(error);
+    // }
 
       // .then(response => {
       //   this.isLoading = false;

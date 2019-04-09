@@ -15,7 +15,7 @@
         Displayed when loading
       </div>
     </template>
-    <template v-if="!loading">
+    <template v-show="!loading">
       <div ref="item">
         Hello Ref
       </div>
@@ -30,7 +30,8 @@
         loading: true
       },
       mounted() {
-        this.$refs.item.style = 'color: blue';
+        console.log(this.$refs);
+        // this.$refs.item.style = 'color: blue';
       },
     })
   </script>

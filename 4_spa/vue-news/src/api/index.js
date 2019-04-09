@@ -9,7 +9,12 @@ let config = {
 // #4 - Instance & Interceptor 설정
 // #3 - API 함수 정의
 function fetchNews() {
-  return axios.get(config.baseUrl + 'news/1.json');
+  try {
+    return axios.get(config.baseUrl + 'news/1.json');  
+  } catch (error) {
+    console.log(error);
+    return;
+  }
 }
 
 function fetchAsk() {

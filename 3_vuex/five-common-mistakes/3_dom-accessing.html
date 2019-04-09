@@ -16,22 +16,13 @@
 <body>
   <!-- jquery나 vanilla js로 직접 화면 요소를 조작하는 경우 refs를 활용 -->
   <div id="app">
+    <!-- #1 TODO: 뷰 디렉티브를 이용하여 아래 코드 축소 -->
+    <!-- #2 TODO: 이벤트 접근 방식이 아닌 ref 속성으로 'hide' 클래스 토글링 -->
     <ul>
-      <li @click="removeItem">
-        <span>메뉴 1</span>
-        <div class="child hide">
-          메뉴 설명
-        </div>
-      </li>
-      <li @click="removeItem">
-        <span>메뉴 2</span>
-        <div class="child hide">
-          메뉴 설명
-        </div>
-      </li>
-      <li @click="removeItem">
-        <span>메뉴 3</span>
-        <div class="child hide">
+      <li @click="removeItem(index)" 
+        v-for="(item, index) in items" v-bind:key="index">
+        <span>{{ item }}</span>
+        <div class="child hide" ref="listItem">
           메뉴 설명
         </div>
       </li>
@@ -56,7 +47,8 @@
       },
       methods: {
         removeItem(index) {
-          event.target.lastChild.classList.toggle("hide");
+          console.log(this.$refs.listItem[index]);
+          this.$refs.listItem[index].classList.toggle("hide");
 
           // this.$refs[`listItem${index}`][0].classList.toggle('hide');
         }

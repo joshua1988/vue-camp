@@ -17,7 +17,7 @@
 </template>
 
 <script>
-import { fetchAsk } from '../api/index.js';
+import { fetchAsk, fetchNews } from '../api/index.js';
 import { mapGetters } from 'vuex';
 
 export default {
@@ -43,9 +43,25 @@ export default {
     //     });
     // }
   // },
-  created() {
+  methods: {
+    async fetchNewsItems() {
+      const response = await fetchNews();
+      console.log(response);
+      // return response;
+    },
+    async fetchAskItems() {
+      return await fetchAsk();
+    }
+  },
+  async created() {
+    await this.$store.dispatch('FETCH_ASK');
+    // await this.fetchNewsItems();
+    // await this.fetchAskItems();
+
     // this.fetchData();
-    this.$store.dispatch('FETCH_ASK');
+  },
+  beforeDestroy() {
+    this.$store.commit('clearAskItems');
   }
 }
 </script>

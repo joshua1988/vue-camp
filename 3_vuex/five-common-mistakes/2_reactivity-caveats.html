@@ -41,7 +41,7 @@
         addNum(state) {
           state.user.num = 300;
           // API 형식 - Vue.set(object, key, value)
-          // Vue.set(state.user, 'num', 300);
+          Vue.set(state.user, 'num', 300);
         }
       },
       actions: {

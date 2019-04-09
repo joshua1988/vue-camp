@@ -26,18 +26,25 @@ export default new Vuex.Store({
     },
   },
   actions: {
-    FETCH_NEWS(context) {
-      return fetchNewsItems()
-        .then(response => 
-          context.commit('setNews', response.data))
-        .catch(error => console.log(error));
+    async FETCH_NEWS(context) {
+      const { data } = await fetchNewsItems();
+      context.commit('setNews', data);
+      return data;
+      // return fetchNewsItems()
+      //   .then(response => 
+      //     context.commit('setNews', response.data))
+      //   .catch(error => console.log(error));
     },
-    FETCH_ASK({ commit }) {
-      return fetchAsk()
-        .then(({ data }) => {
-          commit('setAsk', data);
-        })
-        .catch(error => console.log(error));
+    async FETCH_ASK({ commit }) {
+      const { data } = await fetchAsk();
+      commit('setAsk', data);
+      return data;
+
+      // return fetchAsk()
+      //   .then(({ data }) => {
+      //     commit('setAsk', data);
+      //   })
+      //   .catch(error => console.log(error));
     }
   }
 });

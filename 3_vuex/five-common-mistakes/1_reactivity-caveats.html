@@ -16,10 +16,14 @@
       <button @click="changeRegion">change Region</button>
     </div>
     <div>
-      <h1>User Data</h1>
       <div>
-        {{ user }}
+        <label for="login">Selected</label>
+        <input 
+          id="login" 
+          type="checkbox" 
+          v-bind:checked="user.checked">
       </div>
+      <h1>User Data</h1>
     </div>
   </div>
 
@@ -27,10 +31,18 @@
   화면에 반응성이 없는 사례 -->
   <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
   <script>
-    new Vue({
+    function initUser() {
+      return {
+        name: '',
+        email: '',
+        address: '',
+      };
+    }
+
+    var vm = new Vue({
       el: '#app',
       data: {
-        user: {}
+        user: initUser(),
       },
       created() {
         this.fetchUsers();
@@ -41,12 +53,13 @@
           .then(response => response.json())
           .then(data => {
             this.user = data;
-            this.user.region = 'Pangyo';
+            this.$set(this.user, 'checked', false);
           })
           .catch(error => console.log(error));
         },
         changeName() {
           this.user.name = 'Josh';
+          this.user.checked = true;
         },
         changeRegion() {
           this.user.region = 'Seoul';
