@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="form-container">
     <h1>Sign up</h1>
     <form @submit.prevent="registerUser" class="form">
       <div>
@@ -57,6 +57,8 @@ export default {
 }
 </script>
 
-<style>
-
+<style scoped>
+.form-container {
+  height: 100%;
+}
 </style>
