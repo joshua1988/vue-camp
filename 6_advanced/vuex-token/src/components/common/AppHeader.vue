@@ -10,7 +10,7 @@
       </template>
       <template v-else>
         <router-link to="/new">Add</router-link> |
-        <router-link to="/">Logout</router-link>
+        <a href="javascript:;" @click="logout">Logout</a>
       </template>
       <!-- <router-link to="/main">Main</router-link> -->
     </div>
@@ -31,6 +31,10 @@ export default {
     }
   },
   methods: {
+    logout() {
+      this.$store.commit('LOGOUT');
+      this.$router.push('/');
+    },
     checkHeight() {
       if (window.scrollY > 0) {
         this.isFixed = true;

@@ -18,6 +18,7 @@
 
 <script>
 import { fetchPostById, editPostById } from '../api/index.js';
+import bus from '../utils/bus.js';
 
 export default {
   data() {
@@ -38,6 +39,7 @@ export default {
           title: this.title,
           contents: this.contents,
         });
+        bus.$emit('show:toast', `${response.data.title} was editted`);
         this.$router.push('/main');
       } catch (error) {
         console.log(error);

@@ -1,5 +1,6 @@
 import axios from 'axios';
 import store from '../store/index.js';
+import { getAuthFromCookie } from '../utils/cookies.js';
 
 // basic config for axios
 const APP_URL = 'http://localhost:3000/';
@@ -13,7 +14,7 @@ function create(url, options) {
 function createWithAuth(url, options) {
   const instance = axios.create(Object.assign({ baseURL: url }, options));
   instance.interceptors.request.use(config => {
-    config.headers.Authorization = store.getters['userToken'];
+    config.headers.Authorization = store.getters['userToken'] || getAuthFromCookie();
     return config;
   }, error => {    
     console.dir(error);

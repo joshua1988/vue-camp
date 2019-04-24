@@ -6,6 +6,7 @@ import MainView from '../views/MainView';
 import PostAddView from '../views/PostAddView';
 import PostDetailView from '../views/PostDetailView';
 import store from '../store';
+import { getUserFromCookie } from '../utils/cookies.js';
 
 Vue.use(Router);
 
@@ -48,10 +49,10 @@ export default new Router({
 });
 
 function beforeEnter(to, from, next) {
-  if (store.getters['isLoggedIn']) {
-    next();
-  } else {
-    alert('sign in please');
-    next('/login');
-  }
+  if (store.getters['isLoggedIn'] || getUserFromCookie()) {
+		next();
+	} else {
+		alert('sign in please');
+		next('/login');
+	}
 }

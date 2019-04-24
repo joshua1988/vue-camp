@@ -11,15 +11,9 @@
           </div>
           <div class="post-time">
             {{ item.createdAt }}
-            <i class="icon ion-md-create"></i>
+            <i class="icon ion-md-create" @click="editPost(item._id)"></i>
             <i class="icon ion-md-trash" @click="removePost(item._id)"></i>
           </div>
-          <!-- <router-link :to="`/post/${item._id}`">
-            {{ item.title }}
-          </router-link>
-          <button @click="removePost(item._id)">
-            delete
-          </button> -->
         </li>
       </ul>
     </div>
@@ -46,11 +40,13 @@ export default {
         console.log(error);
       }
     },
+    editPost(id) {
+      this.$router.push(`/post/${id}`);
+    },
     async removePost(id) {
       try {
         if (confirm('Delete it?')) {
           const response = await deletePostById(id);
-          console.log(response);
           await this.fetchData();
           bus.$emit('show:toast', `${response.data.title} was deleted`);
         }
