@@ -3,10 +3,10 @@
 	https://colorhunt.co/palette/15830
 */
 .main-container {
-	overflow: hidden;
-	overflow-x: auto;
+	/* overflow: hidden; */
+	/* z-index: 1; */
+	/* overflow-x: auto; */
 	position: relative;
-	z-index: 1;
 	width: 100%;
 	height: 100%;
 	font-size: 1.4rem;

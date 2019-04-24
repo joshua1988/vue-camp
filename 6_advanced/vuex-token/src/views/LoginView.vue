@@ -21,6 +21,8 @@
 </template>
 
 <script>
+import bus from '../utils/bus.js';
+
 export default {
   data() {
     return {
@@ -41,7 +43,8 @@ export default {
           password: this.password,
         });
         console.log(response);
-        this.logMessage = response.data.message;
+        // this.logMessage = response.data.message;
+        bus.$emit('show:toast', response.data.message);
         this.$router.push('/main');
         this.initForm();
       } catch (error) {
@@ -56,7 +59,7 @@ export default {
   },
   created() {
     this.username = 'test@abc.com';
-    this.password = '1234';
+    this.password = '12341234';
   }
 }
 </script>

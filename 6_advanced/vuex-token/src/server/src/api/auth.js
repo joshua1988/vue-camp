@@ -84,4 +84,6 @@ router.post('/signup', (req, res) => {
   });
 });
 
+// TODO: Logout 구현 필요
+
 export default router;

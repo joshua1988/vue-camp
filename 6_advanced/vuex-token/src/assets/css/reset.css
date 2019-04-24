@@ -10,9 +10,13 @@ body {
 	font-family: 'SpoqaHanSans', 'SpoqaHanSansJP', 'Sans-serif';
 }
 
-h1, p {
+h1, p, ul {
 	margin: 0;
 	padding: 0;
+}
+
+li {
+	list-style: none;
 }
 
 button {

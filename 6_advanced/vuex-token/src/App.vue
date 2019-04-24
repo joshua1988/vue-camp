@@ -2,7 +2,7 @@
   <div class="main-container">
     <app-header></app-header>
     <router-view></router-view>
-    <toast-popup :loading="loading"></toast-popup>
+    <toast-popup></toast-popup>
   </div>
 </template>
 
@@ -14,18 +14,14 @@ export default {
   components: {
     AppHeader,
     ToastPopup,
-  },
-  data() {
-    return {
-      loading: false
-    }
-  },
+  },  
 }
 </script>
 
 <style>
 @import './assets/css/reset.css';
 @import './assets/css/common.css';
+@import './assets/font/typicons.min.css';
 
 .form {
   margin: 0.5rem 0.2rem;
