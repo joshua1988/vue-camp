@@ -30,19 +30,26 @@ export default {
       isFixed: false,
     }
   },
+  watch: {
+    '$route'(to, from) {
+      this.looseHeader();
+    }
+  },
   methods: {
     logout() {
       this.$store.commit('LOGOUT');
       this.$router.push('/');
     },
     checkHeight() {
-      if (window.scrollY > 0) {
-        this.isFixed = true;
-        document.querySelector('.list-container').classList.add('sticky');
-      } else {
-        this.isFixed = false;
-        document.querySelector('.list-container').classList.remove('sticky');
-      }
+      window.scrollY > 0 ? this.stickHeader() : this.looseHeader();
+    },
+    stickHeader() {
+      this.isFixed = true;
+      document.querySelector('.main').classList.add('sticky');
+    },
+    looseHeader() {
+      this.isFixed = false;
+      document.querySelector('.main').classList.remove('sticky');
     }
   },
   mounted() {

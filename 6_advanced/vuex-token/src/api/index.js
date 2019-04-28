@@ -16,8 +16,12 @@ function createWithAuth(url, options) {
   instance.interceptors.request.use(config => {
     config.headers.Authorization = store.getters['userToken'] || getAuthFromCookie();
     return config;
-  }, error => {    
-    console.dir(error);
+  }, error => {
+    return Promise.reject(error.response);
+  });
+  instance.interceptors.response.use(config => {
+    return config;
+  }, error => {
     return Promise.reject(error.response);
   });
   return instance;

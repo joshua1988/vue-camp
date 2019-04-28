@@ -63,6 +63,7 @@ router.post('/signup', (req, res) => {
   // NOTE: 10 is saltround which is a cost factor
   bcrypt.hash(password, 10, (error, hashedPassword) => {
     if (error) {
+      console.log(error);
       return res.status(500).json({
         error
       });
@@ -75,6 +76,7 @@ router.post('/signup', (req, res) => {
       newUser.save((error, saved) => {
         if (error) {
           console.log(error);
+          res.status(409).send(error);
         } else {
           console.log(saved);
           res.send(saved);

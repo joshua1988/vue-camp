@@ -1,71 +1,69 @@
 <template>
-  <div>
-    <form>
+  <div class="form-wrapper">
+    <h1>Login</h1>
+    <form @submit.prevent="submitForm" class="form">
       <div>
-        <label for="username">ID : </label>
-        <input id="username" type="text" v-model="username">
+        <label for="username">ID: </label>
+        <input type="text" id="username" v-model="username">
       </div>
       <div>
-        <label for="password">PW : </label>
-        <input id="password" type="password" v-model="password">
+        <label for="password">PW: </label>
+        <input type="text" id="password" v-model="password">
       </div>
-      <div>
-        <label for="nickname">NICKNAME : </label>
-        <input id="nickname" type="text" v-model="nickname">
-      </div>
-      <button @click.prevent="signupUser">sign up</button>
-      <button @click.prevent="loginUser">login</button>
+      <button class="btn">login</button>
     </form>
+    <p class="log">
+      {{ logMessage }}
+    </p>
   </div>
 </template>
 
 <script>
-import axios from 'axios';
+import bus from '../utils/bus.js';
 
 export default {
   data() {
     return {
       username: '',
       password: '',
-      nickname: '',
+      logMessage: '',
     }
   },
   methods: {
-    signupUser() {
-      // axios.post('url', data);
-      axios.post('http://localhost:3000/signup', {
-        username: this.username,
-        nickname: this.nickname,
-        password: this.password,
-      })
-      .then((response) => {
-        console.log(response.data);
+    async submitForm() {
+      if (!this.username || !this.password) {
+        alert('Fill in the account information');
+        return;
+      }
+      try {
+        const response = await this.$store.dispatch('LOGIN', {
+          username: this.username,
+          password: this.password,
+        });
+        console.log(response);
+        bus.$emit('show:toast', response.data.message);
+        this.$router.push('/main');
         this.initForm();
-      })
-      .catch((error) => {
+      } catch (error) {
         console.log(error);
-      });
-    },
-    loginUser() {
-      axios.post('http://localhost:3000/login', {
-        username: this.username,
-        password: this.password,
-      })
-      .then(response => {
-        const token = response.data.token;
-        this.$store.commit('setToken', token);
-      })
-      .catch(error => console.log(error));
+        this.logMessage = error.response.data;
+      }
     },
     initForm() {
       this.username = '';
-      this.nickname = '';
       this.password = '';
-    }
+    },
+  },
+  created() {
+    this.username = 'test@abc.com';
+    this.password = '12341234';
   }
 }
 </script>
 
-<style>
-
+<style scoped>
+.btn {
+  background-color: #3fc1c9;
+  color: white;
+}
 </style>

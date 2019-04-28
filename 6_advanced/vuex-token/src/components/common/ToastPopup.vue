@@ -1,5 +1,5 @@
 <template>
-  <div class="toast" :class="{ show: open }">
+  <div class="toast" :class="toastAnimationClass">
     {{ message }}
   </div>
 </template>
@@ -43,7 +43,7 @@ export default {
 
 <style scoped>
 .toast {
-  visibility: hidden;
+  /* visibility: hidden; */
   position: fixed;
   width: 400px;
   height: 56px;
@@ -51,17 +51,17 @@ export default {
   border-radius: 2px;
   box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2);
   color: white;
-  bottom: -60px;
+  bottom: -120px;
   margin-left: -200px;
   left: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
-  transition: transform 300ms ease-out;
+  transition: transform 750ms ease-out;
 }
 .toast.show {
   visibility: visible;
-  transform: translateY(-60px);
-  transition: transform 300ms ease-in-out;
+  transform: translateY(-120px);
+  transition: transform 500ms ease-in-out;
 }
 </style>

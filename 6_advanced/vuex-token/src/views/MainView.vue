@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="list-container">
+    <div class="main list-container">
       <ul>
         <li v-for="item in postItems" :key="item._id">
           <div class="post-title">
@@ -10,7 +10,7 @@
             {{ item.contents }}
           </div>
           <div class="post-time">
-            {{ item.createdAt }}
+            {{ item.createdAt | formatDate }}
             <i class="icon ion-md-create" @click="editPost(item._id)"></i>
             <i class="icon ion-md-trash" @click="removePost(item._id)"></i>
           </div>
@@ -62,6 +62,9 @@ export default {
 </script>
 
 <style scoped>
+.list-container {
+  margin-top: 1.5rem;
+}
 .list-container.sticky {
   margin-top: 76px;
 }

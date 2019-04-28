@@ -21,6 +21,9 @@ export default new Router({
       path: '/login',
       name: 'login',
       component: LoginView,
+      beforeEnter(to, from, next) {
+        store.getters['isLoggedIn'] ? next('/main') : next();
+      },
     },
     {
       path: '/signup',

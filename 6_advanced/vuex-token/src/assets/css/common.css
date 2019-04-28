@@ -2,7 +2,7 @@
 	color hunt palette  
 	https://colorhunt.co/palette/15830
 */
-.main-container {
+.app {
 	/* overflow: hidden; */
 	/* z-index: 1; */
 	/* overflow-x: auto; */
@@ -11,8 +11,83 @@
 	height: 100%;
 	font-size: 1.4rem;
 }
-
 h1 {
 	text-align: center;
 	font-weight: 100;
+}
+
+/* headers */
+a {
+  color: #364f6b;
+  text-decoration: none;
+}
+a:hover {
+  color: #3fc1c9;
+}
+a.router-link-exact-active {
+  color: #fc5185;
+}
+
+/* form */
+.form-container {
+  padding: 120px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.form-wrapper {
+  border: 1px solid #dae1e7;
+  border-radius: 30px;
+  padding: 1rem 0.5rem;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.12), 0 2px 4px 0 rgba(0,0,0,.08);
+}
+.form {
+  width: 360px;
+  height: 290px;
+  padding: 24px 20px;
+  margin: 0.5rem 0.2rem;
+}
+.form label {
+  width: 100%;
+  display: block;
+  margin-bottom: 0.5rem;
+  color: #364f6b;
+  font-size: 90%;
+}
+.form input,
+.form textarea {
+  font-family: inherit;
+  font-size: 100%;
+  width: 100%;
+  border: 1px solid #dae1e7;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
+  padding: 0.5rem 0.75rem;
+  margin-bottom: 1rem;
+}
+.form input.valid {
+  border: 1px solid #21b314;
+}
+.form input.invalid {
+  border: 1px solid red;
+}
+.form div:nth-last-child(2) {
+  margin-bottom: 0.5rem;
+}
+.btn {
+  padding: 0.5rem 1.5rem;
+  font-weight: 700;
+  border-radius: .25rem;
+  border: 0 solid #dae1e7;
+}
+.btn.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+.log {
+  color: #ff4057;
+  font-size: 1rem;
+  text-align: center;
+}
+.warning {
+  color: #ff4057;
 }
