@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "nodemon --exec npm run restart",
     "restart": "rimraf dist && npm run build && npm run start",
-    "build": "babel src --out-dir dist",
+    "build": "babel src --out-dir dist --source-maps inline --copy-files",
     "start": "node dist/app.js"
   },
   "keywords": [],
@@ -37,5 +37,8 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "rimraf": "^2.6.3"
+  },
+  "dependencies": {
+    "swagger-jsdoc": "^3.2.9"
   }
 }

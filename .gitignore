@@ -1,8 +1,11 @@
 # JetBrains IDE
 .idea
 
- # VS Code
+# VS Code
 .vscode
+
+# Build
+dist
 
 # Visual Studio Code
 .vs

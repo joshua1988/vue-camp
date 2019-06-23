@@ -1,0 +1,350 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "TIL API 문서",
+    "description": "",
+    "version": "1.0"
+  },
+  "produces": [
+    "application/json"
+  ],
+  "paths": {
+    "/signup": {
+      "post": {
+        "tags": [
+          "/signup"
+        ],
+        "description": "회원 가입을 위한 API 입니다. 사용자 아이디, 암호, 닉네임 3개를 입력해야 합니다.",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "formData",
+            "description": "사용자 아이디",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "비밀번호",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "nickname",
+            "in": "formData",
+            "description": "닉네임",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "[완료]가입이 정상적으로 완료되었습니다.",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          },
+          "409": {
+            "description": "[에러]사용자 아이디가 이미 존재하여 회원 가입이 실패하였습니다.",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          },
+          "500": {
+            "description": "[에러]서버에 문제가 있어 회원 가입에 실패하였습니다.",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          }
+        }
+      }
+    },
+    "/login": {
+      "post": {
+        "tags": [
+          "/login"
+        ],
+        "description": "로그인하는 API 입니다. 사용자 아이디와 암호를 입력해야 합니다.",
+        "parameters": [
+          {
+            "name": "username",
+            "in": "formData",
+            "description": "사용자 아이디",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "password",
+            "in": "formData",
+            "description": "비밀번호",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "[완료]로그인이 완료되었습니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          },
+          "401": {
+            "description": "[에러]비밀번호가 맞지 않아 로그인에 실패하였습니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          },
+          "500": {
+            "description": "[에러]서버에 문제가 있어 로그인하지 못했습니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          }
+        }
+      }
+    },
+    "/posts": {
+      "get": {
+        "tags": [
+          "/posts"
+        ],
+        "description": "사용자가 등록한 게시물을 가져오는 API입니다",
+        "responses": {
+          "200": {
+            "description": "[완료]게시물을 받아왔습니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          },
+          "401": {
+            "description": "[에러]인증 토큰이 유효하지 않아 게시물을 받아올 수 없습니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          },
+          "500": {
+            "description": "[에러]서버에 문제가 있어 게시물을 받아오지 못했습니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "/posts"
+        ],
+        "description": "게시물을 한개 생성하는 API입니다",
+        "parameters": [
+          {
+            "name": "title",
+            "in": "formData",
+            "description": "게시물 제목",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "contents",
+            "in": "formData",
+            "description": "게시물 내용",
+            "required": true,
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "[완료]게시물이 생성되었습니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          },
+          "400": {
+            "description": "[에러]게시물이 이미 존재합니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          },
+          "500": {
+            "description": "[에러]서버에 문제가 있어 게시물을 생성하지 못했습니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          }
+        }
+      }
+    },
+    "/posts/{_id}": {
+      "get": {
+        "tags": [
+          "/posts"
+        ],
+        "description": "특정 게시물을 조회하는 API입니다",
+        "operationId": "getPostById",
+        "consumes": [
+          "application/json"
+        ],
+        "produces": [
+          "application/json"
+        ],
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "게시글 고유 아이디",
+            "required": true,
+            "type": "string",
+            "schema": {
+              "$ref": "#/definitions/Posts"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "[완료]게시물이 조회되었습니다",
+            "schema": {
+              "$ref": "#/definitions/Posts"
+            },
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          },
+          "401": {
+            "description": "[에러]인증 토큰이 유효하지 않아 게시물을 받아올 수 없습니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          },
+          "500": {
+            "description": "[에러]서버에 문제가 있어 게시물을 생성하지 못했습니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "/posts"
+        ],
+        "description": "특정 게시물을 수정하는 API입니다",
+        "operationId": "updatePost",
+        "parameters": [
+          {
+            "name": "_id",
+            "in": "path",
+            "description": "post id that needs to be updated",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "body",
+            "name": "body",
+            "description": "Updated Post object",
+            "required": true,
+            "schema": {
+              "$ref": "#/definitions/Posts"
+            }
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "[완료]게시물이 수정되었습니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          },
+          "400": {
+            "description": "[에러]게시물이 이미 존재합니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          },
+          "404": {
+            "description": "[에러]게시글을 찾을 수 없습니다"
+          },
+          "500": {
+            "description": "[에러]서버에 문제가 있어 게시물을 생성하지 못했습니다",
+            "content": {
+              "application/json": {},
+              "application/xml": {}
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Users": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string",
+          "format": "int64"
+        },
+        "username": {
+          "type": "string",
+          "description": "User's name"
+        },
+        "password": {
+          "type": "string",
+          "description": "User's password"
+        },
+        "nickname": {
+          "type": "string",
+          "description": "User's nickname"
+        },
+        "createdAt": {
+          "type": "date-time"
+        }
+      }
+    },
+    "Posts": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "string"
+        },
+        "title": {
+          "type": "string"
+        },
+        "contents": {
+          "type": "string"
+        }
+      }
+    }
+  },
+  "security": [
+    {
+      "jwt": [],
+      "petstore_auth": [
+        "write:pets",
+        "read:pets"
+      ]
+    }
+  ],
+  "securityDefinitions": {
+    "jwt": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header"
+    }
+  }
+}

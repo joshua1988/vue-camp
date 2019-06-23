@@ -11,6 +11,7 @@ import chalk from 'chalk';
 import auth from './api/auth.js';
 import posts from './api/posts.js';
 import todos from './api/todos.js';
+import docs from './utils/api-doc.js';
 
 // utils
 import { authenticateUser } from './utils/auth.js';
@@ -42,6 +43,9 @@ app.use(morgan('dev')); // log request
 app.use('/', auth);
 app.use('/posts', authenticateUser, posts);
 app.use('/todos', todos);
+
+// api docs
+app.use('/api', docs);
 
 // start
 app.listen(port, () => console.log(`Example app listening on port ${port}!`));

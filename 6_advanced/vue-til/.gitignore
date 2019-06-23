@@ -1,3 +1,7 @@
+# Build
+dist
+
+# Basic
 .DS_Store
 node_modules
 /dist

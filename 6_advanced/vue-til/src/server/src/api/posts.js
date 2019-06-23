@@ -71,7 +71,7 @@ router.put('/:id', async (req, res) => {
       )
       .lean()
       .exec();
-      
+
     if (!updatedDoc) {
       return res.status(400).json({ message: 'cannot update the data' });
     }
