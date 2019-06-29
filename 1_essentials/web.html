@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Reactivity</title>
+  </head>
+  <body>
+    <div id="app"></div>
+
+    <script>
+      // $('#app')
+      var div = document.querySelector('#app');
+      // console.log(div);
+      // var str = 'hello';
+      // div.innerHTML = str;
+
+      // str = 'hello world';
+      // div.innerHTML = str;
+      var obj = { num: 10, arr: [] };
+      // Object.defineProperty(대상 객체, '변경할 속성 이름', {
+      //   동작...
+      // }),
+
+      // new Proxy(obj, {
+      //   get: function() {
+
+      //   },
+      //   set: function() {
+
+      //   }
+      // });
+
+      Object.defineProperty(obj, 'str', {
+        get: function() {
+          // 속성에 접근했을 때의 동작을 정의
+          // obj.str
+          console.log('접근');
+        },
+        set: function(newValue) {
+          // 속성에 값을 할당했을 때의 동작을 정의
+          console.log('할당', newValue);
+          div.innerHTML = newValue;
+        },
+      });
+    </script>
+  </body>
+</html>
