@@ -10,17 +10,33 @@
   <div id="app">
     <!-- <app-header v-bind:프롭스 속성 이름="상위 컴포넌트의 데이터 이름"></app-header> -->
     <app-header v-bind:propsdata="str"></app-header>
-    <app-content></app-content>
+    <!-- <app-content v-on:이벤트 이름="상위 컴포넌트의 메서드 이름"></app-content> -->
+    <app-content v-on:modify="changeStr"></app-content>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
   <script>
     // Vue.component('컴포넌트 이름': 컴포넌트 내용)
     Vue.component('app-content', {
-      template: '<div>content</div>',
+      template: `
+        <div>
+          content
+          <button v-on:click="passEvent">
+            change
+          </button>
+        </div>
+      `,
+      methods: {
+        passEvent: function() {
+          console.log('clicked');
+          // this.$emit('이벤트 이름', 인자1, 인자2, ..)
+          this.$emit('modify');
+          // this.$emit('modify', 10);
+        }
+      }
     })
 
-    new Vue({
+    var vm = new Vue({
       el: '#app',
       data: {
         str: 'App Header'
@@ -29,8 +45,13 @@
         // '컴포넌트 이름': 컴포넌트 내용,
         'app-header': {
           props: ['propsdata'],
-          template: '<h1>temp</h1>',
+          template: '<h1>{{ propsdata }}</h1>',
         },
+      },
+      methods: {
+        changeStr: function() {
+          this.str = 'Hello';
+        }
       }
     })
   </script>

@@ -10,7 +10,7 @@
       <!-- 참고 1 : propsdata는 child-component에 선언해놓은 props 속성의 이름입니다. -->
       <!-- 참고 2: 프롭스 속성은 오른쪽에서 왼쪽으로 읽는게 편합니다. -->
       <child-component v-bind:propsdata="message"></child-component>
-
+      <sibling-component v-bind:propsdata="anotherMessage"></sibling-component>
       <!-- #할일 3 -->
       <!-- sibling-component 등록 -->
     </div>

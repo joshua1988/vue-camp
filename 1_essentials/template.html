@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Template</title>
+  <style>
+    .primary {
+      color: blue;
+    }
+    .warning {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h1>템플릿 기본 문법</h1>
+    <!-- 뷰 디렉티브 -->
+    <button v-on:click="toggleStr">toggle</button>
+    <!-- 데이터 바인딩 -->
+    <p v-if="show">{{ str }}</p>
+    <h1>템플릿 실전 문법</h1>
+    <p v-bind:class="textColorClass">Hello</p>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        str: 'hi',
+        show: false,
+      },
+      computed: {
+        textColorClass: function() {
+          // if (this.show) {
+          //   return 'primary';
+          // } else {
+          //   return 'warning';
+          // }
+          return this.show ? 'primary' : 'warning';
+        }
+      },
+      methods: {
+        toggleStr: function() {
+          this.show = !this.show;
+        }
+      }
+    })
+  </script>
+</body>
+</html>

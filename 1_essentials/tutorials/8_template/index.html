@@ -4,16 +4,24 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Templates Sample</title>
+    <style>
+      .blue-text {
+        color: blue;
+      }
+    </style>
   </head>
   <body>
     <div id="app">
       <header>
         <!-- #1 -->
         <h3>{{ message }}</h3>
+        <button v-on:click="showAlert">click me</button>
       </header>
       <section>
         <!-- #2 -->
-        <p v-bind:id="uid"></p>
+        <p 
+          v-bind:id="uid"
+          v-bind:class="blueTextClass">123</p>
 
         <!-- #3 -->
         <button v-on:click="clickBtn">alert</button>
