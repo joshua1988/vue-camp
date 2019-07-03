@@ -1,0 +1,3 @@
+vue create todo-app
+ - mkdir 폴더 이름...
+ - npm install

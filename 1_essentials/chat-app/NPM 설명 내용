@@ -1,0 +1,27 @@
+npm init
+npm init -y
+npm install jquery
+npm i vue react
+npm i raect
+npm uninstall raect
+
+npm run serve
+npm install webpack-cli -global
+
+1. NPM(Node Package Manager) 이란?
+전세계 자바스크립트 라이브러리가 있는 공간
+
+2. NPM 설정 파일 생성하는 방법
+npm init
+
+3. NPM으로 라이브러리를 다운로드 하는 방법
+npm install '라이브러리 이름'
+
+4. NPM으로 라이브러리를 시스템 레벨(콘솔 창에 명령어를 인식)에 설치하는 방법
+npm install '라이브러리 이름' -global
+
+5. NPM에 커스텀 명령어 추가하는 방법
+
+"scripts": {
+  "커스텀 명령어 이름": "실행할 명령어"
+}
