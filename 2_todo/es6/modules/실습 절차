@@ -1,0 +1,4 @@
+[실행 절차]
+npm i
+npm run build
+index.html을 라이브 서버로 실행

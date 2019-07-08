@@ -23,10 +23,12 @@ export default {
 	// 인스턴스 옵션 속성
 	components: {
 		// '컴포넌트 이름': 컴포넌트 내용,
-		'todo-header': TodoHeader,
-		'todo-input': TodoInput,
-		'todo-list': TodoList,
-		'todo-footer': TodoFooter,
+		TodoHeader,
+		TodoInput,
+		TodoList,
+		// 'todo-footer': TodoFooter,
+		// 'TodoFooter': TodoFooter,
+		TodoFooter,
 	},
 	data() {
 		return {
@@ -34,7 +36,7 @@ export default {
 		};
 	},
 	methods: {
-		fetchItems: function() {
+		fetchItems() {
 			// var arr = [];
 			for (var i = 0; i < localStorage.length; i++) {
 				var item = localStorage.key(i);
@@ -43,20 +45,21 @@ export default {
 			}
 			// return arr;
 		},
-		addTodoItem: function(value) {
+		addTodoItem(value) {
 			// 배열에 추가
 			this.todoItems.push(value);
 			// 저장소에 저장
 			localStorage.setItem(value, value);
 		},
-		removeTodoItem: function() {
+		removeTodoItem() {
+			console.log(this);
 			// TODO: 구현해보세요...
 		},
-		removeAllItems: function() {
+		removeAllItems() {
 			// TODO: 모든 아이템을 삭제하는 로직 구현...
 		},
 	},
-	created: function() {
+	created() {
 		this.fetchItems();
 	},
 };

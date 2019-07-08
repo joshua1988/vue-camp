@@ -1,0 +1,8 @@
+[프로젝트 실행 명령어]
+npm i
+npm run dev
+
+[할 일]
+- 경로 : 2번 폴더 -> slot -> exercise 프로젝트
+- 내용 : props 속성 대신에 slots으로 
+동일한 화면 구현
