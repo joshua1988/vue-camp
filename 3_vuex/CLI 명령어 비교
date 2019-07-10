@@ -1,0 +1,7 @@
+[지금]
+- vue create vue-news
+
+[예전]
+- vue init vue-news
+- cd vue-news
+- npm i

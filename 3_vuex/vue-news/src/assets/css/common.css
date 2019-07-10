@@ -1,0 +1,12 @@
+a {
+  color: #35495e;
+}
+a:hover {
+  color: #42b883;
+}
+a:active {
+  color: #30e3ca;
+}
+a.router-link-exact-active {
+  color: lightgreen;
+}

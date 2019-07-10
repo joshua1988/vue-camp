@@ -1,0 +1,8 @@
+1. npm init -y
+2. npm i webpack webpack-cli -D
+3. index.html 생성 후 내용 복사
+4. src/index.js 생성 후 내용 복사
+5. lodash 라이브러리 설치
+  - npm i lodash
+6. 웹팩 명령어 실행
+  - webpack --mode=none
