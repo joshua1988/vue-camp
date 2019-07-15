@@ -1,5 +1,5 @@
 {
-  "name": "getting-started",
+  "name": "css-splitting",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,10 +11,10 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "css-loader": "^3.0.0",
+    "mini-css-extract-plugin": "^0.7.0",
+    "style-loader": "^0.23.1",
     "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
-  },
-  "dependencies": {
-    "lodash": "^4.17.13"
+    "webpack-cli": "^3.3.6"
   }
 }

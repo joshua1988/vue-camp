@@ -1,10 +1,11 @@
 {
-  "name": "getting-started",
+  "name": "dev-server",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "webpack-dev-server",
     "build": "webpack"
   },
   "keywords": [],
@@ -12,9 +13,7 @@
   "license": "ISC",
   "devDependencies": {
     "webpack": "^4.35.3",
-    "webpack-cli": "^3.3.5"
-  },
-  "dependencies": {
-    "lodash": "^4.17.13"
+    "webpack-cli": "^3.3.6",
+    "webpack-dev-server": "^3.7.2"
   }
 }

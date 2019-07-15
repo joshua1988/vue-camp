@@ -1,0 +1,9 @@
+[일반]
+npm i jquery --save
+npm i jquery --save-dev
+
+[축약]
+npm i jquery
+npm i jquery -D
+
+npm i vue -D

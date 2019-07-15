@@ -1,0 +1,20 @@
+{
+  "name": "npm",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  // 애플리케이션 로직과 관련된 라이브러리 (프레임워크, 라이브러리, 플러그인)
+  "dependencies": {
+    "jquery": "^3.4.1"
+  },
+  // 애플리케이션을 개발할 때 필요한 라이브러리 (테스팅 도구, 프로토 타이핑 서버 등)
+  "devDependencies": {
+    "vue": "^2.6.10"
+  }
+}
