@@ -20,7 +20,13 @@ function fetchAsk() {
   return instance.get('ask/1.json');
 }
 
-export { fetchNews, fetchAsk };
+function fetchUser(name) {
+  // 'https://api.hnpwa.com/v0/user/Luc.json'
+  //  instance.get('user/' + name + '.json');
+  return instance.get(`user/${name}.json`);
+}
+
+export { fetchNews, fetchAsk, fetchUser };
 
 // API 공통 설정
 // let config = {

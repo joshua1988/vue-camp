@@ -2,6 +2,7 @@
 import NewsView from '../views/NewsView.vue';
 import AskView from '../views/AskView.vue';
 import JobsView from '../views/JobsView.vue';
+import UserView from '../views/UserView.vue';
 import NotFound from '../views/NotFound.vue';
 
 export let routes = [
@@ -22,6 +23,10 @@ export let routes = [
   {
     path: '/jobs',
     component: JobsView,
+  },
+  {
+    path: '/user/:userName',
+    component: UserView,
   },
   {
     path: '*',

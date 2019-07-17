@@ -2,7 +2,15 @@
   <div>
     <ul>
       <li v-for="newsItem in newsItems" v-bind:key="newsItem.id">
-        {{ newsItem.title }}
+				<p>
+					{{ newsItem.title }}
+					<router-link v-bind:to="'/user/' + newsItem.user">
+						{{ newsItem.user }}
+					</router-link>
+					<!-- <a v-bind:href="'/user/' + 사용자 이름">
+						사용자 이름...
+					</a> -->
+				</p>
       </li>
     </ul>
   </div>
@@ -35,5 +43,8 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
+.blue {
+	color: blue;
+}
 </style>

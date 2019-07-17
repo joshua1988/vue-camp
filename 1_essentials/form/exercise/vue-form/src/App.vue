@@ -5,6 +5,9 @@
 			<h1>{{ title | exclamate }}</h1>
 			<h1>{{ exclamatedTitle }}</h1>
 			<h1>{{ currentDate | YYYY }}</h1> -->
+
+			<!-- NOTE: 나중에 exclamatedTitle이랑 비교해보세요 -->
+			<h1>{{ exclamateText(title) }}</h1>
 			<form 
 				v-on:submit.prevent="submitForm"
 				class="bg-white shadow-md rounded px-8 pt-6 pb-8 mb-4">
@@ -12,10 +15,13 @@
 					<label class="block text-grey-darker text-sm font-bold mb-2" for="username">
 						Username
 					</label>
-					<input class="shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+					<input 
+						class="mb-2 shadow appearance-none border rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
+						v-bind:class="{ 'border-red': !isValidUsername }"
 						id="username" type="text" placeholder="Username"
 						v-model="username">
 					<p 
+						v-if="!isValidUsername"
 						class="text-red text-xs italic">Please enter an email.</p>
 				</div>
 				<div class="mb-6">
@@ -80,8 +86,17 @@ export default {
 				// 'box-shadow': isShadowApplied,
 			};
 		},
+		isValidUsername() {
+			if (!this.username) {
+				return true;
+			}
+			return validateEmail(this.username);
+		},
 	},
 	methods: {
+		exclamateText(value) {
+			return value + '!!';
+		},
 		submitForm() {
 			// console.log(event);
 			$.ajax({
