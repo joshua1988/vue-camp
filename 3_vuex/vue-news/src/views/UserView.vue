@@ -1,6 +1,6 @@
 <template>
   <div>
-    user
+    {{ user }}
   </div>
 </template>
 
@@ -8,11 +8,16 @@
 import { fetchUser } from '../api/index.js';
 
 export default {
+	data() {
+		return {
+			user: {},
+		};
+	},
 	methods: {
 		fetchUserByName(name) {
 			fetchUser(name)
 				.then(response => {
-					console.log(response);
+					this.user = response.data;
 				})
 				.catch(error => {
 					console.log(error);
@@ -20,6 +25,7 @@ export default {
 		},
 	},
 	created() {
+		// console.log(this);
 		console.log(this.$route.params);
 		let name = this.$route.params.userName;
 		this.fetchUserByName(name);

@@ -2,10 +2,11 @@
   <div>
     <div>
       <p v-for="askItem in askItems" :key="askItem.id">
-        {{ askItem.title }}
+        <router-link v-bind:to="`/item/${askItem.id}`">
+					{{ askItem.title }}
+				</router-link>
       </p>
     </div>
-
   </div>
 </template>
 

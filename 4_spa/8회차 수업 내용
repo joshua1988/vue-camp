@@ -1,0 +1,12 @@
+- Form Validation
+  - computed
+  - filter
+  - computed vs methods
+- 뉴스 앱 제작
+  - 동적 라우트 매칭
+- 뷰엑스
+  - 왜 쓰는지? (단방향 데이터 흐름 및 처리)
+  - 설치 (npm i vuex)
+  - 폴더 (store -> index.js)
+  - state (data 속성)
+  - mutations (methods 함수)

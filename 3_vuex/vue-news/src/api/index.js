@@ -26,7 +26,11 @@ function fetchUser(name) {
   return instance.get(`user/${name}.json`);
 }
 
-export { fetchNews, fetchAsk, fetchUser };
+function fetchItem(id) {
+  return instance.get(`item/${id}.json`);
+}
+
+export { fetchNews, fetchAsk, fetchUser, fetchItem };
 
 // API 공통 설정
 // let config = {
