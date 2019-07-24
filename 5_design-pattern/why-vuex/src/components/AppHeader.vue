@@ -4,7 +4,7 @@
       <strong>Why Vuex</strong>
     </div>
     <div>
-      <small>{{ propsdata }}</small>
+      <small>{{ this.$store.state.userId }}</small>
     </div>
   </header>
 </template>
