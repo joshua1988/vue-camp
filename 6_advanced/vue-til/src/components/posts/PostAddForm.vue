@@ -4,11 +4,11 @@
     <div class="form-wrapper">
       <form @submit.prevent="submitForm" class="form">
         <div>
-          <label for="title">Title :</label>
+          <label for="title">Title</label>
           <input id="title" type="text" v-model="title">
         </div>
         <div>
-          <label for="contents">Contents :</label>
+          <label for="contents">Contents</label>
           <textarea name="contents" id="contents" cols="30" rows="5" v-model="contents"></textarea>
           <p class="validation-text" :class="{ 'reverse': isContentTooLong }">
             <span v-if="isContentTooLong" class="warning">Maximum Length is 50</span>
@@ -92,7 +92,6 @@ export default {
 	flex-direction: row;
 }
 .btn {
-	background-color: #3fc1c9;
 	color: white;
 }
 .log {

@@ -123,7 +123,6 @@ export default {
 	justify-content: space-between;
 }
 .btn {
-  background-color: #3fc1c9;
   color: white;
 }
 .log {

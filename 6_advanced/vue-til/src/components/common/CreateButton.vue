@@ -10,8 +10,8 @@ export default {}
 
 <style scoped>
 .create-button {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   position: fixed;
   right: 20px;
@@ -21,7 +21,7 @@ export default {}
   justify-content: center;
   color: white;
   box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.1);
-  background: #FED819;
+  background: #FE9616;
   border: 3px solid white;
 }
 </style>

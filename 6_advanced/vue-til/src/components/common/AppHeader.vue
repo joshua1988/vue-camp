@@ -69,7 +69,8 @@ header {
   align-items: center;
   padding: 10px 20px;
   /* background-color: #3CA776; */
-  background-color: #2e3e37;
+  /* background-color: #2e3e37; */
+  background-color: #927DFC;
   z-index: 2;
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
 }

@@ -63,7 +63,6 @@ export default {
 
 <style scoped>
 .btn {
-  background-color: #3fc1c9;
   color: white;
 }
 </style>

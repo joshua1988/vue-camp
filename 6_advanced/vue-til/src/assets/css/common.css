@@ -84,6 +84,7 @@ a.router-link-exact-active {
   margin-bottom: 0.5rem;
 }
 .btn {
+  background: #FE9616;
   padding: 0.5rem 1.5rem;
   font-weight: 700;
   border-radius: .25rem;
