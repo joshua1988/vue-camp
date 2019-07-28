@@ -2,7 +2,7 @@
   <div>
     <div class="main list-container contents">
       <PageHeader>Today I Learned</PageHeader>
-      <ul>
+      <ul v-if="postItems">
         <li v-for="item in postItems" :key="item._id">
           <div class="post-title">
             <router-link :to="`/post/${item._id}`">{{ item.title }}</router-link>
@@ -17,6 +17,7 @@
           </div>
         </li>
       </ul>
+      <LoadingAnimation v-else />
     </div>
     <create-button></create-button>
   </div>
@@ -24,6 +25,7 @@
 
 <script>
 import PageHeader from '../components/common/PageHeader.vue';
+import LoadingAnimation from '../components/common/LoadingAnimation.vue';
 import CreateButton from '../components/common/CreateButton.vue';
 import { fetchPosts, deletePostById } from '../api/index.js';
 import bus from '../utils/bus.js';
@@ -32,10 +34,11 @@ export default {
   components: {
     CreateButton,
     PageHeader,
+    LoadingAnimation,
   },
   data() {
     return {
-      postItems: [],
+      postItems: null,
     }
   },
   methods: {
