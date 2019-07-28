@@ -43,7 +43,6 @@ export default {
 
 <style scoped>
 .toast {
-  /* visibility: hidden; */
   position: fixed;
   width: 400px;
   height: 56px;

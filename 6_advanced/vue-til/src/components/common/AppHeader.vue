@@ -1,18 +1,16 @@
 <template>
   <header :class="{ 'fixed': isFixed }" ref="appHeader">
     <div>
-      <router-link to="/" class="logo">TIL</router-link>
+      <router-link to="/" class="logo">TIL <span v-if="this.$store.state.user.nickname">by {{ this.$store.state.user.nickname }}</span></router-link>
     </div>
     <div class="navigations">
       <template v-if="!isLoggedIn">
-        <router-link to="/login">Login</router-link> |
+        <router-link to="/login">Login</router-link>
         <router-link to="/signup">Sign Up</router-link>
       </template>
       <template v-else>
-        <router-link to="/new">Add</router-link> |
-        <a href="javascript:;" @click="logout">Logout</a>
+        <a href="javascript:;" @click="logout" class="logout-button">Logout</a>
       </template>
-      <!-- <router-link to="/main">Main</router-link> -->
     </div>
   </header>
 </template>
@@ -62,23 +60,51 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #f5f5f5;
+  padding: 10px 20px;
+  /* Use the color you like! */
+  /* background-color: #3CA776; */
+  /* background-color: #2e3e37; */
+  background-color: #927DFC;
+  z-index: 2;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
 }
-.logo {
+a {
+  color: #dedede;
+  font-size: 18px;
+}
+a.logo {
   font-size: 30px;
+  font-weight: 900;
+  color: white;
 }
-.navigations > a {
-  margin-left: 3px;
+.logo > span {
+  font-size: 14px;
+  font-weight: normal;
+}
+.navigations a {
+  margin-left: 10px;
 }
 .fixed {
   position: fixed;
   top: 0;
   width: 100%;
+}
+.add-button {
+  background: #3CA776;
+  color: white;
+  padding: 4px 23px;
+  border-radius: 4px;
+}
+.logout-button {
+  font-size: 14px;
+}
+a.router-link-exact-active {
+  color: white;
+  font-weight: bold;
 }
 </style>

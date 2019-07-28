@@ -1,7 +1,8 @@
 <template>
   <div>
-    <div class="main list-container">
-      <ul>
+    <div class="main list-container contents">
+      <PageHeader>Today I Learned</PageHeader>
+      <ul v-if="postItems">
         <li v-for="item in postItems" :key="item._id">
           <div class="post-title">
             <router-link :to="`/post/${item._id}`">{{ item.title }}</router-link>
@@ -16,18 +17,28 @@
           </div>
         </li>
       </ul>
+      <LoadingAnimation v-else />
     </div>
+    <create-button></create-button>
   </div>
 </template>
 
 <script>
+import PageHeader from '../components/common/PageHeader.vue';
+import LoadingAnimation from '../components/common/LoadingAnimation.vue';
+import CreateButton from '../components/common/CreateButton.vue';
 import { fetchPosts, deletePostById } from '../api/index.js';
 import bus from '../utils/bus.js';
 
 export default {
+  components: {
+    CreateButton,
+    PageHeader,
+    LoadingAnimation,
+  },
   data() {
     return {
-      postItems: [],
+      postItems: null,
     }
   },
   methods: {
@@ -63,37 +74,42 @@ export default {
 
 <style scoped>
 .list-container {
-  margin-top: 1.5rem;
+  margin-top: 13px;
 }
 .list-container.sticky {
   margin-top: 76px;
 }
 ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
 }
 ul>li {
-  width: 450px;
+  position: relative;
+  flex-grow: 1;
+  width: 320px;
   height: 250px;
-  border: 1px solid #dae1e7;
-  border-radius: 35px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
-  margin: 1rem 0;
-  padding: 1rem;
+  margin: 7px;
+  padding: 10px 20px;
+  background: white;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
 }
 .post-title {
-  text-align: center;
-  font-size: 1.8rem;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 .post-contents {
-  height: 73%;
+  height: 160px;
+  overflow-y: auto;
+  font-size: 18px;
 }
 .post-time {
-  font-size: 1rem;
-  text-align: right;
+  position: absolute;
+  bottom: 4px;
+  right: 5px;
+  font-size: 14px;
+  color: #9e9e9e;
 }
 .icon {
   font-size: 1.3rem;

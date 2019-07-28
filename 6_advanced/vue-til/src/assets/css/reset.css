@@ -7,7 +7,7 @@ body {
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
-	font-family: 'SpoqaHanSans', 'SpoqaHanSansJP', 'Sans-serif';
+	font-family: 'Spoqa Han Sans', 'Sans-serif';
 }
 
 h1,
@@ -42,5 +42,5 @@ button {
 *:after,
 *:before {
 	box-sizing: border-box;
-	font-family: 'SpoqaHanSans', 'SpoqaHanSansJP', 'Sans-serif';
+	font-family: 'Spoqa Han Sans', 'Sans-serif';
 }

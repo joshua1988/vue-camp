@@ -1,27 +1,33 @@
 <template>
-  <div class="form-wrapper">
-    <h1>Login</h1>
-    <form @submit.prevent="submitForm" class="form">
-      <div>
-        <label for="username">ID: </label>
-        <input type="text" id="username" v-model="username">
-      </div>
-      <div>
-        <label for="password">PW: </label>
-        <input type="text" id="password" v-model="password">
-      </div>
-      <button class="btn">login</button>
-    </form>
-    <p class="log">
-      {{ logMessage }}
-    </p>
+  <div class="contents">
+    <div class="form-wrapper form-wrapper-sm">
+      <PageHeader>Login</PageHeader>
+      <form @submit.prevent="submitForm" class="form">
+        <div>
+          <label for="username">ID</label>
+          <input type="text" id="username" v-model="username">
+        </div>
+        <div>
+          <label for="password">PW</label>
+          <input type="text" id="password" v-model="password">
+        </div>
+        <button class="btn">login</button>
+      </form>
+      <p class="log">
+        {{ logMessage }}
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
 import bus from '../utils/bus.js';
+import PageHeader from './common/PageHeader.vue';
 
 export default {
+  components: {
+    PageHeader,
+  },
   data() {
     return {
       username: '',
@@ -63,7 +69,6 @@ export default {
 
 <style scoped>
 .btn {
-  background-color: #3fc1c9;
   color: white;
 }
 </style>
