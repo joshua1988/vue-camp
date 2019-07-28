@@ -74,10 +74,6 @@ export default {
 </script>
 
 <style scoped>
-.form {
-	/* width: 420px;
-	height: 100%; */
-}
 .form textarea {
 	margin-bottom: 0;
 }
