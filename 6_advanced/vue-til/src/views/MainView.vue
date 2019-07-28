@@ -1,6 +1,7 @@
 <template>
   <div>
     <div class="main list-container contents">
+      <PageHeader>Today I Learned</PageHeader>
       <ul>
         <li v-for="item in postItems" :key="item._id">
           <div class="post-title">
@@ -17,14 +18,21 @@
         </li>
       </ul>
     </div>
+    <create-button></create-button>
   </div>
 </template>
 
 <script>
+import PageHeader from '../components/common/PageHeader.vue';
+import CreateButton from '../components/common/CreateButton.vue';
 import { fetchPosts, deletePostById } from '../api/index.js';
 import bus from '../utils/bus.js';
 
 export default {
+  components: {
+    CreateButton,
+    PageHeader,
+  },
   data() {
     return {
       postItems: [],
@@ -63,7 +71,7 @@ export default {
 
 <style scoped>
 .list-container {
-  margin-top: 1.5rem;
+  margin-top: 13px;
 }
 .list-container.sticky {
   margin-top: 76px;
@@ -71,15 +79,12 @@ export default {
 ul {
   display: flex;
   flex-wrap: wrap;
-  /* flex-direction: column; */
-  /* align-items: center; */
 }
 ul>li {
   position: relative;
   flex-grow: 1;
   width: 320px;
   height: 250px;
-  /* max-width: 332px; */
   margin: 7px;
   padding: 10px 20px;
   background: white;
@@ -87,13 +92,14 @@ ul>li {
   border-radius: 3px;
 }
 .post-title {
-  /* text-align: center; */
-  font-size: 1.8rem;
+  font-size: 24px;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 .post-contents {
-  /* height: 73%; */
+  height: 160px;
+  overflow-y: auto;
+  font-size: 18px;
 }
 .post-time {
   position: absolute;

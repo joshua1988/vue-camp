@@ -62,22 +62,29 @@ export default {
 }
 </script>
 
-<style sty>
+<style scoped>
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background-color: #f5f5f5;
+  padding: 10px 20px;
+  /* background-color: #3CA776; */
+  background-color: #2e3e37;
+  z-index: 2;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
+}
+a {
+  color: white;
 }
 .logo {
   font-size: 30px;
-
+  font-weight: 900;
 }
 .logo > span {
   font-size: 14px;
+  font-weight: normal;
 }
-.navigations > a {
+.navigations a {
   margin-left: 3px;
 }
 .fixed {

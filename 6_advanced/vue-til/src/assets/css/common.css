@@ -33,26 +33,29 @@ a.router-link-exact-active {
 .contents {
   max-width: 1020px;
   margin: 0 auto;
+  padding: 0 5px;
+  width: 100%;  
 }
 
 /* form */
 .form-container {
-  padding: 120px 0;
+  /* padding: 120px 0; */
   display: flex;
-  flex-direction: column;
+  /* flex-direction: column; */
   align-items: center;
 }
 .form-wrapper {
-  border: 1px solid #dae1e7;
-  border-radius: 30px;
-  padding: 1rem 0.5rem;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,.12), 0 2px 4px 0 rgba(0,0,0,.08);
+  background: white;
+  -webkit-box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
+  padding: 15px 15px;
 }
 .form {
-  width: 360px;
+  /* width: 360px;
   height: 290px;
   padding: 24px 20px;
-  margin: 0.5rem 0.2rem;
+  margin: 0.5rem 0.2rem; */
 }
 .form label {
   width: 100%;
