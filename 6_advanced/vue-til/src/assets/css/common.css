@@ -2,15 +2,14 @@
 	color hunt palette  
 	https://colorhunt.co/palette/15830
 */
+body {
+  background: #F7F6F9;
+}
 .app {
-	/* overflow: hidden; */
-	/* z-index: 1; */
-	/* overflow-x: auto; */
 	position: relative;
 	width: 100%;
 	height: 100%;
   font-size: 1.4rem;
-  background: #F7F6F9;
 }
 h1 {
 	text-align: center;
@@ -24,9 +23,6 @@ a {
 }
 a:hover {
   color: #3fc1c9;
-}
-a.router-link-exact-active {
-  color: #fc5185;
 }
 
 /* layout */
@@ -51,6 +47,14 @@ a.router-link-exact-active {
   border-radius: 3px;
   padding: 15px 15px;
 }
+.form-wrapper.form-wrapper-sm {
+  max-width: 500px;
+  margin: 40px auto;
+}
+.form-wrapper-sm .page-header {
+  padding: 0px 0 20px;
+}
+
 .form {
   /* width: 360px;
   height: 290px;

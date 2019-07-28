@@ -1,42 +1,48 @@
 <template>
-  <div class="form-wrapper">
-    <h1>Sign up</h1>
-    <form @submit.prevent="registerUser" class="form">
-      <div>
-        <label for="username">ID: </label>
-        <input type="text" id="username" v-model="username" :class="usernameValidClass">
-        <p class="validation-text">
-          <span class="warning" v-if="!isUsernameValid">Please enter an email address</span>
-        </p>
-      </div>
-      <div>
-        <label for="password">PW: </label>
-        <input type="password" id="password" v-model="password" :class="passwordValidClass">
-        <p class="validation-text">
-          <span class="warning" v-if="!isPasswordValid">Password must be over 8 letters</span>
-        </p>
-      </div>
-      <div>
-        <label for="nickname">Nickname: </label>
-        <input type="text" id="nickname" v-model="nickname"  :class="nicknameValidClass">
-      </div>
-      <button 
-				type="submit" 
-				class="btn" 
-				:class="isButtonDisabled" 
-				:disabled="isButtonDisabled">Create</button>
-    </form>
-    <p class="log">
-      {{ logMessage }}
-    </p>
+  <div class="contents">
+    <div class="form-wrapper form-wrapper-sm">
+    <PageHeader>Sign Up</PageHeader>
+      <form @submit.prevent="registerUser" class="form">
+        <div>
+          <label for="username">ID</label>
+          <input type="text" id="username" v-model="username" :class="usernameValidClass">
+          <p class="validation-text">
+            <span class="warning" v-if="!isUsernameValid">Please enter an email address</span>
+          </p>
+        </div>
+        <div>
+          <label for="password">PW</label>
+          <input type="password" id="password" v-model="password" :class="passwordValidClass">
+          <p class="validation-text">
+            <span class="warning" v-if="!isPasswordValid">Password must be over 8 letters</span>
+          </p>
+        </div>
+        <div>
+          <label for="nickname">Nickname</label>
+          <input type="text" id="nickname" v-model="nickname"  :class="nicknameValidClass">
+        </div>
+        <button 
+          type="submit" 
+          class="btn" 
+          :class="isButtonDisabled" 
+          :disabled="isButtonDisabled">Create</button>
+      </form>
+      <p class="log">
+        {{ logMessage }}
+      </p>
+    </div>
   </div>
 </template>
 
 <script>
 import { signupUser } from '../api';
 import { validateEmail, validatePassword } from '../utils/validation.js';
+import PageHeader from './common/PageHeader.vue';
 
 export default {
+  components: {
+    PageHeader,
+  },
   data() {
     return {
       username: '',

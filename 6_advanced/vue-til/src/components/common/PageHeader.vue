@@ -8,7 +8,7 @@
 export default {};
 </script>
 
-<style scoped>
+<style>
 .page-header {
 	font-size: 45px;
 	font-weight: 600;

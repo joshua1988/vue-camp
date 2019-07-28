@@ -1,7 +1,7 @@
 <template>
   <header :class="{ 'fixed': isFixed }" ref="appHeader">
     <div>
-      <router-link to="/" class="logo">TIL <span>by {{ this.$store.state.user.nickname }}</span></router-link>
+      <router-link to="/" class="logo">TIL <span v-if="this.$store.state.user.nickname">by {{ this.$store.state.user.nickname }}</span></router-link>
     </div>
     <div class="navigations">
       <template v-if="!isLoggedIn">
@@ -10,9 +10,7 @@
       </template>
       <template v-else>
         <a href="javascript:;" @click="logout" class="logout-button">Logout</a>
-        <!-- <router-link to="/new" class="add-button">Add</router-link> -->
       </template>
-      <!-- <router-link to="/main">Main</router-link> -->
     </div>
   </header>
 </template>
@@ -68,6 +66,7 @@ header {
   justify-content: space-between;
   align-items: center;
   padding: 10px 20px;
+  /* Use the color you like! */
   /* background-color: #3CA776; */
   /* background-color: #2e3e37; */
   background-color: #927DFC;
@@ -75,18 +74,20 @@ header {
   box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.05);
 }
 a {
-  color: white;
+  color: #dedede;
+  font-size: 18px;
 }
-.logo {
+a.logo {
   font-size: 30px;
   font-weight: 900;
+  color: white;
 }
 .logo > span {
   font-size: 14px;
   font-weight: normal;
 }
 .navigations a {
-  margin-left: 3px;
+  margin-left: 10px;
 }
 .fixed {
   position: fixed;
@@ -101,5 +102,9 @@ a {
 }
 .logout-button {
   font-size: 14px;
+}
+a.router-link-exact-active {
+  color: white;
+  font-weight: bold;
 }
 </style>
