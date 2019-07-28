@@ -1,14 +1,14 @@
 <template>
   <div class="contents">
+    <PageHeader>Edit Post</PageHeader>
     <div class="form-wrapper">
-      <h1>Edit Post</h1>
       <form @submit.prevent="editForm" class="form">
         <div>
-          <label for="title">Title :</label>
+          <label for="title">Title</label>
           <input id="title" type="text" v-model="title">
         </div>
         <div>
-          <label for="contents">Contents :</label>
+          <label for="contents">Contents</label>
           <textarea name="contents" id="contents" cols="30" rows="5" v-model="contents"></textarea>
         </div>
         <button type="submit" class="btn" :class="isButtonDisabled" :disabled="isButtonDisabled">Edit</button>
@@ -21,10 +21,14 @@
 </template>
 
 <script>
+import PageHeader from '../common/PageHeader.vue';
 import { fetchPostById, editPostById } from '../../api/index.js';
 import bus from '../../utils/bus.js';
 
 export default {
+  components: {
+    PageHeader,
+  },
   data() {
     return {
       title: '',
@@ -70,10 +74,6 @@ export default {
 </script>
 
 <style scoped>
-.form {
-	/* width: 420px;
-	height: 100%; */
-}
 .btn {
 	background-color: #fc5185;
 	color: white;
