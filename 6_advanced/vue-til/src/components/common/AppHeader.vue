@@ -1,16 +1,16 @@
 <template>
   <header :class="{ 'fixed': isFixed }" ref="appHeader">
     <div>
-      <router-link to="/" class="logo">TIL</router-link>
+      <router-link to="/" class="logo">TIL <span>by {{ this.$store.state.user.nickname }}</span></router-link>
     </div>
     <div class="navigations">
       <template v-if="!isLoggedIn">
-        <router-link to="/login">Login</router-link> |
+        <router-link to="/login">Login</router-link>
         <router-link to="/signup">Sign Up</router-link>
       </template>
       <template v-else>
-        <router-link to="/new">Add</router-link> |
-        <a href="javascript:;" @click="logout">Logout</a>
+        <a href="javascript:;" @click="logout" class="logout-button">Logout</a>
+        <!-- <router-link to="/new" class="add-button">Add</router-link> -->
       </template>
       <!-- <router-link to="/main">Main</router-link> -->
     </div>
@@ -62,7 +62,7 @@ export default {
 }
 </script>
 
-<style>
+<style sty>
 header {
   display: flex;
   justify-content: space-between;
@@ -72,6 +72,10 @@ header {
 }
 .logo {
   font-size: 30px;
+
+}
+.logo > span {
+  font-size: 14px;
 }
 .navigations > a {
   margin-left: 3px;
@@ -80,5 +84,14 @@ header {
   position: fixed;
   top: 0;
   width: 100%;
+}
+.add-button {
+  background: #3CA776;
+  color: white;
+  padding: 4px 23px;
+  border-radius: 4px;
+}
+.logout-button {
+  font-size: 14px;
 }
 </style>

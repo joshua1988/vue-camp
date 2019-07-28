@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div class="main list-container">
+    <div class="main list-container contents">
       <ul>
         <li v-for="item in postItems" :key="item._id">
           <div class="post-title">
@@ -70,30 +70,37 @@ export default {
 }
 ul {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  flex-wrap: wrap;
+  /* flex-direction: column; */
+  /* align-items: center; */
 }
 ul>li {
-  width: 450px;
+  position: relative;
+  flex-grow: 1;
+  width: 320px;
   height: 250px;
-  border: 1px solid #dae1e7;
-  border-radius: 35px;
-  box-shadow: 0 2px 4px 0 rgba(0,0,0,.1);
-  margin: 1rem 0;
-  padding: 1rem;
+  /* max-width: 332px; */
+  margin: 7px;
+  padding: 10px 20px;
+  background: white;
+  box-shadow: 0 20px 20px rgba(0, 0, 0, 0.08);
+  border-radius: 3px;
 }
 .post-title {
-  text-align: center;
+  /* text-align: center; */
   font-size: 1.8rem;
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 .post-contents {
-  height: 73%;
+  /* height: 73%; */
 }
 .post-time {
-  font-size: 1rem;
-  text-align: right;
+  position: absolute;
+  bottom: 4px;
+  right: 5px;
+  font-size: 14px;
+  color: #9e9e9e;
 }
 .icon {
   font-size: 1.3rem;

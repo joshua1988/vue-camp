@@ -11,7 +11,7 @@
       </div>
       <div>
         <label for="password">PW: </label>
-        <input type="text" id="password" v-model="password" :class="passwordValidClass">
+        <input type="password" id="password" v-model="password" :class="passwordValidClass">
         <p class="validation-text">
           <span class="warning" v-if="!isPasswordValid">Password must be over 8 letters</span>
         </p>

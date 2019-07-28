@@ -9,7 +9,8 @@
 	position: relative;
 	width: 100%;
 	height: 100%;
-	font-size: 1.4rem;
+  font-size: 1.4rem;
+  background: #F7F6F9;
 }
 h1 {
 	text-align: center;
@@ -26,6 +27,12 @@ a:hover {
 }
 a.router-link-exact-active {
   color: #fc5185;
+}
+
+/* layout */
+.contents {
+  max-width: 1020px;
+  margin: 0 auto;
 }
 
 /* form */
