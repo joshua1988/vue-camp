@@ -11,6 +11,9 @@ body {
 	height: 100%;
   font-size: 1.4rem;
 }
+.app-contents {
+  min-height: 80vh;
+}
 h1 {
 	text-align: center;
 	font-weight: 100;
