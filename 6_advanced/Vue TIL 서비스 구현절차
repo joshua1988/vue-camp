@@ -1,0 +1,18 @@
+vue create vue-notes
+vue-til > server > npm i 실행
+vue-til > server > npm i swagger-ui-express -D
+
+9시 5분까지 쉬는 시간
+
+[서비스 구현 절차]
+TODO: API 문서를 이용하여 회원가입 페이지와 로그인 페이지 제작
+1. 페이지 라우터 설계
+2. 페이지 컴포넌트 설계
+3. API 함수 설계
+4. 뷰 라우터 설치
+  a) npm i vue-router
+  b) routes 폴더 밑에 index.js 생성
+  c) 페이지 라우터 정보 생성 (뷰 라우터 인스턴스의 routes 속성 안에)
+5. Axios 설치
+  a) npm i axios
+  b) api 폴더 밑에 index.js 생성
