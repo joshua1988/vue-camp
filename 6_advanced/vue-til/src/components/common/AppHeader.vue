@@ -1,7 +1,10 @@
 <template>
   <header :class="{ 'fixed': isFixed }" ref="appHeader">
     <div>
-      <router-link to="/" class="logo">TIL <span v-if="this.$store.state.user.nickname">by {{ this.$store.state.user.nickname }}</span></router-link>
+      <router-link to="/" class="logo">
+        TIL 
+        <span v-if="isLoggedIn">by {{ this.$store.state.user.nickname }}</span>
+      </router-link>
     </div>
     <div class="navigations">
       <template v-if="!isLoggedIn">
@@ -39,7 +42,7 @@ export default {
       this.$router.push('/');
     },
     checkHeight() {
-      window.scrollY > 0 ? this.stickHeader() : this.looseHeader();
+      window.scrollY > 5 ? this.stickHeader() : this.looseHeader();
     },
     stickHeader() {
       this.isFixed = true;

@@ -12,7 +12,7 @@
           <textarea name="contents" id="contents" cols="30" rows="5" v-model="contents"></textarea>
           <p class="validation-text" :class="{ 'reverse': isContentTooLong }">
             <span v-if="isContentTooLong" class="warning">Maximum Length is 50</span>
-            <span>{{ contentsLength }} / 50</span>
+            <span>{{ contentsLength }} / 250</span>
           </p>
         </div>
         <button 
@@ -49,7 +49,7 @@ export default {
 			return this.contents.length;
 		},
 		isContentTooLong() {
-			return this.contents.length > 50;
+			return this.contents.length > 250;
 		},
 		isButtonDisabled() {
 			return (!this.title || !this.contents || this.contents.length > 50) ? 'disabled' : null;
@@ -62,7 +62,7 @@ export default {
 					title: this.title,
 					contents: this.contents,
 				});
-				bus.$emit('show:toast', `${response.data.title} was created`);
+				bus.$emit('show:toast', `${response.data.data.title} was created`);
 				this.$router.push('/main');
 			} catch (error) {
 				console.log(error);

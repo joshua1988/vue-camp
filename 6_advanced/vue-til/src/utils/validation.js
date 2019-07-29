@@ -4,5 +4,5 @@ export function validateEmail(value) {
 }
 
 export function validatePassword(value) {
-  return value.length > 8;
+  return value.length >= 8;
 }

@@ -9,7 +9,7 @@
         </div>
         <div>
           <label for="password">PW</label>
-          <input type="text" id="password" v-model="password">
+          <input type="password" id="password" v-model="password">
         </div>
         <button class="btn">login</button>
       </form>
@@ -61,8 +61,8 @@ export default {
     },
   },
   created() {
-    this.username = 'test@abc.com';
-    this.password = '12341234';
+    // this.username = 'test@abc.com';
+    // this.password = '12341234';
   }
 }
 </script>
