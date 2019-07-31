@@ -1,23 +1,31 @@
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>DOM Direct Accessing</title>
-  <style>
-    li {
-      padding: 0.6rem;
-    }
-    .hide {
-      display: none;
-    }
-  </style>
-</head>
-<body>
-  <!-- jquery나 vanilla js로 직접 화면 요소를 조작하는 경우 refs를 활용 -->
-  <div id="app">
-    <ul>
-      <li @click="removeItem">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>DOM Direct Accessing</title>
+    <style>
+      li {
+        padding: 0.6rem;
+      }
+      .hide {
+        display: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- jquery나 vanilla js로 직접 화면 요소를 조작하는 경우 refs를 활용 -->
+    <div id="app">
+      <ul>
+        <!-- After -->
+        <li @click="removeItem(index)" v-for="(item, index) in items">
+          <span>{{ item }}</span>
+          <div class="child hide" ref="listItem">
+            메뉴 설명
+          </div>
+        </li>
+        <!-- Before -->
+        <!-- <li @click="removeItem">
         <span>메뉴 1</span>
         <div class="child hide">
           메뉴 설명
@@ -34,10 +42,10 @@
         <div class="child hide">
           메뉴 설명
         </div>
-      </li>
-    </ul>
+      </li> -->
+      </ul>
 
-    <!-- <ul>
+      <!-- <ul>
       <li v-for="(item, index) in items" @click="removeItem(index)">
         <span>메뉴 1</span>
         <div class="child hide" :ref="'listItem' + index">
@@ -45,23 +53,46 @@
         </div>
       </li>
     </ul> -->
-  </div>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      data: {
-        items: ['메뉴 1', '메뉴 2', '메뉴 3']
-      },
-      methods: {
-        removeItem(index) {
-          event.target.lastChild.classList.toggle("hide");
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          items: ['메뉴 1', '메뉴 2', '메뉴 3']
+        },
+        computed: {
+          isUsernameValid() {
+            // if (this.name) {
+            //   return true;
+            // } else {
+            //   return false;
+            // }
+            // return this.name;
+            return (
+              // before
+              validateLength(this.name, 10) &&
+              validateEmail(this.name) &&
+              validateDuplicte(this.name)
+              // after
+              validate(validateLength, validateEmail, validateDuplicte);
+            )
+          }
+        },
+        mounted() {
+          console.log(this.$refs.listItem[0]);
+          // console.log(this.$refs.listItem[1]);
+        },
+        methods: {
+          removeItem(index) {
+            // event.target.lastChild.classList.toggle("hide");
+            this.$refs.listItem[index].classList.toggle("hide");
 
-          // this.$refs[`listItem${index}`][0].classList.toggle('hide');
+            // this.$refs[`listItem${index}`][0].classList.toggle('hide');
+          }
         }
-      }
-    })
-  </script>
-</body>
+      })
+    </script>
+  </body>
 </html>

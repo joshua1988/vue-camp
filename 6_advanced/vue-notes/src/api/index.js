@@ -10,8 +10,13 @@ function createInstance(options) {
 let auth = createInstance({
 	timeout: 5000,
 });
+let posts = createInstance({
+	headers: {
+		Authorization: '$a1e2',
+	},
+});
 
-export { auth };
+export { auth, posts };
 // let products = createInstance({
 
 // })

@@ -20,6 +20,12 @@ export default {
 		fetchUser() {
 			axios
 				.get(url1)
+				.then(fetchTodo)
+				.then(logTodo)
+				.catch();
+
+			axios
+				.get(url1)
 				.then(response => {
 					// console.log(response.data.id);
 					let id = response.data.id;

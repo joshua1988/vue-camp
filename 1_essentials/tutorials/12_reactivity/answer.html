@@ -1,8 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Vue.js Reactivity under the hood</title>
   </head>
   <body>
@@ -11,9 +11,8 @@
     <script>
       var viewModel = {};
       var divElement = document.querySelector('#app');
-      
-      (function() {
 
+      (function() {
         function init() {
           Object.defineProperty(viewModel, 'str', {
             get: function() {
@@ -21,8 +20,12 @@
             },
             set: function(newValue) {
               render(newValue);
-            }
-          })
+            },
+          });
+          var obj = new Proxy(viewModel, {
+            get() {},
+            set() {},
+          });
         }
 
         function render(value) {
