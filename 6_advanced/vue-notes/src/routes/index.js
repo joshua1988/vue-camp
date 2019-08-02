@@ -13,6 +13,10 @@ export default new VueRouter({
 			path: '/login',
 			component: () => import('../views/LoginView.vue'),
 		},
+		{
+			path: '/home',
+			component: () => import('../views/HomeView.vue'),
+		},
 		// TODO: 게시글 조회 페이지, 게시글 생성 페이지 제작
 	],
 });
