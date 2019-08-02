@@ -9,7 +9,8 @@
 				<label for="">password:</label>
 				<input type="text" v-model="password" />
 			</div>
-			<button type="submit">로그인</button>
+			<button type="submit" :disabled="!isValidUsername">로그인</button>
+			<p v-if="!isValidUsername">email is not valid</p>
 		</form>
 		<!-- <button @click="fetchItem">게시글 조회</button> -->
 	</div>
@@ -18,12 +19,26 @@
 <script>
 import { loginUser } from '../api/account.js';
 
+function validateEmail(email) {
+	var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+	return re.test(String(email).toLowerCase());
+}
+
 export default {
 	data() {
 		return {
 			username: '',
 			password: '',
+			testValue: 10,
 		};
+	},
+	computed: {
+		isValidUsername() {
+			if (!this.username) {
+				return true;
+			}
+			return validateEmail(this.username);
+		},
 	},
 	methods: {
 		submitForm() {
