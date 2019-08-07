@@ -5,6 +5,14 @@ function sum(a, b) {
 	return a + b;
 }
 
+function factory(values) {
+	return shallowMount(LoginView, {
+		data() {
+			return values;
+		},
+	});
+}
+
 describe('LoginView.vue', () => {
 	test('샘플', () => {
 		expect(true).toBeTruthy();
@@ -37,8 +45,13 @@ describe('LoginView.vue', () => {
 		});
 		let validationTextTag = wrapper.find('p');
 		console.log(validationTextTag.element);
-		expect(validationTextTag.element).toBeTruthy();
+		expect(validationTextTag.element).toBeFalsy();
 	});
 
-	test('username이 이메일이 아니면 로그인 버튼 비활성화', () => {});
+	test('username이 이메일이 아니면 로그인 버튼 비활성화', () => {
+		const wrapper = factory({ username: 'test' });
+		let loginButton = wrapper.find('button');
+		let disabled = loginButton.element.disabled;
+		expect(disabled).toBeTruthy();
+	});
 });
