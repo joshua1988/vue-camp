@@ -1,12 +1,17 @@
 module.exports = {
   title: 'Cracking Vue.js',
   description: 'Javascript, ES6, Advanced Vue.js',
-  base: "/vue-camp/",
+  base: '/vue-camp/',
   head: [
-    ['link', {
-      rel: 'icon',
-      href: '/logo.png'
-    }]
+    ['link', { rel: 'icon', href: '/logo.png' }],
+    ['link', { rel: 'manifest', href: '/manifest.json' }],
+    ['meta', { name: 'theme-color', content: '#3eaf7c' }],
+    ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    ['link', { rel: 'apple-touch-icon', href: '/images/icons/152x.png' }],
+    ['link', { rel: 'mask-icon', href: '/logo.png', color: '#ffffff' }],
+    ['meta', { name: 'msapplication-TileImage', content: '/images/icons/144x.png' }],
+    ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }],
   ],
   themeConfig: {
     sidebar: [
@@ -27,7 +32,7 @@ module.exports = {
           '/js/this',
           '/js/prototype',
           '/js/closure',
-        ]
+        ],
       },
       {
         title: 'ES6',
@@ -41,7 +46,7 @@ module.exports = {
           '/es6/destructuring',
           '/es6/async-await',
           '/es6/modules',
-        ]
+        ],
       },
       {
         title: 'Vue.js Fundamentals',
@@ -58,7 +63,7 @@ module.exports = {
           '/vue/axios',
           '/vue/cli',
           '/vue/sfc',
-        ]
+        ],
       },
       {
         title: 'Template Syntax',
@@ -69,7 +74,7 @@ module.exports = {
           '/syntax/watch',
           '/syntax/filters',
           '/syntax/form',
-        ]
+        ],
       },
       {
         title: 'Maximizing Reusability',
@@ -79,8 +84,8 @@ module.exports = {
           '/reuse/scoped-slot',
           '/reuse/mixins',
           '/reuse/plugins',
-          '/reuse/mixins-vs-hoc'
-        ]
+          '/reuse/mixins-vs-hoc',
+        ],
       },
       {
         title: 'Vue.js in Legacy Projects',
@@ -90,7 +95,7 @@ module.exports = {
           '/legacy/form',
           '/legacy/datepicker',
           '/legacy/chart',
-        ]
+        ],
       },
       {
         title: 'State Management',
@@ -104,7 +109,7 @@ module.exports = {
           '/vuex/helper',
           '/vuex/modules',
           '/vuex/state-vs-data',
-        ]
+        ],
       },
       {
         title: 'Advanced Technics',
@@ -114,8 +119,7 @@ module.exports = {
           '/advanced/code-splitting',
           '/advanced/navigation-guard',
           '/advanced/transition',
-          '/advanced/js-testing',
-        ]
+        ],
       },
       {
         title: 'Component Design Patterns',
@@ -126,62 +130,84 @@ module.exports = {
           '/design/pattern3',
           '/design/pattern4',
           '/design/pattern5',
-        ]
+        ],
       },
       {
         title: 'Testing Applications',
         collapsable: false,
         children: [
+          '/testing/overview',
+          '/testing/jest-testing',
           '/testing/vue-test-util',
           '/testing/getting-started',
-          '/testing/snapshots',
+          '/testing/component-tutorial-1',
+          // 튜토리얼 - 뷰엑스
+          // 튜토리얼 - 비동기
+          // 튜토리얼 - 외부 라이브러리
           '/testing/api',
+          '/testing/snapshots',
           '/testing/coverage',
-        ]
+        ],
       },
       {
         title: 'Typescript',
         collapsable: false,
-        children: [
-          '/ts/intro',
-          '/ts/with-vue',
-          '/ts/pdecorator',
-        ]
+        children: ['/ts/intro', '/ts/with-vue', '/ts/pdecorator'],
       },
       {
         title: 'Nuxt',
         collapsable: false,
-        children: [
-          '/nuxt/intro',
-        ]
-      }
+        children: ['/nuxt/intro'],
+      },
+      {
+        title: 'Deployment',
+        collapsable: false,
+        children: ['/deploy/intro', '/deploy/env-setup', '/deploy/cli3-rules'],
+      },
+      {
+        title: 'VuePress',
+        collapsable: false,
+        children: ['/vuepress/learning-note'],
+      },
     ],
     nav: [
       {
-        text: 'Text Book',
-        link: '/textbook'
+        text: '📖 Text Book',
+        link: '/textbook',
       },
       {
-        text: 'FrontEnd Development',
-        link: '/front-dev'
+        text: '💬 FrontEnd Development',
+        link: '/front-dev',
       },
       {
-        text: 'Online Courses',
-        link: 'https://www.inflearn.com/?post_type=course&s=%EC%9E%A5%EA%B8%B0%ED%9A%A8'
+        text: '💻 Vue 3.0',
+        link: '/3.0',
       },
       {
-        text: 'More Articles',
-        link: 'https://joshua1988.github.io/'
-      }
-    ]
+        text: '📹 Online Courses',
+        link: 'https://www.inflearn.com/courses?s=%EC%9E%A5%EA%B8%B0%ED%9A%A8',
+      },
+      {
+        text: '📝 More Articles',
+        link: 'https://joshua1988.github.io/',
+      },
+    ],
   },
   configureWebpack: {
     resolve: {
       alias: {
-        '@img': './images'
-      }
+        '@img': './images',
+      },
+    },
+  },
+  plugins: {
+    '@vuepress/pwa': {
+      serviceWorker: true,
+      updatePopup: {
+        message: '새 컨텐츠가 등록되었습니다. 새로고침 버튼을 눌러주세요 😄',
+        buttonText: '새로고침',
+      },
     }
   },
-  serviceWorker: true,
-  ga: 'UA-128482369-1'
-}
+  ga: 'UA-128482369-1',
+};
