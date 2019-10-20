@@ -7,10 +7,16 @@ module.exports = {
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    [
+      'meta',
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+    ],
     ['link', { rel: 'apple-touch-icon', href: '/images/icons/152x.png' }],
     ['link', { rel: 'mask-icon', href: '/logo.png', color: '#ffffff' }],
-    ['meta', { name: 'msapplication-TileImage', content: '/images/icons/144x.png' }],
+    [
+      'meta',
+      { name: 'msapplication-TileImage', content: '/images/icons/144x.png' },
+    ],
     ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }],
   ],
   themeConfig: {
@@ -160,6 +166,11 @@ module.exports = {
         children: ['/nuxt/intro'],
       },
       {
+        title: 'PWA',
+        collapsable: false,
+        children: ['/pwa/cli-pwa-plugin'],
+      },
+      {
         title: 'Deployment',
         collapsable: false,
         children: ['/deploy/intro', '/deploy/env-setup', '/deploy/cli3-rules'],
@@ -185,7 +196,8 @@ module.exports = {
       },
       {
         text: '📹 Online Courses',
-        link: 'https://www.inflearn.com/courses?s=%EC%9E%A5%EA%B8%B0%ED%9A%A8',
+        link:
+          'https://www.inflearn.com/instructors/54224/courses/?utm_source=blog&utm_medium=githubio&utm_campaign=captianpangyo&utm_term=banner',
       },
       {
         text: '📝 More Articles',
@@ -207,7 +219,9 @@ module.exports = {
         message: '새 컨텐츠가 등록되었습니다. 새로고침 버튼을 눌러주세요 😄',
         buttonText: '새로고침',
       },
-    }
+    },
+    '@vuepress/google-analytics': {
+      ga: 'UA-128482369-1',
+    },
   },
-  ga: 'UA-128482369-1',
 };
