@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <app-header></app-header>
+  </div>
+  <app-contents></app-contents>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    // Vue.component('컴포넌트 이름', 컴포넌트 내용);
+    Vue.component('app-contents', {
+      template: '<div>전역 컴포넌트</div>'
+    })
+
+    new Vue({
+      el: '#app',
+      data: {
+        num1: 10,
+        num2: 20,
+        str: 'hi'
+      },
+      components: {
+        // '컴포넌트 이름': 컴포넌트 내용,
+        'app-header': {
+          template: '<header>지역 컴포넌트</header>'
+        }
+      }
+    })
+  </script>
+</body>
+</html>

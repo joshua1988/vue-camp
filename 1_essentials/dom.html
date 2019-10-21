@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div></div>
+
+    <script>
+      var div = document.querySelector('div');
+      // debugger;
+      var str = 'hello';
+      div.innerText = str;
+      str = 'hello world';
+      div.innerText = str;
+
+      var obj = {};
+      // new Vue({
+      //   data: {
+      //     a: 1,
+      //     b: 2,
+      //   }
+      // }) 
+
+      Object.defineProperty(obj, 'str', {
+        get: function() {
+          // "obj.str" 했을 때 돌아가는 코드 - 접근
+          console.log('접근');
+        },
+        set: function(newValue) {
+          // "obj.str = 10" 했을 때 돌아가는 코드 - 할당
+          console.log('할당', newValue);
+          div.innerText = newValue;
+        },
+      });
+    </script>
+  </body>
+</html>

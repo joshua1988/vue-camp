@@ -11,6 +11,19 @@
 - 5주차 : 싱글페이지 애플리케이션 제작 및 입문자가 저지르는 실수(ES6)
 - 6주차 : 컴포넌트 디자인 패턴, 실무 서비스에 적용하는 Vue.js(ES6)
 
+## 1주차 수업 언급 자료
+
+- [Vue.js 수업 웹 자료](https://joshua1988.github.io/vue-camp/)
+- [state of js - 자바스크립트 통계 사이트](https://2018.stateofjs.com/front-end-frameworks/overview/)
+- [HTTP 프로토콜](https://joshua1988.github.io/web-development/http-part1/)
+- [brutal application framework lifecycle](https://stackoverflow.blog/2018/01/11/brutal-lifecycle-javascript-frameworks/)
+- [웹팩 핸드북](https://joshua1988.github.io/webpack-guide/)
+- [Vue.js Test Tutorial 깃헙 리포지토리](https://github.com/joshua1988/vue-test-tutorial)
+- [Reactivity in Depth](https://vuejs.org/v2/guide/reactivity.html#ad)
+- [RX JS](https://rxjs-dev.firebaseapp.com)
+- [브라우저는 어떻게 동작하는가 Naver D2](https://d2.naver.com/helloworld/59361)
+
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)
