@@ -4,10 +4,6 @@
   </head>
   <body>
     <div id="app">
-      {{ message }}
-      <ul>
-        <li v-for="user in users">{{ user.name }}</li>
-      </ul>
       <button v-on:click="getData">Get user data</button>
     </div>
 
@@ -16,14 +12,12 @@
     <script>
       new Vue({
         el: '#app',
-        data: {
-          message: 'Hello Vue.js!'
-        },
         methods: {
           getData: function() { 
             axios.get('https://jsonplaceholder.typicode.com/users/')
               .then(function(response) {
                 console.log(response);
+                // 할일 #1 - 전달 받은 10개의 사용자 정보를 화면에 출력
               });
           }
         }

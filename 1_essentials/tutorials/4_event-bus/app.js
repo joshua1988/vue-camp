@@ -1,5 +1,6 @@
 // 할일 #1 - 이벤트 버스로 사용할 새로운 뷰 인스턴스 생성
 
+
 Vue.component('child-component', {
   template: '<button v-on:click="clickBtn">emit event</button>',
   methods: {
