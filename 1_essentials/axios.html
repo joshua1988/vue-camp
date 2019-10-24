@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <div id="app">
+    <button v-on:click="fetchUser">get user</button>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+        user: {}
+      },
+      methods: {
+        fetchUser: function() {
+          // console.log(this);
+          var url = 'https://jsonplaceholder.typicode.com/users/1';
+          // console.log('1');
+          console.log('실행 전', this);
+          var vm = this;
+          axios.get(url)
+            .then(function(response) {
+              console.log('실행 후', this);
+              // console.log('2');
+              console.log(response.data);
+              vm.user = response.data;
+            })
+            .catch(function(error) {
+              console.log(error);
+            });
+          // renderImages();
+          // console.log('3');
+
+
+          // $.get(url, function(data) {
+          //   console.log(data);
+          // })
+          // $.get(url).then(function(data) {
+          //   console.log(data);
+          // }).catch(function() { 
+
+          // })
+        }
+      }
+    })
+  </script>
+</body>
+</html>

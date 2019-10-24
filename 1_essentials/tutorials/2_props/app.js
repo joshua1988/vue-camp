@@ -1,6 +1,10 @@
 // 할일 #1
 // sibling-component 를 이름으로 갖는 새로운 컴포넌트를 아래에 등록해보세요.
 // options : template, props
+Vue.component('sibling-component', {
+  props: ['propsData'],
+  template: '<p>{{ propsData }}</p>'
+});
 
 Vue.component('child-component', {
   props: ['propsdata'],

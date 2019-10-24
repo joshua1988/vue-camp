@@ -11,7 +11,7 @@
 - 5주차 : 싱글페이지 애플리케이션 제작 및 입문자가 저지르는 실수(ES6)
 - 6주차 : 컴포넌트 디자인 패턴, 실무 서비스에 적용하는 Vue.js(ES6)
 
-## 1주차 수업 언급 자료
+## 1회차 수업 언급 자료
 
 - [Vue.js 수업 웹 자료](https://joshua1988.github.io/vue-camp/)
 - [state of js - 자바스크립트 통계 사이트](https://2018.stateofjs.com/front-end-frameworks/overview/)
@@ -23,6 +23,16 @@
 - [RX JS](https://rxjs-dev.firebaseapp.com)
 - [브라우저는 어떻게 동작하는가 Naver D2](https://d2.naver.com/helloworld/59361)
 
+## 2회차 수업 언급 자료
+
+- [자바스크립트 비동기 처리와 콜백 함수](https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/)
+- [자바스크립트 Promise](https://joshua1988.github.io/web-development/javascript/promise-for-beginners/)
+- [Props Validation](https://vuejs.org/v2/guide/components-props.html#Prop-Validation)
+- [X Template](https://vuejs.org/v2/guide/components-edge-cases.html#X-Templates)
+- [JSONPlaceHolder](https://jsonplaceholder.typicode.com)
+- [Vue Resource](https://github.com/pagekit/vue-resource)
+- [Axios 참고 슬라이드](https://github.com/joshua1988/naver-vue/blob/master/slides/3_vue-ajax-patterns.pdf)
+- [자바스크립트 기본 문법](https://joshua1988.github.io/vue-camp/js/variable.html)
 
 ## 개발 환경
 

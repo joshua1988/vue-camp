@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .primary {
+      color: blue;
+    }
+    .warning {
+      color: red;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <p>{{ reversedStr }}</p>
+    <p class="primary">Blue Text</p>
+    <p v-bind:class="textClass">Blue Text</p>
+
+    <hr>
+    <p v-if="login">로그인 되었습니다.</p>
+    <p v-else>로그인 하세요.</p>
+    <button v-bind:class="loginButtonClass">
+      로그인
+    </button>
+    <hr>
+
+    <ul>
+      <li v-for="item in items">
+        {{ item }}
+      </li>
+      <!-- <li>{{ items[0] }}</li>
+      <li>{{ items[1] }}</li>
+      <li>{{ items[2] }}</li> -->
+    </ul>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      // 데이터 바인딩
+      data: {
+        str: 'Hello',
+        textClass: 'primary',
+        login: true,
+        items: ['애플', '삼성', '구글']
+      },
+      computed: {
+        reversedStr: function() {
+          return this.str.split('').reverse().join('');
+        },
+        loginButtonClass: function() {
+          return {
+            'primary': this.login,
+            'warning': !this.login
+          }
+        }
+      }
+    })
+  </script>
+</body>
+</html>
