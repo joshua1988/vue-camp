@@ -33,6 +33,8 @@
 - [Vue Resource](https://github.com/pagekit/vue-resource)
 - [Axios 참고 슬라이드](https://github.com/joshua1988/naver-vue/blob/master/slides/3_vue-ajax-patterns.pdf)
 - [자바스크립트 기본 문법](https://joshua1988.github.io/vue-camp/js/variable.html)
+- [구글 웹 기술 공식 문서](https://developers.google.com/web/fundamentals?hl=ko)
+- [MDN 사이트](https://developer.mozilla.org/ko/docs/Web/JavaScript)
 
 ## 개발 환경
 
