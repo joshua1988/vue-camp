@@ -1,0 +1,11 @@
+[컴포넌트 등록 실습]
+1. `vue`로 싱글 파일 컴포넌트 구조 자동 완성
+2. 각 파일은 `div` 태그에 간단한 이름으로 구분
+3. `App.vue` 파일에서 컴포넌트 모두 등록 후 표시
+ - 컴포넌트 등록시 `vim` 단축키로 파일 임포트
+ - `vim` 자동 완성 안되시는 분들은 VueVSCodeSnippets 플러그인 설치
+
+TodoHeader
+TodoInput
+TodoList
+TodoFooter
