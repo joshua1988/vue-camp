@@ -36,6 +36,12 @@
 - [구글 웹 기술 공식 문서](https://developers.google.com/web/fundamentals?hl=ko)
 - [MDN 사이트](https://developer.mozilla.org/ko/docs/Web/JavaScript)
 
+## 3회차 수업 언급 자료
+
+- [Vue Template Explorer](https://template-explorer.vuejs.org/#<p>Hello%20Render<%2Fp>)
+- [Presentational and Container Components 원문](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+- [Presentational and Container Components 번역](https://blueshw.github.io/2017/06/26/presentaional-component-container-component/)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)
