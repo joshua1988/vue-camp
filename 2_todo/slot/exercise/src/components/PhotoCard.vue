@@ -1,14 +1,21 @@
 <template>
   <div class="media-card">
     <div class="media-card-image">
-      <img :src="image" alt="">
+      <!-- 이미지 슬롯 -->
+      <!-- <img v-bind:src="image" alt=""> -->
+      <slot name="image"></slot>
     </div>
     <div class="media-card-content">
+      <!-- 타이틀 슬롯 -->
       <h4 class="media-card-heading">
-        {{ title }}
+        <!-- {{ title }} -->
+        <slot name="title"></slot>
       </h4>
+			<slot></slot>
       <div class="media-card-body">
-        <p>{{ contents }}</p>
+        <!-- 콘텐츠 슬롯 -->
+        <!-- <p>{{ contents }}</p> -->
+        <slot name="contents"></slot>
       </div>
     </div>
   </div>
@@ -16,40 +23,40 @@
 
 <script>
 export default {
-  props: ['image', 'title', 'contents']
-}
+	// props: ['image', 'title', 'contents'],
+};
 </script>
 
 <style>
 .media-card {
-  background-color: #fff;
-  border-radius: 0.5rem;
-  overflow: hidden;
-  box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
-    0 5px 15px 0 rgba(0, 0, 0, 0.08);
+	background-color: #fff;
+	border-radius: 0.5rem;
+	overflow: hidden;
+	box-shadow: 0 15px 30px 0 rgba(0, 0, 0, 0.11),
+		0 5px 15px 0 rgba(0, 0, 0, 0.08);
 }
 .media-card-image {
-  height: 10rem;
-  overflow: hidden;
+	height: 10rem;
+	overflow: hidden;
 }
 .media-card-image > img {
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-  object-position: center;
+	height: 100%;
+	width: 100%;
+	object-fit: cover;
+	object-position: center;
 }
 .media-card-content {
-  padding: 1.5rem;
+	padding: 1.5rem;
 }
 .media-card-heading {
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  line-height: 1.25;
-  color: #22292f;
+	margin-bottom: 1rem;
+	font-size: 1rem;
+	line-height: 1.25;
+	color: #22292f;
 }
 .media-card-body {
-  font-size: 0.875rem;
-  color: #3d4852;
-  line-height: 1.5;
+	font-size: 0.875rem;
+	color: #3d4852;
+	line-height: 1.5;
 }
 </style>

@@ -1,0 +1,10 @@
+1. 2번 폴더에서 아래 명령어 입력
+vue create slot-sample
+2. 선택 옵션
+default
+Babel
+in dedicated config files
+no
+3. 아래 명령어 순서대로 입력
+cd slot-sample
+npm run serve

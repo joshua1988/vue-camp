@@ -42,6 +42,12 @@
 - [Presentational and Container Components 원문](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
 - [Presentational and Container Components 번역](https://blueshw.github.io/2017/06/26/presentaional-component-container-component/)
 
+## 4회차 수업 언급 자료
+
+- [slot](https://joshua1988.github.io/vue-camp/reuse/slots.html)
+- [HTML webpack plugin](https://webpack.js.org/plugins/html-webpack-plugin/)
+- [HTML webpack plugin github](https://github.com/jantimon/html-webpack-plugin)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)
