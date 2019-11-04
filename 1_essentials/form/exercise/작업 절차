@@ -1,0 +1,18 @@
+[프로젝트 구성 순서]
+vue create vue-form
+cd vue-form
+npm i jquery
+
+[작업 절차]
+1) 라이브러리, CSS 링크 이전
+  - CSS 링크 -> slido
+  - jQuery 라이브러리 -> npm i jquery 설치...
+2) "App.vue"에 하시거나 컴포넌트를 별도로 분할하셔도 됩니다..
+3) HTML 코드 -> <template> 으로 이전
+4) JS 코드 -> script 이전
+  1. 라이브러리 로딩 - import $ from 'jquery' 
+  2. 인풋 태그는 v-model로 처리
+  3. form 이벤트는 v-on으로 처리
+5) npm run serve로 확인
+
+40분까지 실습

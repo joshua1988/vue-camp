@@ -1,0 +1,8 @@
+쉬는 시간 10시 15분까지
+[실습 절차]
+1. 4_modules 폴더의 exercise에서 `npm i`로 
+  바벨, 웹팩 라이브러리 설치
+2. math.js 작성
+3. app.js 작성
+4. exercise 폴더에서 `npm run build` 명령어 실행하여 빌드
+5. `index.html` 파일을 live server로 실행하여 결과 확인

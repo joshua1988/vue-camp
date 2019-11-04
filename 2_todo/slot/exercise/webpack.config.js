@@ -12,10 +12,7 @@ module.exports = {
     rules: [
       {
         test: /\.css$/,
-        use: [
-          'vue-style-loader',
-          'css-loader'
-        ],
+        use: ['vue-style-loader', 'css-loader'],
       },      {
         test: /\.vue$/,
         loader: 'vue-loader',
@@ -39,6 +36,11 @@ module.exports = {
       }
     ]
   },
+  // 변환,
+  // 빌드,
+  // 컴파일,
+  // 해석(Resolve)
+
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js'

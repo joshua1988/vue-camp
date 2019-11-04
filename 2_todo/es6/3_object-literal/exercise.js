@@ -8,19 +8,21 @@ var router = {
   ],
 };
 
+// const router = new VueRouter({})
+
+// new Vue({
+//   el: '',
+//   data: {},
+//   router,
+//   methods: {},
+// })
+
 function example() {
   return {
     // TODO: 아래의 속성을 축약해보세요.
-    name: name,
+    name,
     // TODO: 아래의 속성을 축약해보세요.
-    router: {
-      routes: [
-        {
-          path: 'sth',
-          component: 'sthComponent',
-        },
-      ],
-    },
+    router,
     data: {
       id: 1,
     },
