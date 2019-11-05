@@ -48,6 +48,14 @@
 - [HTML webpack plugin](https://webpack.js.org/plugins/html-webpack-plugin/)
 - [HTML webpack plugin github](https://github.com/jantimon/html-webpack-plugin)
 
+## 5회차 수업 자료
+
+- [웹팩 소스맵 설명](https://joshua1988.github.io/webpack-guide/devtools/source-map.html)
+- [웹팩 Devtool 옵션 테이블](https://webpack.js.org/configuration/devtool/#devtool)
+- [바벨 사이트](https://babeljs.io/)
+- [Vue.js 공식 스타일 가이드](https://vuejs.org/v2/style-guide/#Component-files-strongly-recommended)
+- [Vue.js 실무 프로젝트 구조 설명 글](https://joshua1988.github.io/web-development/vuejs/vue-structure/)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)
