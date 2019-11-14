@@ -56,6 +56,18 @@
 - [Vue.js 공식 스타일 가이드](https://vuejs.org/v2/style-guide/#Component-files-strongly-recommended)
 - [Vue.js 실무 프로젝트 구조 설명 글](https://joshua1988.github.io/web-development/vuejs/vue-structure/)
 
+## 7회차 수업 복습 자료
+
+- [Cracking Vue.js의 State Management 글 모두](https://joshua1988.github.io/vue-camp/vuex/concept.html#%EB%B7%B0%EC%97%91%EC%8A%A4-%EC%86%8C%EA%B0%9C)
+- [ES6 스프레드 오퍼레이터](https://joshua1988.github.io/vue-camp/es6/spread-operator.html)
+- [라우터 네비게이션 가드(beforeEnter)](https://joshua1988.github.io/vue-camp/advanced/navigation-guard.html)
+- [Facebook React, Flux 패턴 소개 영상](https://www.youtube.com/watch?v=nYkdrAPrdcw&t=750s)
+- [Chart.js 공식 사이트](https://www.chartjs.org/)
+- [Vue Chart](https://vue-chartjs.org/)
+- [Watch 실용 문법](https://joshua1988.github.io/vue-camp/syntax/watch.html)
+
+> 오늘까지 수업 잘 이해가 안되시는 분들은 이번 주말까지 꼭 [Vue.js 완벽 가이드 섹션 13까지 듣고 오세요..! 😄](https://www.inflearn.com/course/vue-js/lecture/17053)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)
