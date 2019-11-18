@@ -1,12 +1,8 @@
 <template>
   <div>
-    <header>
-      <!-- <router-link to="/login">Login</router-link> | -->
-      <!-- <a href="/login">Login</a> -->
-      <router-link to="/news">News</router-link> |
-      <router-link to="/ask">Ask</router-link> |
-      <router-link to="/jobs">Jobs</router-link> |
-    </header>
+    <app-header></app-header>
+    <!-- <AppHeader></AppHeader>
+    <AppHeader/> -->
     <main>
       <router-view></router-view>
     </main>
@@ -14,8 +10,15 @@
 </template>
 
 <script>
-export default {};
+import AppHeader from '@/components/AppHeader.vue';
+
+export default {
+	components: {
+		AppHeader,
+	},
+};
 </script>
 
 <style>
+@import './assets/css/common.css';
 </style>

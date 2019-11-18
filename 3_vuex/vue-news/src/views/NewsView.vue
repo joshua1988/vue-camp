@@ -2,7 +2,14 @@
   <div>
     <h1>News</h1>
     <div>
-      {{ this.$store.state.jobs }}
+      <!-- {{ this.$store.state.jobs }} -->
+      <ul>
+        <li v-for="item in items" :key="item.id">
+          <span>{{ item.title }}</span>
+          <!-- TODO: 클릭했을 때 사용자 상세 페이지로 넘어가게 구현 -->
+          <router-link>{{ item.user }}</router-link>
+        </li>
+      </ul>
     </div>
     <!-- <div v-if="!isLoading">
       {{ items }}
@@ -17,37 +24,37 @@
 // ask url
 // https://api.hnpwa.com/v0/ask/1.json
 
-import axios from "axios";
+import axios from 'axios';
 
 export default {
-  // vda
-  data() {
-    return {
-      items: [],
-      isLoading: true
-    };
-  },
-  methods: {
-    fetchItems() {
-      const url = "https://api.hnpwa.com/v0/news/1.json";
-      console.log("요청 시작");
-      this.isLoading = true;
-      axios
-        .get(url)
-        .then(response => {
-          console.log("요청 완료");
-          // console.log(response.data);
-          this.items = response.data;
-          this.isLoading = false;
-        })
-        .catch(error => {
-          console.log(error);
-        });
-    }
-  },
-  created() {
-    this.fetchItems();
-  }
+	// vda
+	data() {
+		return {
+			items: [],
+			isLoading: true,
+		};
+	},
+	methods: {
+		fetchItems() {
+			const url = 'https://api.hnpwa.com/v0/news/1.json';
+			console.log('요청 시작');
+			this.isLoading = true;
+			axios
+				.get(url)
+				.then(response => {
+					console.log('요청 완료');
+					// console.log(response.data);
+					this.items = response.data;
+					this.isLoading = false;
+				})
+				.catch(error => {
+					console.log(error);
+				});
+		},
+	},
+	created() {
+		this.fetchItems();
+	},
 };
 </script>
 

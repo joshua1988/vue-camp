@@ -1,0 +1,64 @@
+/* reset default css property */
+body,
+header,
+p,
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+
+/* common */
+header {
+  display: flex;
+  justify-content: space-between;
+  font-size: 1.25rem;
+  color: white;
+  background-color: #42b883;
+  padding: 0.4rem 0.8rem;
+}
+header ul li {
+  padding: 0.5rem 1rem;
+}
+
+.nav-menu:visited {
+  color: white;
+}
+.nav-menu:hover {
+  color: #34495e;
+}
+.nav-menu.router-link-exact-active {
+  color: #34495e;
+  text-decoration: underline;
+}
+
+.nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.points {
+  min-width: 80px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #42b883;
+}
+
+.list-item {
+  display: flex;
+  align-items: center;
+  list-style: none;
+  padding: 0.4rem 0;
+  border-bottom: 1px solid #eee;
+}
+
+.list-item div .title {
+  padding-bottom: 0.2rem;
+}
