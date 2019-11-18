@@ -11,10 +11,11 @@
 					<!-- TODO: 클릭했을 때 상세 질의글로 이동할 수 있게 구현 -->
 					<!-- 절차 -->
 					<!-- 1. 라우터 페이지 정보 생성 -->
-					<!-- 2. API 함수 생성 -->
 					<!-- 3. 아래 타이틀을 클릭했을 때 이동할 수 있게 router-link 구현 -->
+					<!-- 2. API 함수 생성 -->
 					<!-- 4. 상세 질의 글 페이지에 진입하자마자 데이터 호출하여 화면에 표시 -->
-          <p class="title">{{ item.title }}</p>
+          <!-- <p class="title">{{ item.title }}</p> -->
+					<router-link :to="`/item/${item.id}`">{{ item.title }}</router-link>
           <div>
             <span>{{ item.time_ago }}</span>, 
             <!-- <strong><span></span></strong> -->

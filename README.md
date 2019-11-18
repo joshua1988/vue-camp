@@ -68,6 +68,14 @@
 
 > 오늘까지 수업 잘 이해가 안되시는 분들은 이번 주말까지 꼭 [Vue.js 완벽 가이드 섹션 13까지 듣고 오세요..! 😄](https://www.inflearn.com/course/vue-js/lecture/17053)
 
+## 8회차 수업 복습 자료
+
+- [다이나믹 라우터 매칭](https://router.vuejs.org/guide/essentials/dynamic-matching.html)
+- [Generator MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Generator)
+- [Babel Repl](https://babeljs.io/repl)
+- [Async Await](https://joshua1988.github.io/web-development/javascript/js-async-await/)
+- [Vue Enterprise Boilerplate](https://github.com/chrisvfritz/vue-enterprise-boilerplate)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)

@@ -22,7 +22,10 @@ function log() {
 // mongo db
 const db = mongoose.connection;
 db.on("error", console.error.bind(console, "MongoDB connection error:"));
-mongoose.connect('mongodb://test:test1234@ds019038.mlab.com:19038/vue-shop', { useNewUrlParser: true });
+mongoose.connect(
+  'mongodb+srv://admin:1234@cluster0-yf8kh.mongodb.net/test?retryWrites=true&w=majority', 
+  { useNewUrlParser: true }
+);
 mongoose.Promise = global.Promise;
 
 // server setup

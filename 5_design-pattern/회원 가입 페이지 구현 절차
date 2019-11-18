@@ -1,0 +1,20 @@
+[클라이언트 자원 설치]
+1. 6번 폴더 -> vue-til -> npm i 
+
+[서버 자원 설치]
+1. 6번 폴더 -> vue-til -> src -> server -> npm i 
+2. `npm run dev`로 서버 실행
+
+[필요 라이브러리 설치 in 5번 폴더 -> til-app]
+npm i axios vue-router
+
+[API 문서 주소]
+localhost:3000/api/docs
+
+// 회원 가입 페이지 구현
+1. 필요 라이브러리 설치 및 설정
+2. 라우터 설계
+3. 컴포넌트 설계
+4. API 설계
+5. 컴포넌트 구현
+6. (optional) 폼 유효성 검사 구현

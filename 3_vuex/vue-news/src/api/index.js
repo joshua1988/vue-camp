@@ -25,4 +25,8 @@ function fetchUser(userName) {
 	return instance.get(`user/${userName}.json`);
 }
 
-export { fetchNews, fetchAsk, fetchJobs, fetchUser };
+function fetchItem(id) {
+	return instance.get(`item/${id}.json`);
+}
+
+export { fetchNews, fetchAsk, fetchJobs, fetchUser, fetchItem };

@@ -23,8 +23,8 @@
 <script>
 // ask url
 // https://api.hnpwa.com/v0/ask/1.json
-
 import axios from 'axios';
+import { fetchNews } from '../api/index';
 
 export default {
 	// vda
@@ -52,8 +52,19 @@ export default {
 				});
 		},
 	},
-	created() {
-		this.fetchItems();
+	async created() {
+		// 프로미스 처리
+		// fetchNews()
+		// 	.then(response => {
+		// 		this.items = response.data;
+		// 	})
+		// 	.catch(error => {
+		// 		console.log(error);
+		// 	});
+
+		// async await 처리
+		const response = await fetchNews();
+		this.items = response.data;
 	},
 };
 </script>
