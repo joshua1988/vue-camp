@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import Chart from "chart.js";
 import BarChart from "@/components/BarChart.vue";
 import LineChart from "@/components/LineChart.vue";
 
@@ -20,7 +19,8 @@ export default {
   },
   data() {
     return {
-      barChartData: []
+      barChartData: [],
+      num: 100,
     };
   },
   methods: {
@@ -35,9 +35,13 @@ export default {
   },
   created() {
     this.fetchChartData().then(data => {
-      console.log("받아왔음");
+      // console.log("받아왔음");
       this.barChartData = data;
     });
+  },
+  beforeMount() {
+    // this.logText();
+    console.log(this);
   }
 
   // beforeMount() {

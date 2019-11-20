@@ -3,6 +3,8 @@
 </template>
 
 <script>
+import Chart from "chart.js";
+
 export default {
   mounted() {
     var ctx = this.$refs.myChart.getContext("2d");

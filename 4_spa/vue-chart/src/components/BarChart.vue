@@ -17,7 +17,7 @@ export default {
       // console.log(document.getElementById("myChart"));
       // console.log(this.$refs.myChart);
       var ctx = this.$refs.myChart.getContext("2d");
-      var myChart = new Chart(ctx, {
+      var myChart = new this.$_Chart(ctx, {
         type: "bar",
         data: {
           labels: ["Red", "Blue", "Yellow", "Green", "Purple", "Orange"],
