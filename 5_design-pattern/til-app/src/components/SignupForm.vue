@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <form @submit.prevent="submitForm">
     <div>
       <label for="username">ID: </label>
       <input id="username" type="text" v-model="username" />
@@ -17,16 +17,48 @@
 </template>
 
 <script>
+import { registerUser } from "../api/index";
+
+function initData() {
+  return {
+    username: "",
+    password: "",
+    nickname: ""
+    // developer: {
+    //   name: "",
+    //   age: ""
+    // }
+  };
+}
+
 export default {
   data() {
-    return {
-      username: "",
-      password: "",
-      nickname: ""
-    };
+    return initData();
   },
   methods: {
-    submitForm() {}
+    async submitForm() {
+      // this.developer.age = 10;
+      // this.$set(this.developer, 'age', 0);
+      const data = {
+        username: this.username,
+        password: this.password,
+        nickname: this.nickname
+      };
+      const response = await registerUser(data);
+      console.log(response.data);
+      this.$router.push("/login");
+      // this.$router.push({
+      //   path: '/login',
+      //   name: '',
+      //   query: {},
+      // })
+      this.initForm();
+    },
+    initForm() {
+      this.username = "";
+      this.password = "";
+      this.nickname = "";
+    }
   }
 };
 </script>
