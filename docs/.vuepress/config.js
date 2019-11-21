@@ -190,10 +190,11 @@ module.exports = {
         text: '💬 FrontEnd Development',
         link: '/front-dev',
       },
-      {
-        text: '💻 Vue 3.0',
-        link: '/3.0',
-      },
+      // temp
+      // {
+      //   text: '💻 Vue 3',
+      //   link: '/vue-3',
+      // },
       {
         text: '📹 Online Courses',
         link:
@@ -221,7 +222,7 @@ module.exports = {
       },
     },
     '@vuepress/google-analytics': {
-      ga: 'UA-128482369-1',
+      ga: 'UA-87965695-1',
     },
   },
 };
