@@ -28,7 +28,7 @@
       </li>
     </ul>
   </div>
-</template>
+</template> 
 
 <script>
 import { fetchAsk } from '../api/index.js';

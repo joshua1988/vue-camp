@@ -15,6 +15,7 @@
       (function() {
 
         function init() {
+          // ES5
           Object.defineProperty(viewModel, 'str', {
             get: function() {
               console.log('str has been accessed');
@@ -23,6 +24,11 @@
               render(newValue);
             }
           })
+          // ES6
+          // new Proxy(viewModel, {
+          //   get() {},
+          //   set() {}
+          // })
         }
 
         function render(value) {

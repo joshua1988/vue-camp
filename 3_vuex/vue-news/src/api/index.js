@@ -5,6 +5,10 @@ const instance = axios.create({
 	timeout: 5000,
 });
 
+function fetchListData(listName) {
+	return instance.get(`${listName}/1.json`);
+}
+
 function fetchNews() {
 	return instance.get('news/1.json');
 	// const url = 'https://api.hnpwa.com/v0/news/1.json';
@@ -29,4 +33,4 @@ function fetchItem(id) {
 	return instance.get(`item/${id}.json`);
 }
 
-export { fetchNews, fetchAsk, fetchJobs, fetchUser, fetchItem };
+export { fetchNews, fetchAsk, fetchJobs, fetchUser, fetchItem, fetchListData };

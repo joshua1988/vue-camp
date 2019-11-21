@@ -76,6 +76,12 @@
 - [Async Await](https://joshua1988.github.io/web-development/javascript/js-async-await/)
 - [Vue Enterprise Boilerplate](https://github.com/chrisvfritz/vue-enterprise-boilerplate)
 
+## 9회차 수업 언급 자료
+
+- [Object.observe() MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/observe)
+- [Mixins](https://joshua1988.github.io/vue-camp/reuse/mixins.html)
+- [High Order Component](https://joshua1988.github.io/vue-camp/design/pattern5.html)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)

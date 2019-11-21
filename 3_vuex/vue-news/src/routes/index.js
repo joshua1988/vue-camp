@@ -29,6 +29,7 @@ export default new VueRouter({
 		// },
 		{
 			path: '/news',
+			name: 'news',
 			component: NewsView,
 			beforeEnter(routeTo, routeFrom, next) {
 				console.log('accessed');
@@ -51,6 +52,7 @@ export default new VueRouter({
 		},
 		{
 			path: '/jobs',
+			name: 'jobs',
 			component: JobsView,
 			// TODO: beforeEnter를 이용하여
 			// 페이지 진입 전에 데이터를 요청해보세요.

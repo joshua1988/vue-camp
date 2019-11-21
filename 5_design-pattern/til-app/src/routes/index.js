@@ -1,20 +1,20 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
+import Vue from 'vue';
+import VueRouter from 'vue-router';
 // import SignupView from '../views/SignupView';
 
 Vue.use(VueRouter);
 
 export default new VueRouter({
-  routes: [
-    {
-      path: "/signup",
-      component: () => import("../views/SignupView.vue")
-    },
-    {
-      path: "/login",
-      component: () => import("../views/LoginView.vue")
-    }
-  ]
+	routes: [
+		{
+			path: '/signup',
+			component: () => import('../views/SignupView.vue'),
+		},
+		{
+			path: '/login',
+			component: () => import('../views/LoginView.vue'),
+		},
+	],
 });
 
 // TODO: 1. 로그인 페이지 구현
