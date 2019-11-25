@@ -5,7 +5,12 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter);
 
 export default new VueRouter({
+	mode: 'history',
 	routes: [
+		{
+			path: '/',
+			redirect: '/login',
+		},
 		{
 			path: '/signup',
 			component: () => import('../views/SignupView.vue'),
@@ -13,6 +18,19 @@ export default new VueRouter({
 		{
 			path: '/login',
 			component: () => import('../views/LoginView.vue'),
+		},
+		{
+			path: '/home',
+			component: () => import('../views/HomeView.vue'),
+		},
+		{
+			// TODO: 학습 노트를 생성하는 페이지 제작 및 home 화면에 생성한 데이터 표시
+			// 9시 6분까지 실습
+			path: '/add',
+		},
+		{
+			path: '*',
+			component: () => import('../views/NotFoundView.vue'),
 		},
 	],
 });

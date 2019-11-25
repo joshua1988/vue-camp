@@ -4,7 +4,7 @@
 			<router-link to="/signup">회원 가입</router-link> |
 			<router-link to="/login">로그인</router-link>
 		</div>
-		<!-- <div>{{ this.$store.state.username }}</div> -->
+		<div>{{ this.$store.state.username }}</div>
 	</header>
 </template>
 

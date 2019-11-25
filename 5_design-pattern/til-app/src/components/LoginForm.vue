@@ -33,8 +33,9 @@ export default {
 					username: this.username,
 					password: this.password,
 				});
-				this.$store.commit('setUserName', data.user.username);
-				console.log(data);
+				this.$store.commit('setUsername', data.user.username);
+				this.$store.commit('setToken', data.token);
+				this.$router.push('/home');
 			} catch (error) {
 				console.log(error);
 				this.errorMessage = error;
