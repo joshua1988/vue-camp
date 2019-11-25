@@ -17,6 +17,7 @@
 
 <script>
 import { loginUser } from '../api/index';
+import { saveAuthToCookie, saveUserToCookie } from '../utils/cookies';
 
 export default {
 	data() {
@@ -34,7 +35,9 @@ export default {
 					password: this.password,
 				});
 				this.$store.commit('setUsername', data.user.username);
+				saveUserToCookie(data.user);
 				this.$store.commit('setToken', data.token);
+				saveAuthToCookie(data.token);
 				this.$router.push('/home');
 			} catch (error) {
 				console.log(error);

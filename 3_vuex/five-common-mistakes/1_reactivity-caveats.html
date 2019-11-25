@@ -30,7 +30,10 @@
     new Vue({
       el: '#app',
       data: {
-        user: {}
+        user: {
+          region: '',
+          name: '',
+        }
       },
       created() {
         this.fetchUsers();
@@ -41,7 +44,8 @@
           .then(response => response.json())
           .then(data => {
             this.user = data;
-            this.user.region = 'Pangyo';
+            // this.user.region = 'Pangyo';
+            this.$set(this.user, 'region', '');
           })
           .catch(error => console.log(error));
         },

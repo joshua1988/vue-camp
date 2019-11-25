@@ -20,7 +20,19 @@ export default {
     ToastPopup,
     AppFooter,
   },
+  // setup() {
+  //   this.data = {
+  //     num: 10
+  //   }
+  // }
 }
+
+// class App extends TS {
+//   @Props
+//   constructor() {
+
+//   }
+// }
 </script>
 
 <style>
