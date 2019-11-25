@@ -27,6 +27,7 @@ export default new VueRouter({
 			// TODO: 학습 노트를 생성하는 페이지 제작 및 home 화면에 생성한 데이터 표시
 			// 9시 6분까지 실습
 			path: '/add',
+			component: () => import('../views/AddView.vue'),
 		},
 		{
 			path: '*',
