@@ -82,6 +82,13 @@
 - [Mixins](https://joshua1988.github.io/vue-camp/reuse/mixins.html)
 - [High Order Component](https://joshua1988.github.io/vue-camp/design/pattern5.html)
 
+## 10회차 수업 안내 자료
+
+- [Vue Router History Mode](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations)
+- [Axios Interceptor](https://github.com/axios/axios#interceptors)
+- [Vue CLI 환경 변수 파일 설정](https://joshua1988.github.io/vue-camp/deploy/env-setup.html)
+- [Vue TS Property Decorator](https://joshua1988.github.io/vue-camp/ts/pdecorator.html)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)
