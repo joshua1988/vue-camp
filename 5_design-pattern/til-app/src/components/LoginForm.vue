@@ -35,7 +35,7 @@ export default {
 					password: this.password,
 				});
 				this.$store.commit('setUsername', data.user.username);
-				saveUserToCookie(data.user);
+				saveUserToCookie(data.user.username);
 				this.$store.commit('setToken', data.token);
 				saveAuthToCookie(data.token);
 				this.$router.push('/home');
