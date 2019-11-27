@@ -1,0 +1,7 @@
+[서버 경로]
+vue-camp/6_advanced/vue-til/src/server
+npm run dev
+
+[클라이언트 경로]
+vue-camp/5_design-pattern/til-app
+npm run serve
