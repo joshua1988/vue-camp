@@ -1,12 +1,14 @@
-import { shallowMount } from "@vue/test-utils";
-import HelloWorld from "@/components/HelloWorld.vue";
+// --- 테스트 할 내용 ---
+function sum(a, b) {
+	return a + b;
+}
 
-describe("HelloWorld.vue", () => {
-  it("renders props.msg when passed", () => {
-    const msg = "new message";
-    const wrapper = shallowMount(HelloWorld, {
-      propsData: { msg }
-    });
-    expect(wrapper.text()).toMatch(msg);
-  });
+sum(10, 20); // 30
+// ---
+
+describe('example.spec.js', () => {
+	test('sum 함수 테스트', () => {
+		const result = sum(10, 20);
+		expect(result).toBe(30);
+	});
 });

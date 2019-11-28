@@ -89,6 +89,15 @@
 - [Vue CLI 환경 변수 파일 설정](https://joshua1988.github.io/vue-camp/deploy/env-setup.html)
 - [Vue TS Property Decorator](https://joshua1988.github.io/vue-camp/ts/pdecorator.html)
 
+## 11회차 수업 안내 자료
+
+- [Moment.js](https://momentjs.com/)
+- [Functional Component](https://vuejs.org/v2/guide/render-function.html#Functional-Components)
+- [State of js - Testing](https://2018.stateofjs.com/testing/overview/)
+- [Jest](https://jestjs.io/docs/en/getting-started)
+- [Nested Routes](https://router.vuejs.org/guide/essentials/nested-routes.html)
+- [Vue.js Filter](https://joshua1988.github.io/vue-camp/syntax/filters.html)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)
