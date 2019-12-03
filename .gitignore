@@ -11,8 +11,8 @@ dist
 .vs
 
 # Vue Press
-dist
-docs/.vuepress/dist
+# dist
+# docs/.vuepress/dist
 
 # Logs
 logs
