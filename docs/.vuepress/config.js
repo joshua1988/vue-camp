@@ -176,6 +176,11 @@ module.exports = {
 				children: ['/deploy/intro', '/deploy/env-setup', '/deploy/cli3-rules'],
 			},
 			{
+				title: 'ESLint & Prettier',
+				collapsable: false,
+				children: ['/format/official'],
+			},
+			{
 				title: 'VuePress',
 				collapsable: false,
 				children: ['/vuepress/learning-note'],
@@ -183,11 +188,11 @@ module.exports = {
 		],
 		nav: [
 			{
-				text: '📖 Text Book',
+				text: '📖 텍스트 북',
 				link: '/textbook',
 			},
 			{
-				text: '💬 FrontEnd Development',
+				text: '💬 프런트엔드 개발',
 				link: '/front-dev',
 			},
 			// temp
@@ -196,16 +201,16 @@ module.exports = {
 			//   link: '/vue-3',
 			// },
 			{
-				text: '📹 Online Courses',
+				text: '📹 온라인 강의',
 				link:
-					'https://www.inflearn.com/instructors/54224/courses/?utm_source=blog&utm_medium=githubio&utm_campaign=captianpangyo&utm_term=banner',
+					'https://www.inflearn.com/instructors/54224/courses/?utm_source=vuepress&utm_medium=githubio&utm_campaign=captianpangyo&utm_term=banner',
 			},
 			{
-				text: '📆 Offline Courses',
-				link: 'https://www.fastcampus.co.kr/dev_camp_vue/',
+				text: '📆 오프라인 강의',
+				link: 'https://www.fastcampus.co.kr/dev_camp_wap/',
 			},
 			{
-				text: '📝 More Articles',
+				text: '📝 더 많은 글 보기',
 				link: 'https://joshua1988.github.io/',
 			},
 		],
