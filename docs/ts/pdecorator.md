@@ -4,7 +4,7 @@ title: Vue Property Decorator
 
 # Vue Property Decorator
 
-앞에서 살펴본 뷰 클래스 컴포넌트([vue-class-component]((https://github.com/vuejs/vue-class-component))) 라이브러리 이외에도 타입스크립트로 뷰 컴포넌트를 작성할 때 유용한 라이브러리가 있습니다. 뷰 프로퍼티 데코레이터([Vue Property Decorator]((https://github.com/kaorun343/vue-property-decorator))) 라이브러리입니다.
+앞에서 살펴본 뷰 클래스 컴포넌트([vue-class-component](https://github.com/vuejs/vue-class-component)) 라이브러리 이외에도 타입스크립트로 뷰 컴포넌트를 작성할 때 유용한 라이브러리가 있습니다. 뷰 프로퍼티 데코레이터([Vue Property Decorator](https://github.com/kaorun343/vue-property-decorator)) 라이브러리입니다.
 
 :::tip
 참고로 뷰 프로퍼티 데코레이터 라이브러리는 뷰 클래스 컴포넌트를 기반으로 제작되었습니다.
