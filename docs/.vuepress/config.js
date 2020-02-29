@@ -168,7 +168,7 @@ module.exports = {
 			{
 				title: 'PWA',
 				collapsable: false,
-				children: ['/pwa/cli-pwa-plugin'],
+				children: ['/pwa/cli-pwa-plugin', '/pwa/workbox'],
 			},
 			{
 				title: 'Deployment',
@@ -207,7 +207,7 @@ module.exports = {
 			},
 			{
 				text: '📆 오프라인 강의',
-				link: 'https://www.fastcampus.co.kr/dev_camp_wap/',
+				link: 'https://www.fastcampus.co.kr/dev_camp_vue/',
 			},
 			{
 				text: '📝 더 많은 글 보기',
