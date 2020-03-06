@@ -168,7 +168,7 @@ module.exports = {
 			{
 				title: 'PWA',
 				collapsable: false,
-				children: ['/pwa/cli-pwa-plugin', '/pwa/workbox'],
+				children: ['/pwa/cli-pwa-plugin', '/pwa/workbox', '/pwa/workbox-caching'],
 			},
 			{
 				title: 'Deployment',
