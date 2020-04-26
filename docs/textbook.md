@@ -4,7 +4,7 @@ title: Introduction
 
 # 패스트캠퍼스 Vue.js 수업 자료
 
-이 사이트는 패스트캠퍼스의 [Vue로 구현하는 PWA 캠프](https://www.fastcampus.co.kr/dev_camp_wap/)와 [Vue.js 정복 캠프](https://www.fastcampus.co.kr/dev_camp_vue/) 오프라인 수업 자료입니다.
+이 사이트는 패스트캠퍼스의 [Vue로 구현하는 PWA 캠프](https://www.fastcampus.co.kr/dev_camp_wap/)와 [Vue.js 정복 캠프](https://www.fastcampus.co.kr/dev_camp_vue/) **오프라인 수업** 자료입니다.
 
 저와 함께 자바스크립트 기초부터 Vue.js 실무 응용까지 함께 학습해보실까요? 😄
 

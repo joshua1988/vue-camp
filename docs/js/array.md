@@ -4,7 +4,7 @@ title: Array
 
 # 배열(Array)
 
-배열(Array)은 객체와 더불어 실제로 웹 애플리케이션을 구현할 때 가장 많이 쓰이는 데이터 유형입니다. 배열을 선언하는 방식은 객체와 유사합니다.
+배열(Array)은 객체와 더불어 실제로 웹 애플리케이션을 구현할 때 가장 많이 쓰이는 변수 타입입니다. 배열을 선언하는 방식은 객체와 유사합니다.
 
 ```js
 var arr = [];
@@ -43,14 +43,14 @@ arr[0] = 10;
 console.log(arr); // [10, 20]
 ```
 
-하지만 위와 같이 인덱스에 직접 접근해서 조작하는 것보다 자바스크립트 내장 API를 사용하는 것을 추천합니다. 그리고 이 방식은 뷰 개발자 뿐만 아니라 자바스크립트 개발자들에게도 해당되는 사항입니다.
+하지만 위와 같이 인덱스에 직접 접근해서 조작하는 것보다 자바스크립트 내장 API를 사용하는 것을 추천합니다. 그리고 이 방식은 뷰 개발자 뿐만 아니라 자바스크립트 개발자들에게도 권장되는 방식입니다.
 
 ```js
 // 자바스크립트 내장 API를 사용하는 경우
 var arr = [];
-arr.push(100);
-arr.push(20);
-arr.splice(0, 1, 10);
+arr.push(100); // [100]
+arr.push(20); // [100, 20]
+arr.splice(0, 1, 10); // [10, 20]
 console.log(arr); // [10, 20]
 ```
 
@@ -60,6 +60,6 @@ console.log(arr); // [10, 20]
 
 - [push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) : 배열에 데이터 추가 (맨 끝 인덱스부터 추가됨)
 - [slice()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) : 배열의 특정 인덱스에 있는 값을 반환 (배열의 내용이 변환되지 않음)
-- [splice()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) : 배열의 특정 인덱스에 있는 값을 변경 (배열의 내용이 변경됨)
+- [splice()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) : 배열의 특정 인덱스에 있는 값을 변경 또는 삭제 (배열의 내용이 변경됨)
 - [pop()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) : 배열의 마지막 인덱스의 값을 꺼냄 (배열의 내용이 변경됨)
 - [shift()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/shift) : 배열의 첫번째 인덱스의 값을 꺼냄 (배열의 내용이 변경됨)

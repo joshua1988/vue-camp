@@ -12,7 +12,7 @@ function addCounter() {
 
   return function() {
     return counter++;
-  }
+  };
 }
 ```
 
@@ -35,11 +35,13 @@ function addCounter() {
 
   return function() {
     return counter++;
-  }
+  };
 }
 ```
 
-`counter` 변수 다음으로 주목할 부분은 함수를 반환하는 부분(코드 강조된 부분)입니다. 여기서 이렇게 함수를 반환할 수 있는 이유는 '**함수를 변수나 인자로 넘길 수 있는 자바스크립트의 성질(일급 객체)**' 때문입니다. 자 그럼 이제 아래와 같이 `addCounter()` 함수를 실행해보겠습니다.
+`counter` 변수 다음으로 주목할 부분은 함수를 반환하는 부분(코드 강조된 부분)입니다. 여기서 이렇게 함수를 반환할 수 있는 이유는 '**함수를 변수나 인자로 넘길 수 있는 자바스크립트의 성질(일급 객체)**' 때문입니다.
+
+자 그럼 이제 아래와 같이 `addCounter()` 함수를 실행해보겠습니다.
 
 ```js
 addCounter();
@@ -59,7 +61,7 @@ console.log(addCounter());
   }
 ```
 
-여기서 갸우뚱 하시는 분들은 다시 한번 `addCounter()` 함수 코드를 살펴보시기 바랍니다. 애시당초 `addCounter()` 함수의 역할은 `addCounter()` 함수를 실행했을 때 함수를 반환하는 것 이었습니다. 
+여기서 갸우뚱 하시는 분들은 다시 한번 `addCounter()` 함수 코드를 살펴보시기 바랍니다. 애시당초 `addCounter()` 함수의 역할은 `addCounter()` 함수를 실행했을 때 함수를 반환하는 것 이었습니다.
 
 그럼 이제 반환된 함수를 살펴보면 `counter++`라는 코드가 보일 겁니다. 그리고 그 변수를 아래와 같이 접근하면 당연히 또 오류가 납니다.
 
@@ -69,14 +71,14 @@ function addCounter() {
 
   return function() {
     return counter++;
-  }
+  };
 }
 
 addCounter();
 console.log(counter); // Uncaught ReferenceError: counter is not defined
 ```
 
-코드를 찬찬히 살펴보면 `addCounter()`함수의 실행이 끝난 시점에서는 `counter`라는 변수는 더이상 접근할 수 없는 상태가 됩니다. **함수 안에 선언한 변수는 함수 안에서만 유효 범위를 갖게 때문이죠**. 
+코드를 찬찬히 살펴보면 `addCounter()`함수의 실행이 끝난 시점에서는 `counter`라는 변수는 더이상 접근할 수 없는 상태가 됩니다. **함수 안에 선언한 변수는 함수 안에서만 유효 범위를 갖게 때문이죠**.
 
 자 그럼 이제 아래 코드를 실행해보겠습니다.
 
@@ -86,7 +88,7 @@ function addCounter() {
 
   return function() {
     return counter++;
-  }
+  };
 }
 
 var add = addCounter();
@@ -95,7 +97,7 @@ add(); // 1
 add(); // 2
 ```
 
-위와 같이 코드를 실행했을 때 동작하는 이유가 무엇일까요? 그건 바로 `addCounter()`라는 함수가 반환한 함수를 `add`라는 변수에 담아놨기 때문에 `add` 변수 자체가 함수처럼 동작하는 것입니다. 기술 용어로 정확히 표현하자면 '**add 변수가 addCounter()가 반환한 함수를 참조하고 있다**' 입니다.
+위와 같이 코드를 실행했을 때 동작하는 이유가 무엇일까요? 그건 바로 `addCounter()`라는 함수가 반환한 함수를 `add`라는 변수에 담아놨기 때문에 `add` 변수 자체가 함수처럼 동작하는 것입니다. 기술 용어로 정확히 표현하자면 "**add 변수가 addCounter()가 반환한 함수를 참조하고 있다**" 입니다.
 
 이처럼 함수의 실행이 끝나고 나서도 함수 안의 변수를 참조할 수 있는게 바로 클로져입니다. 이러한 패턴을 응용하면 자바스크립트에 없는 private 변수나 함수형 프로그래밍을 할 수 있습니다.
 
@@ -111,7 +113,7 @@ function add(num1, num2) {
 function curry(fn, a) {
   return function(b) {
     return fn(a, b);
-  }
+  };
 }
 
 var add3 = curry(add, 3);
