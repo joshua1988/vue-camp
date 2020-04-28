@@ -11,6 +11,32 @@
 - 5주차 : 싱글페이지 애플리케이션 제작 및 입문자가 저지르는 실수(ES6)
 - 6주차 : 컴포넌트 디자인 패턴, 실무 서비스에 적용하는 Vue.js(ES6)
 
+## 1회차 수업 자료 안내
+
+### 참고 자료
+
+- [state of js 2017](https://2017.stateofjs.com/2017/front-end/results)
+- [state of js 2018](https://2018.stateofjs.com/front-end-frameworks/overview/)
+- [state of js 2019](https://2019.stateofjs.com/front-end-frameworks/)
+
+### Vue로 제작된 사이트
+
+- [Gitlab](https://about.gitlab.com/)
+- [Adobe Behance](https://www.behance.net/)
+- [네이버 웨일](https://whale.naver.com/ko)
+- [네이버 바이브](https://vibe.naver.com/today)
+- [네이버 카페](https://section.cafe.naver.com/)
+- [삼성생명](https://www.samsunglife.com/main/PDP-MAMAI000000M)
+
+### 학습 안내 자료
+
+- [Vue.js 수업 자료](https://joshua1988.github.io/vue-camp/)
+- [리눅스 터미널 명령어 안내 글](https://joshua1988.github.io/web-development/linux-commands-for-beginners/)
+- [cmder 윈도우 콘솔 에뮬레이터](https://cmder.net/)
+- [MDN](https://developer.mozilla.org/en-US/docs/Web/JavaScript)
+- [Google Web Fundamentals](https://developers.google.com/web/fundamentals/)
+- [Vue.js 공식 문서](https://vuejs.org/)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)

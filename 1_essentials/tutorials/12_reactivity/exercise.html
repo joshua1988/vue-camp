@@ -16,8 +16,8 @@
       // 할일 #1 - Object.defineProperty() API를 이용하여 viewModel에 반응성을 주입해보세요.
       function init() {
         // 객체의 기본 동작을 재정의하는 API
-        Object.defineProperty(동작을 정의할 대상 객체, 해당 객체의 대상 속성, {
-          get: function() {
+        Object.(동작을 정의할 대상 객체, 해당 객체의 대상 속성, {
+          get: function(defineProperty) {
             해당 속성에 접근했을 때 실행할 로직
           },
           set: function(newValue) {

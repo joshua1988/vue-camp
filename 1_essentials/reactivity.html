@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Vue.js Reactivity</title>
+  </head>
+  <body>
+    <div id="app">Hello</div>
+    <script>
+      var div = document.querySelector('#app');
+
+      var str = 'Hello World';
+      div.innerHTML = str; // Hello World
+
+      str = 'Hello Vue.js';
+      div.innerHTML = str; // Hello Vue.js
+
+      // Vue.js 코딩
+      var obj = {
+        str: 'hello',
+      };
+
+      // Object.defineProperty(대상 객체, 객체의 속성, 옵션)
+      Object.defineProperty(obj, 'str', {
+        // obj.str 일 때 동작
+        get: function () {
+          console.log('접근');
+        },
+        // obj.str = '무언가' 일 때 동작
+        set: function (newValue) {
+          console.log('변경 또는 할당', newValue);
+          div.innerHTML = newValue;
+        },
+      });
+
+
+
+
+      
+
+      // TODO: 라이브 서버로 실행 후 개발자 도구 콘솔 창에 아래 코드를 실행해보세요.
+      // 1. obj.str = 'hi'
+      // 2. obj.str;
+    </script>
+  </body>
+</html>
