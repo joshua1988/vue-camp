@@ -7,31 +7,23 @@
   </head>
   <body>
     <div id="app">
-      {{ str }}
-      <button v-on:click="btnClick">
-        Vue Btn
-      </button>
+      <app-header v-bind:title="str"></app-header>
     </div>
 
-    <button id="btn2">Pure JS</button>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <script>
       new Vue({
         el: '#app',
         data: {
-          str: 'Hello',
+          str: '제목',
         },
-        methods: {
-          btnClick: function () {
-            console.log('btn1 clicked');
+        components: {
+          'app-header': {
+            template: '<h1>{{title}}</h1>',
+            props: ['title'],
           },
         },
-      });
-
-      // Vanilla Javascript
-      var btn2 = document.querySelector('#btn2');
-      btn2.addEventListener('click', function () {
-        console.log('btn2 clicked');
       });
     </script>
   </body>

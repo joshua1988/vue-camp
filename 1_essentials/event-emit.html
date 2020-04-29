@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      {{counter}}
+      <app-header v-on:say="logging"></app-header>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          str: '제목',
+          counter: 0,
+        },
+        methods: {
+          logging: function () {
+            console.log(this.counter++);
+          },
+        },
+        components: {
+          'app-header': {
+            template: '<button v-on:click="logText">say hello</button>',
+            methods: {
+              logText: function () {
+                console.log('hit');
+                this.$emit('say');
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
