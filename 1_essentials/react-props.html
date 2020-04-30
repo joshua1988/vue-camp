@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <app-header v-bind:add-function="add"></app-header>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          counter: 0,
+        },
+        methods: {
+          add: function() {
+            this.counter = this.counter + 1;
+          },
+        },
+        components: {
+          'app-header': {
+            template: '<button v-on:click="addFunction">click me</button>',
+            props: ['addFunction'],
+            // methods: {
+            //   logText: function() {
+            //     console.log('hi');
+            //   },
+            // },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      <!-- {{ obj.a }} -->
+      <app-header></app-header>
+      <app-main></app-main>
+      <!-- {{ obj.b }} -->
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      // Vue.component('컴포넌트 이름', 컴포넌트 내용);
+      // 1. 컴포넌트 이름을 짓고
+      Vue.component('app-main', {
+        // 2. 컴포넌트 내용을 정의
+        template: '<main>전역 컴포넌트</main>',
+      });
+
+      var vm = new Vue({
+        el: '#app',
+        data: {
+          obj: {
+            a: 1,
+          },
+        },
+        components: {
+          // '컴포넌트 이름': 컴포넌트 내용,
+          'app-header': {
+            template: '<h1>지역 컴포넌트</h1>',
+          },
+        },
+      });
+
+      vm.obj.b = 30;
+    </script>
+  </body>
+</html>

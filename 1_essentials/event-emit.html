@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+
+  <body>
+    <div id="app">
+      {{ counter }}
+      <!-- <app-header v-on:하위 컴포넌트에서 발생한 이벤트 이름="상위 컴포넌트의 메서드 이름"></app-header> -->
+      <app-header v-on:say="greet"></app-header>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          counter: 0,
+        },
+        methods: {
+          greet: function() {
+            console.log('hello');
+            this.counter = this.counter + 1;
+          },
+        },
+        components: {
+          'app-header': {
+            template: '<button v-on:click="logText">say hi</button>',
+            methods: {
+              logText: function() {
+                console.log('hi');
+                this.$emit('say');
+              },
+            },
+          },
+        },
+      });
+    </script>
+  </body>
+</html>

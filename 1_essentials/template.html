@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      {{ reversedMessage }}
+      <button v-bind:id="buttonId" v-on:click="logText">click me</button>
+      <input v-if="false" type="text" value="hi" v-model="str" />
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        methods: {
+          logText: function() {},
+        },
+        data: {
+          message: 'hello',
+          buttonId: 100,
+          str: '',
+        },
+        computed: {
+          reversedMessage: function() {
+            return 'hi';
+          },
+        },
+      });
+    </script>
+  </body>
+</html>
