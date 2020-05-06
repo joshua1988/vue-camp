@@ -7,7 +7,7 @@
   </head>
   <body>
     <div id="app">
-      <app-header v-bind:title="str"></app-header>
+      <app-header v-bind:add-function="add"></app-header>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
@@ -15,12 +15,22 @@
       new Vue({
         el: '#app',
         data: {
-          str: '제목',
+          counter: 0,
+        },
+        methods: {
+          add: function() {
+            this.counter = this.counter + 1;
+          },
         },
         components: {
           'app-header': {
-            template: '<h1>{{title}}</h1>',
-            props: ['title'],
+            template: '<button v-on:click="addFunction">click me</button>',
+            props: ['addFunction'],
+            // methods: {
+            //   logText: function() {
+            //     console.log('hi');
+            //   },
+            // },
           },
         },
       });
