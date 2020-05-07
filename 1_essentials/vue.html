@@ -1,29 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-</head>
-<body>
-  <div id="app">
-    {{ str }}
-    <button v-on:click="logText">click me</button>
-  </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="app">
+      {{ str }}
+      <button v-on:click="btnClick">
+        Vue Btn
+      </button>
+    </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-  <script>
-    new Vue({
-      el: '#app',
-      data: {
-        str: 'Hello World'
-      },
-      methods: {
-        logText: function() {
-          console.log('clicked');
-        }
-      }
-    })
-  </script>
-</body>
+    <button id="btn2">Pure JS</button>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script>
+      new Vue({
+        el: '#app',
+        data: {
+          str: 'Hello',
+        },
+        methods: {
+          btnClick: function () {
+            console.log('btn1 clicked');
+          },
+        },
+      });
+
+      // Vanilla Javascript
+      var btn2 = document.querySelector('#btn2');
+      btn2.addEventListener('click', function () {
+        console.log('btn2 clicked');
+      });
+    </script>
+  </body>
 </html>

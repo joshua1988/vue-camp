@@ -7,10 +7,6 @@
   </head>
   <body>
     <div id="app">
-      <div>
-        상위 컴포넌트인 루트 컴포넌트 영역
-      </div>
-      <!-- <app-header v-bind:프롭스 속성 이름="상위 컴포넌트의 데이터 이름"></app-header> -->
       <app-header v-bind:title="str"></app-header>
     </div>
 
@@ -23,7 +19,7 @@
         },
         components: {
           'app-header': {
-            template: '<h1>{{ title }}</h1>',
+            template: '<h1>{{title}}</h1>',
             props: ['title'],
           },
         },

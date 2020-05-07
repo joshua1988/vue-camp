@@ -6,37 +6,22 @@
     <title>Document</title>
   </head>
   <body>
-    <!-- 인스턴스 유효 범위 -->
     <div id="app">
-      {{ message }}
+      {{ message}}
     </div>
-    <!-- // -->
-    <!-- <main>
-      {{ message }}
-    </main>
-    <footer></footer> -->
-
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+
     <script>
-      new Vue({
+      var vm = new Vue({
         el: '#app',
         data: {
           message: 'hi',
+          obj: {
+            a1: 100,
+          },
         },
       });
-    </script>
-
-    <script>
-      // function Developer(name) {
-      //     this.name = name;
-      //   }
-      //   var john = new Developer('john');
-      //   { name: 'john' }
-
-      //   function Vue() {
-      //     this.el = el;
-      //     this.data = data;
-      //   }
+      vm.obj.b1 = 30;
     </script>
   </body>
 </html>
