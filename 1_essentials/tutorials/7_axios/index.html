@@ -4,6 +4,8 @@
   </head>
   <body>
     <div id="app">
+      <p>{{ result }}</p>
+      <!-- TODO: 사용자 이름을 10개 아래에 리스트로 출력해보세요 -->
       <button v-on:click="getData">Get user data</button>
     </div>
 
@@ -12,12 +14,22 @@
     <script>
       new Vue({
         el: '#app',
+        data: {
+          result: {}
+        },
         methods: {
-          getData: function() { 
+          getData: function() {
+            console.log('호출 전', this);
+            var vm = this;
             axios.get('https://jsonplaceholder.typicode.com/users/')
               .then(function(response) {
-                console.log(response);
+                console.log('호출 후', this);
+                // console.log(response);
+                vm.result = response.data;
                 // 할일 #1 - 전달 받은 10개의 사용자 정보를 화면에 출력
+              })
+              .catch(function(error) {
+
               });
           }
         }

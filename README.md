@@ -50,6 +50,17 @@
 - [자바스크립트 비동기 처리 글](https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/)
 - [자바스크립트 Promise 글](https://joshua1988.github.io/web-development/javascript/promise-for-beginners/)
 
+## 3회차 수업 자료 안내
+
+- [Vue Template Explorer](https://template-explorer.vuejs.org/)
+- [HTTP 프로토콜 정리 글](https://joshua1988.github.io/web-development/http-part1/)
+- [axios github](https://github.com/axios/axios)
+- [자바스크립트 동작 원리](https://joshua1988.github.io/web-development/translation/javascript/how-js-works-inside-engine/)
+- [npm](https://www.npmjs.com/)
+- [데스크탑 앱 제작 프레임워크 Electron](https://www.electronjs.org/)
+- [배포한 뷰 애플리케이션 URL 접속이 잘 안될 때 살펴볼 글](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations)
+- [Vue.js 공식 스타일 가이드](https://kr.vuejs.org/v2/style-guide/index.html)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)

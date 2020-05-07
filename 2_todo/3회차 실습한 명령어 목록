@@ -1,0 +1,12 @@
+node -v
+git
+npm init
+npm install jquery
+
+npm install gulp --global
+npm i gulp -g
+
+npm install -g @vue/cli
+vue create todo-app
+cd todo-app
+npm run serve
