@@ -15,8 +15,10 @@ export default {
   methods: {
     addItem: function() {
       // this.inputText
-      localStorage.setItem(this.inputText, this.inputText);
-      this.inputText = '';
+      // 9시 55분까지..
+      // TODO: App.vue의 todoItems에 할 일 데이터 값을 추가
+      var value = this.inputText;
+      this.$emit('add', value);
       this.clearInput();
 
       // axios.post('todos', {

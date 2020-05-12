@@ -1,0 +1,18 @@
+참고할 만한 문법
+    1. v-on
+    2. v-model
+    3. methods
+
+    추가로 구현할 만한 부분 : 
+      비밀번호 유효성 검사 8자 이상인 경우만 로그인 버튼 활성화
+
+
+여기다가 작업해보세요..!
+    <!-- 
+      TODO: exercise의 index.html 코드를 여기에 옮겨서 
+      Vue.js 문법을 적용해보세요 
+
+      NOTE: 오늘의 출석 번호 2179
+      todo-app의 vue.config.js를 vue-form 프로젝트에 복사 후 
+      서버 재실행
+    -->

@@ -61,6 +61,12 @@
 - [배포한 뷰 애플리케이션 URL 접속이 잘 안될 때 살펴볼 글](https://router.vuejs.org/guide/essentials/history-mode.html#example-server-configurations)
 - [Vue.js 공식 스타일 가이드](https://kr.vuejs.org/v2/style-guide/index.html)
 
+## 4회차 수업 자료 안내
+
+- [JS Doc](https://jsdoc.app/)
+- [Presentational & Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
+- [프리젠테이셔널 & 컨테이너 컴포넌트 번역](https://blueshw.github.io/2017/06/26/presentaional-component-container-component/)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)
