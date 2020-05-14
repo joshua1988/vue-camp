@@ -34,7 +34,7 @@ export default {
     }
   },
   methods: {
-    fetchTodoItems: function() {
+    fetchTodoItems: () => {
       // var arr = [];
       for (var i = 0; i < localStorage.length; i++) {
         var value = localStorage.key(i);
@@ -42,24 +42,28 @@ export default {
       }
       // return arr;
     },
-    clearItems: function() {
+    clearItems() {
       this.todoItems = [];
       localStorage.clear();
     },
-    addItem: function(todoItem) {
+    addItem(todoItem) {
       this.todoItems.push(todoItem);
       localStorage.setItem(todoItem, todoItem);
     },
-    removeItem: function(todoItem, index) {
+    removeItem(todoItem, index) {
       // 배열 변경
       this.todoItems.splice(index, 1);
       // 브라우저 저장소(DB)에서 삭제
       localStorage.removeItem(todoItem);
     }
   },
-  created: function() {
+  created() {
     this.fetchTodoItems();
-  }
+  },
+  // watch,
+  // computed,
+  // data,
+  // methods.
 }
 </script>
 

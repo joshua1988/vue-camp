@@ -5,7 +5,7 @@ function example1() {
   var arr = [1, 2, 3, 4];
   var sum = 0;
 
-  arr.forEach(function(value) {
+  arr.forEach(value => {
     sum = sum + value;
   });
 
@@ -16,14 +16,16 @@ function example1() {
 function example2() {
   this.post = {};
   this.validation = 1;
-  this.fetchData = function() {
+  // console.log(this);
+  this.fetchData = () => {
     var vm = this;
     return axios
       .get('https://jsonplaceholder.typicode.com/posts/1')
-      .then(function(data) {
+      .then((data) => {
+        // console.log(this);
         vm.post = data.post;
       })
-      .catch(function(error) {
+      .catch((error) => {
         console.error(error);
       });
   };

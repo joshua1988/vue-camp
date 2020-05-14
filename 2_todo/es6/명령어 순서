@@ -1,0 +1,8 @@
+[명령어 순서]
+npm i
+exercise1.spec.js로 바꾸고 나서
+npm t
+p
+1
+
+[9시 18분까지 실습 및 휴식]

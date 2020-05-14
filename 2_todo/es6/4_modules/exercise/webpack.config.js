@@ -1,7 +1,7 @@
 var path = require('path');
 
 module.exports = {
-	mode: 'none',
+	mode: 'production',
 	entry: './js/app.js',
 	output: {
 			path: path.resolve(__dirname, 'build'),

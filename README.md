@@ -67,6 +67,20 @@
 - [Presentational & Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
 - [프리젠테이셔널 & 컨테이너 컴포넌트 번역](https://blueshw.github.io/2017/06/26/presentaional-component-container-component/)
 
+## 5주차 수업 자료 안내
+
+- [Todo App 배포한 리포지토리(강사용)](https://github.com/joshua1988/todo-app1)
+- [serve 서버 라이브러리](https://github.com/zeit/serve)
+- [Continous Delivery Tool - Bamboo](https://www.atlassian.com/ko/software/bamboo/features)
+- [Continuous Integration Tool - Jenkins](https://www.jenkins.io/)
+- [Can I Use?](https://caniuse.com/)
+- [const mdn](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const)
+- [Javascript this](https://joshua1988.github.io/vue-camp/js/this.html)
+- [e2e Testing Tool - Cypress](https://www.cypress.io/)
+- [웹팩 가이드 - 브라우저 요청 숫자 제약](https://joshua1988.github.io/webpack-guide/motivation/problem-to-solve.html#%EB%B8%8C%EB%9D%BC%EC%9A%B0%EC%A0%80%EB%B3%84-http-%EC%9A%94%EC%B2%AD-%EC%88%AB%EC%9E%90%EC%9D%98-%EC%A0%9C%EC%95%BD)
+- [gulp - web task manager](https://gulpjs.com/)
+- [Babel](https://babeljs.io/docs/en/usage)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)

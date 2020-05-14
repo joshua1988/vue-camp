@@ -20,17 +20,15 @@
         methods: {
           getData: function() {
             console.log('호출 전', this);
-            var vm = this;
+            // var vm = this;
             axios.get('https://jsonplaceholder.typicode.com/users/')
-              .then(function(response) {
+              .then(response => {
                 console.log('호출 후', this);
                 // console.log(response);
-                vm.result = response.data;
+                this.result = response.data;
                 // 할일 #1 - 전달 받은 10개의 사용자 정보를 화면에 출력
               })
-              .catch(function(error) {
-
-              });
+              .catch((error) => console.log(error));
           }
         }
       })
