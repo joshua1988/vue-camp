@@ -1,0 +1,12 @@
+[Vue.js]
+- Vue.js Core(데이터 바인딩, 이벤트 제어~)
+- Vue CLI(프로젝트 생성 도구)
+- Vue Router(라우터)
+- Vuex(상태 관리)
+
+[React]
+- React Core
+- React CLI
+---
+- React Router
+- Redux, Mobx, Recoil

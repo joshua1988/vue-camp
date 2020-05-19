@@ -81,6 +81,21 @@
 - [gulp - web task manager](https://gulpjs.com/)
 - [Babel](https://babeljs.io/docs/en/usage)
 
+## 6주차 수업 자료 안내
+
+- [lodash](https://lodash.com/)
+- [Node.js Path API](https://nodejs.org/api/path.html)
+- [즉시 실행 함수](https://developer.mozilla.org/en-US/docs/Glossary/IIFE)
+- [웹팩 로더 문서](https://webpack.js.org/loaders/)
+- [웹팩 플러그인 문서](https://webpack.js.org/plugins/)
+- [해커뉴스 사이트](https://news.ycombinator.com/newest)
+- [bind() API - MDN](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Function/bind)
+- [뷰 라우터 공식 사이트](https://router.vuejs.org/)
+- [Vuex 소개](https://joshua1988.github.io/vue-camp/vuex/concept.html)
+- [Apache Cordova - 하이브리드앱 개발 프레임워크](https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-file/index.html)
+- [Vue Native - 모바일 앱 개발 프레임워크](https://vue-native.io/)
+- [웹으로 로컬 파일 시스템 접근할 수 있는 API(현재 구현 중임) 소개 하는 글](https://web.dev/native-file-system/)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)
