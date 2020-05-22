@@ -10,9 +10,7 @@
 </template>
 
 <script>
-import axios from 'axios';
-
-const url = 'https://api.hnpwa.com/v0/news/1.json';
+import { fetchNews } from '../api/index'
 
 export default {
   data() {
@@ -21,10 +19,11 @@ export default {
     };
   },
   methods: {
-    fetchNews() {
+    fetchNewsItems() {
       // this;
-      axios
-        .get(url)
+      // axios
+      //   .get(url)
+      fetchNews()
         .then((response) => {
           console.log(response.data);
           this.items = response.data;
@@ -35,7 +34,7 @@ export default {
     },
   },
   created() {
-    this.fetchNews();
+    this.fetchNewsItems();
   },
 };
 </script>

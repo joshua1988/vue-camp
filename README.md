@@ -96,6 +96,15 @@
 - [Vue Native - 모바일 앱 개발 프레임워크](https://vue-native.io/)
 - [웹으로 로컬 파일 시스템 접근할 수 있는 API(현재 구현 중임) 소개 하는 글](https://web.dev/native-file-system/)
 
+## 7주차 수업 자료 안내
+
+- [brutal lifecycle of js frameworks](https://stackoverflow.blog/2018/01/11/brutal-lifecycle-javascript-frameworks/)
+- [slot 글](https://joshua1988.github.io/vue-camp/reuse/slots.html#%EC%8A%AC%EB%A1%AF-%EC%BD%94%EB%93%9C-%ED%98%95%EC%8B%9D)
+- [뷰 공식 스타일 가이드 - 인스턴스 옵션 속성 순서](https://vuejs.org/v2/style-guide/#Component-instance-options-order-recommended)
+- [뷰엑스 공식 문서](https://vuex.vuejs.org/)
+- [Vue.js SEO Tips](https://www.digitalocean.com/community/tutorials/vuejs-vue-seo-tips)
+- [Prerendering SEO Guide](https://vuejs-templates.github.io/webpack/prerender.html)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)
