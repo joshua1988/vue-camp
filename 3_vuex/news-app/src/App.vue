@@ -1,11 +1,19 @@
 <template>
   <div>
-    <h1>뷰엑스 - 상태 관리</h1>
+    <header>
+      <router-link to="/news">News</router-link> |
+      <!-- <a href="/news">News</a> -->
+      <router-link to="/ask">Ask</router-link> |
+      <router-link to="/jobs">Jobs</router-link>
+    </header>
+    <router-view></router-view>
+
+    <!-- <h1>뷰엑스 - 상태 관리</h1>
     <p>{{ msg }}</p>
     <button v-on:click="changeMsg">변경</button>
     <hr />
     <p>{{ $store.state.msg }}</p>
-    <button v-on:click="$store.commit('changeMsg')">변경</button>
+    <button v-on:click="$store.commit('changeMsg')">변경</button> -->
   </div>
 </template>
 

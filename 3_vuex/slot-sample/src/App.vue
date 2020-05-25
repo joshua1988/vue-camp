@@ -1,5 +1,9 @@
 <template>
   <div>
+    <list-item v-for="item in 100">
+      <template slot="text">아이템 123</template>
+    </list-item>
+
     <ul>
       <list-item>
         <p slot="text">item 1</p>

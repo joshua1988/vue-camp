@@ -5,6 +5,8 @@ import VueRouter from 'vue-router';
 import NewsView from '../views/NewsView.vue';
 import AskView from '../views/AskView.vue';
 import JobsView from '../views/JobsView.vue';
+import AskDetailView from '../views/AskDetailView.vue';
+import NotFoundView from '../views/NotFoundView.vue';
 
 // 라이브러리 초기화
 Vue.use(VueRouter);
@@ -14,6 +16,10 @@ Vue.use(VueRouter);
 // const router = new VueRouter({
 export default new VueRouter({
   routes: [
+    {
+      path: '/',
+      redirect: '/news',
+    },
     {
       path: '/news',
       component: NewsView,
@@ -28,6 +34,16 @@ export default new VueRouter({
       // NOTE: 쉬는 시간 9시 10분까지
       // TODO: 아래 주소를 이용하여 jobs 페이지에 구직 정보를 표시
       // https://api.hnpwa.com/v0/jobs/1.json
+    },
+    {
+      path: '/ask/:id',
+      // 'ask/1234'
+      // 'ask/abc'
+      component: AskDetailView,
+    },
+    {
+      path: '*',
+      component: NotFoundView
     }
   ],
 });

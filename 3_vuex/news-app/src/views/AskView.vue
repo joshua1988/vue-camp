@@ -3,7 +3,10 @@
     <h1>질문 페이지</h1>
     <ul>
       <li v-for="item in items" v-bind:key="item.id">
-        {{ item.title }}
+        <!-- <router-link to="/ask/1">{{ item.title }}</router-link> -->
+        <router-link v-bind:to="'/ask/' + item.id">
+          {{ item.title }}
+        </router-link>
       </li>
     </ul>
   </div>
@@ -20,15 +23,13 @@ export default {
   },
   methods: {
     fetchAskItems() {
-      // this.$store.dispatch('fetchAsk').then();
-      
-      // const url = 'https://api.hnpwa.com/v0/ask/1.json';
-      // axios.get(url)
-      //   .then(response => {
-      //     console.log(response);
-      //     this.items = response.data;
-      //   })
-      //   .catch(error => console.log(error));
+      const url = 'https://api.hnpwa.com/v0/ask/1.json';
+      axios.get(url)
+        .then(response => {
+          console.log(response);
+          this.items = response.data;
+        })
+        .catch(error => console.log(error));
     }
   },
   created() {

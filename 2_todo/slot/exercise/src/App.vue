@@ -1,11 +1,27 @@
 <template>
   <div class="min-h-screen bg-grey-lighter p-8">
     <div class="max-w-xs mx-auto mb-8">
-      <photo-card :image="imageLinks[0]" title="Card 1" contents="Card Content 1"></photo-card>
+      <!-- <photo-card 
+        :image="imageLinks[0]" 
+        title="Card 1" 
+        contents="Card Content 1"
+      ></photo-card> -->
+      <photo-card>
+        <img slot="image" v-bind:src="imageLinks[0]" alt="image1">
+        <!-- <p slot="heading">abc</p> -->
+        <template slot="heading">
+          Card 1
+        </template>
+        <p slot="contents">Card Content 1</p>
+      </photo-card>
     </div>
 
     <div class="max-w-xs mx-auto mb-8">
-      <photo-card :image="imageLinks[1]" title="Card 2" contents="Card Content 2"></photo-card>
+      <photo-card 
+        :image="imageLinks[1]" 
+        title="Card 2" 
+        contents="Card Content 2"
+      ></photo-card>
     </div>
   </div>
 </template>

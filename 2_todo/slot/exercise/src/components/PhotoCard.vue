@@ -3,14 +3,17 @@
 <!-- NOTE: 9시 15분까지 -->
   <div class="media-card">
     <div class="media-card-image">
-      <img :src="image" alt="">
+      <!-- <img :src="image" alt=""> -->
+      <slot name="image"></slot>
     </div>
     <div class="media-card-content">
       <h4 class="media-card-heading">
-        {{ title }}
+        <!-- {{ title }} -->
+        <slot name="heading"></slot>
       </h4>
       <div class="media-card-body">
-        <p>{{ contents }}</p>
+        <!-- <p>{{ contents }}</p> -->
+        <slot name="contents"></slot>
       </div>
     </div>
   </div>

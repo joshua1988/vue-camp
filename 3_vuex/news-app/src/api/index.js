@@ -12,4 +12,10 @@ function fetchAsk() {
   return axios.get(config.url + 'ask/1.json');
 }
 
-export { fetchNews, fetchAsk }
+function fetchAskDetailById(id) {
+  // https://api.hnpwa.com/v0/item/13831370.json
+  // axios.get(config.url + 'item/' + id + '.json')
+  return axios.get(`${config.url}item/${id}.json`);
+}
+
+export { fetchNews, fetchAsk, fetchAskDetailById }
