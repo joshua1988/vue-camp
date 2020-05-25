@@ -1,4 +1,6 @@
 <template>
+<!-- TODO: 프롭스 대신 slot으로 동일한 결과가 나오게 코딩해보세요. -->
+<!-- NOTE: 9시 15분까지 -->
   <div class="media-card">
     <div class="media-card-image">
       <img :src="image" alt="">
