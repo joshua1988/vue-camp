@@ -4,7 +4,9 @@
     <ul>
       <li v-for="item in items" v-bind:key="item.id">
         <p>{{ item.title }}</p>
-        <small>{{ item.user }}</small>
+        <router-link v-bind:to="'/user/' + item.user">
+          {{ item.user }}
+        </router-link>
 <!-- TODO: 사용자 아이디를 클릭했을 때 사용자 상세 페이지로 이동 -->
 [실습 절차]
 1. 사용자 상세 페이지 라우터 정보 생성

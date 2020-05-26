@@ -18,4 +18,8 @@ function fetchAskDetailById(id) {
   return axios.get(`${config.url}item/${id}.json`);
 }
 
-export { fetchNews, fetchAsk, fetchAskDetailById }
+function fetchUserByName(name) {
+  return axios.get(`${config.url}user/${name}.json`)
+}
+
+export { fetchNews, fetchAsk, fetchAskDetailById, fetchUserByName }

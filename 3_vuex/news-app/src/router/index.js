@@ -6,6 +6,7 @@ import NewsView from '../views/NewsView.vue';
 import AskView from '../views/AskView.vue';
 import JobsView from '../views/JobsView.vue';
 import AskDetailView from '../views/AskDetailView.vue';
+import UserDetailView from '../views/UserDetailView.vue';
 import NotFoundView from '../views/NotFoundView.vue';
 
 // 라이브러리 초기화
@@ -40,6 +41,12 @@ export default new VueRouter({
       // 'ask/1234'
       // 'ask/abc'
       component: AskDetailView,
+    },
+    {
+      path: '/user/:userId',
+      // 'ask/1234'
+      // 'ask/abc'
+      component: UserDetailView,
     },
     {
       path: '*',

@@ -67,7 +67,7 @@
 - [Presentational & Container Components](https://medium.com/@dan_abramov/smart-and-dumb-components-7ca2f9a7c7d0)
 - [프리젠테이셔널 & 컨테이너 컴포넌트 번역](https://blueshw.github.io/2017/06/26/presentaional-component-container-component/)
 
-## 5주차 수업 자료 안내
+## 5회차 수업 자료 안내
 
 - [Todo App 배포한 리포지토리(강사용)](https://github.com/joshua1988/todo-app1)
 - [serve 서버 라이브러리](https://github.com/zeit/serve)
@@ -81,7 +81,7 @@
 - [gulp - web task manager](https://gulpjs.com/)
 - [Babel](https://babeljs.io/docs/en/usage)
 
-## 6주차 수업 자료 안내
+## 6회차 수업 자료 안내
 
 - [lodash](https://lodash.com/)
 - [Node.js Path API](https://nodejs.org/api/path.html)
@@ -96,7 +96,7 @@
 - [Vue Native - 모바일 앱 개발 프레임워크](https://vue-native.io/)
 - [웹으로 로컬 파일 시스템 접근할 수 있는 API(현재 구현 중임) 소개 하는 글](https://web.dev/native-file-system/)
 
-## 7주차 수업 자료 안내
+## 7회차 수업 자료 안내
 
 - [brutal lifecycle of js frameworks](https://stackoverflow.blog/2018/01/11/brutal-lifecycle-javascript-frameworks/)
 - [slot 글](https://joshua1988.github.io/vue-camp/reuse/slots.html#%EC%8A%AC%EB%A1%AF-%EC%BD%94%EB%93%9C-%ED%98%95%EC%8B%9D)
@@ -104,6 +104,18 @@
 - [뷰엑스 공식 문서](https://vuex.vuejs.org/)
 - [Vue.js SEO Tips](https://www.digitalocean.com/community/tutorials/vuejs-vue-seo-tips)
 - [Prerendering SEO Guide](https://vuejs-templates.github.io/webpack/prerender.html)
+
+## 8회차 수업 자료 안내
+
+- [slot 글](https://joshua1988.github.io/vue-camp/reuse/slots.html)
+- [Lazy Loading 글](https://developers.google.com/web/fundamentals/performance/lazy-loading-guidance/images-and-video)
+- [뷰 인스턴스 라이프사이클 글](https://joshua1988.github.io/vue-camp/vue/life-cycle.html#%EB%9D%BC%EC%9D%B4%ED%94%84-%EC%82%AC%EC%9D%B4%ED%81%B4-%EB%8B%A4%EC%9D%B4%EC%96%B4%EA%B7%B8%EB%9E%A8)
+- [뷰 인스턴스 라이프사이클 공식 문서](https://vuejs.org/v2/guide/instance.html#Lifecycle-Diagram)
+- [Chart.js](https://www.chartjs.org/docs/latest/)
+- [HighChart.js](https://www.highcharts.com/)
+- [AmChart.js](https://www.amcharts.com/)
+- [D3.js](https://d3js.org/)
+- [Three.js](https://threejs.org/)
 
 ## 개발 환경
 
