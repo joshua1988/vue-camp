@@ -36,7 +36,8 @@
     "nodemon": "^1.18.10",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "rimraf": "^2.6.3"
+    "rimraf": "^2.6.3",
+    "swagger-ui-express": "^4.1.4"
   },
   "dependencies": {
     "swagger-jsdoc": "^3.2.9"

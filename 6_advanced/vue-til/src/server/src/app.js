@@ -16,19 +16,22 @@ import docs from './utils/api-doc.js';
 // utils
 import { authenticateUser } from './utils/auth.js';
 function log() {
-  [...arguments].forEach(val => console.log(chalk.cyan(val)));
+	[...arguments].forEach(val => console.log(chalk.cyan(val)));
 }
 
 // mongo db
 const db = mongoose.connection;
-db.on("error", console.error.bind(console, "MongoDB connection error:"));
-mongoose.connect('mongodb://test:test1234@ds019038.mlab.com:19038/vue-shop', { useNewUrlParser: true });
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+mongoose.connect(
+	'mongodb+srv://admin:1234@cluster0-4ok2s.mongodb.net/test?retryWrites=true&w=majority',
+	{ useNewUrlParser: true },
+);
 mongoose.Promise = global.Promise;
 
 // server setup
 let port;
 async function configServer() {
-  port = 3000 || await detectPort(3000);
+	port = 3000 || (await detectPort(3000));
 }
 configServer();
 
