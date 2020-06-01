@@ -1,6 +1,6 @@
 <template>
   <div>
-    <router-view></router-view>
+    회원 가입
   </div>
 </template>
 
