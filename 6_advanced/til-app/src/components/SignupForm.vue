@@ -17,14 +17,14 @@
 </template>
 
 <script>
-import { signupUser } from "../api/index";
+import { signupUser } from '../api/index';
 
 export default {
   data() {
     return {
-      username: "",
-      password: "",
-      nickname: ""
+      username: '',
+      password: '',
+      nickname: ''
     };
   },
   methods: {
@@ -39,7 +39,7 @@ export default {
           console.log(response);
         })
         .catch(error => {
-          console.log("A", error);
+          console.log('A', error);
         });
     }
   }
