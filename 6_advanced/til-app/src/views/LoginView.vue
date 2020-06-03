@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import { loginUser } from '../api/index';
+import { loginUser, fetchPosts } from '../api/index';
 
 export default {
   data() {
@@ -32,9 +32,18 @@ export default {
       // })
       //   .then(response => console.log(response))
       //   .catch(error => console.log(error));
-
-      const response = await loginUser();
-      console.log(response);
+      try {
+        const { data } = await loginUser({
+          username: this.username,
+          password: this.password
+        });
+        console.log(data.token);
+        this.$store.commit('setToken', data.token);
+        const result = await fetchPosts();
+        console.log(result);
+      } catch (error) {
+        console.log(error);
+      }
     }
   }
 };
