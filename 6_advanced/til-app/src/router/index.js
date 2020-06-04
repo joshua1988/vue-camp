@@ -18,6 +18,10 @@ const router = new VueRouter({
     {
       path: '/login',
       component: LoginView
+    },
+    {
+      path: '/home',
+      component: HomeView
     }
   ]
 });

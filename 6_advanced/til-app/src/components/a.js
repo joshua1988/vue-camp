@@ -1,3 +1,5 @@
+import {} from '';
+
 function a() {
   return '10';
 }
