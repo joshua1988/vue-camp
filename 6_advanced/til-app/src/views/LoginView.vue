@@ -10,6 +10,7 @@
         <input id="password" type="text" v-model="password" />
       </div>
       <button type="submit">로그인</button>
+      <!-- <router-link to="/home">홈 화면</router-link> -->
     </form>
   </div>
 </template>
@@ -37,10 +38,8 @@ export default {
           username: this.username,
           password: this.password
         });
-        console.log(data.token);
         this.$store.commit('setToken', data.token);
-        const result = await fetchPosts();
-        console.log(result);
+        this.$router.push('/home');
       } catch (error) {
         console.log(error);
       }
