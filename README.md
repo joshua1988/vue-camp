@@ -144,6 +144,22 @@
 - [Webpack Resolve option](https://webpack.js.org/configuration/resolve/)
 - [VSCode jsconfig](https://code.visualstudio.com/docs/languages/jsconfig)
 
+## 12회차 수업 자료 안내
+
+- [구글 코드 리뷰 가이드(번역본)](https://soojin.ro/review/)
+- [구글 코드 리뷰 가이드(원본)](https://google.github.io/eng-practices/review/)
+- [웹팩 다이나믹 임포트 문서](https://webpack.js.org/guides/code-splitting/#dynamic-imports)
+- [브라우저 저장소 관련 학습 문서]()
+- [Vue Composition API](https://composition-api.vuejs.org/)
+- [Typescript Doc](https://www.typescriptlang.org/index.html)
+- [Jest Doc](https://jestjs.io/)
+- [Cypress](https://www.cypress.io/)
+- [Vue Developers](https://vuejsdevelopers.com/)
+- [PWA Doc](https://developers.google.com/web/fundamentals)
+- [History API - MDN](https://developer.mozilla.org/ko/docs/Web/API/History)
+- [SSR - Nuxt](https://nuxtjs.org/guide/routing)
+- [Vue Test Utils](https://vue-test-utils.vuejs.org/)
+
 ## 개발 환경
 
 - [Chrome](https://www.google.com/intl/ko/chrome/)

@@ -22,7 +22,8 @@ export default {
     };
   },
   async beforeMount() {
-    const response = await fetchPosts().catch();
+    const response = await fetchPosts();
+    console.log(response);
     this.posts = response.data.posts;
   }
 };

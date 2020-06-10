@@ -63,8 +63,12 @@ function fetchPosts() {
   return authInstance.get('posts');
 }
 
+function createPost(postData) {
+  return authInstance.post('posts', postData);
+}
+
 // function createPost() {
 //   return instance.post('posts');
 // }
 
-export { signupUser, loginUser, fetchPosts };
+export { signupUser, loginUser, fetchPosts, createPost };

@@ -20,6 +20,9 @@
 import { signupUser } from '../api/index';
 
 export default {
+  components: {
+    SignupButton: createHOC(SignupButton)
+  },
   data() {
     return {
       username: '',
@@ -42,7 +45,9 @@ export default {
           console.log('A', error);
         });
     }
-  }
+  },
+  setup() {},
+  mixins: []
 };
 </script>
 

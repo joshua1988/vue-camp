@@ -39,6 +39,8 @@ export default {
           password: this.password
         });
         this.$store.commit('setToken', data.token);
+        // saveToken();
+        localStorage.setItem('til-token', data.token);
         this.$router.push('/home');
       } catch (error) {
         console.log(error);

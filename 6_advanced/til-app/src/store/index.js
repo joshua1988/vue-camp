@@ -7,6 +7,7 @@ export default new Vuex.Store({
   // strict: true,
   strict: process.env.NODE_ENV === 'development' ? true : false,
   state: {
+    // token: getToken() || ''
     token: ''
   },
   mutations: {
