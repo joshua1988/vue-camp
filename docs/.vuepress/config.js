@@ -195,11 +195,10 @@ module.exports = {
 				text: '💬 프런트엔드 개발',
 				link: '/front-dev',
 			},
-			// temp
-			// {
-			//   text: '💻 Vue 3',
-			//   link: '/vue-3',
-			// },
+			{
+			  text: '💻 Vue 3',
+			  link: '/vue3',
+			},
 			{
 				text: '📹 온라인 강의',
 				link:

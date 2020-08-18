@@ -2,13 +2,16 @@
 title: Introduction
 ---
 
-# 패스트캠퍼스 Vue.js 수업 자료
+# 캡틴판교의 Cracking Vue.js
 
-이 사이트는 패스트캠퍼스의 [Vue로 구현하는 PWA 캠프](https://www.fastcampus.co.kr/dev_camp_wap/)와 [Vue.js 정복 캠프](https://www.fastcampus.co.kr/dev_camp_vue/) **오프라인 수업** 자료입니다.
+이 사이트는 Vue.js로 웹 서비스를 개발할 때 필요한 지식을 모아놓은 사이트입니다.
+[기본적인 자바스크립트 개념](/js/object.html)부터 [Vue.js 기본](vue/instance.html), [실무 지식](reuse/slots.html)까지 모두 정리해 놓았습니다.
 
-저와 함께 자바스크립트 기초부터 Vue.js 실무 응용까지 함께 학습해보실까요? 😄
+Vue.js로 재밌게 개발하시길 바랍니다 😄
 
-이 사이트의 내용은 아래와 같습니다.
+::: tip
+이 사이트는 인프런의 [Vue.js 온라인 강의](https://www.inflearn.com/course/Age-of-Vuejs) 교안으로도 활용됩니다 😄
+:::
 
 ### 📖 입문
 
@@ -35,7 +38,3 @@ title: Introduction
 - [Typescript](/ts/intro.html)
 - [Nuxt](/nuxt/intro.html)
 - [VuePress](/vuepress/learning-note.html)
-
-::: tip
-⚠️ 본 사이트는 수강생들에게만 제공됩니다.
-:::
