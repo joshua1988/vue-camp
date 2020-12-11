@@ -176,6 +176,11 @@ module.exports = {
 				children: ['/deploy/intro', '/deploy/env-setup', '/deploy/cli3-rules'],
 			},
 			{
+				title: 'Webpack',
+				collapsable: false,
+				children: ['/webpack/project-setup'],
+			},
+			{
 				title: 'ESLint & Prettier',
 				collapsable: false,
 				children: ['/format/official'],
