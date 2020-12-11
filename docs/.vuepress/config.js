@@ -195,19 +195,19 @@ module.exports = {
 				text: '💬 프런트엔드 개발',
 				link: '/front-dev',
 			},
-			{
-			  text: '💻 Vue 3',
-			  link: '/vue3',
-			},
+			// {
+			//   text: '💻 Vue 3',
+			//   link: '/vue3',
+			// },
 			{
 				text: '📹 온라인 강의',
 				link:
-					'https://www.inflearn.com/instructors/54224/courses/?utm_source=vuepress&utm_medium=githubio&utm_campaign=captianpangyo&utm_term=banner',
+					'https://www.inflearn.com/course/Age-of-Vuejs?inst=72986832&utm_source=blog&utm_medium=githubio&utm_campaign=captianpangyo&utm_term=banner',
 			},
-			{
-				text: '📆 오프라인 강의',
-				link: 'https://www.fastcampus.co.kr/dev_camp_vue/',
-			},
+			// {
+			// 	text: '📆 오프라인 강의',
+			// 	link: 'https://www.fastcampus.co.kr/dev_camp_vue/',
+			// },
 			{
 				text: '📝 더 많은 글 보기',
 				link: 'https://joshua1988.github.io/',
