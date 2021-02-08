@@ -158,7 +158,7 @@ module.exports = {
 			{
 				title: 'Typescript',
 				collapsable: false,
-				children: ['/ts/intro', '/ts/with-vue', '/ts/pdecorator'],
+				children: ['/ts/intro', '/ts/with-vue', '/ts/pdecorator', '/ts/vuex'],
 			},
 			{
 				title: 'Nuxt',
@@ -209,10 +209,10 @@ module.exports = {
 				link:
 					'https://www.inflearn.com/course/Age-of-Vuejs?inst=72986832&utm_source=blog&utm_medium=githubio&utm_campaign=captianpangyo&utm_term=banner',
 			},
-			// {
-			// 	text: '📆 오프라인 강의',
-			// 	link: 'https://www.fastcampus.co.kr/dev_camp_vue/',
-			// },
+			{
+				text: '📆 직접 물어보기',
+				link: 'https://www.youtube.com/watch?v=fL39Yg2H0ig',
+			},
 			{
 				text: '📝 더 많은 글 보기',
 				link: 'https://joshua1988.github.io/',
