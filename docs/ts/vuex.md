@@ -148,8 +148,75 @@ declare module "vue/types/options" {
 
 ![store-infer](./images/store-infer.gif)
 
+## 부록 - actions 정의
 
+`actions` 함수도 아래와 같이 정의할 수 있습니다.
 
+```ts
+// store/actions.ts
+import { ActionContext } from "vuex";
+import { Mutations } from "./mutations";
+import { RootState } from "./state";
+
+export enum ActionTypes {
+  FETCH_NEWS = "FETCH_NEWS"
+}
+
+interface News {
+  title: string;
+  id: number;
+}
+
+type MyActionContext = {
+  commit<K extends keyof Mutations>(
+    key: K,
+    payload: Parameters<Mutations[K]>[1]
+  ): ReturnType<Mutations[K]>;
+} & Omit<ActionContext<RootState, RootState>, "commit">;
+
+export const actions = {
+  async [ActionTypes.FETCH_NEWS](context: MyActionContext, payload?: number) {
+    const res = await fetch("https://jsonplaceholder.typicode.com/users/1");
+    const user: News[] = await res.json();
+    return user;
+  }
+};
+
+export type Actions = typeof actions;
+```
+
+스토어 커스텀 타입 파일에 아래 내용을 추가합니다.
+
+```ts{1,2,14-20,24,27}
+// store/types.ts
+import { CommitOptions, DispatchOptions, Store } from "vuex";
+import { Actions } from "./actions";
+import { Mutations } from "./mutations";
+import { RootState } from "./state";
+
+type MyMutations = {
+  commit<K extends keyof Mutations, P extends Parameters<Mutations[K]>[1]>(
+    key: K,
+    payload?: P,
+    options?: CommitOptions
+  ): ReturnType<Mutations[K]>;
+};
+
+type MyActions = {
+  dispatch<K extends keyof Actions>(
+    key: K,
+    payload?: Parameters<Actions[K]>[1],
+    options?: DispatchOptions
+  ): ReturnType<Actions[K]>;
+};
+
+export type MyStore = Omit<
+  Store<RootState>,
+  "commit" | "dispatch"
+> &
+  MyMutations &
+  MyActions;
+```
 
 <!-- ```html
 <script lang="ts">
