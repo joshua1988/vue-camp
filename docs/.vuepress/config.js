@@ -158,7 +158,7 @@ module.exports = {
 			{
 				title: 'Typescript',
 				collapsable: false,
-				children: ['/ts/intro', '/ts/with-vue', '/ts/pdecorator', '/ts/vuex'],
+				children: ['/ts/intro', '/ts/with-vue', '/ts/pdecorator', '/ts/vuex', '/ts/refs'],
 			},
 			{
 				title: 'Nuxt',
