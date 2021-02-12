@@ -148,7 +148,11 @@ declare module "vue/types/options" {
 
 ![store-infer](./images/store-infer.gif)
 
-## 부록 - actions 정의
+:::tip
+Vue 2에서는 node_modules 밑의 타입 선언 파일을 지워줘야 하지만, Vue 3에서는 내부 라이브러리를 건들지 않고도 확장할 수 있게 다음과 같은 인터페이스가 제공됩니다 :) [Vuex 4 릴리즈 노트](https://github.com/vuejs/vuex/releases/tag/v4.0.0-beta.1)
+:::
+
+## actions 정의
 
 `actions` 함수도 아래와 같이 정의할 수 있습니다.
 
@@ -233,3 +237,60 @@ export default Vue.extend({
 </script>
 ```
  -->
+
+## getters 정의
+
+`getters` 속성 함수는 다음과 같이 정의합니다.
+
+```ts
+// store/getters.ts
+import { RootState } from "./state";
+
+export const getters = {
+  getToken(state: RootState) {
+    return state.token + "!";
+  }
+};
+
+export type Getters = typeof getters;
+```
+
+스토어 커스텀 파일에 아래와 같이 추가합니다.
+
+```ts{3,23-27,31,35}
+import { Action, CommitOptions, DispatchOptions, Store } from "vuex";
+import { Actions } from "./actions";
+import { Getters } from "./getters";
+import { Mutations } from "./mutations";
+import { RootState } from "./state";
+
+type MyMutations = {
+  commit<K extends keyof Mutations, P extends Parameters<Mutations[K]>[1]>(
+    key: K,
+    payload?: P,
+    options?: CommitOptions
+  ): ReturnType<Mutations[K]>;
+};
+
+type MyActions = {
+  dispatch<K extends keyof Actions>(
+    key: K,
+    payload?: Parameters<Actions[K]>[1],
+    options?: DispatchOptions
+  ): ReturnType<Actions[K]>;
+};
+
+type MyGetters = {
+  getters: {
+    [K in keyof Getters]: ReturnType<Getters[K]>;
+  };
+};
+
+export type MyStore = Omit<
+  Store<RootState>,
+  "getters" | "commit" | "dispatch"
+> &
+  MyMutations &
+  MyActions &
+  MyGetters;
+```
