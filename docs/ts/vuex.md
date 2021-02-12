@@ -137,7 +137,7 @@ declare module "vue/types/options" {
   "src/**/*.vue",
   "tests/**/*.ts",
   "tests/**/*.tsx",
-  "src/types/project.d.ts",
+  "src/types/**.d.ts",
 ],
 "exclude": [
   // ...
@@ -187,7 +187,7 @@ export type Actions = typeof actions;
 
 스토어 커스텀 타입 파일에 아래 내용을 추가합니다.
 
-```ts{1,2,14-20,24,27}
+```ts{1,2,15-21,24,27}
 // store/types.ts
 import { CommitOptions, DispatchOptions, Store } from "vuex";
 import { Actions } from "./actions";
