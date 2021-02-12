@@ -107,12 +107,12 @@ export type MyStore = Omit<
 
 ![store-inference-error](./images/store-infer-error.png)
 
-뷰 + 타입스크립트 프로젝트 루트 레벨에 `src/project.d.ts` 파일을 생성하고 아래 내용을 작성합니다.
+뷰 + 타입스크립트 프로젝트 루트 레벨에 `src/types/project.d.ts` 파일을 생성하고 아래 내용을 작성합니다.
 
 ```ts
-// src/project.d.ts
+// src/types/project.d.ts
 import Vue from "vue";
-import { MyStore } from "./store/types";
+import { MyStore } from "../store/types";
 
 declare module "vue/types/vue" {
   interface Vue {
@@ -127,7 +127,7 @@ declare module "vue/types/options" {
 }
 ```
 
-마지막으로 프로젝트의 타입스크립트 설정 파일에 아래 옵션을 추가합니다.
+다음으로 프로젝트의 타입스크립트 설정 파일에 아래 옵션을 추가합니다.
 
 ```js{8}
 // ...
@@ -144,7 +144,7 @@ declare module "vue/types/options" {
 ]
 ```
 
-이제 사용중인 개발 툴이나 코드 편집기를 종료하고 다시 실행하여 추론이 잘 되는지 확인합니다.
+그리고 `node_modules/vuex/types/vue.d.ts` 파일을 삭제합니다. 이제 사용중인 개발 툴이나 코드 편집기를 종료하고 다시 실행하여 추론이 잘 되는지 확인합니다.
 
 ![store-infer](./images/store-infer.gif)
 
