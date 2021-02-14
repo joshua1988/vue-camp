@@ -189,7 +189,7 @@ export const actions = {
 export type Actions = typeof actions;
 ```
 
-스토어 커스텀 타입 파일에 아래 내용을 추가합니다.
+스토어 커스텀 타입이 정의된 파일에 아래 내용을 추가합니다.
 
 ```ts{1,2,15-21,24,27}
 // store/types.ts
