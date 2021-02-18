@@ -1,5 +1,5 @@
 ---
-title: TypeScript with Vue
+title: How To Start Typescript
 ---
 
 # 뷰에 타입스크립트 적용하기
@@ -103,3 +103,11 @@ data 속성인 `message`는 클래스의 멤버 변수 형태로 작성하고, m
 :::tip
 데코레이터는 클래스 정의와 내용에 대해 메타 정보를 제공하기 위한 문법입니다. 어노테이션(@)을 사용하며 `@표현식` 형태로 작성합니다. 더 자세한 내용은 [타입스크립트 공식 문서](https://www.typescriptlang.org/docs/handbook/decorators.html)를 참고하세요.
 :::
+
+## 온라인 강의 안내
+
+Vue.js와 타입스크립트를 재밌게 배워볼 수 있는 온라인 강의를 소개합니다 :)
+
+<a href="https://www.inflearn.com/course/vue-ts" target="_blank">
+  <img src="./images/vue-ts.png" alt="인프런 Vue.js + TypeScript 완벽 가이드 온라인 강의">
+</a>
