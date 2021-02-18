@@ -108,6 +108,6 @@ data 속성인 `message`는 클래스의 멤버 변수 형태로 작성하고, m
 
 Vue.js와 타입스크립트를 재밌게 배워볼 수 있는 온라인 강의를 소개합니다 :)
 
-<a href="https://www.inflearn.com/course/vue-ts" target="_blank">
+<a href="https://www.inflearn.com/course/vue-ts?inst=0ced8395" target="_blank">
   <img src="./images/vue-ts.png" alt="인프런 Vue.js + TypeScript 완벽 가이드 온라인 강의">
 </a>
