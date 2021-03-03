@@ -20,7 +20,26 @@ sidebar: auto
 
 - ss
 
-##
+## composition API의 장점
+
+- 
+- `ref`, `reactive` API로 생성한 reactive 데이터들은 템플릿에만 꼭 쓰지 않아도 되는 장점이 생긴다. 컴포넌트와 별개로 사용할 수 있는 반응성 데이터를 생성할 수 있음.
+- 컴포넌트 옵션 속성이 존재하기 전에 `setup` API가 실행되므로 `this`로 컴포넌트를 접근할 수 없다. 대신 `context` 사용. (마치 기존의 functional component를 변형해서 사용하는 느낌)
+- `setup` API의 두 번째 인자에 제공되는 옵션들
+
+```js
+setup(props, context) {
+  context.attrs
+  context.slots
+  context.parent
+  context.root
+  context.emit
+}
+```
+
+## composition API에 대한 생각
+
+- API 함수로 불러온 데이터를 컴포넌트 `data`에 연결하기 전에 가공할 일이 많은데 이를 컴포지션 API 함수 레이어에 넣으면 좋을 것 같다는 생각이 듦. 이를 서비스 레이어라고 치면 기존에는 스토어라든가 믹스인에 분산시키거나 앵귤러처럼 서비스 파일을 만드는 경향이 있는 듯.
 
 ---
 
@@ -100,13 +119,15 @@ console.log(state.double)
 // reactive
 const event = reactive({
   count: 3,
-  doubled: computed(() => state.count * 2)
+  doubled: computed(() => event.count * 2)
 })
 
 // ref
 const count = ref(3)
 const doubled = computed(() => count.value * 2)
 ```
+
+- 두개 다 어차피 `event.count`로 접근하나 `count.value`로 접근하나 속성으로 한단계 더 들어가서 접근해야 하는건 같다.
 
 ## reactive가 더 선언하기 편한 것 같은데요?
 
@@ -208,6 +229,41 @@ function setup() {
 }
 ```
 
+## 라이프 사이클 훅
+
+`setup` API에서 기존 라이프 사이클 개념과 훅은 대부분 유지가 되었고 아래 4가지의 변화만 있다.
+
+1. `beforeCreate`, `created`는 `setup` 함수 안에서의 로직 실행으로 동일한 효과를 발휘하기 때문에 제거됨
+2. `beforeDestroy`, `destroyed`는 더 명시적인 이름으로 변경 -> `beforeUnmount`, `unmounted`
+3. `onRenderTracked` : 화면을 다시 그리기 위한 리액티브 디펜던시(반응성이 주입된 데이터 변화 정도로 이해)가 처음으로 감지되었을 때. 디버깅 용도 
+4. `onRenderTriggered` : 첫 번째 렌더링이 일어났을 때. 어떤 이유로 화면이 다시 그려진건지 디버깅하기 위한 용도.
+
+문법은 아래와 같이 변경되었다.
+
+```js
+// 기존
+new Vue({
+  created() {
+    
+  },
+  beforeMount() {
+
+  }
+})
+
+// setup
+setup() {
+  onBeforeMount(() => {
+    console.log("Before Mount!");
+  });
+  onMounted(() => {
+    console.log("Mounted!");
+  });
+}
+```
+
+**Vue 3 컴포지션 API 비디오 8 ~ 11까지 보기**
+
 ## 모듈화 관련된 내용은 아래 링크 참고
 
 - [modularizing](https://www.vuemastery.com/courses/vue-3-essentials/modularizing)
@@ -231,3 +287,7 @@ function setup() {
 - 새 버전에서는 다양한 문법이 존재하므로 아래 내용을 참고
 
 [watch 문법 2분 20초대](https://www.vuemastery.com/courses/vue-3-essentials/watch)
+
+## 참고 자료 
+
+- [괜찮은 setup 예제 - Auth0](https://auth0.com/blog/vue-composition-api-tutorial/)
