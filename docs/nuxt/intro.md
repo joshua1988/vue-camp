@@ -14,12 +14,13 @@ Nuxt는 Vue.js로 빠르게 웹을 제작할 수 있게 도와주는 프레임�
 
 Nuxt의 특징을 요약해보면 크게 아래와 같이 구분됩니다.
 
-- pages 폴더 기반의 자동 라우팅 설정
+- [pages 폴더 기반의 자동 라우팅 설정](./automatic-routing.md)
 - 코드 스플리팅
 - 서버 사이드 렌더링
 - 비동기 데이터 요청 속성
 - ES6/ES6+ 변환
 - 웹팩을 비롯한 기타 설정
+- 규격화된 폴더 구조(layout, store, middleware, plugins 등)
 
 ## Nuxt 시작하기
 
