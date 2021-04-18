@@ -12,6 +12,7 @@ title: Nuxt Folder Structure
 
 ![nuxt-folder-structure](./images/nuxt-folder-structure.png)
 
+- `.nuxt` : 넉스트 빌드 결과물 폴더
 - `assets` : 스타일 시트, 이미지, 폰트 등 웹 리소스 폴더입니다.
 - `components` : 뷰 컴포넌트 폴더입니다.
 - `layouts` : 레이아웃 컴포넌트 폴더입니다. 레이아웃 패턴에 대해서는 [레이아웃 챕터](./layouts.md)에서 알아보겠습니다.
