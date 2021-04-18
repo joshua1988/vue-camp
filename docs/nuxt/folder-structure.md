@@ -10,7 +10,7 @@ title: Nuxt Folder Structure
 
 넉스트의 기본 폴더 구조입니다.
 
-![nuxt-folder-structure](./images/nuxt-folder-structure.png)
+![nuxt-folder-structure](./images/folder.png)
 
 - `.nuxt` : 넉스트 빌드 결과물 폴더
 - `assets` : 스타일 시트, 이미지, 폰트 등 웹 리소스 폴더입니다.
