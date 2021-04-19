@@ -1,5 +1,5 @@
 ---
-title: Layout Patterns
+title: Layouts
 ---
 
 # Nuxt의 레이아웃 컴포넌트
