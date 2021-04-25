@@ -102,6 +102,24 @@ new VueRouter({
 })
 ``` -->
 
+## asyncData의 에러 핸들링
+
+aysncData 속성에서 API 호출 에러가 발생했을 때는 아래와 같이 에러 페이지로 이동시킬 수 있습니다.
+
+```js
+export default {
+  async asyncData({ params, $http, error }) {
+    try {
+      const response = await axios.get(`/users/${params.id}`);
+      const user = response.data;
+      return { user }
+    } catch(e) {
+      error({ statusCode: 503, message: 'API 요청이 실패했습니다 다시 시도해 주세요' })
+    }
+  }
+}
+```
+
 ## fetch
 
 `fetch`는 페이지 컴포넌트 뿐만 아니라 일반 뷰 컴포넌트에서도 사용할 수 있는 데이터 호출 속성입니다. 다음 2가지 상황에서 호출됩니다.
