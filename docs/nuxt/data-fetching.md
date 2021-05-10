@@ -85,7 +85,7 @@ export default {
 :::
 
 <!-- TODO: 이후 강의 개시 시점에 아래 코드 노출 -->
-<!-- ```js
+```js
 // router/index.js
 new VueRouter({
   routes: [
@@ -100,7 +100,7 @@ new VueRouter({
     }
   ]
 })
-``` -->
+```
 
 ## asyncData의 에러 핸들링
 
