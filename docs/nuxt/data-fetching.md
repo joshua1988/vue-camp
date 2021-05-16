@@ -102,6 +102,39 @@ new VueRouter({
 [Vue.js 완벽 가이드 - 라우터 네비게이션 데이터 호출 방법](https://www.inflearn.com/course/vue-js/lecture/17055)
 :::
 
+## asyncData의 파라미터
+
+asyncData 속성의 파라미터는 `context` 속성입니다. 컨텍스트 속성은 넉스트 프레임워크 전반에 걸쳐 공용으로 사용되는 속성으로써 플러그인, 미들웨어 등의 속성에서도 접근할 수 있습니다. 컨텍스트에는 스토어, 라우터 관련 정보뿐만 아니라 서버 사이드에서 요청, 응답 관련된 속성도 접근할 수 있습니다.
+
+```js
+function (context) { // asyncData, plugins, middleware, ...
+  // Always available
+  const {
+    app,
+    store,
+    route,
+    params,
+    query,
+    env,
+    isDev,
+    isHMR,
+    redirect,
+    error,
+   $config
+  } = context
+
+  // Only available on the Server-side
+  if (process.server) {
+    const { req, res, beforeNuxtRender } = context
+  }
+
+  // Only available on the Client-side
+  if (process.client) {
+    const { from, nuxtState } = context
+  }
+}
+```
+
 ## asyncData의 에러 핸들링
 
 aysncData 속성에서 API 호출 에러가 발생했을 때는 아래와 같이 에러 페이지로 이동시킬 수 있습니다.
