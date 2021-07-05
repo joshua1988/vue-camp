@@ -125,7 +125,7 @@ new Vuex.Store({
 
 ## nuxtServerInit
 
-`nuxtServerInit` 속성은 넉스트의 `universal` 모드에서 사용할 수 있는 액션 속성입니다.
+`nuxtServerInit` 속성은 넉스트의 `universal` 모드에서 사용할 수 있는 액션 함수입니다.
 
 ```js
 // store/index.js
@@ -138,9 +138,9 @@ actions: {
 }
 ```
 
-위 속성은 서버 사이드 렌더링 시점에 실행되기 때문에 스토어에 미리 데이터를 설정해 놓거나 서버에서만 접근할 수 있는 데이터를 다룰 때 유용합니다. 만약, 서버에서 세션을 관리하는 구조이고 세션에 연결된 사용자 정보를 스토어에 저장해야 할 때 위와 같은 방식으로 사용자 정보를 스토어에 미리 담아놓을 수 있습니다.
+위 함수는 서버 사이드 렌더링 시점에 실행되기 때문에 스토어에 미리 데이터를 설정해 놓거나 서버에서만 접근할 수 있는 데이터를 다룰 때 유용합니다. 만약, 서버에서 세션을 관리하는 구조이고 세션에 연결된 사용자 정보를 스토어에 저장해야 할 때 위와 같은 방식으로 사용자 정보를 스토어에 미리 담아놓을 수 있습니다.
 
-`nuxtServerInit` 액션 속성의 첫 번째 파라미터는 [스토어의 컨텍스트](https://vuex.vuejs.org/guide/actions.html#actions) 정보를 접근할 수 있는 객체입니다. 두 번째 파라미터는 [넉스트의 컨텍스트](https://ko.nuxtjs.org/docs/2.x/concepts/context-helpers/) 정보가 담긴 객체입니다.
+`nuxtServerInit` 액션 함수의 첫 번째 파라미터는 [스토어의 컨텍스트](https://vuex.vuejs.org/guide/actions.html#actions) 정보를 접근할 수 있는 객체입니다. 두 번째 파라미터는 [넉스트의 컨텍스트](https://ko.nuxtjs.org/docs/2.x/concepts/context-helpers/) 정보가 담긴 객체입니다.
 
 ```js{3,4,6}
 // store/index.js
