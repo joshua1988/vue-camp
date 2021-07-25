@@ -1,6 +1,6 @@
 module.exports = {
 	title: 'Cracking Vue.js',
-	description: 'Javascript, ES6, Advanced Vue.js',
+	description: 'JavaScript, ES6, Advanced Vue.js',
 	base: '/vue-camp/',
 	head: [
 		['link', { rel: 'icon', href: '/logo.png' }],
@@ -23,7 +23,7 @@ module.exports = {
 		sidebar: [
 			'/textbook',
 			{
-				title: 'Javascript Fundamentals',
+				title: 'JavaScript Fundamentals',
 				collapsable: true,
 				children: [
 					'/js/variable',

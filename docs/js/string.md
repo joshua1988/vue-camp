@@ -34,4 +34,4 @@ console.log(b.length); // 2
 
 여기서 `length` 라는 예약어는 자바스크립트에서 변수의 타입에 따라 제공하는 기능입니다. length는 문자열, 배열의 길이를 숫자 형태로 확인할 수 있습니다. 따라서 `b`는 문자열이고 `a`는 숫자임을 추측할 수가 있습니다.
 
-위와 같이 타입에 따라 기본적으로 제공되는 예약어 및 기능들을 자바스크립트 내장 함수(Javascript Built-in API / Javascript Native API)라고 합니다. 내장 함수에 대해서는 [prototype](/js/prototype.html)에서 자세히 설명하겠습니다.
+위와 같이 타입에 따라 기본적으로 제공되는 예약어 및 기능들을 자바스크립트 내장 함수(JavaScript Built-in API / JavaScript Native API)라고 합니다. 내장 함수에 대해서는 [prototype](/js/prototype.html)에서 자세히 설명하겠습니다.

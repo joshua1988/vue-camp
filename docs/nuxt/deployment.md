@@ -48,5 +48,5 @@ SSG 모드는 사용자의 페이지 URL 요청이 들어올 때마다 서버에
 - [Github](https://nuxtjs.org/docs/2.x/deployment/github-pages)
 
 :::tip
-JAMStack이란 Javascript & API & Markup을 의미하며 API 서버 없이 사이트를 제작하는 방식을 의미합니다.
+JAMStack이란 JavaScript & API & Markup을 의미하며 API 서버 없이 사이트를 제작하는 방식을 의미합니다.
 :::
