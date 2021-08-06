@@ -26,6 +26,21 @@
         "tool",
         "tutorial"
       ]
+    },
+    {
+      "login": "jm-chong",
+      "name": "jm-chong",
+      "avatar_url": "https://avatars.githubusercontent.com/u/33050650?v=4",
+      "profile": "https://github.com/jm-chong",
+      "contributions": [
+        "business",
+        "doc",
+        "maintenance",
+        "mentoring",
+        "projectManagement",
+        "review",
+        "tool"
+      ]
     }
   ],
   "contributorsPerLine": 7
