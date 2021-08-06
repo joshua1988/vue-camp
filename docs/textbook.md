@@ -9,10 +9,6 @@ title: Introduction
 
 Vue.js로 재밌게 개발하시길 바랍니다 😄
 
-::: tip
-이 사이트는 인프런의 [Vue.js 온라인 강의](https://www.inflearn.com/course/Age-of-Vuejs) 교안으로도 활용됩니다 😄
-:::
-
 ### 📖 입문
 
 - [자바스크립트 기본](/js/object.html)
