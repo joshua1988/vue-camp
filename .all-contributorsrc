@@ -41,6 +41,20 @@
         "review",
         "tool"
       ]
+    },
+    {
+      "login": "amorfati0310",
+      "name": "Chany",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25189066?v=4",
+      "profile": "https://www.cakeresume.com/088bc7",
+      "contributions": [
+        "doc",
+        "ideas",
+        "maintenance",
+        "mentoring",
+        "projectManagement",
+        "tool"
+      ]
     }
   ],
   "contributorsPerLine": 7
