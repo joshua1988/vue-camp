@@ -31,4 +31,4 @@ This project follows the [all-contributors](https://github.com/all-contributors/
 
 [MIT](https://opensource.org/licenses/MIT)
 
-Copyright © 2019~present Captain Pangyo
+Copyright © 2018~present Captain Pangyo

@@ -1,6 +1,6 @@
 module.exports = {
 	title: 'Cracking Vue.js',
-	description: 'JavaScript, ES6, Advanced Vue.js',
+	description: 'JavaScript, Vue.js, Nuxt.js',
 	base: '/vue-camp/',
 	head: [
 		['link', { rel: 'icon', href: '/logo.png' }],
