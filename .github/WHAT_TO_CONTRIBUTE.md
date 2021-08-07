@@ -24,6 +24,7 @@ Cracking Vue.js 프로젝트에 기여할 수 있는 방법은 크게 다음 4�
 - Vue Testing(Unit & E2E)
 - Vue Composition(Vue 3)
 - Vue 3 with TypeScript
+- Vue.js with StoryBook
 - Vite
 - VuePress
 
