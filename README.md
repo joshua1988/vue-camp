@@ -5,6 +5,12 @@
 
 Vue.js 오픈소스 개발과 관련된 정보를 얻을 수 있는 사이트입니다.
 
+## 프로젝트 기여 방법
+
+- [무엇을 기여할 것인가?](./.github/WHAT_TO_CONTRIBUTE.md)
+- [문서 작성 방식 안내](./.github/DOC_CONTRIBUTION_GUIDE.md)
+- [PR & Commit 컨벤션](./.github/PR_COMMIT_CONVENTION.md)
+
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
