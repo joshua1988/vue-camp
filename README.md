@@ -3,7 +3,7 @@
 [![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
-Vue.js 오픈소스 개발과 관련된 정보를 얻을 수 있는 사이트입니다.
+Vue.js 오픈소스 개발과 관련된 정보를 얻을 수 있는 사이트입니다. [Cracking Vue.js](https://joshua1988.github.io/vue-camp/)
 
 ## 프로젝트 기여 방법
 
