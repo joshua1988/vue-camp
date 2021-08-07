@@ -196,18 +196,19 @@ module.exports = {
 				text: '📖 텍스트 북',
 				link: '/textbook',
 			},
-			{
-				text: '💬 프런트엔드 개발',
-				link: '/front-dev',
-			},
+			// TODO: Vue 3 관련 글 정리 후 게재
 			// {
 			//   text: '💻 Vue 3',
 			//   link: '/vue3',
 			// },
+			// {
+			// 	text: '💬 프런트엔드 개발',
+			// 	link: '/front-dev',
+			// },
 			{
-				text: '📝 더 많은 글 보기',
-				link: 'https://joshua1988.github.io/',
-			},
+        text: '💻  깃헙',
+        link: 'https://github.com/joshua1988/webpack-guide',
+      },
 		],
 	},
 	configureWebpack: {
