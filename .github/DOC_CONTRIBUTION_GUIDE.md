@@ -87,7 +87,7 @@ a = 20;
 
 tip, warning, danger, details 여러 레벨로 나뉘기 때문에 해당 내용은 아래 링크를 참고하세요.
 
-![VuePress Custom Container](https://vuepress.vuejs.org/guide/markdown.html#custom-containers)
+[VuePress Custom Container](https://vuepress.vuejs.org/guide/markdown.html#custom-containers)
 
 ## 참고 자료
 
