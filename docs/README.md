@@ -1,5 +1,5 @@
 ---
-title: Vue.js 개발자를 위한 ES6 입문서
+title: Cracking Vue.js
 lang: en-US
 home: true
 heroImage: logo.png

@@ -201,10 +201,10 @@ module.exports = {
 			//   text: '💻 Vue 3',
 			//   link: '/vue3',
 			// },
-			// {
-			// 	text: '💬 프런트엔드 개발',
-			// 	link: '/front-dev',
-			// },
+			{
+				text: '💬 프런트엔드 개발',
+				link: '/front-dev',
+			},
 			{
         text: '💻  깃헙',
         link: 'https://github.com/joshua1988/webpack-guide',
