@@ -193,7 +193,7 @@ module.exports = {
 		],
 		nav: [
 			{
-				text: '📖 텍스트 북',
+				text: '📖 개발 가이드',
 				link: '/textbook',
 			},
 			// TODO: Vue 3 관련 글 정리 후 게재
