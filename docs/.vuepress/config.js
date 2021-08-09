@@ -163,7 +163,7 @@ module.exports = {
 			{
 				title: 'Nuxt',
 				collapsable: false,
-				children: ['/nuxt/intro', '/nuxt/ssr', '/nuxt/folder-structure', '/nuxt/automatic-routing', '/nuxt/layouts', '/nuxt/data-fetching', '/nuxt/store', '/nuxt/deployment'],
+				children: ['/nuxt/intro', '/nuxt/ssr', '/nuxt/universal-mode', '/nuxt/folder-structure', '/nuxt/automatic-routing', '/nuxt/layouts', '/nuxt/data-fetching', '/nuxt/store', '/nuxt/deployment'],
 			},
 			{
 				title: 'PWA',
