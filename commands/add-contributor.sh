@@ -1,1 +1,1 @@
-npm run add
+yarn add
