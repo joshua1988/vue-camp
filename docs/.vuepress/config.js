@@ -229,5 +229,6 @@ module.exports = {
 		'@vuepress/google-analytics': {
 			ga: 'UA-87965695-1',
 		},
+		'@vuepress/back-to-top': true
 	},
 };

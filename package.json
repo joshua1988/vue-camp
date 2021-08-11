@@ -24,6 +24,7 @@
   },
   "homepage": "https://github.com/joshua1988/vue-camp#readme",
   "devDependencies": {
+    "@vuepress/plugin-back-to-top": "^1.5.2",
     "@vuepress/plugin-google-analytics": "^1.1.0",
     "@vuepress/plugin-pwa": "^1.0.0-rc.1",
     "firebase": "^5.3.1",
