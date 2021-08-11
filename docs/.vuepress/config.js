@@ -207,7 +207,7 @@ module.exports = {
 			},
 			{
         text: '💻  깃헙',
-        link: 'https://github.com/joshua1988/webpack-guide',
+        link: 'https://github.com/joshua1988/vue-camp',
       },
 		],
 	},
