@@ -26,14 +26,14 @@
 자 이제 등록한 이슈에 대한 실제 코드를 작성합니다.
 코드라고 표현했지만 Cracking Vue.js 에서는 markdown 형식의 문서일 가능성이 높습니다.
 
-보통 Open Source Reponsitory는 자유롭게 clone 하여 내려받을수는 있지만, 브랜치를 push할 수 있는 권한은 제한되어 있는 경우가 많습니다. 이럴 경우 어떻게 브랜치를 생성하고 Push를 하게될까요? 
+보통 Open Source Repository는 자유롭게 clone 하여 내려받을수는 있지만, 브랜치를 push할 수 있는 권한은 제한되어 있는 경우가 많습니다. 이럴 경우 어떻게 브랜치를 생성하고 Push를 하게될까요? 
 
 ### Fork Repository
-바로 참여하고자 하는 Repository 를  Fork 하여 나의 github 계정으로 가져올 수 있습니다.
+바로 참여하고자 하는 Repository 를  Fork 하여 나의 Github 계정으로 가져올 수 있습니다.
 <img width="991" alt="스크린샷 2021-08-11 오후 10 57 58" src="https://user-images.githubusercontent.com/33050650/129042360-ba6c6f15-90b6-4144-9f78-483fdc82119d.png">
 
 Fork 버튼을 누르면.. `joshua1988/vue-camp` 를
-나의 repository 로 복사 할 수 있습니다.
+나의 Repository 로 복사 할 수 있습니다.
 <img width="978" alt="스크린샷 2021-08-11 오후 10 59 46" src="https://user-images.githubusercontent.com/33050650/129042763-d0f01162-1825-41d2-a967-ec60425eec0a.png">
 
 Fork가 완료되면 내 계정 하위에 똑같은 코드들이 복사되어 있는것을 보실 수 있습니다.
@@ -42,22 +42,22 @@ Fork가 완료되면 내 계정 하위에 똑같은 코드들이 복사되어 �
 이제 내 계정안의 Repository이기 때문에, 자유롭게 branch를 생성할 수 있습니다.
 git clone을 통해 repo를 local에 내려받고, 수정, 추가하고자 하는 부분을 작성합니다.
 
-### Fork 된 후에 원본 repository 최신화.
+### Fork 된 후에 원본 Repository 최신화.
 <img width="481" alt="스크린샷 2021-08-11 오후 11 09 14" src="https://user-images.githubusercontent.com/33050650/129044306-8446cec0-a3e7-43fd-a5f5-af9e2c1c2ecf.png">
 
 ```
 git remote -v show
 ```
-를 실행하면, fork된 repository이므로, origin 이외에 'upstream'이라는 또 하나의 remote path 가 보입니다.
-원본 repositiry의 내용을 받아오려면 
+를 실행하면, Fork된 Repository이므로, origin 이외에 'upstream'이라는 또 하나의 remote path 가 보입니다.
+원본 Repositiry의 내용을 받아오려면 
 ```
 git fetch upstream
 ```
-을 실행해 주면 됩니다.!
+을 실행해 주면 됩니다!
 
 ## Branch 생성 및 소스 수정
 자 이제 코드를 작성할 모든 준비는 끝났습니다.
-다른 작업과 마찬가지로 [PR & Commit 작성 가이드](./DOC_CONTRIBUTION_GUIDE.md)  를 참고하여
+다른 작업과 마찬가지로 [PR & Commit 작성 가이드](./DOC_CONTRIBUTION_GUIDE.md)를 참고하여
 새로운 Branch를 만들어 내용을 수정하고, commit 합니다.
 하나의 commit은 가능하면 commit메시지가 의미하는 하나의 내용을 담는것이 좋습니다. [(커밋의 원자성)](https://palindrom615.dev/git-know-how/#git_add_-p%EB%A1%9C_%EC%9B%90%EC%9E%90%EC%A0%81_%EC%BB%A4%EB%B0%8B%ED%95%98%EA%B8%B0)
 이는 Pull Request를 리뷰할때나 이후 History 를 파악할때 큰 도움이 됩니다.
