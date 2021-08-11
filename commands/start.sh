@@ -1,1 +1,1 @@
-npm run doc
+yarn doc
