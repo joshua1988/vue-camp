@@ -55,14 +55,14 @@ git fetch upstream
 ```
 을 실행해 주면 됩니다.!
 
-### Branch
+## Branch 생성 및 소스 수정
 자 이제 코드를 작성할 모든 준비는 끝났습니다.
 다른 작업과 마찬가지로 [PR & Commit 작성 가이드](./DOC_CONTRIBUTION_GUIDE.md)  를 참고하여
 새로운 Branch를 만들어 내용을 수정하고, commit 합니다.
 하나의 commit은 가능하면 commit메시지가 의미하는 하나의 내용을 담는것이 좋습니다. [(커밋의 원자성)](https://palindrom615.dev/git-know-how/#git_add_-p%EB%A1%9C_%EC%9B%90%EC%9E%90%EC%A0%81_%EC%BB%A4%EB%B0%8B%ED%95%98%EA%B8%B0)
 이는 Pull Request를 리뷰할때나 이후 History 를 파악할때 큰 도움이 됩니다.
 
-### Create Pull Request
+## Create Pull Request
 내용을 수정하고 commit까지 마치게 되면 code 를 remote 에 push합니다.
 이때 push하는 remote 대상은 'origin' 입니다. (fork 받은 내 계정의 repo)
 
@@ -75,6 +75,16 @@ remote에 push된 이후, 나의 repo에서 'New Pull Request'를 누르면
 <img width="1202" alt="스크린샷 2021-08-11 오후 11 26 59" src="https://user-images.githubusercontent.com/33050650/129047419-80002366-daf7-422f-b9c3-81ad64da97d7.png">
 
 아래와 같이 나의 Repo: branch --> vue-camp:master 로 경로가 설정됩니다.
-<img width="1040" alt="스크린샷 2021-08-11 오후 11 27 11" src="https://user-images.githubusercontent.com/33050650/129047872-1102d6ed-81c8-4b30-9556-ea5cfbe69bb0.png">
+<img width="1204" alt="스크린샷 2021-08-11 오후 11 39 09" src="https://user-images.githubusercontent.com/33050650/129049577-ff6c9f9f-a569-41ac-b03e-320add369653.png">
+
+또한 PR을 작성하였으나, Review준비가 덜 되었다면, 'Draft Pull requst' 로 임시로 올려두고 수정을 더 할 수 있습니다. 이후 리뷰준비가 완료되면 'Ready for review' 버튼을 눌러 상태를 변경할 수 있습니다.
+
+## Review & Merge & Done!
+Maintainer가 PR에 대한 리뷰와 수정이 필요한 부분에 대해 Feed-back 을 줄 수 도 있습니다.
+이 부분에 대한 추가 수정과 commit 을 진행하고 PR이 머지되면
+
+생성한 issue를 close 해주시면 됩니다.
+
+자 이제 Open Source Contributor가 되었습니다! 축하합니다.
 
 
