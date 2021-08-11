@@ -1,0 +1,16 @@
+name: Greetings
+
+on: [pull_request, issues]
+
+jobs:
+  greeting:
+    runs-on: ubuntu-latest
+    permissions:
+      issues: write
+      pull-requests: write
+    steps:
+    - uses: actions/first-interaction@v1
+      with:
+        repo-token: ${{ secrets.GITHUB_TOKEN }}
+        issue-message: '프로젝트에 기여해 주셔서 감사합니다. 앞으로도 많은 참여 부탁드려요 :smile: :tada:'
+        pr-message: '의미있는 첫 번째 PR 정말 감사합니다. 빠른 시간 안에 리뷰 후 피드백 드릴게요. 앞으로도 더 적극적인 컨트리뷰션 기대하겠습니다! :smile: :tada:'
