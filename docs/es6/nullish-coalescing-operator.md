@@ -1,10 +1,10 @@
 ---
-title: Nullish coalescing Operator
+title: Nullish coalescing operator
 ---
 
-# 널 병합 연산자(Nullish coalescing Operator)
+# 널 병합 연산자(Nullish coalescing operator)
 
-널 병합 연산자(Nullish coalescing Operator)는 연산자(`??`)의 왼쪽 피연산자가 null 또는 undefined일 때 오른쪽 피연산자를 반환하고, 그렇지 않으면 왼쪽 피연산자를 반환하는 논리 연산자입니다.
+널 병합 연산자(Nullish coalescing operator)는 연산자(`??`)의 왼쪽 피연산자가 null 또는 undefined일 때 오른쪽 피연산자를 반환하고, 그렇지 않으면 왼쪽 피연산자를 반환하는 논리 연산자입니다.
 
 ## 기존 문자열 할당 방식
 
@@ -41,7 +41,7 @@ printTitle(); // Cracking Vue.js
 
 널 병합 연산자(`??`)와 비슷한 논리 연산자 OR(`||`)가 있습니다. 논리 연산자 OR(`||`) 또한 왼쪽의 피연산자가 null 또는 undefined인 경우 오른쪽의 피연산자를 반환합니다.
 
-하지만 논리 연산자 OR(`||`)는 null과 undefined를 포함한 falsy 한 값인 `0`, `''`, `NaN`의 경우에도 왼쪽 피연산자를 반환합니다.
+하지만 논리 연산자 OR(`||`)는 null과 undefined를 포함한 falsy 한 값인 `0`, `''`, `NaN`의 경우에도 오른쪽 피연산자를 반환합니다.
 
 ```js
 function printTitle(text) {
