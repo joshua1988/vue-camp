@@ -50,7 +50,7 @@ git clone을 통해 repo를 local에 내려받고, 수정, 추가하고자 하�
 git remote -v show
 ```
 를 실행하면, Fork된 Repository이므로, origin 이외에 'upstream'이라는 또 하나의 remote path 가 보입니다.
-Fork된 이후에도 원본 Repository에는 많은 변경사항들이 발생핥텐데요, 업데이트를 위해서는
+Fork된 이후에도 원본 Repository에는 많은 변경사항들이 발생할텐데요, 업데이트를 위해서는
 ```
 git fetch upstream
 ```
@@ -91,5 +91,4 @@ Maintainer가 PR에 대한 리뷰와 수정이 필요한 부분에 대해 피드
 이 부분에 대한 추가 수정과 commit 을 진행하고 PR이 머지되면, 처음에 생성한 issue를 close 해주시면 됩니다.
 
 자 이제 Open Source Contributor가 되셨습니다! 축하합니다.
-
 
