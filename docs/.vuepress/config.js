@@ -52,6 +52,7 @@ module.exports = {
 					'/es6/destructuring',
 					'/es6/async-await',
 					'/es6/modules',
+					'/es6/default-parameter',
 				],
 			},
 			{
