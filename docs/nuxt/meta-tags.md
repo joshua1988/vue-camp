@@ -44,6 +44,19 @@ export default {
 <!-- ... -->
 ```
 
+:::tip
+페이지별로 동일한 타이틀을 설정하고 싶다면, `titleTemplate`을 활용해 보세요.
+```js{4}
+// nuxt.config.js
+export default {
+  head: {
+    titleTemplate: '%s | Cracking Vue.js',
+  },
+  meta: [...],
+}
+```
+:::
+
 이 설정은 모든 페이지에 동일하게 적용됩니다. 여기서 페이지별로 다른 head 태그를 설정하고 싶다면 어떻게 해야 할까요?
 
 ## 페이지별 head 태그 설정
