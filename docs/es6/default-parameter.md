@@ -4,14 +4,29 @@ title: Default parameter
 
 # 기본값 매개변수(Default parameter)
 
-기본값 매개변수는 기존 함수에서 값이 없거나 undefined인 매개변수를 전달할 때 기본값 초기화하는 방식을 개선한 문법입니다.
-## 기존 기본값 사용 방식
+기본값 매개변수는 함수에 값이 없거나 undefined인 매개변수를 전달할 때 기본값 대체할 때 사용합니다.
 
-ES6 이전에는 기본값을 함수 내에서 재정의해야 했습니다. <br />
-아래 예시 코드와 같이 `||`를 사용하여 매개변수로 오는 값이 falsy한 값이 올 경우 기본값을 할당하도록 사용하였습니다.
+## 구문
+
+> function functionName(param1 = defaultValue1, ..., paramN = defaultValueN) { ... }
+
+```js {1}
+function functionName(param1 = 1, param2 = {}, param3 = 'korean') {
+  console.log(param1, param2, param3);
+};
+
+functionName(); // 1, {}, 'korean'
+```
+
+## 설명
+
+ES6 이전에는 undefined 또는 falsy 한 값을 받으면 기본값으로 대체하는 방식으로 사용하였습니다. <br />
+아래 예시 코드를 예로 들면 `printPersonInfo` 호출 시 `height`에 할당된 값이 없거나 falsy한 값이 온다면 `height`를 `180`으로 설정하는 방식으로 사용하였습니다.
+
+### undefined, falsy 값으로 기본값 대체 방식
 
 ```js {2-4}
-printPersonInfo(height, weight, age) {
+function printPersonInfo(height, weight, age) {
   var height = height || 180;
   var weight = weight || 60;
   var age = age || 66;
@@ -20,19 +35,20 @@ printPersonInfo(height, weight, age) {
 };
 
 printPersonInfo(10, 200, 300); // 10, 200, 300
-printPersonInfo(undefined, undefined, undefined); // 180, 60, 66
+printPersonInfo(); // 180, 100, 66
 ```
 
-## 기본값 매개변수 사용 방식
+ES6의 기본값 매개변수를 사용하면 더이상 함수 내부에서 값을 비교하고 할당 하는 연산이 필요하지 않습니다. <br />
+간단하게 함수의 매개변수를 선언하는 곳에서 기본값을 미리 정의 할 수 있습니다.
 
-기본값 매개변수를 사용한다면 함수 내에서 `||`를 사용하지 않고, 아래와 같이 개선할 수 있습니다.
+### 기본값 매개변수 사용 방식
 
 ```js {1}
-printPersonInfo(height = 180, weight = 60, age = 66) {
+function printPersonInfo(height = 180, weight = 60, age = 66) {
   console.log(height, weight, age);
 };
 
-printPersonInfo(100, undefined, undefined); // 100, 60, 66
+printPersonInfo(100); // 100, 60, 66
 ```
 
 ## 주의사항
@@ -51,31 +67,31 @@ printPersonInfo(100, undefined, undefined); // 100, 60, 66
 
 ### 주의사항 예시코드
 
-#### 기존 기본값 사용 방식
+#### undefined, falsy 값으로 기본값 대체 방식
 
 ```js {10}
-printPersonInfo(height, weight, age) {
-  var height = height || 180;
-  var weight = weight || 60;
-  var age = age || 66;
+function printFruit(name, weight, price) {
+  var name = name || 'apple';
+  var weight = weight || 10;
+  var price = price || 15000;
 
-  console.log(height, weight, age);
+  console.log(name, weight, price);
 };
 
 // 0, false, null이 false로 인식되어 기본값 return
-printPersonInfo(0, false, null); // 100, 60, 66
+printFruit(0, false, null); // apple, 10, 15000
 ```
 
 #### 기본값 매개변수 사용 방식
 
-```js {9}
-printPersonInfo(height = 180, weight = 60, age = 66) {
-  console.log(height, weight, age);
+```js {6,9}
+function printFruit(name = 'apple', weight = 10, price = 15000) {
+  console.log(name, weight, price);
 };
 
 // 0, false, null을 값으로 인식하여 기본값 대체되지 않음
-printPersonInfo(0, false, null); // 0 false null
+printFruit(0, false, null); // 0, false, null
 
-// undefined는 기본값으로 대체
-printPersonInfo(undefined, undefined, undefined); // 180, 60, 66
+// 값이 없거나 undefined 일 때 기본값으로 대체
+printFruit(); // apple, 10, 15000
 ```
