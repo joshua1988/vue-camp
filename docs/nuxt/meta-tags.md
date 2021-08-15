@@ -14,14 +14,15 @@ title: Meta Tags
 // nuxt.config.js
 export default {
   head: {
-    title: 'learn-nuxt',
+    title: 'Cracking Vue.js',
     htmlAttrs: {
       lang: 'en',
     },
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { hid: 'description', name: 'description', content: '' },
+      { hid: 'description', name: 'description', content: 'Vue.js 오픈소스 개발과 관련된 정보를 얻을 수 있는 사이트입니다.' },
+      { hid: 'keywords', name: 'keywords', content: 'JavaScript, Vue.js, Nuxt.js, TypeScript, VuePress' },
     ],
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
   },
@@ -33,10 +34,11 @@ export default {
 ```html
 <html lang="en">
 <head>
-  <title>페이지 타이틀입니다</title>
+  <title>Cracking Vue.js</title>
   <meta data-n-head="ssr" charset="utf-8">
   <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
-  <meta data-n-head="ssr" data-hid="description" name="description" content="">
+  <meta data-n-head="ssr" data-hid="description" name="description" content="Vue.js 오픈소스 개발과 관련된 정보를 얻을 수 있는 사이트입니다.">
+  <meta data-n-head="ssr" data-hid="keywords" name="keywords" content="JavaScript, Vue.js, Nuxt.js, TypeScript, VuePress">
   <link data-n-head="ssr" rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <!-- ... -->
@@ -49,22 +51,26 @@ export default {
 페이지별로 다른 head 태그를 설정하고 싶은 경우에는 각 페이지 컴포넌트에 아래와 같은 속성을 추가합니다.
 
 ```html
-<!-- page/home.vue -->
+<!-- page/review/index.vue -->
 <script>
 export default {
   data() {
     return {
-      str: 'hi'
+      reviews: [],
     }
   },
-
   head: {
-    title: '페이지 타이틀',
+    title: '실시간 후기',
     meta: [
       {
         hid: 'description',
         name: 'description',
-        content: '페이지 설명 내용',
+        content: '실시간 후기를 확인해보세요.',
+      },
+      {
+        hid: 'keywords',
+        name: 'keywords',
+        content: '과자, 과자 후기, 실시간 후기',
       },
     ],
     link: [
