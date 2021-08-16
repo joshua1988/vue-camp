@@ -14,6 +14,7 @@ title: Default parameter
 function foo(param1 = 1, param2 = {}, param3 = 'korean') {
   console.log(param1, param2, param3);
 };
+
 foo(30, { name: 'amy' }, 'american'}); // 30, { name: 'amy' }, 'american'
 foo(); // 1, {}, 'korean'
 ```
@@ -53,8 +54,6 @@ printPersonInfo(100); // 100, 60, 66
 ```
 
 ## 주의사항
-
-기본값 매개변수를 사용할 때와 사용하지 않을 때와 차이점이 존재하기 때문에 한가지 주의하셔야 할 것이 있습니다.
 
 default parameter는 undefined나 값이 정의되지 않을 때만 정의된 default value로 할당하기 때문에 `||`를 이용한 default value를 설정할 때와는 다르게 동작합니다.
 
