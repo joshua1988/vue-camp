@@ -145,6 +145,7 @@ module.exports = {
           '/nuxt/data-fetching',
           '/nuxt/store',
           '/nuxt/deployment',
+          '/nuxt/meta-tags',
         ],
       },
       {
