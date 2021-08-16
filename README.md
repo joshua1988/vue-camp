@@ -1,6 +1,6 @@
 # Cracking Vue.js
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-9-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-10-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Vue.js 오픈소스 개발과 관련된 정보를 얻을 수 있는 사이트입니다. [Cracking Vue.js](https://joshua1988.github.io/vue-camp/)
@@ -31,6 +31,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://sang-okki.tistory.com/"><img src="https://avatars.githubusercontent.com/u/60969294?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SANGOK</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=ChoiSangok" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/shinyuna"><img src="https://avatars.githubusercontent.com/u/19729134?v=4?s=100" width="100px;" alt=""/><br /><sub><b>shinyuna</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=shinyuna" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Parkjju"><img src="https://avatars.githubusercontent.com/u/75518683?v=4?s=100" width="100px;" alt=""/><br /><sub><b>박경준, Gyeong Jun Park</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=Parkjju" title="Documentation">📖</a></td>
   </tr>
 </table>
 
