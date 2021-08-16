@@ -29,7 +29,7 @@ SSR 모드로 생성한 웹 서비스는 배포하려는 서버에 Node.js 서�
 - [Google App Engine](https://nuxtjs.org/docs/2.x/deployment/appengine-deployment)
 - [Heroku](https://nuxtjs.org/docs/2.x/deployment/heroku-deployment)
 
-## SSG(Static Site Generator)
+## SSG(Static Site Generation)
 
 SSG 모드는 Deployment Target을 `Static(Static/Jamstack hosting)`을 선택한 경우입니다. 넉스트 설정 파일의 `target` 속성 값은 `static`으로 지정됩니다.
 

@@ -262,12 +262,6 @@ setup() {
 }
 ```
 
-**Vue 3 컴포지션 API 비디오 8 ~ 11까지 보기**
-
-## 모듈화 관련된 내용은 아래 링크 참고
-
-- [modularizing](https://www.vuemastery.com/courses/vue-3-essentials/modularizing)
-
 ## 라이프 사이클 훅
 
 1. 기존의 라이프 사이클 훅의 앞에 `on` 접두사가 붙는다.
@@ -280,14 +274,3 @@ setup() {
 
 - `onRenderTracked` : 렌더 함수 안에 존재하는 리액티브 디펜던시가 최초로 접근되었을 때 호출된다. 디버깅에 유용한 훅
 - `onRenderTriggered` : 렌더링이 새로 되었을 때 호출된다. 화면을 다시 그린 이유가 어떤건지 디버깅하기 좋다.
-
-## watch
-
-- nexttick은 `setup()` 코드가 실행된 이후에 실행할 코드를 의미.
-- 새 버전에서는 다양한 문법이 존재하므로 아래 내용을 참고
-
-[watch 문법 2분 20초대](https://www.vuemastery.com/courses/vue-3-essentials/watch)
-
-## 참고 자료 
-
-- [괜찮은 setup 예제 - Auth0](https://auth0.com/blog/vue-composition-api-tutorial/)
