@@ -73,6 +73,15 @@
       "contributions": [
         "tool"
       ]
+    },
+    {
+      "login": "padosum",
+      "name": "Yeonjeong Choi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6129764?v=4",
+      "profile": "https://padosum.dev/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
