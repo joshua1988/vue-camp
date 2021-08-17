@@ -79,4 +79,32 @@ npm install jest @vue/test-utils vue-jest babel-jest --save-dev
 JSON 파일이므로 복붙할 때 주석은 제거해주세요.
 :::
 
+### jest.config.js 설정
+
+프로젝트 경로(최상위)에 `jest.config.js` 파일을 생성합니다.
+
+```javascript
+module.exports = {
+  moduleFileExtensions: [
+    'js',
+    'json',
+    // 모든 vue 파일(`*.vue`)을 처리하기 위해 Jest에게 알려줍니다
+    'vue',
+  ],
+  transform: {
+    // `vue-jest`를 사용하여 모든 vue 파일(`*.vue`)을 처리합니다
+    '.*\\.(vue)$': 'vue-jest',
+    // `babel-jest`를 사용하여 모든 js 파일(`*.js`)을 처리합니다
+    '.*\\.(js)$': 'babel-jest',
+  },
+  collectCoverage: true,
+  collectCoverageFrom: ['**/*.{js,vue}', '!**/node_modules/**'],
+};
+```
+
+::: tip
+`jest.config.js` 파일로 분리하면 환경 설정 부분만 모아놓을 수 있어서 유지보수가 용이해집니다.
+자바스크립트(JavaScript) 파일이므로 주석 작성도 가능합니다.
+:::
+
 이제 다음 챕터에서 간단한 테스트 코드를 작성해보겠습니다.
