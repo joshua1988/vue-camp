@@ -12,6 +12,10 @@ title: Vue Test Utils
 
 ![뷰 CLI에서 테스트 도구 옵션 선택](../.vuepress/public/images/test/vue-cli-test-setup.png)
 
+:::tip
+방향키(↑, ↓)로 항목을 이동할 수 있으며, `space` 키로 선택/해제할 수 있습니다.
+:::
+
 ### Vue CLI 옵션 선택
 
 **Unit Testing** 옵션을 추가하고 나면 아래와 같이 차례대로 선택합니다.
