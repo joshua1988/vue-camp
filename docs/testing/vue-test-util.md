@@ -100,7 +100,10 @@ module.exports = {
     '.*\\.(js)$': 'babel-jest',
   },
   collectCoverage: true,
-  collectCoverageFrom: ['**/*.{js,vue}', '!**/node_modules/**'],
+  collectCoverageFrom: [
+    '**/*.{js,vue}',
+    '!**/node_modules/**'
+  ],
 };
 ```
 
