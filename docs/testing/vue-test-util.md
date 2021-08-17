@@ -36,7 +36,6 @@ title: Vue Test Utils
 
 ![문법 검사 보조 도구와 정리 도구 선택](../.vuepress/public/images/test/cli-option-4.png)
 
-
 ## 레거시 뷰 CLI(2.x) 프로젝트에서의 라이브러리 설치
 
 아래의 명령어로 뷰 테스트 유틸 라이브러리를 설치합니다.
