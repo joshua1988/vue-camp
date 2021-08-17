@@ -4,7 +4,7 @@ title: Vue Test Utils
 
 # Vue Test Utils
 
-뷰 테스트 유틸([Vue Test Utils](https://vue-test-utils.vuejs.org/))은 코어 팀 멤버가 제작한 테스팅 보조 라이브러리입니다. 제스트 뿐만 아니라 다른 테스트 도구도 사용할 수 있습니다.
+뷰 테스트 유틸([Vue Test Utils](https://vue-test-utils.vuejs.org/))은 코어 팀 멤버가 제작한 테스팅 보조 라이브러리입니다. 제스트(Jest) 뿐만 아니라 다른 테스트 도구도 사용할 수 있습니다.
 
 ## 라이브러리 설치
 
@@ -28,7 +28,7 @@ title: Vue Test Utils
 
 ![문법 검사 보조 도구와 정리 도구 선택](../.vuepress/public/images/test/cli-option-2.png)
 
-3. 단위 테스트 도구는 제스트(Jest)로 선택합니다.
+3. 단위 테스트 도구는 제스트로 선택합니다.
 
 ![문법 검사 보조 도구와 정리 도구 선택](../.vuepress/public/images/test/cli-option-3.png)
 
