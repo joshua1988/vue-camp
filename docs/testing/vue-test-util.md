@@ -64,7 +64,7 @@ npm install jest @vue/test-utils vue-jest babel-jest --save-dev
       // `vue-jest`를 사용하여 모든 vue 파일(`*.vue`)을 처리합니다
       ".*\\.(vue)$": "vue-jest",
       // `babel-jest`를 사용하여 모든 js 파일(`*.js`)을 처리합니다
-      "^.+\\.js$": "<rootDir>/node_modules/babel-jest",
+      ".*\\.(js)$": "babel-jest",
     },
     "collectCoverage": true,
     "collectCoverageFrom": [
