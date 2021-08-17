@@ -13,7 +13,7 @@ title: Vue Test Utils
 ![뷰 CLI에서 테스트 도구 옵션 선택](../.vuepress/public/images/test/vue-cli-test-setup.png)
 
 :::tip
-방향키(↑, ↓)로 항목을 이동할 수 있으며, `space` 키로 선택/해제할 수 있습니다.
+방향키(↑, ↓)로 항목을 이동할 수 있고 `space` 키로 선택/해제, `enter` 키로 결정할 수 있습니다.
 :::
 
 ### Vue CLI 옵션 선택
