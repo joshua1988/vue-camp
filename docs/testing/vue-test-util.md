@@ -82,7 +82,7 @@ npm install jest @vue/test-utils vue-jest babel-jest --save-dev
 ```
 
 ::: danger
-JSON 파일이므로 복붙할 때 주석은 제거해주세요.
+JSON 파일이므로 복사해 붙여넣을 때 주석은 제거해주세요.
 :::
 
 ### jest.config.js 설정
@@ -112,7 +112,7 @@ module.exports = {
 ```
 
 ::: tip
-`jest.config.js` 파일로 분리하면 환경 설정 부분만 모아놓을 수 있어서 유지보수가 용이해집니다.
+`jest.config.js` 파일로 분리하면 환경 설정 부분만 모아놓을 수 있어서 유지보수가 쉬워집니다.
 자바스크립트(JavaScript) 파일이므로 주석 작성도 가능합니다.
 :::
 
