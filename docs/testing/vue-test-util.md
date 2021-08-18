@@ -8,7 +8,11 @@ title: Vue Test Utils
 
 ## 라이브러리 설치
 
-최신 뷰 CLI를 이용하여 프로젝트를 구성한 경우에는 아래와 같이 **Unit Testing** 옵션을 선택해주면 됩니다.
+최신 뷰 CLI를 이용하여 프로젝트를 구성한 경우에는 아래와 같이 **Manually select features** 옵션을 선택해주면 됩니다.
+
+![버전별 프리셋 또는 수동 설정 선택](../.vuepress/public/images/test/vue-cli-preset-setup.png)
+
+뷰 테스트 유틸을 설치하기 위해 **Unit Testing** 옵션을 선택해줍니다.
 
 ![뷰 CLI에서 테스트 도구 옵션 선택](../.vuepress/public/images/test/vue-cli-test-setup.png)
 
