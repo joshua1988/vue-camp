@@ -28,7 +28,7 @@ title: Vue Test Utils
 
 ![문법 검사 보조 도구와 코드 정리 도구 선택](../.vuepress/public/images/test/cli-option-1.png)
 
-2. 다음은 문법 검사 도구의 실행 시점을 선택합니다. 에디터에서 저장을 누를 때 마다 검사하는 것으로 선택합니다.
+2. 다음은 문법 검사 도구의 실행 시점을 선택합니다. 에디터에서 저장을 누를 때마다 검사하는 것으로 선택합니다.
 
 ![문법 검사 보조 도구와 정리 도구 선택](../.vuepress/public/images/test/cli-option-2.png)
 
@@ -36,7 +36,7 @@ title: Vue Test Utils
 
 ![문법 검사 보조 도구와 정리 도구 선택](../.vuepress/public/images/test/cli-option-3.png)
 
-4. 위에서 추가한 ESLint와 프리티어의 설정 내역을 package.json에 추가하지 않고 개별 설정 파일에 관리합니다.
+4. 위에서 추가한 ESLint와 프리티어의 설정 내용을 package.json에 추가하지 않고 개별 설정 파일에 관리합니다.
 
 ![문법 검사 보조 도구와 정리 도구 선택](../.vuepress/public/images/test/cli-option-4.png)
 
