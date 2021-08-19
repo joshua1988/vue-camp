@@ -60,6 +60,9 @@ npm install jest @vue/test-utils vue-jest babel-jest --save-dev
 {
   // ...
   "jest": {
+    // vue-cli 테스트 환경 설정을 사용합니다
+    // 주의! preset 지정 후 아래와 같이 각각 다시 설정하는 경우, 새로 설정한 내용으로 적용됩니다
+    "preset": "@vue/cli-plugin-unit-jest",
     "moduleFileExtensions": [
       "js",
       "json",
@@ -107,6 +110,9 @@ npm으로 직접 설치했다면 프로젝트 경로(최상위)에 `jest.config.
 
 ```javascript
 module.exports = {
+  // (vue-cli로 설치 시 기본 세팅됨) vue-cli 테스트 환경 설정을 사용합니다
+  // 주의! preset 지정 후 아래와 같이 각각 다시 설정하는 경우, 새로 설정한 내용으로 적용됩니다
+  preset: "@vue/cli-plugin-unit-jest",
   moduleFileExtensions: [
     'js',
     'json',
@@ -148,6 +154,12 @@ module.exports = {
 :::
 
 ::: details 각 설정에 대한 상세 설명
+**preset**
+
+* 이미 테스트에 필요한 기본 설정을 갖춘 외부 환경 설정을 사용합니다.
+* `@vue/cli-plugin-unit-jest`의 경우 vue-cli 환경에 맞춰 기본적으로 세팅된 테스트 환경 설정을 사용합니다.
+* 기본적으로 세팅하는 내용은 [vue-cli github](https://github.com/vuejs/vue-cli/tree/dev/packages/%40vue/cli-plugin-unit-jest)에서 확인해보세요.
+
 **moduleFileExtensions**
 
 * 모듈에서 사용할 파일 확장명
