@@ -1,6 +1,6 @@
 # Cracking Vue.js
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-5-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-11-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Vue.js 오픈소스 개발과 관련된 정보를 얻을 수 있는 사이트입니다. [Cracking Vue.js](https://joshua1988.github.io/vue-camp/)
@@ -25,6 +25,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.cakeresume.com/088bc7"><img src="https://avatars.githubusercontent.com/u/25189066?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Chany</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=amorfati0310" title="Documentation">📖</a> <a href="#ideas-amorfati0310" title="Ideas, Planning, & Feedback">🤔</a> <a href="#maintenance-amorfati0310" title="Maintenance">🚧</a> <a href="#mentoring-amorfati0310" title="Mentoring">🧑‍🏫</a> <a href="#projectManagement-amorfati0310" title="Project Management">📆</a> <a href="#tool-amorfati0310" title="Tools">🔧</a></td>
     <td align="center"><a href="https://github.com/daep93"><img src="https://avatars.githubusercontent.com/u/63167589?v=4?s=100" width="100px;" alt=""/><br /><sub><b>daep93</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=daep93" title="Documentation">📖</a></td>
     <td align="center"><a href="https://kyounghwan01.github.io/blog/"><img src="https://avatars.githubusercontent.com/u/44187477?v=4?s=100" width="100px;" alt=""/><br /><sub><b>kyounghwan Noh</b></sub></a><br /><a href="#tool-Kyounghwan01" title="Tools">🔧</a></td>
+    <td align="center"><a href="https://padosum.dev/"><img src="https://avatars.githubusercontent.com/u/6129764?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Yeonjeong Choi</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=padosum" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://blue-boy.tistory.com/"><img src="https://avatars.githubusercontent.com/u/55127127?v=4?s=100" width="100px;" alt=""/><br /><sub><b>PuReum Choi</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=choipureum" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://sang-okki.tistory.com/"><img src="https://avatars.githubusercontent.com/u/60969294?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SANGOK</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=ChoiSangok" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/shinyuna"><img src="https://avatars.githubusercontent.com/u/19729134?v=4?s=100" width="100px;" alt=""/><br /><sub><b>shinyuna</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=shinyuna" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Parkjju"><img src="https://avatars.githubusercontent.com/u/75518683?v=4?s=100" width="100px;" alt=""/><br /><sub><b>박경준, Gyeong Jun Park</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=Parkjju" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://seongsilyoo.medium.com/"><img src="https://avatars.githubusercontent.com/u/19399338?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Seongsil Yoo</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=yooseongsil" title="Documentation">📖</a></td>
   </tr>
 </table>
 

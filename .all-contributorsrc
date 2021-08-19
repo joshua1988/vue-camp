@@ -73,6 +73,60 @@
       "contributions": [
         "tool"
       ]
+    },
+    {
+      "login": "padosum",
+      "name": "Yeonjeong Choi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6129764?v=4",
+      "profile": "https://padosum.dev/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "choipureum",
+      "name": "PuReum Choi",
+      "avatar_url": "https://avatars.githubusercontent.com/u/55127127?v=4",
+      "profile": "https://blue-boy.tistory.com/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "ChoiSangok",
+      "name": "SANGOK",
+      "avatar_url": "https://avatars.githubusercontent.com/u/60969294?v=4",
+      "profile": "https://sang-okki.tistory.com/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "shinyuna",
+      "name": "shinyuna",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19729134?v=4",
+      "profile": "https://github.com/shinyuna",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "Parkjju",
+      "name": "박경준, Gyeong Jun Park",
+      "avatar_url": "https://avatars.githubusercontent.com/u/75518683?v=4",
+      "profile": "https://github.com/Parkjju",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "yooseongsil",
+      "name": "Seongsil Yoo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/19399338?v=4",
+      "profile": "https://seongsilyoo.medium.com/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
