@@ -126,7 +126,7 @@ module.exports = {
 
 `collectCoverageFrom`: 커버리지를 수집할 대상을 지정. 위 설정의 경우, **모든 js 파일과 vue 파일**에 대하여 **수집**하며 **node_modules에 존재하는 파일**을 대상에서 **제외**합니다.
 
-이 밖에 설정은 [Configuring Jest](https://jestjs.io/docs/configuration)에서 확인해보세요.
+자세한 내용은 [Jest 공식 문서의 Configuring Jest](https://jestjs.io/docs/configuration)에서 확인해보세요.
 :::
 
 이제 다음 챕터에서 간단한 테스트 코드를 작성해보겠습니다.
