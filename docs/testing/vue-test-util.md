@@ -113,6 +113,7 @@ module.exports = {
 
 ::: tip
 `jest.config.js` 파일로 분리하면 환경 설정 부분만 모아놓을 수 있어서 유지보수가 쉬워집니다.
+
 자바스크립트(JavaScript) 파일이므로 주석 작성도 가능합니다.
 :::
 
@@ -121,13 +122,16 @@ module.exports = {
 * 모듈에서 사용할 파일 확장명
 
 **transform**
-* 변환기(transformer, 우측)를 사용하여 지정한 대상(좌측)을 변환합니다.   
+* 변환기(transformer, 우측)를 사용하여 지정한 대상(좌측)을 변환합니다.
 
 **collectCoverage**
-* 커버리지(coverage) 정보의 수집 여부. `true`일 경우, 테스트 파일과 케이스가 존재한 상황에서 제스트를 명령어로 실행할 때 `--coverage`를 포함해주면 테스트한 케이스가 얼마나 충족되었는지를 나타내는 지표 보고서를 생성합니다. 결과는 terminal 또는 `프로젝트/lcov-report/index.html`을 열어보면 확인할 수 있습니다.
+* 커버리지(coverage) 정보의 수집 여부
+* `true`일 경우, 테스트 파일과 케이스가 존재한 상황에서 제스트를 명령어로 실행할 때 `--coverage`를 포함해주면 테스트한 케이스가 얼마나 충족되었는지를 나타내는 지표 보고서를 생성합니다.
+* 결과는 terminal 또는 `프로젝트/lcov-report/index.html`을 열어보면 확인할 수 있습니다.
 
 **collectCoverageFrom**
-* 커버리지를 수집할 대상을 지정. 위 설정의 경우, **모든 js 파일과 vue 파일**에 대하여 **수집**하며 **node_modules에 존재하는 파일**을 대상에서 **제외**합니다.
+* 커버리지를 수집할 대상을 지정
+* 위 설정의 경우, **모든 js 파일과 vue 파일**에 대하여 **수집**하며 **node_modules에 존재하는 파일**을 대상에서 **제외**합니다.
 
 자세한 내용은 [Jest 공식 문서의 Configuring Jest](https://jestjs.io/docs/configuration)에서 확인해보세요.
 :::
