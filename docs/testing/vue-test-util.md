@@ -72,6 +72,12 @@ npm install jest @vue/test-utils vue-jest babel-jest --save-dev
       // `babel-jest`를 사용하여 모든 js 파일(`*.js`)을 처리합니다
       ".*\\.(js)$": "babel-jest",
     },
+    "moduleNameMapper": {
+      // '프로젝트 경로/src' 까지 경로를 '@' 별칭으로 맵핑합니다
+      // ex) import HelloWorld from "@/components/HelloWorld.vue";
+      //     모듈 경로는 "프로젝트 경로/src/components/HelloWorld.vue"와 같습니다
+      "^@/(.*)$": "<rootDir>/src/$1"
+    },
     "collectCoverage": true,
     "collectCoverageFrom": [
       "**/*.{js,vue}",
@@ -103,6 +109,12 @@ module.exports = {
     // `babel-jest`를 사용하여 모든 js 파일(`*.js`)을 처리합니다
     '.*\\.(js)$': 'babel-jest',
   },
+  moduleNameMapper: {
+    // '프로젝트 경로/src' 까지 경로를 '@' 별칭으로 맵핑합니다
+    // ex) import HelloWorld from "@/components/HelloWorld.vue";
+    //     모듈 경로는 "프로젝트 경로/src/components/HelloWorld.vue"와 같습니다
+    '^@/(.*)$': '<rootDir>/src/$1'
+  },
   collectCoverage: true,
   collectCoverageFrom: [
     '**/*.{js,vue}',
@@ -123,6 +135,11 @@ module.exports = {
 
 **transform**
 * 변환기(transformer, 우측)를 사용하여 지정한 대상(좌측)을 변환합니다.
+
+**moduleNameMapper**
+
+* 모듈 이름(우측)을 특정 이름(좌측)으로 맵핑하여 치환합니다.
+* `'^@/(.*)$': '<rootDir>/src/$1'`에서 `$1`은 좌측 정규 표현식(Regular Expression) 중 `(.*)`와 치환되어, `<rootDir>/src/` 하위의 모든 파일을 가리킵니다.
 
 **collectCoverage**
 * 커버리지(coverage) 정보의 수집 여부
