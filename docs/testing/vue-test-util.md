@@ -84,6 +84,8 @@ npm install jest @vue/test-utils vue-jest babel-jest --save-dev
       // 파일 이름에 'xxx.spec' 또는 'xxx.test'라는 이름이 붙여인 모든 js/ts/jsx/tsx 파일을 테스트 대상으로 지정합니다
       "**/?(*.)+(spec|test).[jt]s?(x)"
     ],
+    // node_modules 경로 하위에 있는 모든 테스트 파일을 대상에서 제외합니다
+    "testPathIgnorePatterns": ["/node_modules/"],
     "collectCoverage": true,
     "collectCoverageFrom": [
       "**/*.{js,vue}",
@@ -127,6 +129,8 @@ module.exports = {
     // 'xxx.spec' 또는 'xxx.test'라는 이름의 모든 js/ts/jsx/tsx 파일을 테스트 대상으로 지정합니다
     '**/?(*.)+(spec|test).[jt]s?(x)'
   ],
+  // node_modules 경로 하위에 있는 모든 테스트 파일을 대상에서 제외합니다
+  testPathIgnorePatterns: ['/node_modules/'],
   collectCoverage: true,
   collectCoverageFrom: [
     '**/*.{js,vue}',
@@ -158,6 +162,11 @@ module.exports = {
 **testMatch**
 
 * 테스트 실행 시, 대상으로 포함시킬 파일을 지정합니다.
+
+**testPathIgnorePatterns**
+
+* `testMatch`에서 지정한 대상 중 의도적으로 테스트 대상에서 제외할 경로 또는 특정 패턴을 가진 대상을 지정합니다.
+* `node_modules` 하위에는 라이브러리 모듈이 설치되어 있으니 일반적으로 대상에서 제외합니다.
 
 **collectCoverage**
 
