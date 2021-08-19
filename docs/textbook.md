@@ -9,7 +9,7 @@ title: Introduction
 
 ### 📖 입문
 
-- [자바스크립트 기본](/js/object.html)
+- [자바스크립트 기본](/js/variable.html)
 - [ES6](/es6/const-let.html)
 - [Vue.js 기본](/vue/instance.html)
 
