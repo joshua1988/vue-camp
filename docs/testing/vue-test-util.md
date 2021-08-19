@@ -50,7 +50,7 @@ npm install jest @vue/test-utils vue-jest babel-jest --save-dev
 
 위 명령어로 `vue test util`, `jest`, `vue-jest`, `babel-jest` 4개의 라이브러리가 설치됩니다.
 
-제스트 환경 설정은 2가지(**패키지 JSON 설정**, **jest.config.js 설정**) 방식으로 상세하게 설정해 볼 수 있습니다.
+제스트 환경 설정은 **`package.json`** 에서 설정 하거나  **`jest.config.js`** 에서 설정 할 수 있습니다.
 
 ### 패키지 JSON 설정
 
