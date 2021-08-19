@@ -78,6 +78,12 @@ npm install jest @vue/test-utils vue-jest babel-jest --save-dev
       //     모듈 경로는 "프로젝트 경로/src/components/HelloWorld.vue"와 같습니다
       "^@/(.*)$": "<rootDir>/src/$1"
     },
+    "testMatch": [
+      // __tests__ 경로 하위에 있는 모든 js/ts/jsx/tsx 파일을 테스트 대상으로 지정합니다
+      "**/__tests__/**/*.[jt]s?(x)",
+      // 파일 이름에 'xxx.spec' 또는 'xxx.test'라는 이름이 붙여인 모든 js/ts/jsx/tsx 파일을 테스트 대상으로 지정합니다
+      "**/?(*.)+(spec|test).[jt]s?(x)"
+    ],
     "collectCoverage": true,
     "collectCoverageFrom": [
       "**/*.{js,vue}",
@@ -115,6 +121,12 @@ module.exports = {
     //     모듈 경로는 "프로젝트 경로/src/components/HelloWorld.vue"와 같습니다
     '^@/(.*)$': '<rootDir>/src/$1'
   },
+  testMatch: [
+    // __tests__ 경로 하위에 있는 모든 js/ts/jsx/tsx 파일을 테스트 대상으로 지정합니다
+    '**/__tests__/**/*.[jt]s?(x)',
+    // 'xxx.spec' 또는 'xxx.test'라는 이름의 모든 js/ts/jsx/tsx 파일을 테스트 대상으로 지정합니다
+    '**/?(*.)+(spec|test).[jt]s?(x)'
+  ],
   collectCoverage: true,
   collectCoverageFrom: [
     '**/*.{js,vue}',
@@ -142,6 +154,10 @@ module.exports = {
 
 * 모듈 이름(우측)을 특정 이름(좌측)으로 맵핑하여 치환합니다.
 * `'^@/(.*)$': '<rootDir>/src/$1'`에서 `$1`은 좌측 정규 표현식(Regular Expression) 중 `(.*)`와 치환되어, `<rootDir>/src/` 하위의 모든 파일을 가리킵니다.
+
+**testMatch**
+
+* 테스트 실행 시, 대상으로 포함시킬 파일을 지정합니다.
 
 **collectCoverage**
 
