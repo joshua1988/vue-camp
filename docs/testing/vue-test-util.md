@@ -52,7 +52,7 @@ npm install jest @vue/test-utils vue-jest babel-jest --save-dev
 
 제스트 환경 설정은 **`package.json`** 에서 설정 하거나  **`jest.config.js`** 에서 설정 할 수 있습니다.
 
-### 패키지 JSON 설정
+### package.json 설정
 
 설치하고 나서 `package.json` 파일에 아래의 옵션을 추가합니다.
 
