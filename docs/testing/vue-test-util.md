@@ -6,7 +6,7 @@ title: Vue Test Utils
 
 뷰 테스트 유틸([Vue Test Utils](https://vue-test-utils.vuejs.org/))은 코어 팀 멤버가 제작한 테스팅 보조 라이브러리입니다. 제스트(Jest) 뿐만 아니라 다른 테스트 도구도 사용할 수 있습니다.
 
-## 라이브러리 설치
+## 최신 Vue-CLI (3.x 버전 이상)에서 설치 방법
 
 최신 뷰 CLI를 이용하여 프로젝트를 구성한 경우에는 아래와 같이 **Manually select features** 옵션을 선택해주면 됩니다.
 
@@ -40,7 +40,7 @@ title: Vue Test Utils
 
 ![문법 검사 보조 도구와 정리 도구 선택](../.vuepress/public/images/test/cli-option-4.png)
 
-## 레거시 뷰 CLI(2.x) 프로젝트에서의 라이브러리 설치
+## 기존 Vue-CLI (2.x 버전 이하)에서 설치 방법
 
 아래의 명령어로 뷰 테스트 유틸 라이브러리를 설치합니다.
 
