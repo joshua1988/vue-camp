@@ -9,11 +9,9 @@ title: Tutorial - Todo App
 ## 프로젝트 셋업
 [완성 코드](https://github.com/dngwoodo/vue-todo-app-test/tree/6f2a8fb79aa7bf85db495864ac7f40b2c26ed13f)
 
-1. yarn 설치 및 vue cli 최신 버전 설치   
+1. vue cli 최신 버전 설치   
   ```bash
-  npm install -g yarn
-
-  yarn global add @vue/cli
+  npm install -g @vue/cli
   ```
 <br />
 
@@ -41,7 +39,7 @@ title: Tutorial - Todo App
    
   `@types/jest` 라이브러리는 jest api들의 자동완성을 제공합니다.
   ```bash
-  yarn add @types/jest
+  npm install @types/jest -D
   ```
 <br />
 
@@ -84,21 +82,20 @@ title: Tutorial - Todo App
   ```
   이제 테스트 코드를 실행해 주면 됩니다.
   ```bash
-  yarn test:unit
+  npm run test:unit
   ```
   
   터미널 창에 아래와 같이 출력 된다면 프로젝트 셋업이 정상적으로 완료된 것입니다.
   ```bash
-  yarn run v1.22.11
-  $ vue-cli-service test:unit
+  > vue-cli-service test:unit
+
   PASS  src/App.test.js
     App
-      ✓ renders title (22ms)
+      ✓ renders title (21ms)
 
   Test Suites: 1 passed, 1 total
   Tests:       1 passed, 1 total
   Snapshots:   0 total
-  Time:        2.121s
+  Time:        1.403s
   Ran all test suites.
-  ✨  Done in 4.57s.
   ```
