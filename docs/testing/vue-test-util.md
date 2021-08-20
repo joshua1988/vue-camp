@@ -188,7 +188,7 @@ module.exports = {
 * 테스트한 케이스가 얼마나 충족되었는지를 나타내는 지표 보고서를 생성합니다.
   * `true`일 경우, 테스트 실행할 때마다 자동으로 생성
   * `false`일 경우, 제스트를 명령어로 실행할 때 `--coverage`를 포함해주면 생성
-* 결과는 `terminal` 또는 `프로젝트/lcov-report/index.html`을 열어보면 확인할 수 있습니다.
+* 결과는 `터미널` 또는 `프로젝트/lcov-report/index.html`을 열어보면 확인할 수 있습니다.
 
 **collectCoverageFrom**
 
