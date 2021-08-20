@@ -33,7 +33,7 @@ getters 속성은 컴포넌트에서 아래와 같이 접근합니다.
 <div>{{ this.$store.getters.reverseMessage }}</div>
 ```
 
-코드를 실행하면 화면에 sj.euV olloeH가 출력됩니다.
+코드를 실행하면 화면에 sj.euV olleH가 출력됩니다.
 
 ::: tip
 아직 감이 안잡히신다면 computed의 [예제 코드](../syntax/computed.html)와 위의 코드를 비교해보세요.
