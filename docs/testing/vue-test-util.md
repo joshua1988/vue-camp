@@ -50,6 +50,57 @@ npm install jest @vue/test-utils vue-jest babel-jest --save-dev
 
 위 명령어로 `vue test util`, `jest`, `vue-jest`, `babel-jest` 4개의 라이브러리가 설치됩니다.
 
+### babel 사용하기
+
+프로젝트에 [바벨(babel)](https://babeljs.io/docs/en/)을 설정한 적이 없다면 아래와 같이 설치해줍니다.
+
+```bash
+npm install @babel/core @babel/preset-env babel-core@^7.0.0-bridge.0 --save-dev
+```
+
+바벨은 자바스크립트(JavaScript) 컴파일러로서 작성한 최신 코드(ECMAScript 2015 버전 이상)를 이전 버전(오래된 브라우저 또는 환경)에 호환하여 동작할 수 있도록 코드를 변환해주는 도구입니다.
+
+```javascript
+// 바벨 입력: ES2015 화살표 함수
+[1, 2, 3].map(n => n + 1);
+
+// 바벨 출력: 변환된 코드
+[1, 2, 3].map(function(n) {
+  return n + 1;
+});
+```
+
+바벨 프리셋을 `package.json` 또는 `babel.config.json` 또는 `babel.config.js`에서 설정할 수 있습니다.
+
+```json
+// package.json
+{
+  // ...
+  "babel": {
+    "presets": ["@babel/preset-env"]
+  }
+}
+```
+
+```json
+// babel.config.json
+{
+  "presets": ["@babel/preset-env"]
+}
+```
+
+```javascript
+// babel.config.js
+module.exports = {
+  presets: ["@babel/preset-env"] // 수동 설정
+  presets: ["@vue/cli-plugin-babel/preset"] // vue cli로 설치한 경우 자동 설정됨
+};
+```
+
+제스트와 관련된 환경 설정은 제스트 환경 설정에서 확인해보세요.
+
+* `transform`의 `babel-jest`
+
 제스트 환경 설정은 **`package.json`** 에서 설정 하거나  **`jest.config.js`** 에서 설정 할 수 있습니다.
 
 ### package.json 설정
