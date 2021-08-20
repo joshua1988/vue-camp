@@ -143,6 +143,7 @@ module.exports = {
           '/nuxt/automatic-routing',
           '/nuxt/layouts',
           '/nuxt/data-fetching',
+          '/nuxt/nuxt-axios',
           '/nuxt/store',
           '/nuxt/deployment',
           '/nuxt/meta-tags',
