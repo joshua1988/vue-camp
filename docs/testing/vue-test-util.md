@@ -101,6 +101,42 @@ module.exports = {
 
 * **transform**의 **babel-jest**
 
+### 웹팩(Webpack) 별칭(Alias) 사용
+
+프로젝트에 웹팩을 사용 중이고, 별칭을 사용했다면 **`제스트 환경 설정`** 에도 동일하게 추가해줘야 합니다. 
+
+* 웹팩과 상관없이 테스트 코드를 위해 별칭을 사용하는 것도 일관성 있는 경로를 사용할 수 있어서 좋습니다.
+
+```json
+// package.json
+{
+  "jest": {
+    "moduleNameMapper": {
+      // 별칭 @(프로젝트/src) 사용하여 하위 경로의 파일을 맵핑합니다
+      "^@/(.*)$": "<rootDir>/src/$1"
+    }
+  }
+}
+```
+
+```javascript
+// jest.config.js
+module.exports = {
+  moduleNameMapper: {
+    // 별칭 @(프로젝트/src) 사용하여 하위 경로의 파일을 맵핑합니다
+    '^@/(.*)$': '<rootDir>/src/$1'
+  },
+};
+```
+
+`프로젝트 경로/src` 까지 경로를 `@` 별칭으로 맵핑합니다.
+
+```javascript
+// ex) 현재 테스트 코드 파일이 프로젝트 경로/src/components/HelloWorld.vue 파일 위치와 동일하다면,
+// import HelloWorld from "../../src/components/HelloWorld.vue";와 같습니다
+import HelloWorld from "@/components/HelloWorld.vue";
+```
+
 ### 제스트 환경 설정
 
 **`package.json`** 에서 설정 하거나  **`jest.config.js`** 에서 설정 할 수 있습니다.
@@ -129,9 +165,7 @@ module.exports = {
       ".*\\.(js)$": "babel-jest",
     },
     "moduleNameMapper": {
-      // '프로젝트 경로/src' 까지 경로를 '@' 별칭으로 맵핑합니다
-      // ex) import HelloWorld from "@/components/HelloWorld.vue";
-      //     모듈 경로는 "프로젝트 경로/src/components/HelloWorld.vue"와 같습니다
+      // 별칭 @(프로젝트/src) 사용하여 하위 경로의 파일을 맵핑합니다
       "^@/(.*)$": "<rootDir>/src/$1"
     },
     "testMatch": [
@@ -179,9 +213,7 @@ module.exports = {
     '.*\\.(js)$': 'babel-jest',
   },
   moduleNameMapper: {
-    // '프로젝트 경로/src' 까지 경로를 '@' 별칭으로 맵핑합니다
-    // ex) import HelloWorld from "@/components/HelloWorld.vue";
-    //     모듈 경로는 "프로젝트 경로/src/components/HelloWorld.vue"와 같습니다
+    // 별칭 @(프로젝트/src) 사용하여 하위 경로의 파일을 맵핑합니다
     '^@/(.*)$': '<rootDir>/src/$1'
   },
   testMatch: [
