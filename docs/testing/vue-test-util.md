@@ -101,9 +101,11 @@ module.exports = {
 
 * `transform`의 `babel-jest`
 
-제스트 환경 설정은 **`package.json`** 에서 설정 하거나  **`jest.config.js`** 에서 설정 할 수 있습니다.
+### 제스트 환경 설정
 
-### package.json 설정
+**`package.json`** 에서 설정 하거나  **`jest.config.js`** 에서 설정 할 수 있습니다.
+
+#### package.json 설정
 
 설치하고 나서 `package.json` 파일에 아래의 옵션을 추가합니다.
 
@@ -153,7 +155,7 @@ module.exports = {
 JSON 파일이므로 복사해 붙여넣을 때 주석은 제거해주세요.
 :::
 
-### jest.config.js 설정
+#### jest.config.js 설정
 
 Vue-CLI를 이용하여 `Unit Testing`을 선택했다면 `jest.config.js` 파일을 자동으로 생성합니다.
 
