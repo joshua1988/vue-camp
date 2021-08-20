@@ -4,27 +4,35 @@ title: Default parameter
 
 # 기본값 매개변수(Default parameter)
 
-기본값 매개변수는 함수에 값이 없거나 undefined인 매개변수를 전달할 때 기본값 대체할 때 사용합니다.
+기본값 매개변수란 함수의 매개변수에 값이 전달되지 않았을 때 기본 값으로 설정하는 문법입니다.
 
 ## 구문
 
-> function functionName(param1 = defaultValue1, ..., paramN = defaultValueN) { ... }
+기본값 매개변수의 문법은 다음과 같습니다.
+
+```js
+function functionName(param1 = defaultValue1, ..., paramN = defaultValueN) {
+  // ... 
+}
+```
+
+함수를 정의할 때 매개변수의 우측에 = 를 추가하고 함수에 값이 전달되지 않았을 때 설정할 기본 값을 defaultValue 위치에 지정합니다.  이 문법을 이용해 실제로 기본값 매개변수를 적용한 코드를 보겠습니다.
 
 ```js {1}
 function foo(param1 = 1, param2 = {}, param3 = 'korean') {
   console.log(param1, param2, param3);
 };
 
-foo(30, { name: 'amy' }, 'american'}); // 30, { name: 'amy' }, 'american'
+foo(30, { name: 'amy' }, 'american'); // 30, { name: 'amy' }, 'american'
 foo(); // 1, {}, 'korean'
 ```
 
 ## 설명
 
-ES6 이전에는 `||`를 이용하여 falsy 한 값을 받으면 기본값으로 대체하는 방식으로 사용하였습니다. <br />
-아래 예시 코드를 예로 들면 `printPersonInfo` 호출 시 `height`에 할당된 값이 없거나 falsy한 값이 온다면 `height`를 `180`으로 설정하는 방식으로 사용하였습니다.
+ES6 이전 문법에서는 or 연산자인 ||를 이용하여 입력받은 파라미터를 지역변수에 재정의하는 방식을 사용하였습니다. <br />
+or 연산자의 특성으로 인하여 파라미터의 값이 [falsy](https://developer.mozilla.org/ko/docs/Glossary/Falsy) (false 로 평가되는 값, false, null, 0, undefined...) 인 경우에 || 연산자 우항의 값을 기본값으로 사용하게 됩니다.
 
-### || 를 이용한 기본값 방식
+### || 를 이용한 기본값 할당 방식
 
 ```js {2-4}
 function printPersonInfo(height, weight, age) {
@@ -55,11 +63,8 @@ printPersonInfo(100); // 100, 60, 66
 
 ## 주의사항
 
-default parameter는 undefined나 값이 정의되지 않을 때만 정의된 default value로 할당하기 때문에 `||`를 이용한 default value를 설정할 때와는 다르게 동작합니다.
-
-아래 예시 코드로 좀 더 상세히 알아보겠습니다.
-
-### 주의사항 예시코드
+하지만 ES6의 기본값 매개변수는 파라미터가 정의되지 않았을 때 (undefined) 만 기본값을 사용하게 됩니다. <br />
+따라서, || 연산자를 통한 지역변수 재정의 방식과는 그 동작이 다르므로, 예전 문법에 익숙한 경우 주의해서 사용하여야 합니다. 아래 예시 코드로 좀 더 상세히 알아보겠습니다.
 
 ```js
 // || 를 이용한 기본값 방식
