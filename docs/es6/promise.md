@@ -11,7 +11,7 @@ Promise는 비동기 작업의 처리를 나타내는 객체입니다. 비동기
 생성자 함수를 활용한 Promise 객체 생성 법은 다음과 같습니다.
 
 ```js
-let promise = new Promise((reslove, reject) => {
+let promise = new Promise((resolve, reject) => {
     // executor
 }
 ```
