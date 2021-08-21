@@ -4,7 +4,71 @@ title: Promise
 
 # Promise
 
-프로미스는 비동기 작업의 처리를 나타내는 객체입니다. 비동기 작업 처리에 있어서 기존의 [콜백 함수 방식의 문제점들을](https://javascript.info/callbacks#callback-in-callback) 개선한 방식입니다.
+프로미스는 비동기 작업의 처리를 나타내는 객체입니다. 비동기 작업 처리에 있어서 기존의 [콜백(Callback) 함수 방식의 문제점을](https://javascript.info/callbacks#pyramid-of-doom) 개선한 방식입니다.
+
+## 콜백 지옥(Pyramid of Doom)
+
+비동기적으로 처리해야 할 작업이 둘 이상이라고 가정해보겠습니다. 이를 콜백 방식으로 처리한 코드는 다음과 같습니다.
+
+```js
+loadScript('1.js', function(error, script) {
+    if (error) {
+        handleError(error);
+    } else {
+        // ...
+        loadScript('2.js', function(error, script) {
+            if (error) {
+                handleError(error);
+            } else {
+                // ...
+                loadScript('3.js', function(error, script) {
+                    if (error) {
+                        handleError(error);
+                    } else {
+                        // ...continue after all scripts are loaded (*)
+                    }
+                });
+            }
+        });
+    }
+});
+```
+
+전체적인 코드의 흐름을 정리해보면 다음과 같습니다.
+
+1. `1.js`파일을 불러옵니다. 파일을 불러오는 과정에서 에러가 발생하면 처리합니다.
+2. `1.js`파일을 정상적으로 불러왔다면, `2.js` 파일을 불러옵니다. 에러가 발생하면 처리합니다.
+3. `2.js`파일을 정상적으로 불러왔다면, `3.js` 파일을 불러옵니다. 마찬가지로 에러가 발생하면 처리합니다.
+
+처리해야 할 작업이 많아질수록 코드가 뾰족탑처럼 오른쪽으로 치우치는 형태를 보이게 됩니다. 이러한 함수 중첩의 모양이 피라미드와 비슷하다고 하여 **Pyramid of Doom**으로 불리게 되었습니다.
+
+콜백 지옥의 해결 방안으로, 익명 함수를 사용하지 않고 콜백 함수를 분리하는 방법이 있습니다.
+
+```js
+loadScript('1.js', step1);
+
+function step1(error, script) {
+    if (error) {
+        handleError(error);
+    } else {
+        // ..
+        loadScript('2.js', step2);
+    }
+}
+
+function step2(error, script) {
+    if (error) {
+        handleError(error);
+    } else {
+        // ..
+        loadScript('3.js', step3);
+    }
+}
+
+// step3, step4 ....
+```
+
+콜백 함수의 큰 문제점은 해결되었지만, 여전히 함수 정의에 대해 번거로움은 존재합니다. 이에 따라 [ECMAScript 2015](https://262.ecma-international.org/6.0/#sec-promise-objects)에 프로미스라는 개념이 도입되게 됩니다.
 
 ## 기본 문법
 
