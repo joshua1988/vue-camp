@@ -95,13 +95,13 @@ svg.append('g')
 
 **결과**
 
-![](/images/d3-line-path.png)
+![](./images/d3-line-path.png)
 
 돔에 직접 접근해 화면 요소를 제어하는 방식이 제이쿼리(jQuery)와 유사하다는 점을 눈치채셨을 겁니다. 다음 코드를 추가해서 같은 방식으로 x축과 y축을 화면에 그립니다.
 
 **코드**
 ```js
-// index.js
+// chart.js
 svg.append('g')
     .attr("transform", `translate(0, ${height - margin.bottom})`)
     .call(d3.axisBottom(x).ticks(data.length).tickSizeOuter(0))
@@ -113,7 +113,7 @@ svg.append('g')
 
 **결과**
 
-![](/images/d3-line-axis.png)
+![](./images/d3-line-axis.png)
 
 
 ## 뷰에서의 디쓰리
