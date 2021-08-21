@@ -132,8 +132,7 @@ module.exports = {
 `프로젝트 경로/src` 까지 경로를 `@` 별칭으로 맵핑합니다.
 
 ```javascript
-// ex) 현재 테스트 코드 파일이 프로젝트 경로/src/components/HelloWorld.vue 파일 위치와 동일하다면,
-// import HelloWorld from "../../src/components/HelloWorld.vue";와 같습니다
+// '프로젝트 경로/src/' 하위에 존재하는 파일을 아래와 같이 간소화하여 작성할 수 있습니다
 import HelloWorld from "@/components/HelloWorld.vue";
 ```
 
