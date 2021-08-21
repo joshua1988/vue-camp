@@ -136,6 +136,64 @@ module.exports = {
 import HelloWorld from "@/components/HelloWorld.vue";
 ```
 
+### 코드 커버리지(Code Coverage)
+
+제스트는 테스트의 성공, 실패 개수를 나타내는 결과뿐만 아니라, 테스트한 케이스가 얼마나 충족되었는지를 나타내는 지표 보고서도 생성할 수 있습니다.
+
+아래와 같이 **`제스트 환경 설정`** 에 적용한 후
+
+```json
+// packages.json
+{
+  "jest": {
+    "collectCoverage": true,
+    "collectCoverageFrom": [
+      "**/*.{js,vue}",
+      "!**/node_modules/**"
+    ]
+  }
+}
+```
+
+```javascript
+// jest.config.js
+module.exports = {
+  collectCoverage: true,
+  collectCoverageFrom: [
+    '**/*.{js,vue}',
+    '!**/node_modules/**'
+  ]
+};
+```
+
+테스트를 실행해보면 터미널에 아래와 같이 표 형식으로 결과를 보여줍니다.
+
+```bash
+ PASS  tests/unit/example.spec.js
+  HelloWorld.vue
+    √ renders props.msg when passed (14ms)
+
+----------|----------|----------|----------|----------|-------------------|
+File      |  % Stmts | % Branch |  % Funcs |  % Lines | Uncovered Line #s |
+----------|----------|----------|----------|----------|-------------------|
+All files |        0 |        0 |        0 |        0 |                   |
+----------|----------|----------|----------|----------|-------------------|
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        1.628s
+Ran all test suites.
+Done in 2.46s.
+```
+
+각 커버리지 항목의 설명
+
+* **Stmts**: 최소 한 번 이상 실행된 명령문(변수에 값 저장, 함수 호출 등) 코드의 비율
+* **Branch**: 최소 한 번 이상 if, switch와 같은 분기 조건이 충족된 비율
+* **Funcs**: 최소 한 번 이상 호출된 함수의 비율
+* **Lines**: 최소 한 번 이상 실행된 코드 라인의 비율
+* **Uncovered Line**: 코드 커버리지에 측정되지 않은 코드 라인 수
+
 ### 제스트 환경 설정
 
 **`package.json`** 에서 설정 하거나  **`jest.config.js`** 에서 설정 할 수 있습니다.
