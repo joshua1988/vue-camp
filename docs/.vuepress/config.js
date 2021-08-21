@@ -193,6 +193,11 @@ module.exports = {
         link: 'https://github.com/joshua1988/vue-camp',
       },
     ],
+    repo: 'joshua1988/vue-camp',
+    docsRepo: 'joshua1988/vue-camp',
+    docsDir: 'docs',
+    editLinks: true,
+    editLinkText: 'Edit this page on GitHub',
   },
   configureWebpack: {
     resolve: {
