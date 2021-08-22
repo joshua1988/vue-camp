@@ -58,7 +58,7 @@ npm install jest @vue/test-utils vue-jest babel-jest --save-dev
 npm install @babel/core @babel/preset-env babel-core@^7.0.0-bridge.0 --save-dev
 ```
 
-바벨은 자바스크립트(JavaScript) 컴파일러로서 작성한 최신 코드(ECMAScript 2015 버전 이상)를 이전 버전(오래된 브라우저 또는 환경)에 호환하여 동작할 수 있도록 코드를 변환해주는 도구입니다.
+바벨은 자바스크립트(JavaScript) 컴파일러로서 작성한 최신 코드(ECMAScript 2015 버전 이상)를 이전 버전(오래된 브라우저 또는 환경)에 호환하여 동작할 수 있도록 코드를 변환해주는 도구입니다. 예를 들어 아래 코드와 같이 ES2015+ 로 작성된 문법을 이전 자바스크립트 문법으로 변환해 줍니다.
 
 ```javascript
 // 바벨 입력: ES2015 화살표 함수
