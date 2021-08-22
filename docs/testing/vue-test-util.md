@@ -300,7 +300,7 @@ module.exports = {
 
 **moduleFileExtensions**
 
-* 모듈에서 사용할 파일 확장명
+* 모듈에서 사용할 파일 확장명을 지정합니다.
 
 **transform**
 
@@ -322,15 +322,15 @@ module.exports = {
 
 **collectCoverage**
 
-* 커버리지 정보의 수집 여부
+* 커버리지 정보의 수집 여부를 설정합니다.
 * 테스트한 케이스가 얼마나 충족되었는지를 나타내는 지표 보고서를 생성합니다.
-  * `true`일 경우, 테스트 실행할 때마다 자동으로 생성
-  * `false`일 경우, 제스트를 명령어로 실행할 때 `--coverage`를 포함해주면 생성
+  * `true`일 경우, 테스트 실행할 때마다 자동으로 생성합니다.
+  * `false`일 경우, 제스트를 명령어로 실행할 때 `--coverage`를 포함해주면 생성합니다.
 * 결과는 `터미널` 또는 `프로젝트/lcov-report/index.html`을 열어보면 확인할 수 있습니다.
 
 **collectCoverageFrom**
 
-* 커버리지를 수집할 대상을 지정
+* 커버리지를 수집할 대상을 지정합니다.
 * 위 설정의 경우, **모든 js 파일과 vue 파일**에 대하여 **수집**하며 **node_modules에 존재하는 파일**을 대상에서 **제외**합니다.
 
 자세한 내용은 [Jest 공식 문서의 Configuring Jest](https://jestjs.io/docs/configuration)에서 확인해보세요.
