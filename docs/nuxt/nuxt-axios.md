@@ -50,7 +50,7 @@ export default {
 ```
 
 :::tip
-`$axios` 응답(Response) 값에 `data` 구조 분해 할당이 번거로울 경우, 아래와 같이 `$axios`의 요청(Request) 메서드 앞에 `$`를 붙여서 편리하게 `data` 속성 값을 받아 올 수 있습니다.
+`$axios` 응답(Response) 값에 `data` 구조 분해 할당이 번거로울 경우, 아래와 같이 `$axios`의 요청(Request) 메서드 앞에 `$`를 붙여서 편리하게 `data` 속성 값을 받아 올 수 있습니다. [참조](https://axios.nuxtjs.org/usage#-shortcuts)
 
 ```js
 async fetch(){
@@ -70,6 +70,71 @@ Nuxt 설정 파일에 옵션을 명시하여 `$axios`의 환경 설정(Configura
 :::tip
 `$axios`의 환경 설정은 총 두 차례에 걸쳐 일어납니다. Nuxt 설정 파일을 통해서 설정이 우선 적용되고, 두 번째로는 [플러그인](/nuxt/nuxt-axios.html#플러그인)을 통해 설정이 추가 적용됩니다.
 :::
+
+### Host, Port, Prefix
+
+호스트(Host), 포트(Port), 프리픽스(Prefix)는 이후에 언급할 `baseURL`과 `browserBaseURL`의 디폴트 값에 사용되는 값입니다. 아래와 같이 Nuxt 설정 파일에 명시할 수 있습니다.
+
+```js
+// nuxt.config.js
+export default {
+  // $axios의 baseURL을 https://example.com:9000/로 설정
+  axios: {
+    host: "https://example.com",
+    port: "9000",
+    prefix: "/",
+  },
+};
+```
+
+또는 환경 변수에 `API_HOST`, `API_PORT`, `API_PREFIX`로 값을 지정할 수 있습니다.
+
+```js
+// .env
+API_HOST=https://example.com
+API_PORT=9000
+API_PREFIX=/
+```
+
+### BaseURL
+
+`$axios`의 `baseURL` 속성은 서버 사이드에서 요청을 보낼 때 기본 URL이 되는 값입니다. 디폴트 값은 http://\[HOST\]:\[PORT\]\[PREFIX\] 값으로 위에서 언급했던 호스트, 포트, 프리픽스가 사용됩니다. 또는 아래와 같이 직접 `baseURL`을 지정할 수 있습니다.
+
+```js
+// nuxt.config.js
+export default {
+  axios: {
+    baseURL: "http://localhost:8080/modules",
+  },
+};
+```
+
+또는 환경 변수에 `API_URL`로 값을 지정할 수 있습니다.
+
+```js
+// .env
+API_URL=http://localhost.com:8080/modules
+```
+
+### BrowserBaseURL
+
+`browserBaseURL` 속성은 클라이언트 사이드에서 요청을 보낼 때 기본 URL이 되는 값입니다. 위에서 언급한 `baseURL`을 디폴트 값으로 가집니다. 아래와 같이 직접 `browserBaseURL`을 지정할 수 있습니다.
+
+```js
+// nuxt.config.js
+export default {
+  axios: {
+    baseURL: "https://learNuxt.com:8080/modules",
+  },
+};
+```
+
+또는 환경 변수에 `API_URL_BROWSER`로 값을 지정할 수 있습니다.
+
+```js
+// .env
+API_URL_BROWSER=https://learNuxt.com:8080/modules
+```
 
 ### Runtime Config
 
