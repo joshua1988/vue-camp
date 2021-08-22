@@ -313,7 +313,7 @@ module.exports = {
 
 **testMatch**
 
-* 테스트 실행 시, 대상으로 포함시킬 파일을 지정합니다.
+* 테스트 실행 시 대상으로 포함시킬 파일을 지정합니다.
 
 **testPathIgnorePatterns**
 
