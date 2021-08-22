@@ -248,9 +248,7 @@ JSON 파일이므로 복사해 붙여넣을 때 주석은 제거해주세요.
 
 #### jest.config.js 설정
 
-Vue-CLI를 이용하여 `Unit Testing`을 선택했다면 `jest.config.js` 파일을 자동으로 생성합니다.
-
-npm으로 직접 설치했거나, 아직 파일이 존재하지 않는다면 프로젝트 경로(최상위)에 `jest.config.js` 파일을 생성해줍니다.
+Vue-CLI를 이용하여 `Unit Testing`을 선택했다면 `jest.config.js` 파일을 자동으로 생성합니다. npm으로 직접 설치했거나, 아직 파일이 존재하지 않는다면 프로젝트 경로(최상위)에 `jest.config.js` 파일을 생성해줍니다.
 
 ```javascript
 module.exports = {
@@ -290,9 +288,7 @@ module.exports = {
 ```
 
 ::: tip
-`jest.config.js` 파일로 분리하면 환경 설정 부분만 모아놓을 수 있어서 유지보수가 쉬워집니다.
-
-자바스크립트 파일이므로 주석 작성도 가능합니다.
+`jest.config.js` 파일로 분리하면 환경 설정 부분만 모아놓을 수 있어서 유지보수가 쉬워집니다. 자바스크립트 파일이므로 주석 작성도 가능합니다.
 :::
 
 ::: details 각 설정에 대한 상세 설명
