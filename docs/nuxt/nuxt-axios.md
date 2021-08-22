@@ -124,7 +124,7 @@ API_URL=http://localhost.com:8080/modules
 // nuxt.config.js
 export default {
   axios: {
-    baseURL: "https://learNuxt.com:8080/modules",
+    browserBaseURL: "https://learNuxt.com:8080/modules",
   },
 };
 ```
@@ -134,29 +134,6 @@ export default {
 ```js
 // .env
 API_URL_BROWSER=https://learNuxt.com:8080/modules
-```
-
-### Runtime Config
-
-런타임 환경이 서버냐 클라이언트냐에 따라서 `$axios`의 기본 URL을 지정할 수 있습니다. 런타임 환경이 서버일 때 `privateRuntimeConfig.axios.baseURL`에 지정한 주소가 `$axios`의 기본 URL이 됩니다. 반대로 런타임 환경이 클라이언트일 때는 `privateRuntimeConfig.axios.browserBaseURL`이 `$axios`의 기본 URL이 됩니다.
-
-```js
-// nuxt.config.js
-export default {
-  modules: ["@nuxtjs/axios"],
-
-  publicRuntimeConfig: {
-    axios: {
-      browserBaseURL: process.env.BROWSER_BASE_URL,
-    },
-  },
-
-  privateRuntimeConfig: {
-    axios: {
-      baseURL: process.env.BASE_URL,
-    },
-  },
-};
 ```
 
 ### Proxy
