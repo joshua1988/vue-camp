@@ -6,7 +6,14 @@ title: Promise
 
 프로미스는 비동기 작업의 처리를 나타내는 객체입니다. 비동기 작업 처리에 있어서 기존의 [콜백(Callback) 함수 방식의 문제점을](https://javascript.info/callbacks#pyramid-of-doom) 개선한 방식입니다.
 
-## 콜백 지옥(Pyramid of Doom)
+## 프로미스를 사용해야 하는 이유
+
+비동기적 작업 처리에 있어서 기존의 콜백 방식에서 벗어나 프로미스를 사용해야 하는 이유는 다음과 같습니다.
+
+1. **콜백 지옥의(Pyramid of Doom) 해결**
+2. **에러의 처리의 용이성**
+
+### 1. 콜백 지옥(Pyramid of Doom)
 
 비동기적으로 처리해야 할 작업이 둘 이상이라고 가정해보겠습니다. 이를 콜백 방식으로 처리한 코드는 다음과 같습니다.
 
@@ -42,7 +49,11 @@ loadScript('1.js', function(error, script) {
 
 처리해야 할 작업이 많아질수록 코드가 뾰족탑처럼 오른쪽으로 치우치는 형태를 보이게 됩니다. 이러한 함수 중첩의 모양이 피라미드와 비슷하다고 하여 **Pyramid of Doom**으로 불리게 되었습니다.
 
-콜백 지옥의 해결 방안으로, 익명 함수를 사용하지 않고 콜백 함수를 분리하는 방법이 있습니다.
+위의 예시에서 볼 수 있듯 콜백 지옥은 코드의 가독성을 저해하게 되지만, 프로미스를 활용하면 이러한 문제점을 해결할 수 있게 됩니다.
+
+### 2. 에러의 처리
+
+사실 콜백 지옥은 프로미스를 활용하지 않고도 해결할 수 있습니다. 익명 함수의 사용을 포기하고 콜백 함수들을 분리하는 방법을 통해 해결 가능합니다.
 
 ```js
 loadScript('1.js', step1);
@@ -68,7 +79,32 @@ function step2(error, script) {
 // step3, step4 ....
 ```
 
-콜백 함수의 큰 문제점은 해결되었지만, 여전히 함수 정의에 대해 번거로움은 존재합니다. 이에 따라 [ECMAScript 2015](https://262.ecma-international.org/6.0/#sec-promise-objects)에 프로미스라는 개념이 도입되게 됩니다.
+위의 예시처럼 콜백 함수의 분리를 통해 코드의 가독성을 높일 수 있음에도 프로미스가 더 바람직한 이유는 **에러 처리가 쉽다**는 측면에 있습니다. 프로미스를 통한 에러 처리는 뒤에서 설명할 `.then`, `.catch` 메소드를 통해 간단히 정리 가능합니다.
+
+```js
+function loadScript(src) {
+    return new Promise((resolve, reject) => {
+        let script = document.createElement('script');
+        script.src = src;
+
+        script.onload = () => resolve(script);
+        script.onerror = () => reject(new Error('Error!'));
+
+        document.head.append(script);
+    });
+}
+
+let promise = loadScript('callback.js');
+promise //
+    .then(console.log)
+    .catch(console.log);
+```
+
+파일이 정상적으로 로드되었으면 `onload` 이벤트가 감지됨과 동시에 `resolve` 함수가 호출되어 프로미스의 상태가 `fulfilled`로 바뀌게 됩니다.
+
+반대로 파일의 로드가 실패하게 되면 에러가 발생하며, `onerror` 이벤트가 감지됨과 동시에 `reject` 함수가 호출되어 프로미스의 상태가 `rejected`로 바뀌게 됩니다.
+
+이후 프로미스의 상태에 따라 `.then` 또는 `.catch` 메소드가 실행되게 됩니다.
 
 ## 기본 문법
 
