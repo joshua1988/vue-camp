@@ -10,37 +10,37 @@ title: Tutorial - Todo App
 [완성 코드](https://github.com/dngwoodo/vue-todo-app-test/tree/6f2a8fb79aa7bf85db495864ac7f40b2c26ed13f)
 
 1. vue cli 최신 버전 설치   
-  ```bash
-  npm install -g @vue/cli
-  ```
+```bash
+npm install -g @vue/cli
+```
 <br />
 
 2. 프로젝트 생성
-  ```bash
-  vue create todo-app-test
-  ```
-  프로젝트 생성 시 매뉴얼 선택은 [링크](https://joshua1988.github.io/vue-camp/testing/vue-test-util.html#%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%87%E1%85%B3%E1%84%85%E1%85%A5%E1%84%85%E1%85%B5-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5)를 참고해 주세요.   
+```bash
+vue create todo-app-test
+```
+프로젝트 생성 시 매뉴얼 선택은 [링크](https://joshua1988.github.io/vue-camp/testing/vue-test-util.html#%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%87%E1%85%B3%E1%84%85%E1%85%A5%E1%84%85%E1%85%B5-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5)를 참고해 주세요.   
 <br />
 
 3. eslint의 `env` 옵션 속성에 `jest: true` 추가   
-  ```js
-  module.exports = {
-    root: true,
-    env: {
-      node: true,
-      jest: true, // jest api들을 사용할 때 에러 표시가 나지 않게 해줍니다.
-    },
-    //...
-  }
-  ```
+```js
+module.exports = {
+  root: true,
+  env: {
+    node: true,
+    jest: true, // jest api들을 사용할 때 에러 표시가 나지 않게 해줍니다.
+  },
+  //...
+}
+```
 <br />
 
 4. 테스트 코드 작성 시 유용한 @types/jest 라이브러리 설치   
-   
-  `@types/jest` 라이브러리는 jest api들의 자동완성을 제공합니다.
-  ```bash
-  npm install @types/jest -D
-  ```
+
+`@types/jest` 라이브러리는 jest api들의 자동완성을 제공합니다.
+```bash
+npm install @types/jest -D
+```
 <br />
 
 5. jest.config.js에 testMatch 설정 추가   
@@ -57,45 +57,45 @@ title: Tutorial - Todo App
 
 6. 테스트 코드 실행해보기   
    
-  App 컴포넌트를 제외한 모든 컴포넌트를 삭제해 주세요. 그리고 아래와 같이 코드를 작성해 줍니다.
-  ```html
-  <!-- src/App.vue -->
-  <template>
-    <div>
-      <h1>Todo App</h1>
-    </div>
-  </template>
-  ```
-  ```js
-  // src/App.test.js
-  import { shallowMount } from "@vue/test-utils";
+App 컴포넌트를 제외한 모든 컴포넌트를 삭제해 주세요. 그리고 아래와 같이 코드를 작성해 줍니다.
+```html
+<!-- src/App.vue -->
+<template>
+  <div>
+    <h1>Todo App</h1>
+  </div>
+</template>
+```
+```js
+// src/App.test.js
+import { shallowMount } from "@vue/test-utils";
 
-  import App from "./App.vue";
+import App from "./App.vue";
 
-  describe("App", () => {
-    it("renders title", () => {
-      const wrapper = shallowMount(App);
+describe("App", () => {
+  it("renders title", () => {
+    const wrapper = shallowMount(App);
 
-      expect(wrapper.find("h1").text()).toMatch("Todo App");
-    });
+    expect(wrapper.find("h1").text()).toMatch("Todo App");
   });
-  ```
-  이제 테스트 코드를 실행해 주면 됩니다.
-  ```bash
-  npm run test:unit
-  ```
-  
-  터미널 창에 아래와 같이 출력 된다면 프로젝트 셋업이 정상적으로 완료된 것입니다.
-  ```bash
-  > vue-cli-service test:unit
+});
+```
+이제 테스트 코드를 실행해 주면 됩니다.
+```bash
+npm run test:unit
+```
 
-  PASS  src/App.test.js
-    App
-      ✓ renders title (21ms)
+터미널 창에 아래와 같이 출력 된다면 프로젝트 셋업이 정상적으로 완료된 것입니다.
+```bash
+> vue-cli-service test:unit
 
-  Test Suites: 1 passed, 1 total
-  Tests:       1 passed, 1 total
-  Snapshots:   0 total
-  Time:        1.403s
-  Ran all test suites.
-  ```
+PASS  src/App.test.js
+  App
+    ✓ renders title (21ms)
+
+Test Suites: 1 passed, 1 total
+Tests:       1 passed, 1 total
+Snapshots:   0 total
+Time:        1.403s
+Ran all test suites.
+```
