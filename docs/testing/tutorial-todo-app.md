@@ -107,6 +107,40 @@ Ran all test suites.
 - 할일 체크하기
 - 할일 삭제하기
 
+## 할 일 추가하기
+
+[완성 코드]()
+
+1. UI 구현   
+
+아래에 빨간 박스로 표시된 부분의 UI를 구현합니다.
+
+![스크린샷 2021-08-23 오후 7 24 47](../.vuepress/public/images/todo-app-todo-control.png)
+```html
+<!-- src/App.vue -->
+<template>
+  <div>
+    <h1>Todo App</h1>
+    <form>
+      <label for="todo-control">할 일 작성</label>
+      <div>
+        <input
+          id="todo-control"
+          type="text"
+          placeholder="할 일을 작성해주세요"
+        />
+        <button type="button">추가하기</button>
+      </div>
+    </form>
+  </div>
+</template>
+```
+<br />
+
+2. 테스트 코드 작성
+2. 기능 구현   
+3. 테스트 코드 작성
+
 
 
 
