@@ -259,4 +259,77 @@ vue-test-utils 라이브러리에선 `input`이벤트를 `trigger`시 `event.tar
 <br />
 
 5. 기능 구현 - `추가하기` 버튼을 누르면 할 일 추가
+```html
+<!-- src/App.vue -->
+<template>
+  <div>
+    <h1>Todo App</h1>
+    <form>
+      <label for="todo-control">할 일 작성</label>
+      <div>
+        <input
+          id="todo-control"
+          type="text"
+          placeholder="할 일을 작성해주세요"
+          :value="text"
+          @input="handleInput"
+        />
+        <!-- @click="handleClick" 추가 -->
+        <button type="button" @click="handleClick">추가하기</button>
+      </div>
+    </form>
+    <!-- ul, li 태그 추가 -->
+    <ul>
+      <li v-for="todo in todos" :key="todo.id">
+        {{ todo.text }}
+      </li>
+    </ul>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      text: "",
+      newId: 0, // 추가
+      todos: [], // 추가
+    };
+  },
+  methods: {
+    handleInput(event) {
+      this.text = event.target.value;
+    },
+    // 추가
+    handleClick() {
+      // 할 일 추가
+      this.todos.push({
+        id: this.newId,
+        text: this.text,
+      });
+      this.newId += 1;
+
+      // control값 초기화
+      this.text = "";
+    },
+  },
+};
+</script>
+```
+<br />
+
 6. 기능 구현 - 테스트 코드 작성
+```js
+// src/App.test.js
+it("listens click event", async () => {
+  const wrapper = shallowMount(App);
+
+  wrapper.find("input").setValue("아무것도 안하기");
+
+  await wrapper.find("button").trigger("click");
+
+  expect(wrapper.find("li").text()).toContain("아무것도 안하기");
+});
+```
+
+`click`이벤트를 트리거는 비동기로 동작하기 때문에 `async, await`문법을 사용하여 동기로 동작하게 합니다. `control` 창에 할 일을 타이핑하고 `추가하기 button`이 클릭 됐을 때 타이핑한 할 일이 화면에 출력 되는지 테스트합니다.
