@@ -188,12 +188,9 @@ module.exports = {
         text: '💬 프런트엔드 개발',
         link: '/front-dev',
       },
-      {
-        text: '💻  깃헙',
-        link: 'https://github.com/joshua1988/vue-camp',
-      },
     ],
     repo: 'joshua1988/vue-camp',
+    repoLabel: '💻  깃헙',
     docsRepo: 'joshua1988/vue-camp',
     docsDir: 'docs',
     editLinks: true,
