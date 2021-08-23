@@ -22,7 +22,7 @@ title: Tutorial - Todo App
   프로젝트 생성 시 매뉴얼 선택은 [링크](https://joshua1988.github.io/vue-camp/testing/vue-test-util.html#%E1%84%85%E1%85%A1%E1%84%8B%E1%85%B5%E1%84%87%E1%85%B3%E1%84%85%E1%85%A5%E1%84%85%E1%85%B5-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8E%E1%85%B5)를 참고해 주세요.   
 <br />
 
-3. eslint의 env옵션에 jest 추가   
+3. eslint의 `env` 옵션 속성에 `jest: true` 추가   
   ```js
   module.exports = {
     root: true,
