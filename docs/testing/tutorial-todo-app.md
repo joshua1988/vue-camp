@@ -149,7 +149,7 @@ UI 구현 코드에서 작성해야되는 테스트 코드는 다음과 같습�
 이제 관련 있는 테스트끼리 묶어서 코드를 작성해보겠습니다.
 
 ```js
-// src/App.vue
+// src/App.test.vue
 import { shallowMount } from "@vue/test-utils";
 
 import App from "./App.vue";
@@ -196,13 +196,67 @@ it("connects label and input", () => {
 
 이런식으로 학습하시면서 아쉬운 부분들이 생긴다면 테스트를 추가해보세요.
 
-그리고 위의 테스트 코드에서 `describe`, `it`의 첫번째 인수를 합쳐보면 `App renders label, input`, `App renders button` 로 문장이 만들어지는 것을 보실 수 있습니다. `render`는 `App`이 단수이기 때문에 뒤에 s를 붙여서 `renders`로 작성하는 겁니다. 이런식으로 테스트 코드를 작성하실 때는 항상 `말이 되게` 작성하시는 것을 권장드립니다. 나중에 해당 컴포넌트의 역할을 파악하고 싶을 때 [관심사의 분리(separation of concerns, SoC)](https://ko.wikipedia.org/wiki/%EA%B4%80%EC%8B%AC%EC%82%AC_%EB%B6%84%EB%A6%AC)를 잘 해놓았다면 테스트 코드만으로도 파악이 가능합니다. 이 부분은 튜토리얼 마지막 부분에서 다뤄보겠습니다.
+그리고 위의 테스트 코드에서 `describe`, `it`의 첫번째 인수를 합쳐보면 `App renders label, input`, `App renders button` 로 문장이 만들어지는 것을 보실 수 있습니다. `render`는 `App`이 단수이기 때문에 뒤에 s를 붙여서 `renders`로 작성하는 겁니다. 이런식으로 테스트 코드를 작성하실 때는 항상 `말이 되게` 작성하시는 것을 권장드립니다. 나중에 해당 컴포넌트의 역할을 파악하고 싶을 때 [관심사의 분리(separation of concerns, SoC)](https://ko.wikipedia.org/wiki/%EA%B4%80%EC%8B%AC%EC%82%AC_%EB%B6%84%EB%A6%AC)를 잘 해놓았다면 테스트 코드만으로도 파악이 가능합니다. 이 부분은 튜토리얼 마지막 부분에서 다뤄보겠습니다.   
+<br />
 
-1. 기능 구현   
+3. 기능 구현 - `control`에 할 일 작성 시 data에 할 일 텍스트 값 넣기
+```html
+<!-- src/App.vue -->
+<template>
+  <div>
+    <h1>Todo App</h1>
+    <form>
+      <label for="todo-control">할 일 작성</label>
+      <div>
+        <input
+          id="todo-control"
+          type="text"
+          placeholder="할 일을 작성해주세요"
+          :value="text"
+          @input="handleInput"
+        />
+        <button type="button">추가하기</button>
+      </div>
+    </form>
+  </div>
+</template>
 
+<script>
+export default {
+  data() {
+    return {
+      text: "",
+    };
+  },
+  methods: {
+    handleInput(event) {
+      this.text = event.target.value;
+    },
+  },
+};
+</script>
+```
 
-2. 기능 구현 - 테스트 코드 작성
+v-model을 사용하지 않은 이유는 현재 시점에서는 IME 입력(한국어, 일본어, 중국어)에 대해서 한계점이 있기 때문입니다. 자세한 내용은 이 [링크](https://joshua1988.github.io/web-development/vuejs/v-model-usage/#%EA%B7%B8%EB%9F%BC-v-model%EC%9D%B4-%EB%8D%94-%ED%8E%B8%ED%95%98%EB%8B%88%EA%B9%8C-%EC%9D%B4%EA%B1%B0-%EC%93%B0%EB%A9%B4-%EB%90%98%EB%8A%94%EA%B1%B0%EC%A3%A0)를 참고해주세요.   
+<br />
 
+4. 기능 구현 - 테스트 코드 작성
+```js
+// src/App.test.js
+  it("listens input event", () => {
+    const wrapper = shallowMount(App);
 
+    // setValue는 아래 두 코드의 축약 api 입니다.
+    wrapper.find("input").setValue("아무것도 안하기");
+    // wrapper.find("input").element.value = "아무것도 안하기";
+    // wrapper.find("input").trigger("input");
 
+    expect(wrapper.vm.text).toMatch("아무것도 안하기");
+  });
+```
 
+vue-test-utils 라이브러리에선 `input`이벤트를 `trigger`시 `event.target.value`를 직접적으로 변경할 수 없습니다. 그래서 `input`의 `value`값을 변경한 뒤 `input`이벤트를 `trigger`해야 합니다. `input`이벤트를 `trigger`하면 `handleInput`함수가 실행되고 `data`의 `text`값이 변경됐는지 테스트합니다.
+<br />
+
+5. 기능 구현 - `추가하기` 버튼을 누르면 할 일 추가
+6. 기능 구현 - 테스트 코드 작성
