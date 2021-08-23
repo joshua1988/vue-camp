@@ -148,18 +148,18 @@ export default {
     author: String,
   },
   methods: {
-    fetchData(postId) {
+    savePost(postId) {
       // ..
     },
     submitForm() {
       // 구조 분해 문법 미적용
       const id = this.id;
-      const fetchData = this.fetchData;
-      fetchData(id);
+      const savePost = this.savePost;
+      savePost(id);
 
       // 구조 분해 문법 적용
-      const { id, fetchData } = this;
-      fetchData(id);
+      const { id, savePost } = this;
+      savePost(id);
     },
   },
 </script>
