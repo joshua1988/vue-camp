@@ -43,7 +43,7 @@ npm install @types/jest -D
 ```
 <br />
 
-5. jest.config.js에 testMatch 설정 추가   
+5. jest.config.js에 `testMatch` 설정 추가   
     
   테스트해야 하는 컴포넌트와 테스트 코드가 한 폴더 내에 존재하는 것이 찾을 때 편리합니다. 그러므로 [@vue/cli-plugin-unit-jest](https://github.com/vuejs/vue-cli/blob/dev/packages/%40vue/cli-plugin-unit-jest/presets/default/jest-preset.js)의 testMatch 설정값을 추가합니다. 기본적인 jest 설정들의 역할들은 [여기](https://joshua1988.github.io/vue-camp/testing/vue-test-util.html#%E1%84%91%E1%85%A2%E1%84%8F%E1%85%B5%E1%84%8C%E1%85%B5-json-%E1%84%89%E1%85%A5%E1%86%AF%E1%84%8C%E1%85%A5%E1%86%BC)를 참고하세요.
   
