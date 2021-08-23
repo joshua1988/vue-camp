@@ -35,7 +35,7 @@ module.exports = {
 ```
 <br />
 
-4. 테스트 코드 작성 시 유용한 @types/jest 라이브러리 설치   
+4. `@types/jest` 라이브러리 설치
 
 `@types/jest` 라이브러리는 jest api들의 자동완성을 제공합니다.
 ```bash
