@@ -196,7 +196,7 @@ it("connects label and input", () => {
 
 이런 식으로 학습하시면서 아쉬운 부분들이 생긴다면 테스트를 추가해보세요.
 
-그리고 위의 테스트 코드에서 `describe`, `it`의 첫 번째 인수를 합쳐보면 `App renders label, input`, `App renders button`으로 문장이 만들어지는 것을 보실 수 있습니다. `render`는 `App`이 단수이기 때문에 뒤에 s를 붙여서 `renders`로 작성하는 겁니다. 이런 식으로 테스트 코드를 작성하실 때는 항상 `말이 되게` 작성하시는 것을 권장해 드립니다. 나중에 해당 컴포넌트의 역할을 파악하고 싶을 때 [관심사의 분리(separation of concerns, SoC)](https://ko.wikipedia.org/wiki/%EA%B4%80%EC%8B%AC%EC%82%AC_%EB%B6%84%EB%A6%AC)를 잘해놓았다면 테스트 코드만으로도 파악이 가능합니다. 이 부분은 튜토리얼 마지막 부분에서 다뤄보겠습니다.   
+그리고 위의 테스트 코드에서 `describe`, `it`의 첫 번째 인수를 합쳐보면 `App renders label, input`, `App renders button`으로 문장이 만들어지는 것을 보실 수 있습니다. `render`는 `App`이 단수이기 때문에 뒤에 s를 붙여서 `renders`로 작성하는 겁니다. 이런 식으로 문법에 맞게 작성해주세요. 그리고 테스트 코드를 작성하실 때는 항상 `말이 되게` 작성하시는 것을 권장해 드립니다. 나중에 해당 컴포넌트의 역할을 파악하고 싶을 때 [관심사의 분리(separation of concerns, SoC)](https://ko.wikipedia.org/wiki/%EA%B4%80%EC%8B%AC%EC%82%AC_%EB%B6%84%EB%A6%AC)를 잘해놓았다면 테스트 코드만으로도 파악이 가능합니다. 이 부분은 튜토리얼 마지막 부분에서 다뤄보겠습니다.   
 <br />
 
 1. 기능 구현 - `control`에 할 일 작성 시 data에 할 일 텍스트 값 넣기
@@ -332,4 +332,4 @@ it("listens click event", async () => {
 });
 ```
 
-`click`이벤트를 트리거는 비동기로 동작하기 때문에 `async, await`문법을 사용하여 동기로 동작하게 합니다. `control` 창에 할 일을 타이핑하고 `추가하기 button`이 클릭 됐을 때 타이핑한 할 일이 화면에 출력 되는지 테스트합니다.
+`click`이벤트 트리거는 비동기로 동작하기 때문에 `async, await`문법을 사용하여 동기적으로로 동작하게 만듭니다. `control` 창에 할 일을 타이핑하고 `추가하기 button`이 클릭 됐을 때 타이핑한 할 일이 화면에 출력 되는지 테스트합니다.
