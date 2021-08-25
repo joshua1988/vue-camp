@@ -32,5 +32,8 @@
   },
   "resolutions": {
     "webpack-dev-middleware": "3.6.0"
+  },
+  "dependencies": {
+    "vuepress-plugin-code-copy": "^1.0.6"
   }
 }
