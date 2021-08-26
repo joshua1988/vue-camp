@@ -74,19 +74,19 @@ axios.get('/hello') {
 }
 ```
 
-위 코드에서 `error.response` 는 요청이 제대로 이루어지고, 서버로부터 응답을 받았으나 200번대가 아닌 다른 상태 코드로 응답을 받은 경우를 뜻합니다. 만약 response가 `undefined` 일 경우, 서버의 응답을 받기 전, 에러가 발생했다는 것을 뜻합니다. 
+위 코드에서 `error.response` 는 요청이 제대로 이루어지고 서버로부터 응답을 받았으나, 200번대가 아닌 다른 상태 코드로 응답을 받은 경우를 뜻합니다. 만약 `response`가 `undefined` 일 경우, 서버의 응답을 받기 전, 에러가 발생했다는 것을 뜻합니다. 
 
-또한, `error.request`는 요청이 이루어졌으나, 응답을 받지 못한 경우를 뜻합니다. 즉, request는 `undefined` 상태로 이어지다, 서버에 성공적으로 요청이 이루어지면, 값이 설정됩니다. 만약 request가 `undefined` 라고 나타나면, 서버에 요청을 보내기도 전에 클라이언트 측에서 에러가 발생했다는 것을 뜻합니다.
+또한, `error.request`는 요청이 이루어졌으나, 응답을 받지 못한 경우를 뜻합니다. 즉, `request`는 `undefined` 상태로 이어지다, 서버에 성공적으로 요청이 이루어지면, 값이 설정됩니다. 만약 `request`가 `undefined` 라고 나타나면, 서버에 요청을 보내기도 전에 클라이언트 측에서 에러가 발생했다는 것을 뜻합니다.
 
 ## 액시오스 HTTP 요청 메소드 종류
 
 액시오스를 통해 사용할 수 있는 요청 메소드는 다음과 같습니다. 
 
-자주 쓰이는 메소드는 get, post, patch, delete입니다. 
+자주 쓰이는 메소드는 get, post, put, delete입니다. 
 
 ### **axios.get(url[, config])**
 
-서버에서 데이터를 가져올 때 사용하는 메소드입니다. 두번째 인자인 config 객체에는 헤더, 응답초과시간 (timeout), 인자값 (params) 등의 요청값을 같이 넘길 수 있습니다. 
+서버에서 데이터를 가져올 때 사용하는 메소드입니다. 두번째 인자인 config 객체에는 헤더 (header), 응답초과시간 (timeout), 인자값 (params) 등의 요청값을 같이 넘길 수 있습니다. 
 
 ```javascript
 axios.get('통신할 서버주소')
@@ -109,6 +109,17 @@ axios.post('통신할 서버주소', { 추가할 데이터 })
    })
 ```
 
+### **axios.put(url[, data[, config]])**
+
+특정 데이터를 수정할 때 요청하는 메소드입니다. `put` 은 데이터 전체를 교체할 경우에 사용됩니다.
+
+```javascript
+axios.put('통신할 서버주소', { 변경할 데이터 })
+  .then(res => {
+    console.log(res)
+  })
+```
+
 ### **axios.delete(url[, config])**
 
 특정 데이터나 값을 삭제할 때 요청하는 메소드입니다. 
@@ -120,10 +131,6 @@ axios.delete('통신할 서버주소')
   })
 ```
 
-### **axios.put(url[, data[, config]])**
-
-특정 데이터를 수정할 때 요청하는 메소드입니다.
-
 ---
 
 이외에도 아래와 같은 HTTP 요청 메소드를 사용할 수 있습니다.
@@ -132,11 +139,15 @@ axios.delete('통신할 서버주소')
 
 **axios.head(url[, config])**
 
+- `head` 는 `get` 방식과 동일하지만, 응답에 body가 없습니다. 이를 통해 웹 서버의 정보를 확인하거나 버전을 확인하는 등의 용도로 사용됩니다. 
+
 **axios.options(url[, config])**
 
-**axios.patch(url[, data[, config]])**
+- `options` 를 통해 서버에서 지원하는 옵션들을 미리 확인하기 위해 사용됩니다.
 
-###### 
+**axios.patch(url[, data[, config]])** 
+
+- `patch`의 경우, 데이터의 일부를 교체할 경우에 사용됩니다. 
 
 ## 기타 액시오스 API 
 
