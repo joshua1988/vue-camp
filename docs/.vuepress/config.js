@@ -120,6 +120,7 @@ module.exports = {
           '/testing/vue-test-util',
           '/testing/getting-started',
           '/testing/component-tutorial-1',
+          '/testing/tutorial-todo-app',
           // 튜토리얼 - 뷰엑스
           // 튜토리얼 - 비동기
           // 튜토리얼 - 외부 라이브러리
