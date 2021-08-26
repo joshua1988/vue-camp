@@ -100,6 +100,21 @@ Time:        1.403s
 Ran all test suites.
 ```
 
+:::tip
+
+```json
+// package.json
+{
+  //...
+  "scripts": {
+    // ...
+    "test:unit": "vue-cli-service test:unit --watchAll"
+  }
+}
+```
+package.json에 `test:unit` 스크립트에  `--watchAll` 옵션을 추가해주세요. 테스트가 추가되거나 수정되면 자동으로 다시 실행시켜줍니다.
+:::
+
 ## 프로젝트 시작
 
 프로젝트 준비가 끝났으니 Todo App을 구현해보겠습니다. 저희가 구현해야 되는 기능들을 다음과 같으며 차례대로 구현합니다.
