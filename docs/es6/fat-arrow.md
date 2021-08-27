@@ -65,51 +65,49 @@ b(10); // 100
 
 화살표 함수에서 사용되는 this는 기존의 [this](https://joshua1988.github.io/vue-camp/js/this.html)와 다른 방식을 가지고 있습니다. <br />화살표 함수의 this는 함수를 **선언**할 때의 상위 스코프의 this로 바인딩 될 객체가 정해집니다.
 
-아래는 화살표 함수의 this를 나타낸 예제입니다.
+아래는 화살표 함수의 this를 나타낸 예제입니다. innerFunc의 상위 스코프는 getThis이기 때문에 getThis의 내부 this와 innerFunc의 내부 this는 같은 값으로 바인딩 됩니다.
 
 ```js
 const foo = {
     name: "bar",
     age: 10000,
-    getAge: function() {
+    getThis: function() {
+        console.log(this); // {name: "bar", age: 10000, getAge: ƒ}
         innerFunc = () => {
-            // 화살표 함수의 this는 선언된 위치에서 상위 스코프를 가지기 때문에 foo 객체로 바인딩됩니다.
-            return `${this.name}의 나이는 ${this.age}입니다.`
+            return this; // {name: "bar", age: 10000, getAge: ƒ}
         };
         console.log(innerFunc());
     }
 };
 
-foo.getAge(); // bar의 나이는 10000입니다.
+foo.getThis();
 ```
 
-위와 같은 특징으로 화살표 함수는 객체의 메소드에서 사용하는 것이 적합하지 않습니다. 위처럼 함수 안에 함수를 넣어 임의로 스코프를 만들지 않으면 아래와 같은 결과를 낳기 때문입니다.
+### setTimeout에서의 this
+
+일반 함수에서 setTimeout에서의 this는 어디에서 선언하든 무조건 window를 가리킵니다. 그러나 화살표 함수에서는 상위 스코프의 this로 값이 바인딩 됩니다.
 
 ```js
 const foo = {
     name: "bar",
     age: 10000,
-    getAge: () =>  {
-        // 상위 스코프는 window
-        return `${this.name}의 나이는 ${this.age}입니다.`
+    getThisArrowFunc: function() {
+        console.log(this); // {name: "bar", age: 10000, getAge: ƒ}
+        setTimeout(() => {
+            console.log(this); // {name: "bar", age: 10000, getAge: ƒ}
+        }, 1000);
+    },
+
+    getThisFunc: function() {
+        console.log(this); // {name: "bar", age: 10000, getAge: ƒ}
+        setTimeout(function() {
+            console.log(this); // window
+        }, 1000);
     }
 };
 
-foo.getAge(); // "의 나이는 undefined입니다."
-```
-
-그러므로 객체의 메소드로 만들 때는 화살표 함수가 아닌 아래와 같이 **일반 함수**를 이용합니다.
-
-```js
-const foo = {
-    name: "bar",
-    age: 10000,
-    getAge: function() {
-        return `${this.name}의 나이는 ${this.age}입니다.`
-    }
-};
-
-foo.getAge(); // bar의 나이는 10000입니다.
+foo.getThisArrowFunc();
+foo.getThisFunc();
 ```
 
 ### call, bind, apply로 바인딩 변경 불가
@@ -130,17 +128,16 @@ console.log(arrowFunc.call({ foo: 'baz' }));  // bar
 
 ```js
 const Foo = () => {};
-
 const foo = new Foo(); // Uncaught TypeError: Foo is not a constructor
 ```
 
 ### addEventListener에서의 this
 
-addEventListener 두 번째 인자로 화살표 함수를 넣으면 this는 전역 객체인 window를 가리킵니다.
+addEventListener 두 번째 인자로 화살표 함수를 넣으면 this는 상위 스코프의 this를 가리킵니다.
 
 ```js
 const button = document.getElementById('this-button');
-button.innerText = '함수 호출 버튼'
+button.innerText = '함수 호출 버튼';
 
 button.addEventListener('click', () => {
     console.log(this === window); // true
@@ -152,10 +149,30 @@ button.addEventListener('click', () => {
 
 ```js
 const button = document.getElementById('this-button');
-button.innerText = '함수 호출 버튼'
+button.innerText = '함수 호출 버튼';
 
 button.addEventListener('click', function() {
     console.log(this === button); // true
     console.log(this.innerText); // 함수 호출 버튼
 });
+```
+
+class 내부에서 addEventListener 콜백 함수로 사용되는 this는 선언된 class로 값이 바인딩 됩니다. 아래 예시 코드를 참조해주시기 바랍니다.
+
+```js
+class Foo {
+    constructor() {
+      this.name = 'bar';
+    }
+    register() {
+      window.addEventListener('keydown', (e) => this.someMethod(e));
+    }
+    someMethod(e) {
+      console.log(this.name); // bar
+      console.log(e.keyCode); // e를 누르면 63
+    }
+}
+
+const baz = new Foo();
+baz.register();
 ```
