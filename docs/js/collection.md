@@ -12,7 +12,7 @@ const map = new Map();
 
 ## Map 값 추가
 
-Map 객체는 데이터를 추가할때는 Map.prototype.set 를 사용합니다.
+Map 객체는 데이터를 추가할 때는 Map.prototype.set 메서드를 사용합니다.
 
 ```js
 // map 선언
@@ -30,7 +30,7 @@ map
 console.log(map); // Map(2) { 'key' => 'value', 'key2' => 'value' }
 ```
 
-또한, Map 은 중복된 키값이 있을때는 Map 객체에 저장되지 않습니다.
+또한, 중복된 키가 있을 때는 Map 객체에 새로운 키로 저장되지 않고, 값을 덮어씁니다.
 
 ```js
 // map 선언
@@ -40,7 +40,7 @@ console.log(map); // Map(1) { 'key1' => 'value2' }
  ## Map 값 삭제
 
  Map 객체의 값을 삭제하려면 Map.prototype.delete 메서드를 사용합니다. 또한 Map의 모든 값을 삭제할 경우에는
- Map.prototype.clear 를 사용합니다.
+ Map.prototype.clear 메서드를 사용합니다.
 
  ```js
  // map 선언
@@ -72,7 +72,7 @@ map.forEach((val, key, mp) => {
 // value2,key2
 ```
 
-## Map 의 주요메서드와 프로퍼티
+## Map의 주요메서드와 프로퍼티
 
 위에서 설명한 메서드 외에 Map을 조작할 때 주로 사용하는 메서드와 프로퍼티 입니다.
 
@@ -92,7 +92,7 @@ const set = new Set();
 
 ## Set 값 추가
 
-Set 객체에 값을 추가할때는 Set.prototype.add 를 사용합니다.
+Set 객체에 값을 추가할 때는 Set.prototype.add 메서드를 사용합니다.
 
 ```js
 // set 선언
@@ -109,7 +109,7 @@ set.add("javascript").add("vue").add("node");
 console.log(set); // Set(3) { 'javascript', 'vue', 'node' }
 ```
 
-또한, Set 은 중복된 값의 추가는 허용하지 않습니다.
+또한, Set 은 중복된 값의 추가를 허용하지 않습니다.
 
 ```js
 // set 선언
@@ -121,7 +121,7 @@ console.log(set); // Set(2) { 'apple', 'banana' }
  ## Set 값 삭제
  
 Set 객체의 값을 삭제하려면 Set.prototype.delete 메서드를 사용합니다. 또한 Set내 모든 값을 삭제할 경우에는
-Set.prototype.clear 를 사용합니다.
+Set.prototype.clear 메서드를 사용합니다.
 
 ```js
 // set 선언
@@ -148,7 +148,7 @@ const set = new Set(['apple', 'banana', 'orange']);
 set.forEach((val, val2, set) => {
   console.log(val, val2, set);
 });
-// // 결과입니다.
+// 결과입니다.
 // apple apple Set(3) { 'apple', 'banana', 'orange' }
 // banana banana Set(3) { 'apple', 'banana', 'orange' }
 // orange orange Set(3) { 'apple', 'banana', 'orange' }
