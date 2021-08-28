@@ -51,6 +51,8 @@ new Vue({
 
 위 코드는 get data 버튼을 클릭했을 때 사용자 정보를 받아오는 코드입니다. 실행하면 사용자 정보가 브라우저 개발자 도구의 콘솔에 출력됩니다.
 
+## 액시오스 응답 제어
+
 ### .then
 
 HTTP 통신이 성공했다는 뜻으로, `.then()`으로 결과값을 받아서 처리할 수 있습니다.
@@ -80,44 +82,30 @@ axios.get('/hello') {
 
 ## 액시오스 HTTP 요청 메소드 종류
 
-액시오스를 통해 사용할 수 있는 요청 메소드는 다음과 같습니다. 
-
-자주 쓰이는 메소드는 get, post, put, delete입니다. 
+액시오스에서 자주 사용되는 HTTP 요청 메소드를 알아보겠습니다.
 
 ### **axios.get(url[, config])**
 
-서버에서 데이터를 가져올 때 사용하는 메소드입니다. 두번째 인자인 config 객체에는 헤더 (header), 응답초과시간 (timeout), 인자값 (params) 등의 요청값을 같이 넘길 수 있습니다. 
+서버에서 데이터를 가져올 때 사용하는 메소드입니다. 두번째 파라미터 `config` 객체에는 헤더 (header), 응답초과시간 (timeout), 인자값 (params) 등의 요청값을 같이 넘길 수 있습니다. 
 
 ```javascript
 axios.get('통신할 서버주소')
-  .then(res => {
-    console.log(res); 
-  })
-  .catch(err) => {
-    console.log(err);
-  });
 ```
 
 ### **axios.post(url[, data[, config]])**
 
-새로운 값이나 데이터를 추가할 때 사용하는 메소드입니다. 데이터와 함께 보내 새로운 값을 입력합니다.
+서버에 데이터를 새로 생성할 때 사용하는 메소드입니다. 두 번째 파라미터 `data`에 생성할 데이터를 넘깁니다. 
 
 ```javascript
 axios.post('통신할 서버주소', { 추가할 데이터 })
-  .then(res => {
-    console.log(res)
-   })
 ```
 
 ### **axios.put(url[, data[, config]])**
 
-특정 데이터를 수정할 때 요청하는 메소드입니다. `put` 은 데이터 전체를 교체할 경우에 사용됩니다.
+특정 데이터를 수정할 때 요청하는 메소드입니다. `put` 은 새로운 리소스를 생성하거나, 이미 존재하는 데이터를 대체할 때 사용됩니다. 멱등성 (idempotent)을 가져 `put`을 한 번 보내는 결괏값과 `put`을 여러 번 연속으로 보내는 결과값이 동일합니다. 
 
 ```javascript
 axios.put('통신할 서버주소', { 변경할 데이터 })
-  .then(res => {
-    console.log(res)
-  })
 ```
 
 ### **axios.delete(url[, config])**
@@ -126,29 +114,88 @@ axios.put('통신할 서버주소', { 변경할 데이터 })
 
 ```javascript
 axios.delete('통신할 서버주소')
-  .then(res => {
-    console.log(res)
-  })
 ```
 
----
+## 액시오스 HTTP 요청 Config 옵션 
 
-이외에도 아래와 같은 HTTP 요청 메소드를 사용할 수 있습니다.
+액시오스 요청을 할 때는 config 설정이 가능합니다. 이 중 필수적인 설정은 url뿐입니다.
 
-**axios.request(config)**
+### url
 
-**axios.head(url[, config])**
+`url`은 액시오스 요청에 사용될 서버의 URL을 말합니다. 
 
-- `head` 는 `get` 방식과 동일하지만, 응답에 body가 없습니다. 이를 통해 웹 서버의 정보를 확인하거나 버전을 확인하는 등의 용도로 사용됩니다. 
+```javascript
+url: '/book'
+```
 
-**axios.options(url[, config])**
+### method
 
-- `options` 를 통해 서버에서 지원하는 옵션들을 미리 확인하기 위해 사용됩니다.
+`method`는 요청을 할 때 사용할 요청 메소드입니다. `method`의 기본값은 get 입니다.
 
-**axios.patch(url[, data[, config]])** 
+```javascript
+method: 'get'
+```
 
-- `patch`의 경우, 데이터의 일부를 교체할 경우에 사용됩니다. 
+### baseURL 
+
+URL이 절대경로가 아닌 이상, URL 앞에 `baseURL`이 추가됩니다. 액시오스 인스턴스에 `baseURL`을 설정하여 상대경로(relative URL)를 전달하는 방법이 더 편리할 수 있습니다. 
+
+```javascript
+baseURL: `https://도메인.com/api/`
+```
+
+### headers
+
+헤더를 수정해서 보내야 한다면 `headers`를 사용하면 됩니다.
+
+```javascript
+ headers: {'X-Requested-With': 'XMLHttpRequest'}
+```
+
+### params
+
+`params`는 요청과 함께 보낼 URL 파라미터를 말하며 오브젝트 (object)나 [URLSearchParams 오브젝트](https://developer.mozilla.org/ko/docs/Web/API/URLSearchParams)로 이루어져야 합니다. `params`가 널(null)이거나 undefined인 경우, URL에 렌더링되지 않습니다.
+
+```javascript
+params: {
+    ID: 13579
+}
+```
+
+### data
+
+`data`는 요청 본문(body)에 포함되어 보내질 데이터를 말합니다. `data`는 'PUT', 'POST', 'DELETE', 그리고 'PATCH' 액시오스 요청 메소드에 적용이 가능합니다. 
+
+```javascript
+data: {
+    firstName: 'Christine'
+},
+  
+// 아래의 data config 설정은 POST 메소드에서만 사용이 가능합니다.
+data: 'Age=26&City=New York'
+```
+
+### timeout
+
+`timeout`은 요청 시간이 초가되기까지의 시간을 밀리초(millisecond)로 지정합니다. 요청이 `timeout`에 지정된 시간보다 오래 걸리면 요청이 중단됩니다.
+
+```javascript
+timeout: 5000
+```
+
+### responseType
+
+`responseType`은 서버로부터 어떠한 데이터 형식으로 응답받을지 지정하는 것입니다. 옵션으로는 'arraybuffer', 'document', 'json', 'text', 'stream'이 가능합니다. json이 기본값입니다.
+
+```javascript
+responseType: 'json'
+```
+
+### 기타 액시오스 요청 Config
+
+Config 옵션은 메소드 별로 사용할 수 있는 옵션이 다르므로,  [액시오스 Request Config 문서](https://axios-http.com/docs/req_config)를 참고합니다.
 
 ## 기타 액시오스 API 
 
 기타 액시오스 관련 예제와 API는 [액시오스 문서](https://github.com/axios/axios#example)를 참고합니다.
+
