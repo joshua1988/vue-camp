@@ -79,7 +79,16 @@ module.exports = {
       {
         title: 'Vue.js in Legacy Projects',
         collapsable: false,
-        children: ['/legacy/jquery-to-vue', '/legacy/form', '/legacy/datepicker', '/legacy/chart', '/legacy/d3-with-vue'],
+        children: ['/legacy/jquery-to-vue', '/legacy/form', '/legacy/datepicker', '/legacy/chart'],
+      },
+      {
+        title: 'Vue.js with D3',
+        collapsable: false,
+        children: [
+          '/d3/overview',
+          '/d3/vue-with-d3',
+          '/d3/tutorial'
+        ]
       },
       {
         title: 'State Management',

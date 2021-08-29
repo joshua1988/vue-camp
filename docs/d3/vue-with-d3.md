@@ -2,14 +2,14 @@
 title: D3 with Vue
 ---
 
-# 뷰에서 디쓰리 사용하기
+# 뷰에서 D3 사용하기
 
 디쓰리(D3)는 시각화 구성 요소와 돔(DOM) 조작을 결합한 강력한 데이터 시각화 자바스크립트(JavaScript) 라이브러리로 HTML, SVG 및 CSS를 사용하여 데이터에 생명을 불어 넣습니다.
 
 하지만 디쓰리는 뷰와 유사한 작업을 수행하기 때문에 결합하려고 하면 논리 일관성을 유지하기가 어려울 수 있습니다. 디쓰리는 수학적 계산을 수행하여 데이터 시각화에 필요한 데이터를 생성하고 뷰는 반응성을 수용하면서 돔을 조작하여 이 충돌을 해결할 수 있습니다. 더 쉽게 이해할 수 있도록 예제를 통해 살펴 보겠습니다.
 
 
-## 일반적인 디쓰리
+## 일반적인 D3
 먼저 디쓰리의 돔 조작 함수를 사용하여 간단한 꺾은 선형 차트(Chart)를 그려보겠습니다. 아래 코드는 `data` 변수의 값을 선 그래프를 표현하기 위한 계산을 수행하고 SVG 요소에 접근해서 패스(path) 요소를 추가합니다.
 
 :::tip
@@ -18,6 +18,8 @@ title: D3 with Vue
 
 
 **코드**
+
+[실행해보기](https://codesandbox.io/s/vuecamp-d3withvue-example-d3-only-wpybk)
 
 <code-group>
 
@@ -100,6 +102,7 @@ svg.append('g')
 돔에 직접 접근해 화면 요소를 제어하는 방식이 제이쿼리(jQuery)와 유사하다는 점을 눈치채셨을 겁니다. 다음 코드를 추가해서 같은 방식으로 x축과 y축을 화면에 그립니다.
 
 **코드**
+
 ```js
 // chart.js
 svg.append('g')
@@ -113,13 +116,17 @@ svg.append('g')
 
 **결과**
 
+
 ![](./images/d3-line-axis.png)
 
 
-## 뷰에서의 디쓰리
+## 뷰에서의 D3
 이번에는 뷰입니다. `select`, `append` 와 같은 디쓰리의 돔 접근 함수는 뷰 템플릿(template)에서 마크업으로 대신하고 데이터 시각화를 위한 패스 계산과 같은 수학적 연산에는 디쓰리 유틸 함수를 사용합니다.
 
 **코드**
+
+[실행해보기](https://codesandbox.io/s/vuecamp-d3withvue-example-d3-with-vue-lhygp)
+
 ```html
 <!-- VueLineChart.vue -->
 <template>
@@ -217,16 +224,9 @@ export default {
     }
 }
 </script>
-
-<style>
-
-</style>
 ```
+
 
 위의 코드는 뷰의 가상 돔을 그대로 활용하고 계산과 렌더링(rendering)이 명확하게 분리되어 있기 때문에 구성요소를 더 쉽게 이해할 수 있습니다.
 
-
-## 실습 코드
-
-디쓰리의 예제를 뷰로 전환하는 더 많은 실습 코드는 [여기](https://github.com/Seungwoo321/vue-d3-tutorial)에서 확인할 수 있습니다.
 
