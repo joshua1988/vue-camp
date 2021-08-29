@@ -66,5 +66,5 @@ title: Form
 </script>
 ```
 
-[연습 코드는 여기서](https://github.com/joshua1988/vue-camp/tree/master/docs/legacy/form/exercise) <br>
-[답안 코드는 여기서](https://github.com/joshua1988/vue-camp/tree/master/docs/legacy/form/answer)
+[연습 코드는 여기서](https://github.com/joshua1988/vue-camp/tree/vue6-class/1_essentials/form/exercise) <br>
+[답안 코드는 여기서](https://github.com/joshua1988/vue-camp/tree/vue6-class/1_essentials/form/answer)
