@@ -19,5 +19,5 @@ title: Wrapping External Library II
 
 ## 실습 코드
 
-- [연습 코드는 여기서](https://github.com/joshua1988/vue-camp/tree/master/2_todo/chart-with-plugin/exercise)
-- [답안 코드는 여기서](https://github.com/joshua1988/vue-camp/tree/master/2_todo/chart-with-plugin/answer)
+- [연습 코드는 여기서](https://github.com/joshua1988/vue-camp/tree/master/docs/legacy/chart/exercise)
+- [답안 코드는 여기서](https://github.com/joshua1988/vue-camp/tree/master/docs/legacy/chart/answer)

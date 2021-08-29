@@ -21,6 +21,6 @@ title: Wrapping External Library I
 
 ## 실습 코드
 
-- [연습 코드는 여기서](https://github.com/joshua1988/vue-camp/tree/master/2_todo/external-library/exercise)
-- [답안 코드는 여기서](https://github.com/joshua1988/vue-camp/tree/master/2_todo/external-library/answer)
+- [연습 코드는 여기서](https://github.com/joshua1988/vue-camp/tree/master/docs/legacy/datepicker/exercise)
+- [답안 코드는 여기서](https://github.com/joshua1988/vue-camp/tree/master/docs/legacy/datepicker/answer)
 
