@@ -178,7 +178,7 @@ export default {
 
 ## v-slot의 이점
 
-`<template>`태그를 낭비하지 않고 간편한 문법을 사용할 수 있습니다. 그리고 가독성이 좋아집니다.
+`<template>` 태그를 사용함으로써 장황해지는 표현을 간략하게 할 수 있으며, 덕분에 가독성 또한 좋아집니다.
 
 ```html
 <!-- old -->
@@ -233,7 +233,7 @@ export default {
 ```
 
 :::warning
-하지만 슬롯이 여러 개일 경우는 반드시 `<template>`태그를 사용해 컴포넌트 하위에 표현해 주어야 합니다.
+하지만 슬롯이 여러 개일 경우는 반드시 `<template>`태그를 사용해 컴포넌트 하위에 표현해 주어야 합니다. 
 :::
 
 또한 `v-slot:default`는 `v-slot`으로 축약하여 표현할 수 있습니다.
@@ -244,7 +244,34 @@ export default {
 </foo>
 ```
 
-`v-slot`은 `v-bind(:)`, `v-on(@)`과 같이 특수 기호를 통해 나타낼 수 있습니다. 특수 기호는 `#`입니다. 예를 들어 `v-slot:header`는 `#header`로 표현될 수 있습니다.
+단, 컴포넌트 자체에 `v-slot`을 사용하고, 하위에 이름을 가진 `v-slot`을 사용할 수는 없습니다.  스콥드 슬롯의 변수 범위가 모호해지기 때문입니다. 아래의 예시  코드는 `default` 슬롯이 `foo` 컴포넌트에 선언되었고, 하위에 `other` 이름을 가진 슬롯이 존재합니다.
+
+```html {2,4}
+<!-- v-slot:other이 있기 때문에 오류 발생 -->
+<foo v-slot="slotProps">
+  {{ slotProps.msg }}
+  <template v-slot:other="otherSlotProps">
+    <!-- 이곳에 slotProps를 적용할 수 없음. -->
+  </template>
+</foo>
+```
+
+위 코드가 동작하려면 `<template>` 태그로 명확한 범위를 지정해 주어야 합니다. 그리고, default name을 가진 `v-slot` 축약 문법은 `<template>`태그로 명확한 범위를 지정해 준다면, 이름을 가진 슬롯(`<v-slot:other>`등)과 혼용해서 사용할 수 있습니다.
+
+```html {2,5}
+<foo>
+  <template v-slot="slotProps">
+    {{ slotProps.msg }}
+  </template>
+  <template v-slot:other="otherSlotProps">
+    {{ otherSlotProps.something }}
+  </template>
+</foo>
+```
+
+#### 특수 기호 표현
+
+`v-slot`은 `v-bind(:)`, `v-on(@)`과 같이 특수 기호를 통해 나타낼 수 있습니다. 특수 기호는 `#`입니다. 예를 들어 `v-slot:default`는 `#default`로 표현될 수 있습니다.
 
 ```html {1}
 <foo #default="slotProps">
@@ -252,7 +279,7 @@ export default {
 </foo>
 ```
 
-단, `#="slotProps"`구문은 불가능합니다. 특수 기호로 표현하고 싶다면, `#default="slotProps"`와 같이 슬롯 이름을 지정해 주어야 합니다.
+단, `#="slotProps"`구문은 불가능합니다. 특수 기호로 표현하고 싶다면, `#default="slotProps"`와 같이 반드시 슬롯 이름을 지정해 주어야 합니다.
 
 ### Destructuring 표현
 
