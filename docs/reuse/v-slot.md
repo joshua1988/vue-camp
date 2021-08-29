@@ -4,46 +4,83 @@ title: v-slot
 
 # v-slot
 
-Vue 2.6.0에서 `v-slot` 디렉티브가 새롭게 소개되었습니다. 기존의 스콥드 슬롯(Scoped Slot)은 Vue 3.0 에서 사라집니다.
+Vue 2.6.0에서 `v-slot` 디렉티브가 새롭게 소개되었습니다. `v-slot`은  네임드 슬롯(Named Slots)과 스콥드 슬롯(Scoped Slot) 사용을 통합한 새로운 디렉티브 입니다. 기존의 스콥드 슬롯(Scoped Slot) 표현은 Vue 3.0 에서 사라집니다.
+
+이전 버전에서 스콥드 슬롯이 가지고 있었던 문제점과 함께 `v-slot` 디렉티브가 어떻게 그 문제점을 해결했는지 살펴봅시다.
 
 ## 스콥드 슬롯의 문제점
 
-[스콥드 슬롯](/reuse/scoped-slot.html)은 슬롯을 사용할 때, 하위 컴포넌트의 값을 상위 컴포넌트에서 참조할 수 있게 합니다. 
+Vue.js에서 슬롯을 사용하는 이유는 재사용성이 높은 컴포넌트를 설계하기 용이하기 때문입니다. 함수형 프로그래밍에서 함수를 작성할 때, [단일 책임 원칙(Single Responsibility Principle)](https://en.wikipedia.org/wiki/Single_responsibility_principle)을 지켜주면 좋은 것처럼, Vue.js 컴포넌트를 설계할 때에도 하나의 컴포넌트가 하나의 역할을 할 수 있도록 설계하는 것이 좋습니다.
 
-처음 스콥드 슬롯이 소개되었을 때, `<template slot-scope>` 라는 장황한 문법을 사용해야했습니다.
+[스콥드 슬롯](/reuse/scoped-slot.html)**은 슬롯을 사용할 때, 하위 컴포넌트의 값을 상위 컴포넌트에서 참조**할 수 있게 합니다. 상위 컴포넌트의 데이터를 하위 컴포넌트 슬롯으로 바인딩 해주는 것이 자연스러워 보이지만, 하위 컴포넌트가 단일 책임을 지기 위해 데이터를 가지고 있어야 합니다. 그리고 데이터를 상위에서 참조해야 할 때가 있습니다. 그때 사용하는 것이 스콥드 슬롯입니다.
 
-```html {3,5}
+하지만, Vue.js에서 스콥드 슬롯을 소개했을 때, `slot-scope`속성을 추가한  `<template>`태그를 사용해 구문이 길어지는 문제가 있었습니다.
+
+```html {4}
+<!-- 하위 컴포넌트(Foo.vue) -->
+<template>
+  <div>
+    <slot :fooProp="fooProps"></slot>
+  </div>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      fooProp: 'Hello',
+    }
+  }
+}
+</script>
+```
+
+```html {4,6}
 <!-- 상위 컴포넌트 -->
-<foo>
-  <template slot-scope="fooProp">
-    <div>{{ fooProp }}</div>
-  </template>
-</foo>
+<template>
+  <foo>
+    <template slot-scope="fooProps">
+      <div>{{ fooProps }}</div>
+    </template>
+  </foo>
+</template>
+
+<script>
+import Foo from './Foo.vue';
+
+export default {
+  components: {
+    Foo
+  }
+}
+</script>
 ```
 
-스콥드 슬롯을 사용하기 위해서 `<template>` 태그를 계속 사용해야했기 때문에 2.5 버전에서는 스콥드 슬롯을 `<template>` 태그 대신, 표현하고자 하는 태그에 직접 작성할 수 있도록 변경되었습니다.
+스콥드 슬롯을 사용하기 위해서 `<template>`태그를 항상 사용해야 했기 때문에 Vue 2.5에서는 스콥드 슬롯을 `<template>`태그 대신, 표현하고자 하는 태그에 직접 작성할 수 있도록 변경되었습니다.
 
 ```html {2}
 <foo>
-  <div slot-scope="fooProp">{{ fooProp }}</div>
+  <div slot-scope="fooProps">{{ fooProps }}</div>
 </foo>
 ```
 
-이 처럼 HTML의 태그 뿐 아니라 컴포넌트 태그에서도 스콥드 슬롯을 표현할 수 있습니다.
+여기서 눈여겨봐야 할 부분은 하위 컴포넌트인 `<foo>`태그의 props가 상위 컴포넌트의 `<div>`태그로 전달되었다는 점입니다. 
+
+또한, HTML의 기본 태그뿐 아니라 컴포넌트 태그에서도 스콥드 슬롯을 표현할 수 있습니다.
 
 ```html {2}
 <foo>
-  <bar slot-scope="fooProp">{{ fooProp }}</bar>
+  <bar slot-scope="fooProps">{{ fooProps }}</bar>
 </foo>
 ```
 
-하지만 위와 같이 사용했을 때, 어떤 컴포넌트의 `slot-scope` 변수를 사용하는지 명확하지 않다는 문제점이 발생합니다.
+하지만 위와 같이 사용했을 때, 컴포넌트의 복잡성이 늘어나면 어떤 컴포넌트의 `slot-scope`변수를 사용하는지 명확하지 않다는 문제점이 발생합니다.
 
 ```html
 <foo>
-  <bar slot-scope="fooProp">
-    <baz slot-scope="barProp">
-      <div slot-scope="bazProp">
+  <bar slot-scope="fooProps">
+    <baz slot-scope="barProps">
+      <div slot-scope="bazProps">
         {{ fooProp }} {{ barProp }} {{ bazProp }}
       </div>
     </baz>
@@ -51,6 +88,194 @@ Vue 2.6.0에서 `v-slot` 디렉티브가 새롭게 소개되었습니다. 기존
 </foo>
 ```
 
-자식 컴포넌트인 `<foo>` 가 스콥드 슬롯을 사용하기 위해 `<bar>` 에 `slot-scope` 를 사용했고, 이어서 `<bar>` 는 이어서 `<baz>` 에 사용했습니다. 이렇게 중첩된 컴포넌트에서 스콥드 슬롯을 사용하게 되면 어떤 컴포넌트가 어떤 props을 올려주고 있는지 명확하지 않게 됩니다.
+자식 컴포넌트인 `<foo>`태그가 스콥드 슬롯을 사용하기 위해 `<bar>`태그에 `slot-scope`를 사용했고, 이어서 `<bar>`태그는 이어서 `<baz>`태그에 사용했습니다. 이렇게 중첩된 컴포넌트에서 스콥드 슬롯을 사용하게 되면 어떤 컴포넌트가 어떤 props을 올려주고 있는지 명확하지 않게 됩니다.
 
-2.5 버전에서 스콥드 슬롯을 사용할 때, `slot-scope` 속성을 `<template>` 에만 사용하는 것이 아니라 기존 태그에 사용할 수 있도록 허용한 것이 문제가 되었습니다. 따라서, `v-slot` 디렉티브가 등장하게 되었습니다.
+즉 2.5 버전에서 스콥드 슬롯을 사용할 때 `slot-scope`속성을 `<template>`태그에만 사용하는 것이 아니라, 기존 태그에 사용할 수 있도록 허용한 것이 문제가 되었습니다. 따라서, `v-slot`디렉티브가 등장하게 되었습니다.
+
+:::tip
+Vue 3.0에서는 `slot-scope`문법이 제거되었기 때문에, Vue 3.0에서 `slot-scope`를 사용하면 eslint가 `v-slot`으로 변환해 줍니다. (Vue CLI를 이용해 Vue 3.0을 설치했다고 가정합니다.)
+:::
+
+## v-slot 기본 사용 방법
+
+`v-slot`은 슬롯에 name 속성을 지정하여 여러 개 사용할 수 있도록 하는 [네임드 슬롯(Named Slots)](/reuse/slots.html#named-slots)과 스콥드 슬롯을 한 번에 표현할 수 있습니다.
+
+### 네임드 슬롯 표현
+
+```html
+<!-- 하위 컴포넌트(Foo.vue) -->
+<div>
+  <!-- 헤더 영역 -->
+  <slot name="header"></slot>
+  <!-- 본문 영역 -->
+  <slot></slot>
+  <!-- 푸터 영역 -->
+  <slot name="footer"></slot>
+</div>
+```
+
+```html {4,9,14}
+<!-- 상위 컴포넌트 -->
+<foo>
+  <!-- 헤더 영역 -->
+  <template v-slot:header>
+    <h1>Header</h1>
+  </template>
+
+  <!-- 본문 영역 -->
+  <template v-slot:default>
+    <div>Body</div>
+  </template>
+
+  <!-- 푸터 영역 -->
+  <template v-slot:footer>
+    <div>Footer</div>
+  </template>
+</foo>
+```
+
+:::tip
+`v-slot:default`는 슬롯에 name 속성을 붙이지 않은 영역에 표현됩니다.
+:::
+
+렌더링 된 HTML은 아래와 같습니다.
+
+```html
+<div>
+  <h1>Header</h1>
+  <div>Body</div>
+  <div>Footer</div>
+</div>
+```
+
+### 스콥드 슬롯 표현
+
+```html {3}
+<!-- 하위 컴포넌트(Foo.vue) -->
+<template>
+  <slot :msg="msg"></slot>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      msg: 'Hello!',
+    };
+  },
+};
+</script>
+```
+
+```html {3,4,5}
+<!-- 상위 컴포넌트 -->
+<foo>
+  <template v-slot:default="slotProps">
+    <h1>{{ slotProps.msg }}</h1>  <!-- <h1>Hello!</h1> -->
+  </template>
+</foo>
+```
+
+## v-slot의 이점
+
+`<template>`태그를 낭비하지 않고 간편한 문법을 사용할 수 있습니다. 그리고 가독성이 좋아집니다.
+
+```html
+<!-- old -->
+<foo>
+  <template slot-scope="{ msg }">
+    {{ msg }}
+  </template>
+</foo>
+```
+
+```html
+<!-- new -->
+<foo v-slot="{ msg }">{{ msg }}</foo>
+```
+
+어떤 컴포넌트의 스콥드 슬롯인지 명확하게 표현됩니다.
+
+```html
+<!-- old -->
+<foo>
+  <bar slot-scope="foo">
+    <baz slot-scope="bar">
+      <div slot-scope="baz">
+        {{ foo }} {{ bar }} {{ baz }}
+      </div>
+    </baz>
+  </bar>
+</foo>
+```
+
+```html
+<!-- new -->
+<foo v-slot="foo">
+  <bar v-slot="bar">
+    <baz v-slot="baz">
+      {{ foo }} {{ bar }} {{ baz }}
+    </baz>
+  </bar>
+</foo>
+```
+
+## v-slot 응용 표현 방식
+
+### 축약 표현
+
+스콥드 슬롯은 `v-slot`뒤에 props를 작성해 주면 하위 태그에서 사용할 수 있게 됩니다. 앞서 Vue 2.5에서 문제가 되었던 `<template>`태그를 다시 사용해야 한다는 단점이 생길 수 있습니다. 하지만, 여러 개의 슬롯을 사용하지 않고 default 슬롯만 사용한다면 아래와 같이 컴포넌트 자체에 `v-slot`속성을 지정해 사용할 수 있습니다.
+
+```html {1}
+<foo v-slot:default="slotProps">
+  <h1>{{ slotProps.msg }}</h1>
+</foo>
+```
+
+:::warning
+하지만 슬롯이 여러 개일 경우는 반드시 `<template>`태그를 사용해 컴포넌트 하위에 표현해 주어야 합니다.
+:::
+
+또한 `v-slot:default`는 `v-slot`으로 축약하여 표현할 수 있습니다.
+
+```html {1}
+<foo v-slot="slotProps">
+  <h1>{{ slotProps.msg }}</h1>
+</foo>
+```
+
+`v-slot`은 `v-bind(:)`, `v-on(@)`과 같이 특수 기호를 통해 나타낼 수 있습니다. 특수 기호는 `#`입니다. 예를 들어 `v-slot:header`는 `#header`로 표현될 수 있습니다.
+
+```html {1}
+<foo #default="slotProps">
+  <h1>{{ slotProps.msg }}</h1>
+</foo>
+```
+
+단, `#="slotProps"`구문은 불가능합니다. 특수 기호로 표현하고 싶다면, `#default="slotProps"`와 같이 슬롯 이름을 지정해 주어야 합니다.
+
+### Destructuring 표현
+
+스콥드 슬롯의 변수에 ES6 문법인, [디스트럭처링(Destructuring)](/es6/destructuring.html) 표현도 가능합니다.
+
+```html {1}
+<foo v-slot="{ msg }">
+  <h1>{{ msg }}</h1>
+</foo>
+```
+
+### Dynamic Slot Names 표현
+
+슬롯 name을 동적으로 표현할 수 있습니다.
+
+```html
+<foo>
+  <template v-slot:[dynamicsSlotName]>
+    ...
+  </template>
+</foo>
+```
+
+:::tip
+스콥드 슬롯은 Vue 3.0 이하의 버전에서는 계속 사용할 수 있습니다. 단 Vue 3.0 이상 버전에서 삭제되었으므로 Vue 2.6 이상을 사용하고 있다면, `v-slot`디렉티브를 통해 슬롯을 사용하도록 권장합니다.
+:::
