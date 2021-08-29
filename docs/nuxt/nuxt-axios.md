@@ -5,7 +5,7 @@
 ## 주요 특징
 
 - 옵션을 통해 런타임 환경(서버, 클라이언트)에 따라 사용할 기본 URL(Base URL)을 지정할 수 있습니다.
-- 옵션을 통해 [@nuxtjs/proxy](https://www.npmjs.com/package/@nuxtjs/proxy)와 연계하여 프록시(Proxy)를 쉽게 허용할 수 있습니다.
+- 옵션을 통해 [@nuxtjs/proxy](https://www.npmjs.com/package/@nuxtjs/proxy)와 연계하여 프록시([Proxy](https://joshua1988.github.io/webpack-guide/devtools/webpack-dev-server.html#프록시-proxy-설정))를 쉽게 허용할 수 있습니다.
 - 옵션을 통해 [axios-retry](https://www.npmjs.com/package/axios-retry)와 연계하여 비동기 요청 실패에 따른 재전송 옵션을 쉽게 설정할 수 있습니다.
 - Nuxt의 프로그레스 바([Progress Bar](https://nuxtjs.org/docs/2.x/features/loading#customizing-the-progress-bar))와 자동으로 연동됩니다.
 - 헬퍼 메서드를 통해 `$axios`의 인터셉터, 토큰, 헤더, 기본 URL을 쉽게 설정할 수 있습니다.
@@ -68,7 +68,7 @@ async fetch(){
 Nuxt 설정 파일에 옵션을 명시하여 `$axios`의 환경 설정(Configuration)을 할 수 있습니다. 본문에서는 자주 쓰이는 옵션들 위주로 설명하겠습니다.
 
 :::tip
-`$axios`의 환경 설정은 총 두 차례에 걸쳐 일어납니다. Nuxt 설정 파일을 통해서 설정이 우선 적용되고, 두 번째로는 [플러그인](/nuxt/nuxt-axios.html#플러그인)을 통해 설정이 추가 적용됩니다.
+`$axios`의 환경 설정은 총 두 차례에 걸쳐 일어납니다. Nuxt 설정 파일을 통해서 설정이 우선 적용되고 두 번째로는 [플러그인](/nuxt/nuxt-axios.html#플러그인)을 통해 설정이 추가 적용됩니다.
 :::
 
 ### Host, Port, Prefix
@@ -124,7 +124,7 @@ API_URL=http://localhost.com:8080/modules
 // nuxt.config.js
 export default {
   axios: {
-    browserBaseURL: "https://learNuxt.com:8080/modules",
+    browserBaseURL: "https://learnNuxt.com:8080/modules",
   },
 };
 ```
@@ -133,7 +133,7 @@ export default {
 
 ```js
 // .env
-API_URL_BROWSER=https://learNuxt.com:8080/modules
+API_URL_BROWSER=https://learnNuxt.com:8080/modules
 ```
 
 ### Proxy
@@ -154,13 +154,9 @@ export default {
 };
 ```
 
-프록시에 대해서 더 자세히 알고 싶다면 아래의 링크를 참조하세요.
-
-- [http-proxy-middelware](https://github.com/chimurai/http-proxy-middleware)
-
 ### Retry
 
-`@nuxtjs/axios`를 설치하면 의존성에 의해서 자동으로 [`axios-retry`](https://www.npmjs.com/package/axios-retry)가 설치됩니다. 이 모듈을 적용하면 `$axios` 요청 실패 시 자동으로 결과를 인터셉트(Intercept)해서 다시 요청을 보냅니다. Nuxt 설정 파일의 `axios.retry`를 `true`로 설정하거나 [`retryOptions`](https://www.npmjs.com/package/axios-retry#options)를 지정하면 요청 실패에 따른 자동 재요청이 가능해집니다. 참고로 재전송 횟수의 디폴트는 3회입니다.
+`@nuxtjs/axios`를 설치하면 의존성에 의해서 자동으로 [`axios-retry`](https://www.npmjs.com/package/axios-retry)가 설치됩니다. 이 모듈을 적용하면 `$axios` 요청 실패 시 자동으로 결과를 가로채서 다시 요청을 보냅니다. Nuxt 설정 파일의 `axios.retry`를 `true`로 설정하거나 [`retryOptions`](https://www.npmjs.com/package/axios-retry#options)를 지정하면 요청 실패에 따른 자동 재요청이 가능해집니다. 참고로 재전송 횟수의 디폴트는 3회입니다.
 
 ```js
 // nuxt.config.js
@@ -254,7 +250,7 @@ $axios.setToken("123", "Bearer", ["post", "put", "delete"]);
 ```
 
 :::warning
-`$axios`의 설정을 바꿀 경우 글로벌하게 적용되므로 사이드 이펙트(Side Effect) 발생을 막기 위해 헬퍼 메서드를 컴포넌트에서 활용하기보단 [플러그인](/nuxt/nuxt-axios.html#플러그인)에서 활용하는 것을 추천합니다.
+`$axios`의 설정을 바꿀 경우 글로벌하게 적용되므로 의도치 않은 동작을 막기 위해 헬퍼 메서드를 컴포넌트에서 활용하기보단 [플러그인](/nuxt/nuxt-axios.html#플러그인)에서 활용하는 것을 추천합니다.
 :::
 
 ## 플러그인
