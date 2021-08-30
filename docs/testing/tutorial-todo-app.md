@@ -289,8 +289,8 @@ vue-test-utils 라이브러리에선 `input`이벤트를 `trigger`시 `event.tar
           :value="text"
           @input="handleInput"
         />
-        <!-- @click="handleClick" 추가 -->
-        <button type="button" @click="handleClick">추가하기</button>
+        <!-- @click="handleClickAddTodo" 추가 -->
+        <button type="button" @click="handleClickAddTodo">추가하기</button>
       </div>
     </form>
     <!-- ul, li 태그 추가 -->
@@ -316,7 +316,7 @@ export default {
       this.text = event.target.value;
     },
     // 추가
-    handleClick() {
+    handleClickAddTodo() {
       // 할 일 추가
       this.todos.push({
         id: this.newId,
