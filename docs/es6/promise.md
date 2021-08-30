@@ -167,7 +167,7 @@ const promise = new Promise((resolve, reject) => {
     reject(new Error('error')); // ignored
     setTimeout(() => {
         resolve('..');
-    }, 1000); // ignored
+    }, 1000);
 });
 ```
 
