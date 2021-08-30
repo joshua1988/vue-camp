@@ -99,12 +99,6 @@ loadScript('callback.js')
     .catch(console.log);
 ```
 
-파일이 정상적으로 로드되었으면 `onload` 이벤트가 감지됨과 동시에 `resolve` 함수가 호출되어 프로미스의 상태가 `fulfilled`로 바뀌게 됩니다.
-
-반대로 파일의 로드가 실패하게 되면 에러가 발생하며, `onerror` 이벤트가 감지됨과 동시에 `reject` 함수가 호출되어 프로미스의 상태가 `rejected`로 바뀌게 됩니다.
-
-이후 프로미스의 상태에 따라 `.then` 또는 `.catch` 메소드가 실행되게 됩니다.
-
 ## 기본 문법
 
 생성자 함수를 활용한 프로미스 객체 생성 법은 다음과 같습니다.
@@ -230,3 +224,5 @@ promise
         alert('promise ready!');
     })
 ```
+
+## 프로미스 정적 메서드
