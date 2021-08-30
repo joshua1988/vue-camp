@@ -124,7 +124,7 @@ package.json에 `test:unit` 스크립트에  `--watchAll` 옵션을 추가해주
 
 ## 할 일 추가하기
 
-[완성 코드]()
+[완성 코드](https://github.com/dngwoodo/vue-todo-app-test/tree/ec674be494e8c27f6440e689ab40714ec255c19e)
 
 1. UI 구현   
 
