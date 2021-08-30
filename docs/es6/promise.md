@@ -84,7 +84,7 @@ function step2(error, script) {
 ```js
 function loadScript(src) {
     return new Promise((resolve, reject) => {
-        let script = document.createElement('script');
+        const script = document.createElement('script');
         script.src = src;
 
         script.onload = () => resolve(script);
@@ -110,7 +110,7 @@ loadScript('callback.js')
 생성자 함수를 활용한 프로미스 객체 생성 법은 다음과 같습니다.
 
 ```js
-let promise = new Promise((resolve, reject) => {
+const promise = new Promise((resolve, reject) => {
     // executor
 }
 ```
@@ -130,7 +130,7 @@ let promise = new Promise((resolve, reject) => {
 다음의 예제는 별도의 필터링 없이 프로미스 객체를 생성한 뒤 `console.log(promise)`를 통해 객체를 살펴봅니다.
 
 ```js
-let promise = new Promise(function(resolve, reject) {
+const promise = new Promise(function(resolve, reject) {
     setTimeout(() => {
         resolve('success');
     }, 1000);
@@ -161,7 +161,7 @@ Promise {<fulfilled>: "success"}
 1. 프로미스객체의 실행 함수는 단 하나의 `resolve` 또는 `reject`만 처리할 수 있습니다.
 
 ```js
-let promise = new Promise((resolve, reject) => {
+const promise = new Promise((resolve, reject) => {
     resolve('done!');
 
     reject(new Error('error')); // ignored
@@ -176,7 +176,7 @@ let promise = new Promise((resolve, reject) => {
 3. `resolve`와 `reject`는 꼭 비동기적으로 호출되어야 하는 것은 아닙니다.
 
 ```js
-let promise = new Promise((resolve, reject) => {
+const promise = new Promise((resolve, reject) => {
     resolve(123);
 });
 ```
@@ -205,7 +205,7 @@ promise.then(
 프로미스 객체의 에러를 처리할 때 (rejected된 경우) 사용됩니다. `.catch`메서드는 `.then` 메서드의 첫 번째 인자에 `null`을 전달한 것과 마찬가지로 작동하게 됩니다.
 
 ```js
-let promise = new Promise((resolve, reject) => {
+const promise = new Promise((resolve, reject) => {
     setTimeout(() => reject(new Error('Error!')), 1000);
 });
 
@@ -221,7 +221,7 @@ promise.catch(alert); // same as promise.then(null, alert)
 `.finally`는 **인자를 받지 않습니다.**
 
 ```js
-let promise = new Promise((resolve, reject) => {
+const promise = new Promise((resolve, reject) => {
     setTimeout(() => resolve('result!'), 1000);
 });
 promise
