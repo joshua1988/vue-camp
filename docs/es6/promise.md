@@ -225,8 +225,8 @@ const promise = new Promise((resolve, reject) => {
     setTimeout(() => resolve('result!'), 1000);
 });
 promise
+    .then(console.log);
     .finally(() => {
         alert('promise ready!');
     })
-    .then(console.log);
 ```
