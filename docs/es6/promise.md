@@ -49,7 +49,7 @@ loadScript('1.js', function(error, script) {
 
 처리해야 할 작업이 많아질수록 코드가 뾰족탑처럼 오른쪽으로 치우치는 형태를 보이게 됩니다. 이러한 함수 중첩의 모양이 피라미드와 비슷하다고 하여 **Pyramid of Doom**으로 불리게 되었습니다.
 
-위의 예시에서 볼 수 있듯 콜백 지옥은 코드의 가독성을 저해하게 되지만, 프로미스를 활용하면 이러한 문제점을 해결할 수 있게 됩니다.
+위의 예시에서 볼 수 있듯 콜백 지옥은 코드의 가독성을 저해하게 되지만 프로미스를 활용하면 이러한 문제점을 해결할 수 있게 됩니다.
 
 ### 2. 에러의 처리
 
@@ -128,7 +128,7 @@ let promise = new Promise((resolve, reject) => {
 
 ## 기본 예제
 
-다음의 예제는 별도의 필터링 없이 프로미스 객체를 생성한 뒤, `console.log(promise)`를 통해 객체를 살펴봅니다.
+다음의 예제는 별도의 필터링 없이 프로미스 객체를 생성한 뒤 `console.log(promise)`를 통해 객체를 살펴봅니다.
 
 ```js
 let promise = new Promise(function(resolve, reject) {
@@ -139,7 +139,7 @@ let promise = new Promise(function(resolve, reject) {
 console.log(promise);
 ```
 
-프로미스 객체의 실행 함수를 1초가 지난 뒤에 실행하게끔 설정해두었으므로, 위의 예제를 한 번에 실행하게 되면 콘솔 상에 다음과 같은 결과가 나타나며,
+프로미스 객체의 실행 함수를 1초가 지난 뒤에 실행하게끔 설정해두었으므로, 위의 예제를 한 번에 실행하게 되면 콘솔 상에 다음과 같은 결과가 나타납니다.
 
 ```js
 Promise {<pending>}
