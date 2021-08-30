@@ -16,9 +16,9 @@ module.exports = function(data) {
     };
   }
 
-  const filePath =
-    process.env.NODE_ENV === "development"
-      ? `./docs/${data.dirName}`
-      : `./${data.dirName}`;
-  return getFiles(filePath);
+  // const filePath =
+  //   process.env.NODE_ENV === "development"
+  //     ? `./docs/${data.dirName}`
+  //     : `./${data.dirName}`;
+  return getFiles(`./docs/${data.dirName}`);
 };
