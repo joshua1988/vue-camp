@@ -225,4 +225,40 @@ promise
     })
 ```
 
+## 프로미스를 활용한 비동기처리 예시
+
+다음 두 예제는 모두 제이쿼리(jquery)의 `$.get` 메서드를 활용하여 데이터를 요청합니다.
+
+첫 번째 예제 코드는 비동기적으로 동작하는 `$.get` 메서드로 인해 요청에 대한 응답 값을 변수 `todo`에 저장하여도 결과물은 `undefined`로 나타나게 됩니다. 이는 요청에 대한 응답 값을 정상적으로 확인하지 못한다는 의미입니다.
+
+```js
+function getTodo() {
+    let todo;
+    $.get('https://jsonplaceholder.typicode.com/todos/1', function(response) {
+        todo = response;
+    });
+    return todo;
+}
+console.log(getTodo()); // undefined
+```
+
+이러한 문제점을 해결하기 위해 프로미스를 활용합니다.
+
+```js
+function getTodo() {
+    return new Promise((resolve, reject) => {
+        $.get('https://jsonplaceholder.typicode.com/todos/1', (response) => {
+            resolve(response);
+        });
+    });
+}
+getTodo().then(console.log);
+```
+
+위의 예제에서는 `getTodo` 함수에서 특정 변수값을 반환하는 것이 아니라 프로미스를 생성하여 반환하게 됩니다. 이때 프로미스의 콜백인 `resolve`함수에 요청에 대한 응답 값을 담게 됩니다.
+
+`$.get()` 메서드를 통해 요청을 보낸 URL로부터 정상적으로 응답이 오고 나면 `resolve` 콜백에 해당 응답 값이 담겨 `.then` 메서드로 전달됩니다.
+
+이후 콜백에 전달된 응답 값을 출력해보면 정상적으로 데이터 수신이 이루어졌음을 확인할 수 있습니다.
+
 ## 프로미스 정적 메서드
