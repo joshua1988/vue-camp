@@ -258,7 +258,7 @@ v-model을 사용하지 않은 이유는 현재 시점에서는 IME 입력(한�
 4. 기능 구현 - 테스트 코드 작성
 ```js
 // src/App.test.js
-  it("listens input event", () => {
+  it("changes input value when listens input event", () => {
     const wrapper = shallowMount(App);
 
     // setValue는 아래 두 코드의 축약 api 입니다.
@@ -336,7 +336,7 @@ export default {
 6. 기능 구현 - 테스트 코드 작성
 ```js
 // src/App.test.js
-it("listens click event", async () => {
+it("adds todo when listens '추가하기' click event", async () => {
   const wrapper = shallowMount(App);
 
   wrapper.find("input").setValue("아무것도 안하기");
