@@ -340,7 +340,6 @@ it("listens click event", async () => {
   const wrapper = shallowMount(App);
 
   wrapper.find("input").setValue("아무것도 안하기");
-
   await wrapper.find("button").trigger("click");
 
   expect(wrapper.find("li").text()).toContain("아무것도 안하기");
