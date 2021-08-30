@@ -1,3 +1,33 @@
+const routes = [
+  'js',
+  'es6',
+  'vue',
+  'syntax',
+  'reuse',
+  'legacy',
+  'vuex',
+  'advanced',
+  'design',
+  'testing',
+  'ts',
+  'nuxt',
+  'pwa',
+  'deploy',
+  'webpack',
+  'format',
+  'vuepress',
+];
+
+const createSidebar = () => {
+  const sidebar = ['/textbook'];
+  for (let i = 0; i < routes.length; i++) {
+    sidebar.push(require('../' + routes[i]));
+  }
+  return sidebar;
+};
+
+
+
 module.exports = {
   base: '/vue-camp/',
   head: [
@@ -52,168 +82,169 @@ module.exports = {
             link: '/front-dev',
           },
         ],
-        sidebar: [
-          '/textbook',
-          {
-            title: 'JavaScript Fundamentals',
-            collapsable: true,
-            children: [
-              '/js/variable',
-              '/js/string',
-              // '/js/number',
-              '/js/object',
-              '/js/array',
-              '/js/loop',
-              '/js/operator',
-              '/js/function',
-              '/js/scope',
-              '/js/this',
-              '/js/prototype',
-              '/js/closure',
-            ],
-          },
-          {
-            title: 'ES6',
-            collapsable: true,
-            children: [
-              '/es6/const-let',
-              '/es6/fat-arrow',
-              '/es6/enhanced-object-literals',
-              '/es6/spread-operator',
-              '/es6/template-literal',
-              '/es6/destructuring',
-              '/es6/async-await',
-              '/es6/modules',
-              '/es6/nullish-coalescing-operator',
-              '/es6/default-parameter',
-            ],
-          },
-          {
-            title: 'Vue.js Fundamentals',
-            collapsable: false,
-            children: [
-              '/vue/instance',
-              '/vue/life-cycle',
-              '/vue/template',
-              '/vue/components',
-              '/vue/components-communication',
-              '/vue/props',
-              '/vue/event-emit',
-              '/vue/router',
-              '/vue/axios',
-              '/vue/cli',
-              '/vue/sfc',
-            ],
-          },
-          {
-            title: 'Template Syntax',
-            collapsable: false,
-            children: ['/syntax/methods', '/syntax/computed', '/syntax/watch', '/syntax/filters', '/syntax/form'],
-          },
-          {
-            title: 'Maximizing Reusability',
-            collapsable: false,
-            children: ['/reuse/slots', '/reuse/scoped-slot', '/reuse/mixins', '/reuse/plugins', '/reuse/mixins-vs-hoc'],
-          },
-          {
-            title: 'Vue.js in Legacy Projects',
-            collapsable: false,
-            children: ['/legacy/jquery-to-vue', '/legacy/form', '/legacy/datepicker', '/legacy/chart'],
-          },
-          {
-            title: 'State Management',
-            collapsable: false,
-            children: [
-              '/vuex/concept',
-              '/vuex/state',
-              '/vuex/getters',
-              '/vuex/mutations',
-              '/vuex/actions',
-              '/vuex/helper',
-              '/vuex/modules',
-              '/vuex/state-vs-data',
-            ],
-          },
-          {
-            title: 'Advanced Technics',
-            collapsable: false,
-            children: [
-              '/advanced/folder-structure',
-              '/advanced/code-splitting',
-              '/advanced/navigation-guard',
-              '/advanced/transition',
-            ],
-          },
-          {
-            title: 'Component Design Patterns',
-            collapsable: false,
-            children: ['/design/pattern1', '/design/pattern2', '/design/pattern3', '/design/pattern4', '/design/pattern5'],
-          },
-          {
-            title: 'Testing Applications',
-            collapsable: false,
-            children: [
-              '/testing/overview',
-              '/testing/jest-testing',
-              '/testing/vue-test-util',
-              '/testing/getting-started',
-              '/testing/component-tutorial-1',
-              '/testing/tutorial-todo-app',
-              // 튜토리얼 - 뷰엑스
-              // 튜토리얼 - 비동기
-              // 튜토리얼 - 외부 라이브러리
-              '/testing/api',
-              '/testing/snapshots',
-              '/testing/coverage',
-            ],
-          },
-          {
-            title: 'Typescript',
-            collapsable: false,
-            children: ['/ts/intro', '/ts/with-vue', '/ts/pdecorator', '/ts/vuex', '/ts/refs'],
-          },
-          {
-            title: 'Nuxt',
-            collapsable: false,
-            children: [
-              '/nuxt/intro',
-              '/nuxt/ssr',
-              '/nuxt/universal-mode',
-              '/nuxt/folder-structure',
-              '/nuxt/automatic-routing',
-              '/nuxt/layouts',
-              '/nuxt/data-fetching',
-              '/nuxt/store',
-              '/nuxt/deployment',
-              '/nuxt/meta-tags',
-            ],
-          },
-          {
-            title: 'PWA',
-            collapsable: false,
-            children: ['/pwa/cli-pwa-plugin', '/pwa/workbox', '/pwa/workbox-caching'],
-          },
-          {
-            title: 'Deployment',
-            collapsable: false,
-            children: ['/deploy/intro', '/deploy/env-setup', '/deploy/cli3-rules'],
-          },
-          {
-            title: 'Webpack',
-            collapsable: false,
-            children: ['/webpack/project-setup'],
-          },
-          {
-            title: 'ESLint & Prettier',
-            collapsable: false,
-            children: ['/format/official'],
-          },
-          {
-            title: 'VuePress',
-            collapsable: false,
-            children: ['/vuepress/learning-note'],
-          },
-        ],
+        sidebar: createSidebar(),
+        // [
+        //   '/textbook',
+          // {
+          //   title: 'JavaScript Fundamentals',
+          //   collapsable: true,
+          //   children: [
+          //     '/js/variable',
+          //     '/js/string',
+          //     // '/js/number',
+          //     '/js/object',
+          //     '/js/array',
+          //     '/js/loop',
+          //     '/js/operator',
+          //     '/js/function',
+          //     '/js/scope',
+          //     '/js/this',
+          //     '/js/prototype',
+          //     '/js/closure',
+          //   ],
+          // },
+          // {
+          //   title: 'ES6',
+          //   collapsable: true,
+          //   children: [
+          //     '/es6/const-let',
+          //     '/es6/fat-arrow',
+          //     '/es6/enhanced-object-literals',
+          //     '/es6/spread-operator',
+          //     '/es6/template-literal',
+          //     '/es6/destructuring',
+          //     '/es6/async-await',
+          //     '/es6/modules',
+          //     '/es6/nullish-coalescing-operator',
+          //     '/es6/default-parameter',
+          //   ],
+          // },
+          // {
+          //   title: 'Vue.js Fundamentals',
+          //   collapsable: false,
+          //   children: [
+          //     '/vue/instance',
+          //     '/vue/life-cycle',
+          //     '/vue/template',
+          //     '/vue/components',
+          //     '/vue/components-communication',
+          //     '/vue/props',
+          //     '/vue/event-emit',
+          //     '/vue/router',
+          //     '/vue/axios',
+          //     '/vue/cli',
+          //     '/vue/sfc',
+          //   ],
+          // },
+          // {
+          //   title: 'Template Syntax',
+          //   collapsable: false,
+          //   children: ['/syntax/methods', '/syntax/computed', '/syntax/watch', '/syntax/filters', '/syntax/form'],
+          // },
+          // {
+          //   title: 'Maximizing Reusability',
+          //   collapsable: false,
+          //   children: ['/reuse/slots', '/reuse/scoped-slot', '/reuse/mixins', '/reuse/plugins', '/reuse/mixins-vs-hoc'],
+          // },
+          // {
+          //   title: 'Vue.js in Legacy Projects',
+          //   collapsable: false,
+          //   children: ['/legacy/jquery-to-vue', '/legacy/form', '/legacy/datepicker', '/legacy/chart'],
+          // },
+          // {
+          //   title: 'State Management',
+          //   collapsable: false,
+          //   children: [
+          //     '/vuex/concept',
+          //     '/vuex/state',
+          //     '/vuex/getters',
+          //     '/vuex/mutations',
+          //     '/vuex/actions',
+          //     '/vuex/helper',
+          //     '/vuex/modules',
+          //     '/vuex/state-vs-data',
+          //   ],
+          // },
+          // {
+          //   title: 'Advanced Technics',
+          //   collapsable: false,
+          //   children: [
+          //     '/advanced/folder-structure',
+          //     '/advanced/code-splitting',
+          //     '/advanced/navigation-guard',
+          //     '/advanced/transition',
+          //   ],
+          // },
+          // {
+          //   title: 'Component Design Patterns',
+          //   collapsable: false,
+          //   children: ['/design/pattern1', '/design/pattern2', '/design/pattern3', '/design/pattern4', '/design/pattern5'],
+          // },
+          // {
+          //   title: 'Testing Applications',
+          //   collapsable: false,
+          //   children: [
+          //     '/testing/overview',
+          //     '/testing/jest-testing',
+          //     '/testing/vue-test-util',
+          //     '/testing/getting-started',
+          //     '/testing/component-tutorial-1',
+          //     '/testing/tutorial-todo-app',
+          //     // 튜토리얼 - 뷰엑스
+          //     // 튜토리얼 - 비동기
+          //     // 튜토리얼 - 외부 라이브러리
+          //     '/testing/api',
+          //     '/testing/snapshots',
+          //     '/testing/coverage',
+          //   ],
+          // },
+          // {
+          //   title: 'Typescript',
+          //   collapsable: false,
+          //   children: ['/ts/intro', '/ts/with-vue', '/ts/pdecorator', '/ts/vuex', '/ts/refs'],
+          // },
+          // {
+          //   title: 'Nuxt',
+          //   collapsable: false,
+          //   children: [
+          //     '/nuxt/intro',
+          //     '/nuxt/ssr',
+          //     '/nuxt/universal-mode',
+          //     '/nuxt/folder-structure',
+          //     '/nuxt/automatic-routing',
+          //     '/nuxt/layouts',
+          //     '/nuxt/data-fetching',
+          //     '/nuxt/store',
+          //     '/nuxt/deployment',
+          //     '/nuxt/meta-tags',
+          //   ],
+          // },
+          // {
+          //   title: 'PWA',
+          //   collapsable: false,
+          //   children: ['/pwa/cli-pwa-plugin', '/pwa/workbox', '/pwa/workbox-caching'],
+          // },
+          // {
+          //   title: 'Deployment',
+          //   collapsable: false,
+          //   children: ['/deploy/intro', '/deploy/env-setup', '/deploy/cli3-rules'],
+          // },
+          // {
+          //   title: 'Webpack',
+          //   collapsable: false,
+          //   children: ['/webpack/project-setup'],
+          // },
+          // {
+          //   title: 'ESLint & Prettier',
+          //   collapsable: false,
+          //   children: ['/format/official'],
+          // },
+          // {
+          //   title: 'VuePress',
+          //   collapsable: false,
+          //   children: ['/vuepress/learning-note'],
+          // },
+        // ],
       }
     }
   },
