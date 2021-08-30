@@ -94,8 +94,7 @@ function loadScript(src) {
     });
 }
 
-let promise = loadScript('callback.js');
-promise //
+loadScript('callback.js')
     .then(console.log)
     .catch(console.log);
 ```
