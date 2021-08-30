@@ -124,7 +124,7 @@ module.exports = {
             title: 'Vue.js with D3',
             collapsable: false,
             children: [
-              '/d3/overview',
+              '/d3/d3',
               '/d3/vue-with-d3',
               '/d3/tutorial'
             ]
