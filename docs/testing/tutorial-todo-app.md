@@ -258,11 +258,11 @@ v-model을 사용하지 않은 이유는 현재 시점에서는 IME 입력(한�
 4. 기능 구현 - 테스트 코드 작성
 ```js
 // src/App.test.js
-  it("changes input value when listens input event", () => {
+  it("changes input value when listens input event", async () => {
     const wrapper = shallowMount(App);
 
     // setValue는 아래 두 코드의 축약 api 입니다.
-    wrapper.find("input").setValue("아무것도 안하기");
+    await wrapper.find("input").setValue("아무것도 안하기");
     // wrapper.find("input").element.value = "아무것도 안하기";
     // wrapper.find("input").trigger("input");
 
@@ -270,7 +270,7 @@ v-model을 사용하지 않은 이유는 현재 시점에서는 IME 입력(한�
   });
 ```
 
-vue-test-utils 라이브러리에선 `input`이벤트를 `trigger`시 `event.target.value`를 직접적으로 변경할 수 없습니다. 그래서 `input`의 `value`값을 변경한 뒤 `input`이벤트를 `trigger`해야 합니다. `input`이벤트를 `trigger`하면 `handleInput`함수가 실행되고 `data`의 `text`값이 변경됐는지 테스트합니다.
+vue-test-utils 라이브러리에선 `input`이벤트를 `trigger`시 `event.target.value`를 직접적으로 변경할 수 없습니다. 그래서 `input`의 `value`값을 변경한 뒤 `input`이벤트를 `trigger`해야 합니다. `input`이벤트를 `trigger`하면 `handleInput`함수가 실행되고 `data`의 `text`값이 변경됐는지 테스트합니다. 그리고 이벤트 트리거는 비동기로 동작하기 때문에 `async, await`문법을 사용하여 동기적으로로 동작하게 만듭니다.
 <br />
 
 5. 기능 구현 - `추가하기` 버튼을 누르면 할 일 추가
@@ -346,4 +346,4 @@ it("adds todo when listens '추가하기' click event", async () => {
 });
 ```
 
-`click`이벤트 트리거는 비동기로 동작하기 때문에 `async, await`문법을 사용하여 동기적으로로 동작하게 만듭니다. `input 창`에 할 일을 타이핑하고 `추가하기` 버튼이 클릭 됐을 때 타이핑한 할 일이 화면에 출력 되는지 테스트합니다.
+`input 창`에 할 일을 타이핑하고 `추가하기` 버튼이 클릭 됐을 때 타이핑한 할 일이 화면에 출력 되는지 테스트합니다.
