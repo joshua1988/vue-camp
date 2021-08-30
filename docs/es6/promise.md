@@ -205,11 +205,11 @@ promise.then(
 프로미스 객체의 에러를 처리할 때 (rejected된 경우) 사용됩니다. `.catch`메서드는 `.then` 메서드의 첫 번째 인자에 `null`을 전달한 것과 마찬가지로 작동하게 됩니다.
 
 ```js
-const promise = new Promise((resolve, reject) => {
+const asyncThing = new Promise((resolve, reject) => {
     setTimeout(() => reject(new Error('Error!')), 1000);
 });
 
-promise.catch(alert); // same as promise.then(null, alert)
+asyncThing.catch(alert); // same as promise.then(null, alert)
 ```
 
 프로미스의 에러 처리는 가급적 `.catch` 메서드를 사용해야 합니다. 그 이유는 [Javascript.info - Error handling with promises](https://javascript.info/promise-error-handling)문서에 소개되어 있습니다.
