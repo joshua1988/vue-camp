@@ -136,7 +136,7 @@ package.json에 `test:unit` 스크립트에  `--watchAll` 옵션을 추가해주
 <template>
   <div>
     <h1>Todo App</h1>
-    <form>
+    <div>
       <label for="todo-control">할 일 작성</label>
       <div>
         <input
@@ -146,7 +146,7 @@ package.json에 `test:unit` 스크립트에  `--watchAll` 옵션을 추가해주
         />
         <button type="button">추가하기</button>
       </div>
-    </form>
+    </div>
   </div>
 </template>
 ```
@@ -220,7 +220,7 @@ it("connects label and input", () => {
 <template>
   <div>
     <h1>Todo App</h1>
-    <form>
+    <div>
       <label for="todo-control">할 일 작성</label>
       <div>
         <input
@@ -232,7 +232,7 @@ it("connects label and input", () => {
         />
         <button type="button">추가하기</button>
       </div>
-    </form>
+    </div>
   </div>
 </template>
 
@@ -279,7 +279,7 @@ vue-test-utils 라이브러리에선 `input`이벤트를 `trigger`시 `event.tar
 <template>
   <div>
     <h1>Todo App</h1>
-    <form>
+    <div>
       <label for="todo-control">할 일 작성</label>
       <div>
         <input
@@ -292,7 +292,7 @@ vue-test-utils 라이브러리에선 `input`이벤트를 `trigger`시 `event.tar
         <!-- @click="handleClickAddTodo" 추가 -->
         <button type="button" @click="handleClickAddTodo">추가하기</button>
       </div>
-    </form>
+    </div>
     <!-- ul, li 태그 추가 -->
     <ul>
       <li v-for="todo in todos" :key="todo.id">
