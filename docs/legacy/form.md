@@ -1,5 +1,7 @@
 ---
 title: Form
+isDeploy: true
+order: 2
 ---
 
 # Form

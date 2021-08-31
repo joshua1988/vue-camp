@@ -1,5 +1,7 @@
 ---
 title: Tutorial - User Interaction
+isDeploy: true
+order: 6
 ---
 
 # 튜토리얼 1 - 사용자 키보드 & 마우스 입력 테스트하기

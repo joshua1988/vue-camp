@@ -1,5 +1,7 @@
 ---
 title: Wrapping External Library II
+isDeploy: true
+order: 4
 ---
 
 # 차트 라이브러리 통합

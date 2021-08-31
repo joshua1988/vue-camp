@@ -1,5 +1,7 @@
 ---
 title: Modules
+isDeploy: true
+order: 8
 ---
 
 # Import & Export

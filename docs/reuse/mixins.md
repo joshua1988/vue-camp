@@ -1,5 +1,7 @@
 ---
 title: Mixins
+isDeploy: true
+order: 3
 ---
 
 # 믹스인

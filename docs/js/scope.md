@@ -1,5 +1,7 @@
 ---
 title: Scope
+isDeploy: true
+order: 8
 ---
 
 # 유효 범위(Scope)

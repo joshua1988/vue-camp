@@ -1,5 +1,7 @@
 ---
 title: Project Setup
+isDeploy: true
+order: 1
 ---
 
 # Vue CLI로 생성한 프로젝트의 웹팩 설정 방법

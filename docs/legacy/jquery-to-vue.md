@@ -1,5 +1,7 @@
 ---
 title: jQuery to Vue
+isDeploy: true
+order: 1
 ---
 
 # 제이쿼리에서 뷰 사고 방식으로 전환하기

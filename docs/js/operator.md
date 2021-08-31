@@ -1,5 +1,7 @@
 ---
 title: Operator
+isDeploy: true
+order: 6
 ---
 
 # 연산자(Operator)

@@ -1,5 +1,7 @@
 ---
 title: Navigation Guard
+isDeploy: true
+order: 3
 ---
 
 # 네비게이션 가드

@@ -1,5 +1,7 @@
 ---
 title: Computed
+isDeploy: true
+order: 2
 ---
 
 # computed 속성

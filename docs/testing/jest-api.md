@@ -1,5 +1,7 @@
 ---
 title: Practical Jest
+isDeploy: true
+order: 3
 ---
 
 ## Jest 문법 소개

@@ -1,5 +1,7 @@
 ---
 title: CLI
+isDeploy: true
+order: 10
 ---
 
 # 뷰 CLI

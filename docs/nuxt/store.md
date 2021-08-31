@@ -1,5 +1,7 @@
 ---
 title: Store
+isDeploy: true
+order: 8
 ---
 
 # Vuex in Nuxt

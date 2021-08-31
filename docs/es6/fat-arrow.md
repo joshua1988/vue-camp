@@ -1,5 +1,7 @@
 ---
 title: Arrow Function
+isDeploy: true
+order: 2
 ---
 
 # 화살표 함수(Arrow Function)

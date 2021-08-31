@@ -1,5 +1,7 @@
 ---
 title: Workbox Caching
+isDeploy: true
+order: 3
 ---
 
 ## PWA의 캐싱이란?

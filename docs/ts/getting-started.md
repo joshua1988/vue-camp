@@ -1,5 +1,6 @@
 ---
 title: Getting Started
+isDeploy: false
 ---
 
 # Vue.js에서 타입스크립트를 시작하는 방법

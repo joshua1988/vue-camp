@@ -1,5 +1,7 @@
 ---
 title: Template Literal
+isDeploy: true
+order: 5
 ---
 
 # 템플릿 리터럴(Template Literal)

@@ -1,5 +1,7 @@
 ---
 title: Components Communication
+isDeploy: true
+order: 5
 ---
 
 # 컴포넌트 통신 방식

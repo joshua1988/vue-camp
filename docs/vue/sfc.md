@@ -1,5 +1,7 @@
 ---
 title: Single File Components
+isDeploy: true
+order: 11
 ---
 
 # 싱글 파일 컴포넌트

@@ -1,5 +1,7 @@
 ---
 title: General Guide
+isDeploy: true
+order: 1
 ---
 
 # CLI로 생성한 프로젝트 배포하기

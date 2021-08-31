@@ -1,5 +1,7 @@
 ---
 title: Tutorial - Todo App
+isDeploy: true
+order: 7
 ---
 
 # Tutorial - Todo App

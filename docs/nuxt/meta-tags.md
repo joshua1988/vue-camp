@@ -1,5 +1,7 @@
 ---
 title: Meta Tags
+isDeploy: true
+order: 10
 ---
 
 # 페이지 메타 정보 설정

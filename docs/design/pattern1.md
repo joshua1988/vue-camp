@@ -1,5 +1,7 @@
 ---
 title: Common Approach
+isDeploy: true
+order: 1
 ---
 
 # 일반적인 컴포넌트 구조화 방식

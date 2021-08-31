@@ -1,5 +1,7 @@
 ---
 title: Variable
+isDeploy: true
+order: 1
 ---
 
 # 변수(Variable)

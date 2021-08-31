@@ -1,5 +1,7 @@
 ---
 title: Getters
+isDeploy: true
+order: 3
 ---
 
 # getters

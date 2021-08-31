@@ -1,5 +1,7 @@
 ---
 title: Form Handling
+isDeploy: true
+order: 5
 ---
 
 # Form 다루기

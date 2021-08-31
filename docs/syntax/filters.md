@@ -1,5 +1,7 @@
 ---
 title: Filters
+isDeploy: true
+order: 4
 ---
 
 # 뷰 필터

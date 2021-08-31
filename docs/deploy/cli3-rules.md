@@ -1,5 +1,7 @@
 ---
 title: CLI v3.x Rules
+isDeploy: true
+order: 3
 ---
 
 # 최신 뷰 CLI의 빌드 환경 규칙

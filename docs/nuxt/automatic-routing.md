@@ -1,5 +1,7 @@
 ---
 title: Automatic Routing
+isDeploy: true
+order: 5
 ---
 
 # Nuxt의 페이지 라우팅

@@ -1,5 +1,7 @@
 ---
 title: Axios
+isDeploy: true
+order: 9
 ---
 
 # 액시오스

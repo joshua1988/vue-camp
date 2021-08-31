@@ -1,5 +1,7 @@
 ---
 title: High Order Components
+isDeploy: true
+order: 5
 ---
 
 # 컴포넌트의 코드마저 재사용하는 하이 오더 컴포넌트

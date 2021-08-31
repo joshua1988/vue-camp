@@ -1,5 +1,7 @@
 ---
 title: ref
+isDeploy: true
+order: 5
 ---
 
 # ref 타이핑

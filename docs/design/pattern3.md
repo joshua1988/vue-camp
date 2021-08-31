@@ -1,5 +1,7 @@
 ---
 title: Component with Slots
+isDeploy: true
+order: 3
 ---
 
 # 슬롯을 이용한 컴포넌트 템플릿 확장

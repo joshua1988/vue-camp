@@ -1,5 +1,7 @@
 ---
 title: Layouts
+isDeploy: true
+order: 6
 ---
 
 # Nuxt의 레이아웃 컴포넌트

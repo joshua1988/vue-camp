@@ -1,5 +1,7 @@
 ---
 title: Async & Await
+isDeploy: true
+order: 7
 ---
 
 # Async & Await

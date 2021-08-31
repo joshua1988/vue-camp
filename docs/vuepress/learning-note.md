@@ -1,5 +1,7 @@
 ---
 title: Tutorials
+isDeploy: true
+order: 1
 ---
 
 # VuePress 사이트 배포하기 절차

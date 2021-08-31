@@ -1,5 +1,7 @@
 ---
 title: Code Splitting
+isDeploy: true
+order: 2
 ---
 
 # 코드 분할

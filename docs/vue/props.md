@@ -1,5 +1,7 @@
 ---
 title: Props
+isDeploy: true
+order: 6
 ---
 
 # props 속성

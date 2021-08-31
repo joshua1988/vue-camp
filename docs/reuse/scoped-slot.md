@@ -1,5 +1,7 @@
 ---
 title: Scoped Slot
+isDeploy: true
+order: 2
 ---
 
 # 스콥드 슬롯

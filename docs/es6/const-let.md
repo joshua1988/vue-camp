@@ -1,5 +1,7 @@
 ---
 title: Const & Let
+isDeploy: true
+order: 1
 ---
 
 # const & let

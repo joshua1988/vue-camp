@@ -1,5 +1,7 @@
 ---
 title: Default parameter
+isDeploy: true
+order: 10
 ---
 
 # 기본값 매개변수(Default parameter)

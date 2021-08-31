@@ -1,5 +1,7 @@
 ---
 title: Object
+isDeploy: true
+order: 3
 ---
 
 # Object

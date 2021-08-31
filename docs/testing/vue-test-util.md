@@ -1,5 +1,7 @@
 ---
 title: Vue Test Utils
+isDeploy: true
+order: 4
 ---
 
 # Vue Test Utils

@@ -1,5 +1,7 @@
 ---
 title: Unit Testing with Jest
+isDeploy: true
+order: 2
 ---
 
 ## Jest 소개

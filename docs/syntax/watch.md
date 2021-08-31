@@ -1,5 +1,7 @@
 ---
 title: Watch
+isDeploy: true
+order: 3
 ---
 
 # watch 속성

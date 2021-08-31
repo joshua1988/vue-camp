@@ -1,5 +1,7 @@
 ---
 title: Components
+isDeploy: true
+order: 4
 ---
 
 # 뷰 컴포넌트

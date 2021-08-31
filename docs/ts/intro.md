@@ -1,5 +1,7 @@
 ---
 title: Why TypeScript?
+isDeploy: true
+order: 1
 ---
 
 # 왜 타입스크립트를 사용하는가?

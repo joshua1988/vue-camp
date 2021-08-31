@@ -1,5 +1,7 @@
 ---
 title: Nuxt Deployment
+isDeploy: true
+order: 9
 ---
 
 # Nuxt 서비스 배포 방법

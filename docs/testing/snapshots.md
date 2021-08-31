@@ -1,5 +1,7 @@
 ---
 title: Snapshots
+isDeploy: true
+order: 9
 ---
 
 # Snapshot Testing

@@ -1,5 +1,7 @@
 ---
 title: Instance
+isDeploy: true
+order: 1
 ---
 
 # 뷰 인스턴스

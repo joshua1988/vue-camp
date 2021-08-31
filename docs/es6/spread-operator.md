@@ -1,5 +1,7 @@
 ---
 title: Spread Operator
+isDeploy: true
+order: 4
 ---
 
 # 스프레드 오퍼레이터(Spread Operator)

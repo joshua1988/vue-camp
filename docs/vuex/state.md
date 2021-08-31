@@ -1,5 +1,7 @@
 ---
 title: State
+isDeploy: true
+order: 2
 ---
 
 # state

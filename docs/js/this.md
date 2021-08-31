@@ -1,5 +1,7 @@
 ---
 title: this
+isDeploy: true
+order: 9
 ---
 
 # this

@@ -1,5 +1,7 @@
 ---
 title: Wrapping External Library I
+isDeploy: true
+order: 3
 ---
 
 # 날짜 선택기 라이브러리 통합

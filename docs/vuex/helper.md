@@ -1,5 +1,7 @@
 ---
 title: Helpers
+isDeploy: true
+order: 6
 ---
 
 # 헬퍼 함수

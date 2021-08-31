@@ -1,5 +1,7 @@
 ---
 title: Coverage
+isDeploy: true
+order: 10
 ---
 
 # 테스트 커버리지(범위)

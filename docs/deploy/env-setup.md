@@ -1,5 +1,7 @@
 ---
 title: Environment Variables
+isDeploy: true
+order: 2
 ---
 
 # 환경 변수 파일을 이용한 옵션 설정

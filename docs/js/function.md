@@ -1,5 +1,7 @@
 ---
 title: Function
+isDeploy: true
+order: 7
 ---
 
 # Function

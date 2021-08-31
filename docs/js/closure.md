@@ -1,5 +1,7 @@
 ---
 title: Closure
+isDeploy: true
+order: 11
 ---
 
 # 클로져(Closure)

@@ -1,5 +1,7 @@
 ---
 title: Slots
+isDeploy: true
+order: 1
 ---
 
 # 슬롯

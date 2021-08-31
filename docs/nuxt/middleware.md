@@ -1,5 +1,6 @@
 ---
 title: Middleware
+isDeploy: false
 ---
 
 # Nuxt Middleware

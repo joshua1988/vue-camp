@@ -1,5 +1,7 @@
 ---
 title: Router
+isDeploy: true
+order: 8
 ---
 
 # 뷰 라우터

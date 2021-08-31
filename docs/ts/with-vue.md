@@ -1,5 +1,7 @@
 ---
 title: How To Start Typescript
+isDeploy: true
+order: 2
 ---
 
 # 뷰에 타입스크립트 적용하기

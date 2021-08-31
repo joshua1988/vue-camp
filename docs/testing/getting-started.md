@@ -1,5 +1,7 @@
 ---
 title: Getting Started
+isDeploy: true
+order: 5
 ---
 
 # 뷰 테스트 코드 시작하기

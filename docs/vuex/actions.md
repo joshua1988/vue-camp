@@ -1,5 +1,7 @@
 ---
 title: Actions
+isDeploy: true
+order: 5
 ---
 
 # actions

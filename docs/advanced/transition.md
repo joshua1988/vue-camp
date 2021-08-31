@@ -1,5 +1,7 @@
 ---
 title: Transition & Animation
+isDeploy: true
+order: 4
 ---
 
 # Transition & Animation

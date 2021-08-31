@@ -1,5 +1,7 @@
 ---
 title: Workbox
+isDeploy: true
+order: 2
 ---
 
 ## 워크박스(Workbox)란?

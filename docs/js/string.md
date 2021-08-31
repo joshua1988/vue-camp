@@ -1,5 +1,7 @@
 ---
 title: String
+isDeploy: true
+order: 2
 ---
 
 # 문자열(String)

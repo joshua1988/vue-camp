@@ -1,5 +1,7 @@
 ---
 title: Array
+isDeploy: true
+order: 4
 ---
 
 # 배열(Array)

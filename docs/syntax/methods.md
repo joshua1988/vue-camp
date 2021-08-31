@@ -1,5 +1,7 @@
 ---
 title: Methods
+isDeploy: true
+order: 1
 ---
 
 # 뷰 메서드

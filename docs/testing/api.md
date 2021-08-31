@@ -1,5 +1,7 @@
 ---
 title: API
+isDeploy: true
+order: 8
 ---
 
 # 자주 사용하는 API 목록

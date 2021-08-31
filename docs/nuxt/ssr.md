@@ -1,5 +1,7 @@
 ---
 title: Server Side Rendering
+isDeploy: true
+order: 2
 ---
 
 # 서버 사이드 렌더링이란?

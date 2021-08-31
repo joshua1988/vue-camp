@@ -1,5 +1,7 @@
 ---
 title: Modules
+isDeploy: true
+order: 7
 ---
 
 # 스토어 모듈화

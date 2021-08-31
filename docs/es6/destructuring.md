@@ -1,5 +1,7 @@
 ---
 title: Destructuring
+isDeploy: true
+order: 6
 ---
 
 # 구조 분해 문법(Destructuring)

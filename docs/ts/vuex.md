@@ -1,5 +1,7 @@
 ---
 title: Vuex Typing
+isDeploy: true
+order: 4
 ---
 
 # 뷰엑스 타입 정의 방법

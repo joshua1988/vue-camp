@@ -1,5 +1,7 @@
 ---
 title: Nuxt Folder Structure
+isDeploy: true
+order: 4
 ---
 
 # Nuxt의 폴더 구조

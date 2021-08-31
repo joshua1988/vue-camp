@@ -1,5 +1,7 @@
 ---
 title: Data Fetching
+isDeploy: true
+order: 7
 ---
 
 # Nuxt의 비동기 데이터 호출 방법

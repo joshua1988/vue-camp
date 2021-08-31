@@ -1,5 +1,7 @@
 ---
 title: Vue Property Decorator
+isDeploy: true
+order: 3
 ---
 
 # Vue Property Decorator

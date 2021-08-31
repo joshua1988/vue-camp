@@ -1,5 +1,7 @@
 ---
 title: Instance Lifecycle
+isDeploy: true
+order: 2
 ---
 
 # 인스턴스 라이프 사이클

@@ -1,5 +1,7 @@
 ---
 title: Enhanced Object Literal
+isDeploy: true
+order: 3
 ---
 
 # 향상된 객체 리터럴(Enhanced Object Literal)

@@ -1,5 +1,7 @@
 ---
 title: Universal Mode
+isDeploy: true
+order: 3
 ---
 
 # 유니버설(Universal) 모드란?

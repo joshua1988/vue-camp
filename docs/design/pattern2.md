@@ -1,5 +1,7 @@
 ---
 title: Building Controlled Components
+isDeploy: true
+order: 2
 ---
 
 # 결합력 높은 컴포넌트

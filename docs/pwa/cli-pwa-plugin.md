@@ -1,5 +1,7 @@
 ---
 title: CLI PWA Plugin
+isDeploy: true
+order: 1
 ---
 
 ## 뷰 CLI의 PWA 플러그인

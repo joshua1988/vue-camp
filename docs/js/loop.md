@@ -1,5 +1,7 @@
 ---
 title: Loop
+isDeploy: true
+order: 5
 ---
 
 # 반복문(Loop)

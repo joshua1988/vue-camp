@@ -1,5 +1,7 @@
 ---
 title: Concept
+isDeploy: true
+order: 1
 ---
 
 # 상태 관리 소개

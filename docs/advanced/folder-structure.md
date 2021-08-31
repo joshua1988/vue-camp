@@ -1,5 +1,7 @@
 ---
 title: Vue Folder Structure
+isDeploy: true
+order: 1
 ---
 
 # 뷰 프로젝트 폴더 구조

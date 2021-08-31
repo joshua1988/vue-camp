@@ -1,5 +1,7 @@
 ---
 title: ESLint & Prettier
+isDeploy: true
+order: 1
 ---
 
 # ESLint와 Prettier 설정 하기

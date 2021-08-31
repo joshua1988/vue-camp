@@ -1,5 +1,7 @@
 ---
 title: Template
+isDeploy: true
+order: 3
 ---
 
 # 뷰의 템플릿 문법

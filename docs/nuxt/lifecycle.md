@@ -1,5 +1,6 @@
 ---
 title: Nuxt Lifecycle
+isDeploy: false
 ---
 
 

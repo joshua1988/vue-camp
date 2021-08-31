@@ -1,5 +1,7 @@
 ---
 title: Introduction
+isDeploy: true
+order: 1
 ---
 
 # Nuxt란?

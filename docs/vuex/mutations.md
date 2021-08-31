@@ -1,5 +1,7 @@
 ---
 title: Mutations
+isDeploy: true
+order: 4
 ---
 
 # mutations

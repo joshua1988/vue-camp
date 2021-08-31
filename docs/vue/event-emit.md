@@ -1,5 +1,7 @@
 ---
 title: Event Emit
+isDeploy: true
+order: 7
 ---
 
 # 이벤트 발생

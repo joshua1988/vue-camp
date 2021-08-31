@@ -1,5 +1,7 @@
 ---
 title: Mixins vs HOC
+isDeploy: true
+order: 5
 ---
 
 # 믹스인과 하이 오더 컴포넌트 비교 분석
