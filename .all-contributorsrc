@@ -136,6 +136,16 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "yahma25",
+      "name": "MyoungHo Kim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/34343507?v=4",
+      "profile": "http://myoungho.kim/about",
+      "contributions": [
+        "doc",
+        "review"
+      ]
     }
   ],
   "contributorsPerLine": 7

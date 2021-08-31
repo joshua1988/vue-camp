@@ -1,6 +1,6 @@
 # Cracking Vue.js
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-12-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Vue.js 오픈소스 개발과 관련된 정보를 얻을 수 있는 사이트입니다. [Cracking Vue.js](https://joshua1988.github.io/vue-camp/)
@@ -34,6 +34,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/Parkjju"><img src="https://avatars.githubusercontent.com/u/75518683?v=4?s=100" width="100px;" alt=""/><br /><sub><b>박경준, Gyeong Jun Park</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=Parkjju" title="Documentation">📖</a></td>
     <td align="center"><a href="https://seongsilyoo.medium.com/"><img src="https://avatars.githubusercontent.com/u/19399338?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Seongsil Yoo</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=yooseongsil" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/dngwoodo"><img src="https://avatars.githubusercontent.com/u/77663233?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dongwoo Kim</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=dngwoodo" title="Documentation">📖</a></td>
+    <td align="center"><a href="http://myoungho.kim/about"><img src="https://avatars.githubusercontent.com/u/34343507?v=4?s=100" width="100px;" alt=""/><br /><sub><b>MyoungHo Kim</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=yahma25" title="Documentation">📖</a> <a href="https://github.com/joshua1988/Cracking Vue.js/pulls?q=is%3Apr+reviewed-by%3Ayahma25" title="Reviewed Pull Requests">👀</a></td>
   </tr>
 </table>
 
