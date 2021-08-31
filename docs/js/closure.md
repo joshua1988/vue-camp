@@ -101,6 +101,33 @@ add(); // 2
 
 이처럼 함수의 실행이 끝나고 나서도 함수 안의 변수를 참조할 수 있는게 바로 클로져입니다. 이러한 패턴을 응용하면 자바스크립트에 없는 private 변수나 함수형 프로그래밍을 할 수 있습니다.
 
+## private 변수
+일반적으로 프로그래밍에서 외부에서 사용하지 않거나 접근하면 안 되는 변수와 함수는 `private`로 선언하여 사용합니다. 자바스크립트에서는 private 변수를 나타내는 별도의 문법이 없지만 클로져를 활용하여 구현할 수 있습니다.
+```js
+function Account() {
+  let _money = 0
+  return {
+    deposit: function(amount) {
+      _money += amount 
+    },
+    withdraw: function(amount) {
+      _money -= amount
+    },
+    getMoney: function() {
+      return _money;
+    }
+  }
+}
+
+const fund = Account()
+fund.deposit(100) // +100
+fund.deposit(100) // +100
+console.log(fund.getMoney()); // 200
+fund._money = 100000          // private 변수로 변경되지 않는다. 
+console.log(fund.getMoney()); // 200
+```
+위 코드에 나온 `Account` 함수 내부의 `_money` 변수는 함수 내에서 제공한 `deposit`, `withdraw`, `getMoney`를 사용하는 것 외에 접근하는 방법이 없습니다. 이렇게 클로져를 활용하면 외부에서 변수에 직접 접근하는 것을 제한하는 private 변수를 구현할 수 있습니다.
+
 ## 함수형 프로그래밍
 
 함수형 프로그래밍이란 특정 기능을 구현하기 위해서 **함수의 내부 로직은 변경하지 않은 상태로 여러 개의 함수를 조합하여 결과 값을 도출하는 프로그래밍 패턴**을 의미합니다. 커링(currying)이 함수형 프로그래밍의 대표적인 예입니다. 코드로 보겠습니다.
