@@ -1,0 +1,5 @@
+{
+  "rewrites": [
+    { "source": "/vue-camp/(.*)", "destination": "/$1" }
+  ]
+}
