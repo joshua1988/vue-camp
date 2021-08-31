@@ -186,6 +186,7 @@ module.exports = {
               '/nuxt/store',
               '/nuxt/deployment',
               '/nuxt/meta-tags',
+              '/nuxt/nuxt-axios',
             ],
           },
           {
