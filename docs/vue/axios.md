@@ -59,26 +59,22 @@ HTTP 통신이 성공했다는 뜻으로, `.then()`으로 결과값을 받아서
 
 ### .catch
 
-`.catch()` 를 통해 오류를 처리합니다. 오류를 처리하는 방법에는 `response`와 `request`로 나뉩니다.
+`.catch()` 를 통해 오류를 처리합니다. `error` 객체에서는 오류에 대한 주요 정보를 확인할 수 있습니다. 
 
 ```javascript
 axios.get('/hello') {
     catch(function (error) {
         if (error.response) {
-            // 요청이 성공적으로 이루어졌지만, 서버가 200번대 이외의 다른 상태코드로 응답을 한 경우를 말합니다.
-            console.log(error.response);	
-        } else if (error.request) {
-            // 요청이 성공적으로 이루어졌으나 응답을 받지 못한 경우를 뜻합니다.
-            console.log(error.request);
+            console.log(error.response.status);
+            console.log(error.response.headers);
         }
     });
-
 }
 ```
 
-위 코드에서 `error.response` 는 요청이 제대로 이루어지고 서버로부터 응답을 받았으나, 200번대가 아닌 다른 상태 코드로 응답을 받은 경우를 뜻합니다. 만약 `response`가 `undefined` 일 경우, 서버의 응답을 받기 전, 에러가 발생했다는 것을 뜻합니다. 
+위와 같이 `.catch`에서 받아오는 `error` 객체를 통해 `error.response.status`  응답 상태코드와 `error.response.headers` 응답 헤더 정보를 파악할 수 있습니다. 
 
-또한, `error.request`는 요청이 이루어졌으나, 응답을 받지 못한 경우를 뜻합니다. 즉, `request`는 `undefined` 상태로 이어지다, 서버에 성공적으로 요청이 이루어지면, 값이 설정됩니다. 만약 `request`가 `undefined` 라고 나타나면, 서버에 요청을 보내기도 전에 클라이언트 측에서 에러가 발생했다는 것을 뜻합니다.
+기타 에러 처리 방법은 [axios 에러 처리 문서](https://axios-http.com/docs/handling_errors)를 참고합니다.
 
 ## 액시오스 HTTP 요청 메소드 종류
 
@@ -95,15 +91,6 @@ axios.get('users/1')
 ### axios.post(url[, data[, config]])
 
 서버에 데이터를 새로 생성할 때 사용하는 메소드입니다. 두 번째 파라미터 `data`에 생성할 데이터를 넘깁니다. 
-=======
-액시오스를 통해 사용할 수 있는 요청 메소드는 다음과 같습니다. 
-
-자주 쓰이는 메소드는 get, post, put, delete입니다. 
-
-### **axios.get(url[, config])**
-
-서버에서 데이터를 가져올 때 사용하는 메소드입니다. 두번째 인자인 config 객체에는 헤더 (header), 응답초과시간 (timeout), 인자값 (params) 등의 요청값을 같이 넘길 수 있습니다. 
->>>>>>> 79a9e24 ([설명 추가] axios http method 설명 추가 )
 
 ```javascript
 axios.post('/books', { title: '1984' })
@@ -115,17 +102,6 @@ axios.post('/books', { title: '1984' })
 
 ```javascript
 axios.put('users/2', { name: 'Iron Man' })
-```
-
-### **axios.put(url[, data[, config]])**
-
-특정 데이터를 수정할 때 요청하는 메소드입니다. `put` 은 데이터 전체를 교체할 경우에 사용됩니다.
-
-```javascript
-axios.put('통신할 서버주소', { 변경할 데이터 })
-  .then(res => {
-    console.log(res)
-  })
 ```
 
 ### **axios.delete(url[, config])**
