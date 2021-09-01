@@ -1,28 +1,31 @@
-module.exports = function (data) {
-  const fs = require('fs');
-  const yamlFront = require('yaml-front-matter');
+const fs = require("fs");
+const yamlFront = require("yaml-front-matter");
 
-  function getFiles(dir) {
-    const dirArray = [];
-    const all = fs.readdirSync(dir);
-    const filtersDir = all.filter(file => file.includes('.md'));
+function getChildrenFiles(dir) {
+  return fs
+    .readdirSync(dir)
+    .filter(file => file.includes(".md"))
+    .reduce((acc, cur) => {
+      const fileData = fs.readFileSync(`${dir}/${cur}`);
+      const { isDeploy, order } = yamlFront.loadFront(fileData);
 
-    for (let file of filtersDir) {
-      const fileData = fs.readFileSync(`${dir}/${file}`);
-      const fileMetaData = yamlFront.loadFront(fileData);
-      if (fileMetaData.isDeploy) {
-        dirArray.push({ file: file.split('.')[0], order: fileMetaData.order });
-      };
-    }
+      if (isDeploy) {
+        acc.push({ file: cur.split(".")[0], order });
+      }
+      return acc;
+    }, [])
+    .sort((prev, next) => (prev.order > next.order ? 1 : -1))
+    .map(({ file }) => `/${dir.split('/')[2]}/${file}`);
+}
 
-    dirArray.sort((prev, next) => (prev.order > next.order ? 1 : -1));
+function getBuild(data) {
+  const { title, collapsable, dirName } = data;
 
-    return {
-      title: data.title,
-      collapsable: data.collapsable,
-      children: dirArray.map(({ file }) => `/${data.dirName}/${file}`),
-    };
-  }
+  return {
+    title,
+    collapsable,
+    children: getChildrenFiles(`./docs/${dirName}`)
+  };
+}
 
-  return getFiles(`./docs/${data.dirName}`);
-};
+module.exports = getBuild;
