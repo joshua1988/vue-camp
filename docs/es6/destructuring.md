@@ -153,9 +153,7 @@ export default {
     },
     submitForm() {
       // 구조 분해 문법 미적용
-      const id = this.id;
-      const savePost = this.savePost;
-      savePost(id);
+this.savePost(this.id);
 
       // 구조 분해 문법 적용
       const { id, savePost } = this;
