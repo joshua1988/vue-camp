@@ -76,6 +76,7 @@ axios.get('/hello') {
 }
 ```
 
+<<<<<<< HEAD
 위 코드에서 `error.response` 는 요청이 제대로 이루어지고 서버로부터 응답을 받았으나, 200번대가 아닌 다른 상태 코드로 응답을 받은 경우를 뜻합니다. 만약 `response`가 `undefined` 일 경우, 서버의 응답을 받기 전, 에러가 발생했다는 것을 뜻합니다. 
 
 또한, `error.request`는 요청이 이루어졌으나, 응답을 받지 못한 경우를 뜻합니다. 즉, `request`는 `undefined` 상태로 이어지다, 서버에 성공적으로 요청이 이루어지면, 값이 설정됩니다. 만약 `request`가 `undefined` 라고 나타나면, 서버에 요청을 보내기도 전에 클라이언트 측에서 에러가 발생했다는 것을 뜻합니다.
@@ -89,15 +90,15 @@ axios.get('/hello') {
 서버에서 데이터를 가져올 때 사용하는 메소드입니다. 두번째 파라미터 `config` 객체에는 헤더 (header), 응답초과시간 (timeout), 인자값 (params) 등의 요청값을 같이 넘길 수 있습니다. 
 
 ```javascript
-axios.get('통신할 서버주소')
+axios.get('users/1')
 ```
 
-### **axios.post(url[, data[, config]])**
+### axios.post(url[, data[, config]])
 
 서버에 데이터를 새로 생성할 때 사용하는 메소드입니다. 두 번째 파라미터 `data`에 생성할 데이터를 넘깁니다. 
 
 ```javascript
-axios.post('통신할 서버주소', { 추가할 데이터 })
+axios.post('/books', { title: '1984' })
 ```
 
 ### **axios.put(url[, data[, config]])**
@@ -105,7 +106,7 @@ axios.post('통신할 서버주소', { 추가할 데이터 })
 특정 데이터를 수정할 때 요청하는 메소드입니다. `put` 은 새로운 리소스를 생성하거나, 이미 존재하는 데이터를 대체할 때 사용됩니다. 멱등성 (idempotent)을 가져 `put`을 한 번 보내는 결괏값과 `put`을 여러 번 연속으로 보내는 결과값이 동일합니다. 
 
 ```javascript
-axios.put('통신할 서버주소', { 변경할 데이터 })
+axios.put('users/2', { name: 'Iron Man' })
 ```
 
 ### **axios.delete(url[, config])**
@@ -113,7 +114,7 @@ axios.put('통신할 서버주소', { 변경할 데이터 })
 특정 데이터나 값을 삭제할 때 요청하는 메소드입니다. 
 
 ```javascript
-axios.delete('통신할 서버주소')
+axios.delete('books/3')
 ```
 
 ## 액시오스 HTTP 요청 Config 옵션 
@@ -125,7 +126,7 @@ axios.delete('통신할 서버주소')
 `url`은 액시오스 요청에 사용될 서버의 URL을 말합니다. 
 
 ```javascript
-url: '/book'
+url: '/books'
 ```
 
 ### method
@@ -198,4 +199,3 @@ Config 옵션은 메소드 별로 사용할 수 있는 옵션이 다르므로,  
 ## 기타 액시오스 API 
 
 기타 액시오스 관련 예제와 API는 [액시오스 문서](https://github.com/axios/axios#example)를 참고합니다.
-
