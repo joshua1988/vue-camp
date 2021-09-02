@@ -69,12 +69,12 @@ axios.get('/hello')
             console.log(error.response.headers);
         }
     }
-}
 ```
 
 위와 같이 `.catch`에서 받아오는 `error` 객체를 통해 `error.response.status`  응답 상태코드와 `error.response.headers` 응답 헤더 정보를 파악할 수 있습니다. 
 
 기타 에러 처리 방법은 [axios 에러 처리 문서](https://axios-http.com/docs/handling_errors)를 참고합니다.
+
 
 ## 액시오스 HTTP 요청 메서드 종류
 
@@ -120,6 +120,18 @@ axios.delete('books/3')
 
 `method`는 요청을 할 때 사용할 요청 메서드입니다. `method`의 기본값은 get입니다.
 
+### url
+
+`url`은 액시오스 요청에 사용될 서버의 URL을 말합니다. 
+
+```javascript
+url: '/books'
+```
+
+### method
+
+`method`는 요청을 할 때 사용할 요청 메소드입니다. `method`의 기본값은 get 입니다.
+
 ```javascript
 method: 'get'
 ```
@@ -159,6 +171,7 @@ data: {
 },
   
 // 아래의 data config 설정은 POST 메서드에서만 사용이 가능합니다.
+
 data: 'Age=26&City=New York'
 ```
 
@@ -182,6 +195,7 @@ responseType: 'json'
 ### 기타 액시오스 요청 Config
 
 Config 옵션은 메서드 별로 사용할 수 있는 옵션이 다르므로,  [액시오스 Request Config 문서](https://axios-http.com/docs/req_config)를 참고합니다.
+
 
 ## 기타 액시오스 API 
 
