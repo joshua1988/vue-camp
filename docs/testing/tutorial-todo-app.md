@@ -280,7 +280,7 @@ v-model을 사용하지 않은 이유는 현재 시점에서는 IME 입력(한�
   });
 ```
 
-vue-test-utils 라이브러리에선 `input`이벤트를 `trigger`시 `event.target.value`를 직접적으로 변경할 수 없습니다. 그래서 `input`의 `value`값을 변경한 뒤 `input`이벤트를 `trigger`해야 합니다. `input`이벤트를 `trigger`하면 `handleInput`함수가 실행되고 `data`의 `text`값이 변경됐는지 테스트합니다. 그리고 이벤트 트리거는 비동기로 동작하기 때문에 `async, await`문법을 사용하여 동기적으로로 동작하게 만듭니다.
+vue-test-utils 라이브러리에선 `input`이벤트를 `trigger`시 `event.target.value`를 직접적으로 변경할 수 없습니다. 그래서 `input`의 `value`값을 변경한 뒤 `input`이벤트를 `trigger`해야 합니다. `input`이벤트를 `trigger`하면 `handleInput`함수가 실행되고 `data`의 `text`값이 변경됐는지 테스트합니다. 그리고 이벤트 트리거는 비동기로 동작하기 때문에 `async, await`문법을 사용하여 실행 순서를 보장해주어야 합니다.
 <br />
 
 5. 기능 구현 - `추가하기` 버튼을 누르면 할 일 추가
