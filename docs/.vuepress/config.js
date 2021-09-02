@@ -233,6 +233,7 @@ module.exports = {
       ga: 'UA-87965695-1',
     },
     '@vuepress/back-to-top': true,
+    'vuepress-plugin-code-copy': true,
     '@vuepress/last-updated': true,
   },
 };
