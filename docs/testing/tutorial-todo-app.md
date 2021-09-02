@@ -7,7 +7,8 @@ title: Tutorial - Todo App
 이번 튜토리얼에서는 간단한 Todo App을 만들면서 각 컴포넌트의 유닛 테스트(Unit Test)를 작성해보겠습니다. 컴포넌트를 구현하고 해당 컴포넌트의 테스트 코드를 작성하는 순서로 작업합니다. 이 튜토리얼은 학습하시는 분들을 위해 단계별로 코드를 제공합니다. 최대한 먼저 따라 해보시고 안되는 부분만 참고하는 용도로 사용해 주세요.
 
 ## 프로젝트 셋업
-[완성 코드](https://github.com/dngwoodo/vue-todo-app-test/tree/6f2a8fb79aa7bf85db495864ac7f40b2c26ed13f)
+
+프로젝트 셋업 순서는 다음과 같으며 최종 코드는 [여기서](https://github.com/dngwoodo/vue-todo-app-test/tree/6f2a8fb79aa7bf85db495864ac7f40b2c26ed13f) 확인하실 수 있습니다.
 
 1. vue cli 최신 버전 설치   
 ```bash
@@ -124,7 +125,7 @@ package.json에 `test:unit` 스크립트에  `--watchAll` 옵션을 추가해주
 
 ## 할 일 추가하기
 
-[완성 코드](https://github.com/dngwoodo/vue-todo-app-test/tree/ec674be494e8c27f6440e689ab40714ec255c19e)
+할 일 추가하기의 구현 순서는 다음과 같으며 최종 코드는 [여기서](https://github.com/dngwoodo/vue-todo-app-test/tree/ec674be494e8c27f6440e689ab40714ec255c19e) 확인하실 수 있습니다.
 
 1. UI 구현   
 
