@@ -224,7 +224,7 @@ App
 그리고 나중에 해당 컴포넌트의 역할을 파악하고 싶을 때 [관심사의 분리(separation of concerns, SoC)](https://ko.wikipedia.org/wiki/%EA%B4%80%EC%8B%AC%EC%82%AC_%EB%B6%84%EB%A6%AC)를 잘해놓았다면 테스트 코드만으로도 파악이 가능합니다. 이 부분은 튜토리얼 마지막 부분에서 다뤄보겠습니다.   
 <br />
 
-1. 기능 구현 - 인풋 태그에 할 일 작성 시 data에 할 일 텍스트 값 넣기
+3. 기능 구현 - 인풋 태그에 할 일 작성 시 data에 할 일 텍스트 값 넣기
 ```html
 <!-- src/App.vue -->
 <template>
