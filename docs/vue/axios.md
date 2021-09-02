@@ -114,7 +114,7 @@ axios.delete('books/3')
 
 ## 액시오스 HTTP 요청 Config 옵션 
 
-액시오스 요청을 할 때는 config 설정이 가능합니다. 이 중 필수적인 설정은 url뿐입니다.
+액시오스 요청을 할 때는 config 설정이 가능합니다.
 
 ### method
 
