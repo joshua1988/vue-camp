@@ -141,7 +141,7 @@ method: 'get'
 `baseURL`은 액시오스 인스턴스를 생성할 때, 인스턴스의 기본 URL 값을 정할 수 있는 속성입니다. 보통 `http://mysite.com/api/v1/`처럼 API 서버의 기본 도메인을 설정하고, 인스턴스 별로 URL을 뒤에 추가하여 사용합니다. 
 
 ```javascript
-baseURL: `https://도메인.com/api/`
+baseURL: 'https://도메인.com/api/'
 ```
 
 ### headers
