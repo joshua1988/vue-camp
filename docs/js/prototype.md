@@ -19,7 +19,7 @@ title: Prototype
 
 브라우저의 개발자 도구에서 간단한 Array를 정의한 후 출력해보면 다음 화면과 같이 나옵니다. 출력된 결과를 보면 forEach, map, push와 같은 익숙한 함수들이 보입니다. 저희는 해당 함수를 정의하지 않았는데 그럼 어디에 해당 함수들이 정의되어 있고, 어떻게 해당 함수들을 쓸 수 있는 걸까요?
 
-> image
+![sadf](../../img/prototype_001.png)
 
 :::tip  
 \_\_proto\_\_를 읽을 때는 'dunder proto'('던더 프로토')라고 읽으면 됩니다.
@@ -53,7 +53,7 @@ var simpleArray = new Array();
 
 개발자 도구에서 다시 Array.prototype 을 출력해보면, 위에서 출력한 simpleArray의 \_\_proto\_\_ 프로퍼티의 내용과 동일한 것을 알 수 있습니다.
 
-> image
+![](../../img/prototype_002.png)
 
 즉, 우리가 맨 처음 예제에서 봤던 forEach, map, push와 같은 함수들은 Array.prototype에 정의되어 있고, simpleArray 인스턴스의 \_\_proto\_\_ 프로퍼티에서 참조하고 있던 것입니다.
 
@@ -173,7 +173,7 @@ simpleArray.hasOwnProperty(2); // true
 
 `simpleArray` 인스턴스에 push 함수와 hasOwnProperty 함수를 정의하지 않았지만, 위와 같이 사용할 수 있는 이유는 자바스크립트 엔진이 메소드를 찾는 방식이 프로퍼티를 검색하고, 존재하지 않는다면 그다음으로 가까운 대상인 \_\_proto\_\_를 검색하는 순서로 진행하기 때문입니다. 위 예제에서 `console.dir(simpleArray);` 명령을 실행해보면, push 함수와 hasOwnProperty 함수가 어디에 정의되어 있는지 확인 할 수 있습니다.
 
-> image
+![](../../img/prototype_003.png)
 
 ```javascript
 simpleArray(.__proto__).push(3);
