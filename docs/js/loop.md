@@ -92,11 +92,18 @@ hi
 
 ## for of
 
-for of 반복문은 ES6에 추가된 구문으로서, 순회 가능한(iterable) 속성을 가지는 컬렉션에 사용하기 좋은 반복문입니다. for in 반복문과 비교하면서, 아래 코드를 보겠습니다.
+for of 반복문은 ES6에 추가된 구문으로서, 순회 가능한(iterable) 속성을 가지는 컬렉션에 사용하기 좋은 반복문입니다.
+for in 반복문과 비교하면서 알아보겠습니다. 아래와 같은 코드가 있다고 합시다.
 
 ```js
-//배열
 var arr= [10,20,30]
+let iterable="vue";
+```
+
+위 배열과 문자열을 각각 for of와 for in 반복문으로 순회하면 아래와 같습니다.
+
+```js
+// 1) 배열을 순회하는 경우
 for(var num of arr){
     console.log(num); 
 }
@@ -104,8 +111,7 @@ for(var num in arr){
     console.log(num); 
 }
 
-//문자열
-let iterable="vue";
+// 2) 문자열을 순회하는 경우
 for(let value of iterable){
     console.log(value); 
 }
@@ -117,23 +123,22 @@ for(let value in iterable){
 각 코드의 결과는 아래와 같습니다.
 
 ```js
-// 배열의 경우
+// 1) 배열을 순회하는 경우
 // for of 반복문의 콘솔
 10 20 30 
 
 // for in 반복문의 콘솔
 0 1 2
 
-//문자열의 경우
+// 2) 문자열을 순회하는 경우
 // for of 반복문의 콘솔
-"v" "u" "e"
+v u e
 
 // for in 반복문의 콘솔
 0 1 2
 ```
 
 코드를 통해 알 수 있듯이, for in이 배열의 인덱스에 접근하는 데에 반해, for of은 배열의 값 자체에 접근하는 걸 알 수 있습니다.
-
 for in과 for of의 차이점은 아래와 같습니다.
 
 ## for in VS for of
@@ -161,4 +166,4 @@ for(var prop of obj){
 Uncaught TypeError: obj is not iterable
 ```
 
-순회가능하지 않은 객체에 대한 반복문 접근 에러에 대해서는 [이](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Errors/is_not_iterable)를 참고하여 해결할 수 있습니다. 
+순회가능하지 않은 객체에 대한 반복문 접근 에러에 대해서는 [이 자료](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Errors/is_not_iterable)를 참고하여 해결할 수 있습니다. 
