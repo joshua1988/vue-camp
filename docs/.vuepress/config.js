@@ -15,7 +15,7 @@ module.exports = {
     '/': {
       lang: 'ko',
       title: 'Cracking Vue.js',
-      description: 'JavaScript, Vue.js, Nuxt.js'
+      description: 'JavaScript, Vue.js, Nuxt.js',
     },
   },
   themeConfig: {
@@ -147,7 +147,13 @@ module.exports = {
           {
             title: 'Component Design Patterns',
             collapsable: false,
-            children: ['/design/pattern1', '/design/pattern2', '/design/pattern3', '/design/pattern4', '/design/pattern5'],
+            children: [
+              '/design/pattern1',
+              '/design/pattern2',
+              '/design/pattern3',
+              '/design/pattern4',
+              '/design/pattern5',
+            ],
           },
           {
             title: 'Testing Applications',
@@ -214,8 +220,8 @@ module.exports = {
             children: ['/vuepress/learning-note'],
           },
         ],
-      }
-    }
+      },
+    },
   },
   configureWebpack: {
     resolve: {
@@ -224,14 +230,23 @@ module.exports = {
       },
     },
   },
-  plugins: {
-    '@vuepress/pwa': {
-      serviceWorker: true,
-    },
-    '@vuepress/google-analytics': {
-      ga: 'UA-87965695-1',
-    },
-    '@vuepress/back-to-top': true,
-    '@vuepress/last-updated': true,
-  },
+  plugins: [
+    [
+      '@vuepress/pwa',
+      {
+        serviceWorker: true,
+        updatePopup: {
+          message: '새 컨텐츠가 등록되었습니다. 새로고침 버튼을 눌러주세요 😄',
+          buttonText: '새로고침',
+        },
+      },
+    ],
+    [
+      '@vuepress/google-analytics',
+      {
+        ga: 'UA-87965695-1',
+      },
+    ],
+    [require('./plugins/custom-back-to-top/')],
+  ],
 };
