@@ -1,4 +1,4 @@
-# 마크다운(Markdown) 기본 문법
+# 마크다운(Markdown) 가이드
 
 - [제목 (Headings)](#제목headings)
 - [문단 (Paragraphs)](#문단paragraphs)
@@ -66,7 +66,7 @@ h2
 
 <br>
 
-[눌러서 목차로 이동](#마크다운markdown-기본-문법)
+[눌러서 목차로 이동](#마크다운markdown-가이드)
 
 <br>
 
@@ -90,7 +90,7 @@ Unless the paragraph is in a list, don’t indent paragraphs with spaces or tabs
 
 <br>
 
-[눌러서 목차로 이동](#마크다운markdown-기본-문법)
+[눌러서 목차로 이동](#마크다운markdown-가이드)
 
 <br>
 
@@ -131,7 +131,7 @@ Unless the paragraph is in a list, don’t indent paragraphs with spaces or tabs
 
 <br>
 
-[눌러서 목차로 이동](#마크다운markdown-기본-문법)
+[눌러서 목차로 이동](#마크다운markdown-가이드)
 
 <br>
 
@@ -187,7 +187,7 @@ _기울임(Italic)_ 표현하는 방법 2
 
 <br>
 
-[눌러서 목차로 이동](#마크다운markdown-기본-문법)
+[눌러서 목차로 이동](#마크다운markdown-가이드)
 
 <br>
 
@@ -239,7 +239,7 @@ _기울임(Italic)_ 표현하는 방법 2
 
 <br>
 
-[눌러서 목차로 이동](#마크다운markdown-기본-문법)
+[눌러서 목차로 이동](#마크다운markdown-가이드)
 
 <br>
 
@@ -328,7 +328,7 @@ _기울임(Italic)_ 표현하는 방법 2
 
 <br>
 
-[눌러서 목차로 이동](#마크다운markdown-기본-문법)
+[눌러서 목차로 이동](#마크다운markdown-가이드)
 
 <br>
 
@@ -437,7 +437,7 @@ At the command prompt, type `nano`.
 
 <br>
 
-[눌러서 목차로 이동](#마크다운markdown-기본-문법)
+[눌러서 목차로 이동](#마크다운markdown-가이드)
 
 <br>
 
@@ -465,7 +465,7 @@ _____
 
 <br>
 
-[눌러서 목차로 이동](#마크다운markdown-기본-문법)
+[눌러서 목차로 이동](#마크다운markdown-가이드)
 
 <br>
 
@@ -493,14 +493,14 @@ _____
 ```
 <!-- [링크 텍스트](#제목) -->
 
-[눌러서 목차로 이동](#마크다운markdown-기본-문법)
+[눌러서 목차로 이동](#마크다운markdown-가이드)
 ```
 
 > 제목 매칭 방법
-> 1. 목적지 제목(Heading) 복사 붙여넣기 "#마크다운(Markdown) 기본 문법"
-> 2. 특수문자 제거 "#마크다운Markdown 기본 문법"
-> 3. 스페이스 개수만큼 `-`로 변경 "#마크다운Markdown-기본-문법"
-> 4. 대문자 -> 소문자 "#마크다운markdown-기본-문법"
+> 1. 목적지 제목(Heading) 복사 붙여넣기 "#마크다운(Markdown) 가이드"
+> 2. 특수문자 제거 "#마크다운Markdown 가이드"
+> 3. 스페이스 개수만큼 `-`로 변경 "#마크다운Markdown-가이드"
+> 4. 대문자 -> 소문자 "#마크다운markdown-가이드"
 
 ### 📌 실행 결과
 
@@ -519,7 +519,7 @@ _____
 
 <!-- [링크 텍스트](#제목) -->
 
-[눌러서 목차로 이동](#마크다운markdown-기본-문법)
+[눌러서 목차로 이동](#마크다운markdown-가이드)
 
 <br>
 
@@ -575,7 +575,7 @@ _____
 
 <br>
 
-[눌러서 목차로 이동](#마크다운markdown-기본-문법)
+[눌러서 목차로 이동](#마크다운markdown-가이드)
 
 <br>
 
@@ -616,4 +616,4 @@ _____
 
 <br>
 
-[눌러서 목차로 이동](#마크다운markdown-기본-문법)
+[눌러서 목차로 이동](#마크다운markdown-가이드)
