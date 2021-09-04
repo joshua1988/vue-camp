@@ -1,8 +1,7 @@
-
 <script>
-import BackToTop from '@vuepress/plugin-back-to-top/BackToTop'
-export default BackToTop
+import BackToTop from '@vuepress/plugin-back-to-top/BackToTop';
 
+export default BackToTop;
 </script>
 
 <style lang="stylus" scoped>
@@ -10,7 +9,6 @@ $green-100 = #eef6ef
 $green-400 = #3eaf7c
 $green-600 = #388341
 
-// back-to-top 스타일
 .go-to-top
   z-index: 1
   cursor: pointer

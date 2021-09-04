@@ -82,6 +82,7 @@ module.exports = {
               '/es6/spread-operator',
               '/es6/template-literal',
               '/es6/destructuring',
+              '/es6/promise',
               '/es6/async-await',
               '/es6/modules',
               '/es6/nullish-coalescing-operator',
@@ -192,6 +193,7 @@ module.exports = {
               '/nuxt/store',
               '/nuxt/deployment',
               '/nuxt/meta-tags',
+              '/nuxt/nuxt-axios',
             ],
           },
           {
