@@ -485,7 +485,10 @@ _____
 
 ```
 <https://joshua1988.github.io/vue-camp/>
+https://joshua1988.github.io/vue-camp/
+
 <vue@example.com>
+vue@example.com
 ```
 
 #### 문서 내 이동
@@ -497,6 +500,7 @@ _____
 ```
 
 > 제목 매칭 방법
+>
 > 1. 목적지 제목(Heading) 복사 붙여넣기 "#마크다운(Markdown) 가이드"
 > 2. 특수문자 제거 "#마크다운Markdown 가이드"
 > 3. 스페이스 개수만큼 `-`로 변경 "#마크다운Markdown-가이드"
@@ -506,20 +510,31 @@ _____
 
 #### 링크 텍스트
 
-<!-- [링크 텍스트](링크) -->
+<!-- [링크 텍스트](링크) 또는 링크 -->
 
 [Craking Vue.js](https://joshua1988.github.io/vue-camp/)
 
-#### URL
+#### URL 또는 이메일 주소
 
 <https://joshua1988.github.io/vue-camp/>  
-<vue@example.com>
+https://joshua1988.github.io/vue-camp/
+
+<vue@example.com>  
+vue@example.com
 
 #### 문서 내 이동
 
 <!-- [링크 텍스트](#제목) -->
 
 [눌러서 목차로 이동](#마크다운markdown-가이드)
+
+### URL 자동 연결 비활성화
+
+```
+`https://joshua1988.github.io/vue-camp/`
+```
+
+`https://joshua1988.github.io/vue-camp/`
 
 <br>
 
