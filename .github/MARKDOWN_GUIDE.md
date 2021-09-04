@@ -758,7 +758,7 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
 
 ## 이모티콘(Emoji)
 
-short code ([여기](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)에서 참조) 입력
+short code ([여기](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/README.md)에서 참고) 입력
 
 또는
 
@@ -781,5 +781,5 @@ short code ([여기](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/R
 
 [눌러서 목차로 이동](#마크다운markdown-가이드)
 
-> 기본 문법 ([참고 출처 1](https://www.markdownguide.org/basic-syntax/)), 
-> 확장 문법 ([참고 출처 2](https://www.markdownguide.org/extended-syntax/))
+> 기본 문법 ([참조 출처 1](https://www.markdownguide.org/basic-syntax/)), 
+> 확장 문법 ([참조 출처 2](https://www.markdownguide.org/extended-syntax/))
