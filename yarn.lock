@@ -1211,10 +1211,10 @@
   "resolved" "https://registry.npmjs.org/@vuepress/plugin-google-analytics/-/plugin-google-analytics-1.8.2.tgz"
   "version" "1.8.2"
 
-"@vuepress/plugin-last-updated@1.8.2":
-  "integrity" "sha512-pYIRZi52huO9b6HY3JQNPKNERCLzMHejjBRt9ekdnJ1xhLs4MmRvt37BoXjI/qzvXkYtr7nmGgnKThNBVRTZuA=="
-  "resolved" "https://registry.npmjs.org/@vuepress/plugin-last-updated/-/plugin-last-updated-1.8.2.tgz"
-  "version" "1.8.2"
+"@vuepress/plugin-last-updated@1.8.2", "@vuepress/plugin-last-updated@^1.8.2":
+  version "1.8.2"
+  resolved "https://registry.yarnpkg.com/@vuepress/plugin-last-updated/-/plugin-last-updated-1.8.2.tgz#7ce689f8d5050cf0213949bc2e5aa879c09ff4b1"
+  integrity sha512-pYIRZi52huO9b6HY3JQNPKNERCLzMHejjBRt9ekdnJ1xhLs4MmRvt37BoXjI/qzvXkYtr7nmGgnKThNBVRTZuA==
   dependencies:
     "cross-spawn" "^6.0.5"
 
