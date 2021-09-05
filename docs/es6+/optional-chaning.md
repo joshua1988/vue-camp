@@ -44,7 +44,7 @@ const userInfo = {
 const postcode = userInfo.address?.postcode;
 ```
 
-옵셔널 체이닝을 사용하면 이전 코드보다 좀 더 깔끔하게 중첩된 객체의 하위 속성 값에 접근할 수 있습니다.
+옵셔널 체이닝을 사용하면 이전 코드보다 문법적으로 깔끔하고 안전하게 중첩된 객체의 하위 속성 값에 접근할 수 있습니다.
 
 ```js
 const userInfo = {
@@ -52,7 +52,7 @@ const userInfo = {
   getInfo: () => userInfo,
 }
 
-userInfo.userInfo?.()
+userInfo.getInfo?.()
 // userInfo object
 
 userInfo.setInfo?.()
