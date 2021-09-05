@@ -20,7 +20,7 @@ Vue.js에서 슬롯을 사용하는 이유는 재사용성이 높은 컴포넌�
 <!-- 하위 컴포넌트(Foo.vue) -->
 <template>
   <div>
-    <slot :fooProp="fooProps"></slot>
+    <slot :fooProps="fooProps"></slot>
   </div>
 </template>
 
@@ -28,7 +28,10 @@ Vue.js에서 슬롯을 사용하는 이유는 재사용성이 높은 컴포넌�
 export default {
   data() {
     return {
-      fooProp: 'Hello',
+      fooProps: {
+        id: 1,
+        msg: 'Hello',
+      } 
     }
   }
 }
@@ -238,7 +241,7 @@ export default {
 
 또한 `v-slot:default`는 `v-slot`으로 축약하여 표현할 수 있습니다.
 
-```html {1}
+```html {1}
 <foo v-slot="slotProps">
   <h1>{{ slotProps.msg }}</h1>
 </foo>
@@ -273,7 +276,7 @@ export default {
 
 `v-slot`은 `v-bind(:)`, `v-on(@)`과 같이 특수 기호를 통해 나타낼 수 있습니다. 특수 기호는 `#`입니다. 예를 들어 `v-slot:default`는 `#default`로 표현될 수 있습니다.
 
-```html {1}
+```html {1}
 <foo #default="slotProps">
   <h1>{{ slotProps.msg }}</h1>
 </foo>
@@ -283,9 +286,9 @@ export default {
 
 ### Destructuring 표현
 
-스콥드 슬롯의 변수에 ES6 문법인, [디스트럭처링(Destructuring)](/es6/destructuring.html) 표현도 가능합니다.
+스콥드 슬롯의 변수에 ES6 문법인, [구조 분해 문법(Destructuring)](/es6/destructuring.html) 표현도 가능합니다.
 
-```html {1}
+```html {1}
 <foo v-slot="{ msg }">
   <h1>{{ msg }}</h1>
 </foo>
@@ -303,6 +306,6 @@ export default {
 </foo>
 ```
 
-:::tip
-스콥드 슬롯은 Vue 3.0 이하의 버전에서는 계속 사용할 수 있습니다. 단 Vue 3.0 이상 버전에서 삭제되었으므로 Vue 2.6 이상을 사용하고 있다면, `v-slot`디렉티브를 통해 슬롯을 사용하도록 권장합니다.
+:::warning
+스콥드 슬롯의 `slot-scope` 표현은 Vue 3.0 이하의 버전에서는 계속 사용할 수 있습니다. 단 Vue 3.0 이상 버전에서 삭제되었으므로 Vue 2.6 이상을 사용하고 있다면, `v-slot`디렉티브를 통해 슬롯을 사용하도록 권장합니다.
 :::
