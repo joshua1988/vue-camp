@@ -74,9 +74,9 @@ const foo = {
   name: "bar",
   age: 10000,
   printThis() {
-    console.log(this); // {name: "bar", age: 10000, getAge: ƒ}
+    console.log(this); // {name: "bar", age: 10000, printThis: ƒ}
     innerFunc = () => {
-      return this; // {name: "bar", age: 10000, getAge: ƒ}
+      return this; // {name: "bar", age: 10000, printThis: ƒ}
     };
     console.log(innerFunc());
   }
@@ -94,14 +94,14 @@ const foo = {
   name: "bar",
   age: 10000,
   getThisArrowFunc: function() {
-    console.log(this); // {name: "bar", age: 10000, getAge: ƒ}
+    console.log(this); // {name: "bar", age: 10000, getThisArrowFunc: ƒ}
     setTimeout(() => {
-      console.log(this); // {name: "bar", age: 10000, getAge: ƒ}
+      console.log(this); // {name: "bar", age: 10000, getThisArrowFunc: ƒ}
     }, 1000);
   },
 
   getThisFunc: function() {
-    console.log(this); // {name: "bar", age: 10000, getAge: ƒ}
+    console.log(this); // {name: "bar", age: 10000, getThisFunc: ƒ}
     setTimeout(function() {
       console.log(this); // window
     }, 1000);
