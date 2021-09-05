@@ -4,10 +4,7 @@ title: Prototype
 
 # 프로토타입 (Prototype)
 
-자바스크립트는 **`프로토타입 기반 언어(prototype-based language)`** 입니다.
-
-- 모든 자바스크립트 객체들은 메서드와 속성들을 상속받기 위한 템플릿으로 프로토타입 객체(prototype object)를 가진다는 의미입니다.
-- 프로토타입 기반 언어에서는 어떤 객체를 원형(prototype)으로 삼고 이를 참조함으로써 상속과 비슷한 효과를 얻습니다.
+자바스크립트는 **`프로토타입 기반 언어(prototype-based language)`** 입니다. 프로토타입 기반 언어에서는 어떤 객체를 원형(prototype)으로 삼고 이를 참조함으로써 상속과 비슷한 효과를 얻습니다.
 
 자바스크립트의 프로토타입을 이해하기 위해서는 prototype 프로퍼티를 우선 이해해야 합니다. 간단한 예제로 시작해보겠습니다.
 
@@ -17,9 +14,11 @@ title: Prototype
 
 ## prototye 개념 이해
 
-브라우저의 개발자 도구에서 간단한 Array를 정의한 후 출력해보면 다음 화면과 같이 나옵니다. 출력된 결과를 보면 forEach, map, push와 같은 익숙한 함수들이 보입니다. 저희는 해당 함수를 정의하지 않았는데 그럼 어디에 해당 함수들이 정의되어 있고, 어떻게 해당 함수들을 쓸 수 있는 걸까요?
+브라우저의 개발자 도구에서 간단한 Array를 정의한 후 출력해보면 다음 화면과 같이 나옵니다.
 
-![sadf](../../img/prototype_001.png)
+![simpleArray 출력 결과](../../img/prototype_001.png)
+
+출력된 결과를 보면 forEach, map, push와 같은 익숙한 함수들이 보입니다. 우리는 해당 함수를 정의하지 않았는데 그럼 어디에 함수들이 정의되어 있고, 어떻게 함수들을 쓸 수 있는 걸까요?
 
 :::tip  
 \_\_proto\_\_를 읽을 때는 'dunder proto'('던더 프로토')라고 읽으면 됩니다.
@@ -53,7 +52,7 @@ var simpleArray = new Array();
 
 개발자 도구에서 다시 Array.prototype 을 출력해보면, 위에서 출력한 simpleArray의 \_\_proto\_\_ 프로퍼티의 내용과 동일한 것을 알 수 있습니다.
 
-![](../../img/prototype_002.png)
+![Array.prototype 출력 결과](../../img/prototype_002.png)
 
 즉, 우리가 맨 처음 예제에서 봤던 forEach, map, push와 같은 함수들은 Array.prototype에 정의되어 있고, simpleArray 인스턴스의 \_\_proto\_\_ 프로퍼티에서 참조하고 있던 것입니다.
 
@@ -63,7 +62,7 @@ Array.prototype === simpleArray.__proto__; //true
 
 <br>
 
-위 예제에서 알아본 `__proto__` 와 `prototype` 프로퍼티의 관계가 바로 자바스크립트 프로토타입 개념의 핵심입니다. protype의 타입은 **객체**이고, prototype을 **참조**하는 \_\_proto\_\_ 또한 **객체**입니다. prototype 내부에는 **인스턴스가 사용할 메서드와 프로퍼티를 저장**합니다. 그럼 인스턴스에서 자동으로 생성한 \_\_proto\_\_ 프로퍼티를 통해 protype 내부에 정의된 메서드와 프로퍼티를 사용할 수 있습니다.
+위 예제에서 알아본 `__proto__` 와 `prototype` 프로퍼티의 관계가 바로 자바스크립트 프로토타입 개념의 핵심입니다. prototype의 타입은 **객체**이고, prototype을 **참조**하는 \_\_proto\_\_ 또한 **객체**입니다. prototype 내부에는 **인스턴스가 사용할 메서드와 프로퍼티를 저장**합니다. 그럼 인스턴스에서 자동으로 생성한 \_\_proto\_\_ 프로퍼티를 통해 prototype 내부에 정의된 메서드와 프로퍼티를 사용할 수 있습니다.
 
 <br>
 <br>
@@ -123,7 +122,7 @@ captainAmerica.__proto__.printName();
 
 ### prototye 개념 정리
 
-정리하면, 자바스크립트는 함수에 자동으로 `prototype` 이라는 객체 타입의 프로퍼티를 생성합니다. new 연산자와 함께 함수를 호출할 경우, 즉 해당 함수를 생성자 함수로써 사용할 경우, 생성된 인스턴스에는 숨겨진 프로퍼티인 `__proto__` 프로퍼티가 자동으로 생성됩니다. 그리고 `__proto__` 프로퍼티는 생성자 함수의 `prototype` 프로퍼티를 **참조** 합니다. `__proto__` 프로퍼티는 **생략이 가능** 하기 때문에 인스턴스에서 생성자 함수의 `prototype`에 정의된 메서드나 프로퍼티에 **접근** 할 수 있습니다.
+정리하면, 자바스크립트는 함수에 자동으로 `prototype` 이라는 객체 타입의 프로퍼티를 생성합니다. new 연산자와 함께 함수를 호출하여 함수를 생성자 함수로써 사용할 경우, 생성된 인스턴스에는 숨겨진 프로퍼티인 `__proto__` 프로퍼티가 자동으로 생성됩니다. 그리고 `__proto__` 프로퍼티는 생성자 함수의 `prototype` 프로퍼티를 **참조** 합니다. `__proto__` 프로퍼티는 **생략이 가능** 하기 때문에 인스턴스에서 생성자 함수의 `prototype`에 정의된 메서드나 프로퍼티에 **접근** 할 수 있습니다.
 
 <br>
 <br>
@@ -131,9 +130,9 @@ captainAmerica.__proto__.printName();
 
 ## 프로토타입 체인
 
-### 메소드 오버라이드
+### 메서드 오버라이드
 
-인스턴스에서 생성자 함수의 prototype 프로퍼티를 참조하는 \_\_proto\_\_를 생략하면, 인스턴스는 prototype에 정의된 프로퍼티나 메소드를 자신의 것처럼 사용할 수 있다고 설명하였습니다. 그럼 만약 인스턴스에서 동일한 이름의 프로퍼티나 메서드를 가지고 있다면 어떨까요?
+인스턴스에서 생성자 함수의 prototype 프로퍼티를 참조하는 \_\_proto\_\_를 생략하면, 인스턴스는 prototype에 정의된 프로퍼티나 메서드를 자신의 것처럼 사용할 수 있다고 설명하였습니다. 그럼 만약 인스턴스에서 동일한 이름의 프로퍼티나 메서드를 가지고 있다면 어떨까요?
 
 ```javascript
 function Person(name) {
@@ -171,9 +170,9 @@ simpleArray.push(3); //[1, 2, 3]
 simpleArray.hasOwnProperty(2); // true
 ```
 
-`simpleArray` 인스턴스에 push 함수와 hasOwnProperty 함수를 정의하지 않았지만, 위와 같이 사용할 수 있는 이유는 자바스크립트 엔진이 메소드를 찾는 방식이 프로퍼티를 검색하고, 존재하지 않는다면 그다음으로 가까운 대상인 \_\_proto\_\_를 검색하는 순서로 진행하기 때문입니다. 위 예제에서 `console.dir(simpleArray);` 명령을 실행해보면, push 함수와 hasOwnProperty 함수가 어디에 정의되어 있는지 확인 할 수 있습니다.
+`simpleArray` 인스턴스에 push 함수와 hasOwnProperty 함수를 정의하지 않았지만, 위와 같이 사용할 수 있는 이유는 자바스크립트 엔진이 메서드를 찾는 방식이 프로퍼티를 검색하고, 존재하지 않는다면 그다음으로 가까운 대상인 \_\_proto\_\_를 검색하는 순서로 진행하기 때문입니다. 위 예제에서 `console.dir(simpleArray);` 명령을 실행해보면, push 함수와 hasOwnProperty 함수가 어디에 정의되어 있는지 확인 할 수 있습니다.
 
-![](../../img/prototype_003.png)
+![console.dir(simpleArray)의 결과](../../img/prototype_003.png)
 
 ```javascript
 simpleArray(.__proto__).push(3);
