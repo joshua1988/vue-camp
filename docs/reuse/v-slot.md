@@ -300,7 +300,7 @@ export default {
 
 ```html
 <foo>
-  <template v-slot:[dynamicsSlotName]>
+  <template v-slot:[dynamicSlotName]>
     ...
   </template>
 </foo>
