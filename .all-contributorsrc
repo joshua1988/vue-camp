@@ -126,7 +126,9 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/19399338?v=4",
       "profile": "https://seongsilyoo.medium.com/",
       "contributions": [
-        "doc"
+        "doc",
+        "bug",
+        "code"
       ]
     },
     {
