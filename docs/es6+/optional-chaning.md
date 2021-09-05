@@ -91,7 +91,7 @@ const userInfo = {
 const city = userInfo.address?.city ?? "New York"
 ```
 
-옵셔널 체이닝으로 객체의 속성 값을 확인하고 `undefined` 가 반환되면 [널 병합 연산자(`??`)](./nullish-coalescing-operator.md)를 통해 기본 값을 제공할 수 있습니다.
+옵셔널 체이닝으로 객체의 속성 값을 확인하고 `undefined` 가 반환되면 [널 병합 연산자(`??`)](/es6+/nullish-coalescing-operator.html)를 통해 기본 값을 제공할 수 있습니다.
 
 ::: warning
 옵셔널 체이닝을 남용하지 않도록 주의해주세요.
