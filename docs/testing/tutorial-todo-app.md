@@ -225,7 +225,7 @@ App
 <br />
 
 3. 기능 구현 - 인풋 태그에 할 일 작성 시 data에 할 일 텍스트 값 넣기
-```html
+```html{11,12,21-34}
 <!-- src/App.vue -->
 <template>
   <div>
@@ -284,7 +284,7 @@ vue-test-utils 라이브러리에선 `input`이벤트를 `trigger`시 `event.tar
 <br />
 
 5. 기능 구현 - `추가하기` 버튼을 누르면 할 일 추가
-```html
+```html{15,18-22,31,32,39-50}
 <!-- src/App.vue -->
 <template>
   <div>
@@ -299,11 +299,9 @@ vue-test-utils 라이브러리에선 `input`이벤트를 `trigger`시 `event.tar
           :value="text"
           @input="handleInput"
         />
-        <!-- @click="handleClickAddTodo" 추가 -->
         <button type="button" @click="handleClickAddTodo">추가하기</button>
       </div>
     </div>
-    <!-- ul, li 태그 추가 -->
     <ul>
       <li v-for="todo in todos" :key="todo.id">
         {{ todo.text }}
@@ -317,15 +315,14 @@ export default {
   data() {
     return {
       text: "",
-      newId: 0, // 추가
-      todos: [], // 추가
+      newId: 0,
+      todos: [],
     };
   },
   methods: {
     handleInput(event) {
       this.text = event.target.value;
     },
-    // 추가
     handleClickAddTodo() {
       // 할 일 추가
       this.todos.push({
@@ -334,7 +331,7 @@ export default {
       });
       this.newId += 1;
 
-      // control값 초기화
+      // 인풋 값 초기화
       this.text = "";
     },
   },
@@ -343,7 +340,7 @@ export default {
 ```
 <br />
 
-6. 기능 구현 - 테스트 코드 작성
+1. 기능 구현 - 테스트 코드 작성
 ```js
 // src/App.test.js
 it("adds todo when listens '추가하기' click event", async () => {
