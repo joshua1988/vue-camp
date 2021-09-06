@@ -136,6 +136,69 @@ commit('addProducts'); // addProducts has been committed!!
 뷰엑스란 뷰의 상태 관리 라이브러리를 의미합니다. 자세한 내용은 [Vuex 튜토리얼](https://joshua1988.github.io/web-development/vuejs/vuex-start/)을 참고하세요.
 :::
 
-## 뷰에 적용하는 구조 분해 문법 2
+## 뷰에 적용하는 구조 분해 문법 1
 
-업데이트 예정
+뷰에서 `data`, `methods` 등에 접근할 때 `this`를 사용합니다. 하지만 때때로 매번 `this`를 타이핑해 접근하는 것은 번거로울 수 있습니다. 이러한 번거로움을 구조 분해 문법으로 접근해보도록 하겠습니다.  
+
+```html
+<script>
+export default {
+  props: {
+    id: Number,
+    title: String,
+    created: String,
+    author: String,
+  },
+  methods: {
+    savePost(postId) {
+      // ..
+    },
+    submitForm() {
+      // 구조 분해 문법 미적용
+      this.savePost(this.id);
+
+      // 구조 분해 문법 적용
+      const { id, savePost } = this;
+      savePost(id);
+    },
+  },
+}
+</script>
+```  
+
+위 코드를 살펴보면 `this`를 매번 입력하지 않아도 되는 이점이 있습니다. **다만, 해당 데이터가 현재 컴포넌트의 데이터인지, 외부에서 가져오는 메서드인지 구분이 어려워지기 때문에 프로젝트에 정해진 컨벤션에 맞춰 주의해서 사용할 필요가 있습니다.**  
+
+## 뷰에 적용하는 구조 분해 문법 2
+[v-for 디렉티브](https://joshua1988.github.io/vue-camp/vue/template.html#%E1%84%83%E1%85%B5%E1%84%85%E1%85%A6%E1%86%A8%E1%84%90%E1%85%B5%E1%84%87%E1%85%B3)를 사용할 때도 구조 분해 문법을 활용할 수 있습니다.   
+
+`posts`라는 배열 데이터를 반복 사용하기 위해 다음과 같이 `v-for` 디렉티브를 사용한다고 가정해봅시다.  
+다음 코드를 살펴보면 `v-for` 디렉티브 안에서 데이터를 출력하는 부분에 매번 식별자 `post`를 입력해야 하는 번거로움이 있습니다. 이 부분도 앞서 나온 것처럼 구조 분해 문법을 적용해 볼 수 있습니다.  
+```html
+<template>
+  <ul>
+    <li v-for="post in posts" :key="post.id">
+      {{ post.title }} - {{ post.author }}
+    </li>
+  </ul>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      posts: [
+        { id: 1, title: "post 1", created: "2021-08-01", author: "Capt" },
+        { id: 2, title: "post 2", created: "2021-08-02", author: "Capt" },
+        { id: 3, title: "post 3", created: "2021-08-03", author: "Capt" },
+      ],
+    };
+  },
+}
+</script>
+```  
+다음 코드는 위 코드에 구조 분해 문법을 적용한 모습입니다. 이전보다 간결해진 모습입니다. 이처럼 구조 분해 문법을 사용하면 이보다 여러 속성을 참조해야 하는 긴 코드의 데이터를 사용하는 경우 더 간단하고 이해하기 쉽게 코드를 작성할 수 있습니다.  
+```html
+<li v-for="{ title, author, id } in posts" :key="id">
+  {{ title }} - {{ author }}
+</li>
+```

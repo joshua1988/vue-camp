@@ -14,8 +14,13 @@ function getChildrenFiles(dir) {
       }
       return acc;
     }, [])
-    .sort((prev, next) => (prev.order > next.order ? 1 : -1))
-    .map(({ file }) => `/${dir.split('/')[2]}/${file}`);
+    .sort((prev, next) => {
+      if (!prev.order) {
+        throw new Error(`${dir}/${prev.file}에 order 값이 없습니다`);
+      }
+      return prev.order > next.order ? 1 : -1;
+    })
+    .map(({ file }) => `/${dir.split("/")[2]}/${file}`);
 }
 
 function getBuild(data) {
