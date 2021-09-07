@@ -62,6 +62,7 @@ module.exports = {
               '/js/string',
               // '/js/number',
               '/js/object',
+              '/js/collection',
               '/js/array',
               '/js/loop',
               '/js/operator',
