@@ -71,6 +71,7 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/44187477?v=4",
       "profile": "https://kyounghwan01.github.io/blog/",
       "contributions": [
+        "doc",
         "tool"
       ]
     },
@@ -116,7 +117,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/75518683?v=4",
       "profile": "https://github.com/Parkjju",
       "contributions": [
-        "doc"
+        "doc",
+        "tool"
       ]
     },
     {
@@ -125,7 +127,30 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/19399338?v=4",
       "profile": "https://seongsilyoo.medium.com/",
       "contributions": [
-        "doc"
+        "doc",
+        "bug",
+        "code"
+      ]
+    },
+    {
+      "login": "dngwoodo",
+      "name": "Dongwoo Kim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/77663233?v=4",
+      "profile": "https://github.com/dngwoodo",
+      "contributions": [
+        "doc",
+        "example",
+        "tutorial"
+      ]
+    },
+    {
+      "login": "yahma25",
+      "name": "MyoungHo Kim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/34343507?v=4",
+      "profile": "http://myoungho.kim/about",
+      "contributions": [
+        "doc",
+        "review"
       ]
     }
   ],
