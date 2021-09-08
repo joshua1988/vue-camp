@@ -180,6 +180,15 @@
         "doc",
         "tool"
       ]
+    },
+    {
+      "login": "juicyjusung",
+      "name": "juicyjusung",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46892438?v=4",
+      "profile": "https://juicylog.com/",
+      "contributions": [
+        "tool"
+      ]
     }
   ],
   "contributorsPerLine": 7
