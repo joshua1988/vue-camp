@@ -1,6 +1,6 @@
 # Cracking Vue.js
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-14-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-15-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Vue.js 오픈소스 개발과 관련된 정보를 얻을 수 있는 사이트입니다. [Cracking Vue.js](https://joshua1988.github.io/vue-camp/)
@@ -36,6 +36,9 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/dngwoodo"><img src="https://avatars.githubusercontent.com/u/77663233?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dongwoo Kim</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=dngwoodo" title="Documentation">📖</a> <a href="#example-dngwoodo" title="Examples">💡</a> <a href="#tutorial-dngwoodo" title="Tutorials">✅</a></td>
     <td align="center"><a href="http://myoungho.kim/about"><img src="https://avatars.githubusercontent.com/u/34343507?v=4?s=100" width="100px;" alt=""/><br /><sub><b>MyoungHo Kim</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=yahma25" title="Documentation">📖</a> <a href="https://github.com/joshua1988/Cracking Vue.js/pulls?q=is%3Apr+reviewed-by%3Ayahma25" title="Reviewed Pull Requests">👀</a></td>
     <td align="center"><a href="https://github.com/minseo999"><img src="https://avatars.githubusercontent.com/u/76725982?v=4?s=100" width="100px;" alt=""/><br /><sub><b>MINSEO</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=minseo999" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/scl2589"><img src="https://avatars.githubusercontent.com/u/25967949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Chae Lin Shin</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=scl2589" title="Documentation">📖</a></td>
   </tr>
 </table>
 
