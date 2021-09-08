@@ -1,6 +1,6 @@
 # Cracking Vue.js
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-17-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-18-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Vue.js 오픈소스 개발과 관련된 정보를 얻을 수 있는 사이트입니다. [Cracking Vue.js](https://joshua1988.github.io/vue-camp/)
@@ -41,6 +41,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://github.com/scl2589"><img src="https://avatars.githubusercontent.com/u/25967949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Chae Lin Shin</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=scl2589" title="Documentation">📖</a></td>
     <td align="center"><a href="https://sewonkimm.github.io/"><img src="https://avatars.githubusercontent.com/u/30452963?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SeWonKim</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=sewonkimm" title="Documentation">📖</a> <a href="#tool-sewonkimm" title="Tools">🔧</a></td>
     <td align="center"><a href="https://juicylog.com/"><img src="https://avatars.githubusercontent.com/u/46892438?v=4?s=100" width="100px;" alt=""/><br /><sub><b>juicyjusung</b></sub></a><br /><a href="#tool-juicyjusung" title="Tools">🔧</a></td>
+    <td align="center"><a href="https://seungwoo321.github.io/"><img src="https://avatars.githubusercontent.com/u/13829929?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Seungwoo321</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=Seungwoo321" title="Documentation">📖</a></td>
   </tr>
 </table>
 
