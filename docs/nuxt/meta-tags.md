@@ -33,7 +33,7 @@ export default {
 ```html
 <html lang="en">
 <head>
-  <title>페이지 타이틀입니다</title>
+  <title>learn-nuxt</title>
   <meta data-n-head="ssr" charset="utf-8">
   <meta data-n-head="ssr" name="viewport" content="width=device-width, initial-scale=1">
   <meta data-n-head="ssr" data-hid="description" name="description" content="">
