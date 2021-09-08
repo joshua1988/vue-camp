@@ -152,6 +152,15 @@
         "doc",
         "review"
       ]
+    },
+    {
+      "login": "minseo999",
+      "name": "MINSEO",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76725982?v=4",
+      "profile": "https://github.com/minseo999",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
