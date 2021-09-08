@@ -1,6 +1,6 @@
 # Cracking Vue.js
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-13-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-19-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Vue.js 오픈소스 개발과 관련된 정보를 얻을 수 있는 사이트입니다. [Cracking Vue.js](https://joshua1988.github.io/vue-camp/)
@@ -31,10 +31,18 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tr>
     <td align="center"><a href="https://sang-okki.tistory.com/"><img src="https://avatars.githubusercontent.com/u/60969294?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SANGOK</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=ChoiSangok" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/shinyuna"><img src="https://avatars.githubusercontent.com/u/19729134?v=4?s=100" width="100px;" alt=""/><br /><sub><b>shinyuna</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=shinyuna" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://github.com/Parkjju"><img src="https://avatars.githubusercontent.com/u/75518683?v=4?s=100" width="100px;" alt=""/><br /><sub><b>박경준, Gyeong Jun Park</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=Parkjju" title="Documentation">📖</a></td>
-    <td align="center"><a href="https://seongsilyoo.medium.com/"><img src="https://avatars.githubusercontent.com/u/19399338?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Seongsil Yoo</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=yooseongsil" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/Parkjju"><img src="https://avatars.githubusercontent.com/u/75518683?v=4?s=100" width="100px;" alt=""/><br /><sub><b>박경준, Gyeong Jun Park</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=Parkjju" title="Documentation">📖</a> <a href="#tool-Parkjju" title="Tools">🔧</a></td>
+    <td align="center"><a href="https://seongsilyoo.medium.com/"><img src="https://avatars.githubusercontent.com/u/19399338?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Seongsil Yoo</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=yooseongsil" title="Documentation">📖</a> <a href="https://github.com/joshua1988/Cracking Vue.js/issues?q=author%3Ayooseongsil" title="Bug reports">🐛</a> <a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=yooseongsil" title="Code">💻</a></td>
     <td align="center"><a href="https://github.com/dngwoodo"><img src="https://avatars.githubusercontent.com/u/77663233?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Dongwoo Kim</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=dngwoodo" title="Documentation">📖</a> <a href="#example-dngwoodo" title="Examples">💡</a> <a href="#tutorial-dngwoodo" title="Tutorials">✅</a></td>
     <td align="center"><a href="http://myoungho.kim/about"><img src="https://avatars.githubusercontent.com/u/34343507?v=4?s=100" width="100px;" alt=""/><br /><sub><b>MyoungHo Kim</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=yahma25" title="Documentation">📖</a> <a href="https://github.com/joshua1988/Cracking Vue.js/pulls?q=is%3Apr+reviewed-by%3Ayahma25" title="Reviewed Pull Requests">👀</a></td>
+    <td align="center"><a href="https://github.com/minseo999"><img src="https://avatars.githubusercontent.com/u/76725982?v=4?s=100" width="100px;" alt=""/><br /><sub><b>MINSEO</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=minseo999" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/scl2589"><img src="https://avatars.githubusercontent.com/u/25967949?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Chae Lin Shin</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=scl2589" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://sewonkimm.github.io/"><img src="https://avatars.githubusercontent.com/u/30452963?v=4?s=100" width="100px;" alt=""/><br /><sub><b>SeWonKim</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=sewonkimm" title="Documentation">📖</a> <a href="#tool-sewonkimm" title="Tools">🔧</a></td>
+    <td align="center"><a href="https://juicylog.com/"><img src="https://avatars.githubusercontent.com/u/46892438?v=4?s=100" width="100px;" alt=""/><br /><sub><b>juicyjusung</b></sub></a><br /><a href="#tool-juicyjusung" title="Tools">🔧</a></td>
+    <td align="center"><a href="https://seungwoo321.github.io/"><img src="https://avatars.githubusercontent.com/u/13829929?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Seungwoo321</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=Seungwoo321" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/daaaayeah"><img src="https://avatars.githubusercontent.com/u/52729559?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daye Lee</b></sub></a><br /><a href="https://github.com/joshua1988/Cracking Vue.js/commits?author=daaaayeah" title="Documentation">📖</a></td>
   </tr>
 </table>
 

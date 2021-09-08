@@ -117,7 +117,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/75518683?v=4",
       "profile": "https://github.com/Parkjju",
       "contributions": [
-        "doc"
+        "doc",
+        "tool"
       ]
     },
     {
@@ -126,7 +127,9 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/19399338?v=4",
       "profile": "https://seongsilyoo.medium.com/",
       "contributions": [
-        "doc"
+        "doc",
+        "bug",
+        "code"
       ]
     },
     {
@@ -148,6 +151,61 @@
       "contributions": [
         "doc",
         "review"
+      ]
+    },
+    {
+      "login": "minseo999",
+      "name": "MINSEO",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76725982?v=4",
+      "profile": "https://github.com/minseo999",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "scl2589",
+      "name": "Chae Lin Shin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25967949?v=4",
+      "profile": "https://github.com/scl2589",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "sewonkimm",
+      "name": "SeWonKim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30452963?v=4",
+      "profile": "https://sewonkimm.github.io/",
+      "contributions": [
+        "doc",
+        "tool"
+      ]
+    },
+    {
+      "login": "juicyjusung",
+      "name": "juicyjusung",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46892438?v=4",
+      "profile": "https://juicylog.com/",
+      "contributions": [
+        "tool"
+      ]
+    },
+    {
+      "login": "Seungwoo321",
+      "name": "Seungwoo321",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13829929?v=4",
+      "profile": "https://seungwoo321.github.io/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "daaaayeah",
+      "name": "Daye Lee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52729559?v=4",
+      "profile": "https://github.com/daaaayeah",
+      "contributions": [
+        "doc"
       ]
     }
   ],
