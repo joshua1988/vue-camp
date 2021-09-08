@@ -8,7 +8,7 @@ title: Class
 
 ## 클래스의 인스턴스 생성
 
-`new` 키워드(keyword)를 사용해서 클래스의 인스턴스(instance)를 생성할 수 있습니다.
+`new` 키워드를 사용해서 클래스의 인스턴스(instance)를 생성할 수 있습니다.
 
 ```js
 class MyClass{}
