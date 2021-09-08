@@ -122,6 +122,15 @@ module.exports = {
             children: ['/legacy/jquery-to-vue', '/legacy/form', '/legacy/datepicker', '/legacy/chart'],
           },
           {
+              title: 'Vue.js with D3',
+              collapsable: false,
+              children: [
+                  '/d3/d3',
+                  '/d3/vue-with-d3',
+                  '/d3/tutorial'
+              ]
+          },
+          {
             title: 'State Management',
             collapsable: false,
             children: [
