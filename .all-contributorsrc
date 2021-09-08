@@ -170,6 +170,16 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "sewonkimm",
+      "name": "SeWonKim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30452963?v=4",
+      "profile": "https://sewonkimm.github.io/",
+      "contributions": [
+        "doc",
+        "tool"
+      ]
     }
   ],
   "contributorsPerLine": 7
