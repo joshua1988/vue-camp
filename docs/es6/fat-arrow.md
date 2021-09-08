@@ -75,7 +75,7 @@ const foo = {
   age: 10000,
   printThis() {
     console.log(this); // {name: "bar", age: 10000, printThis: ƒ}
-    innerFunc = () => {
+    const innerFunc = () => {
       return this; // {name: "bar", age: 10000, printThis: ƒ}
     };
     console.log(innerFunc());
@@ -149,7 +149,7 @@ button.addEventListener("click", function() {
 });
 ```
 
-class 내부에서 addEventListener 콜백 함수로 사용되는 this는 선언된 class로 생성된 객체의 값이 바인딩 됩니다. 아래 예시 코드를 참조해주시기 바랍니다.
+addEventListener 콜백 함수 안에서 사용되는 this는 class로 생성된 객체 인스턴스를 가리킵니다. 아래 예시 코드를 참조해주시기 바랍니다.
 
 ```js
 class Foo {
@@ -159,9 +159,9 @@ class Foo {
   register() {
     window.addEventListener("keydown", e => this.someMethod(e));
   }
-  someMethod(e) {
+  someMethod(event) {
     console.log(this.name); // bar
-    console.log(e.keyCode); // e를 누르면 63
+    console.log(event.keyCode); // Enter key를 누르면 63
   }
 }
 
