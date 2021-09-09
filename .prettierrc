@@ -3,7 +3,7 @@
   "semi": true,
   "useTabs": false,
   "tabWidth": 2,
-  "trailingComma": "none",
+  "trailingComma": "all",
   "printWidth": 120,
   "parser": "babel",
   "bracketSpacing": true,
