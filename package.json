@@ -19,7 +19,7 @@
     "url": "git+https://github.com/joshua1988/vue-camp.git"
   },
   "lint-staged": {
-    "src/**/*.{js,json,md}": [
+    "docs/**/*.{js,json,md}": [
       "prettier --write",
       "git add"
     ]
