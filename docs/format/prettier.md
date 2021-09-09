@@ -31,6 +31,7 @@ Prettier를 프로젝트에 세팅하는 방법과 commit 전에 전체 코드�
 ## vscode에서 prettier 설치 및 실행하기
 
 1. Extensions(command + shift + x)에서 Prettier를 설치합니다.
+
 2. 설치가 완료되면 command + p를 누르고 `> Format Document`를 실행합니다.
 
 ## vscode에서 저장(command + s)시 자동으로 prettier 실행하기
@@ -38,6 +39,7 @@ Prettier를 프로젝트에 세팅하는 방법과 commit 전에 전체 코드�
 1. command + ,를 누르고 검색에 `format on save`를 입력합니다.
 
 2. `Editor: Format on Save`를 체크하고 vscode를 재부팅합니다.
+
 3. 만약 저장시 포멧팅이 안된다면 다시 command + ,를 누르고 검색창에 `default formatter`를 검색하고 none으로 되어 있으면 Prettier - Code formatter로 변경 후 재부팅합니다.
 
 ## husky를 사용하여 commit 전에 prettier 전체 파일에 적용하기
@@ -45,6 +47,7 @@ Prettier를 프로젝트에 세팅하는 방법과 commit 전에 전체 코드�
 이번에 알려드릴 방법은 위에서 prettier를 설치하고 설정할 필요 없이 husky가 commit 전에 lint-staged에 설정된 파일을 대상 중에 변경된 파일을 대상으로 자동으로 prettier 실행하여 포멧팅 후에 commit 해주는 기능입니다.
 
 1. 위에서 설명드린 `포멧팅할 prettier 설정파일 생성하기`을 만듭니다.
+
 2. 관련 라이브러리를 설치합니다.
 
 ```sh
