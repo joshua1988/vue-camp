@@ -23,7 +23,7 @@
     "docs/**/*.js": [
       "prettier --write"
     ],
-    "docs/**/*/*.md": [
+    "**/*/*.md": [
       "prettier --write",
       "git add"
     ]
