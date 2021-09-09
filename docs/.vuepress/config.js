@@ -7,7 +7,7 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: 'apple-touch-icon', href: '/images/icons/152x.png' }],
-    ['link', { rel: 'mask-icon', href: '/logo.png', color: '#ffffff' }],
+    ["link", { rel: 'mask-icon', href: '/logo.png', color: '#ffffff' }],
     ["meta", { name: 'msapplication-TileImage', content: '/images/icons/144x.png' }],
     ["meta", { name: 'msapplication-TileColor', content: '#ffffff' }],
   ],
