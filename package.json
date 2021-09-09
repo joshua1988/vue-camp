@@ -10,7 +10,9 @@
     "doc": "vuepress dev docs",
     "build": "vuepress build docs",
     "insert": "all-contributors add",
-    "generate": "all-contributors generate"
+    "generate": "all-contributors generate",
+    "init-husky": "npx husky install .husky",
+    "lint-front": "lint-staged"
   },
   "repository": {
     "type": "git",
