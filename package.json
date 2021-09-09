@@ -23,7 +23,7 @@
       "prettier --write"
     ],
     "docs/**/*.md": [
-      "prettier-markdown",
+      "prettier-markdown docs/**/*.md",
       "git add"
     ]
   },
