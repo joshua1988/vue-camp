@@ -90,7 +90,8 @@ yarn lint-front
 5. 이후 다른 파일을 변경하고 commit 하면 파일이 포멧팅 되어 commit 되는지 확인합니다.
 
 6. 만약 아래와 같은 에러로 commit이 실패 한다면 터미널에 아래 코드를 넣습니다.
-   ![husky 에러](./img/husky-prettier-error.png)
+
+![husky 에러](./img/husky-prettier-error.png)
 
 깃 훅 실행 권한을 부여하는 코드입니다.
 
@@ -100,5 +101,3 @@ chmod ug+x .git/hooks/*
 ```
 
 7. vscode 재부팅 후 다시 파일 변경 후 commit 합니다.
-
-8. estdddqdw
