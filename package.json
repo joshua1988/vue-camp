@@ -12,14 +12,15 @@
     "insert": "all-contributors add",
     "generate": "all-contributors generate",
     "init-husky": "npx husky install .husky",
-    "lint-front": "lint-staged"
+    "lint-front": "lint-staged",
+    "prettier": "prettier **/*/*.md --write"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/joshua1988/vue-camp.git"
   },
   "lint-staged": {
-    "docs/**/*.{js,json}": [
+    "docs/**/*.js": [
       "prettier --write"
     ],
     "docs/**/*/*.md": [
@@ -43,7 +44,6 @@
     "husky": "^4.3.8",
     "lint-staged": "^11.1.2",
     "prettier": "^2.4.0",
-    "prettier-markdown": "^0.1.8",
     "vuepress": "^1.8.2",
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-reading-progress": "^1.0.10"

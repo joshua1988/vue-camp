@@ -24,8 +24,8 @@ Prettier를 프로젝트에 세팅하는 방법과 commit 전에 전체 코드�
   "bracketSpacing": true,
   "arrowParens": "avoid"
 }
-
 ```
+
 각 옵션의 의미는 [prettier 공식 사이트](https://prettier.io/docs/en/options.html)에서 확인 부탁드리겠습니다.
 
 ## vscode에서 prettier 설치 및 실행하기
@@ -34,6 +34,7 @@ Prettier를 프로젝트에 세팅하는 방법과 commit 전에 전체 코드�
 2. 설치가 완료되면 command + p를 누르고 `> Format Document`를 실행합니다.
 
 ## vscode에서 저장(command + s)시 자동으로 prettier 실행하기
+
 1. command + ,를 누르고 검색에 `format on save`를 입력합니다.
 2. `Editor: Format on Save`를 체크하고 vscode를 재부팅합니다.
 3. 만약 저장시 포멧팅이 안된다면 다시 command + ,를 누르고 검색창에 `default formatter`를 검색하고 none으로 되어 있으면 Prettier - Code formatter로 변경 후 재부팅합니다.
@@ -88,7 +89,7 @@ yarn lint-front
 
 5. 이후 다른 파일을 변경하고 commit 하면 파일이 포멧팅 되어 commit 되는지 확인합니다.
 6. 만약 아래와 같은 에러로 commit이 실패 한다면 터미널에 아래 코드를 넣습니다.
-![husky 에러](./img/husky-prettier-error.png)
+   ![husky 에러](./img/husky-prettier-error.png)
 
 깃 훅 실행 권한을 부여하는 코드입니다.
 
@@ -98,4 +99,4 @@ chmod ug+x .git/hooks/*
 ```
 
 7. vscode 재부팅 후 다시 파일 변경 후 commit 합니다.
-8. estdd
+8. estdddqdw
