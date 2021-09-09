@@ -98,4 +98,4 @@ chmod ug+x .git/hooks/*
 ```
 
 7. vscode 재부팅 후 다시 파일 변경 후 commit 합니다.
-8. estd
+8. estdd

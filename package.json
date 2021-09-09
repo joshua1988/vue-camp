@@ -22,8 +22,8 @@
     "docs/**/*.{js,json}": [
       "prettier --write"
     ],
-    "docs/**/*.md": [
-      "prettier-markdown docs/**/*.md",
+    "docs/**/*/*.md": [
+      "prettier --write",
       "git add"
     ]
   },
