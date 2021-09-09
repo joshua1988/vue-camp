@@ -18,11 +18,6 @@
     "type": "git",
     "url": "git+https://github.com/joshua1988/vue-camp.git"
   },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
   "lint-staged": {
     "src/**/*.{js,json,md}": [
       "prettier --write",
