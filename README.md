@@ -1,6 +1,6 @@
 # Cracking Vue.js
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-19-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-24-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 Vue.js 오픈소스 개발과 관련된 정보를 얻을 수 있는 사이트입니다. [Cracking Vue.js](https://joshua1988.github.io/vue-camp/)
@@ -43,6 +43,13 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://juicylog.com/"><img src="https://avatars.githubusercontent.com/u/46892438?v=4?s=100" width="100px;" alt=""/><br /><sub><b>juicyjusung</b></sub></a><br /><a href="#tool-juicyjusung" title="Tools">🔧</a></td>
     <td align="center"><a href="https://seungwoo321.github.io/"><img src="https://avatars.githubusercontent.com/u/13829929?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Seungwoo321</b></sub></a><br /><a href="https://github.com/joshua1988/vue-camp/commits?author=Seungwoo321" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/daaaayeah"><img src="https://avatars.githubusercontent.com/u/52729559?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Daye Lee</b></sub></a><br /><a href="https://github.com/joshua1988/vue-camp/commits?author=daaaayeah" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://github.com/kwonET"><img src="https://avatars.githubusercontent.com/u/49463954?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Bomi Kwon</b></sub></a><br /><a href="https://github.com/joshua1988/vue-camp/commits?author=kwonET" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://velog.io/@zwonlala"><img src="https://avatars.githubusercontent.com/u/13375734?v=4?s=100" width="100px;" alt=""/><br /><sub><b>jiwonSong</b></sub></a><br /><a href="https://github.com/joshua1988/vue-camp/commits?author=zwonlala" title="Documentation">📖</a></td>
+  </tr>
+  <tr>
+    <td align="center"><a href="https://github.com/hananumber1"><img src="https://avatars.githubusercontent.com/u/21152295?v=4?s=100" width="100px;" alt=""/><br /><sub><b>HanaKim</b></sub></a><br /><a href="https://github.com/joshua1988/vue-camp/commits?author=hananumber1" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://pozafly.github.io/"><img src="https://avatars.githubusercontent.com/u/59427983?v=4?s=100" width="100px;" alt=""/><br /><sub><b>Sun Tae Hwang</b></sub></a><br /><a href="https://github.com/joshua1988/vue-camp/commits?author=pozafly" title="Documentation">📖</a></td>
+    <td align="center"><a href="https://velog.io/@mlsh1112"><img src="https://avatars.githubusercontent.com/u/59257758?v=4?s=100" width="100px;" alt=""/><br /><sub><b>LeeSeohyun</b></sub></a><br /><a href="https://github.com/joshua1988/vue-camp/commits?author=mlsh1112" title="Documentation">📖</a></td>
   </tr>
 </table>
 
