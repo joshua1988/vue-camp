@@ -149,6 +149,51 @@
         "doc",
         "review"
       ]
+    },
+    {
+      "login": "kwonET",
+      "name": "Bomi Kwon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49463954?v=4",
+      "profile": "https://github.com/kwonET",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "zwonlala",
+      "name": "jiwonSong",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13375734?v=4",
+      "profile": "https://velog.io/@zwonlala",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "hananumber1",
+      "name": "HanaKim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21152295?v=4",
+      "profile": "https://github.com/hananumber1",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "pozafly",
+      "name": "Sun Tae Hwang",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59427983?v=4",
+      "profile": "https://pozafly.github.io/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "mlsh1112",
+      "name": "LeeSeohyun",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59257758?v=4",
+      "profile": "https://velog.io/@mlsh1112",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
