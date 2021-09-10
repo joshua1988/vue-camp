@@ -234,6 +234,15 @@
       "contributions": [
         "doc"
       ]
+    },
+    {
+      "login": "pozafly",
+      "name": "Sun Tae Hwang",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59427983?v=4",
+      "profile": "https://pozafly.github.io/",
+      "contributions": [
+        "doc"
+      ]
     }
   ],
   "contributorsPerLine": 7
