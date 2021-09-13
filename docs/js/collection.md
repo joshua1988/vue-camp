@@ -41,7 +41,7 @@ console.log(map); // Map(2) { 'key' => 'value', 'key2' => 'value' }
 
 ```js
 // map 선언
-const map = new Map([['key1', 'value1'], ['key1','value2']]);
+const map = new Map([['key1', 'value1'], ['key1', 'value2']]);
 console.log(map); // Map(1) { 'key1' => 'value2' }
 
 ```
@@ -76,13 +76,13 @@ map.forEach((val, key) => {
   console.log(val + "," + key);
 });
 
-// 결과입니다.
+// 결과입니다
 // value1,key1
 // value2,key2
 
 
 // key값 가져오기
-for(let key of map.keys()){
+for (let key of map.keys()){
     console.log("key : " + key);
 }
 // 결과입니다
@@ -91,7 +91,7 @@ for(let key of map.keys()){
 
 
 // value 값 가져오기
-for(const value of map.values()) {
+for (const value of map.values()) {
     console.log("value : " + value);
 }
 // 결과입니다
@@ -100,7 +100,7 @@ for(const value of map.values()) {
 
 
 // entries 반복문
-for(let[key, value] of map.entries()) {
+for (let[key, value] of map.entries()) {
     console.log(key + " : " +value);
 }
 // 결과입니다
@@ -140,12 +140,12 @@ Set객체에 값을 추가할 때는 `Set.prototype.add`메서드를 사용합�
 const set = new Set();
 
 // set 값 추가 #1
-set.add("javascript");
-set.add("vue");
-set.add("node");
+set.add('javascript');
+set.add('vue');
+set.add('node');
 
 // set 값 추가 #2
-set.add("javascript").add("vue").add("node");
+set.add('javascript').add('vue').add('node');
 
 console.log(set); // Set(3) { 'javascript', 'vue', 'node' }
 
@@ -231,7 +231,7 @@ for (const [key, value] of set.entries()) {
     console.log("key" + " = " + key);
     console.log("value" + " = " + value);
 }
-// 결과입니다.
+// 결과입니다
 // key = apple
 // value = apple
 // key = banana
@@ -241,7 +241,7 @@ for (const [key, value] of set.entries()) {
 
 ```
 
-## Set 의 주요메서드와 프로퍼티
+## Set의 주요메서드와 프로퍼티
 
 위에서 설명한 메서드 외에 Set를 조작할 때 주로 사용하는 메서드와 프로퍼티입니다.
 
