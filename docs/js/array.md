@@ -58,8 +58,71 @@ console.log(arr); // [10, 20]
 
 배열을 조작할 때 주로 사용하는 API는 다음과 같습니다.
 
-- [push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push) : 배열에 데이터 추가 (맨 끝 인덱스부터 추가됨)
-- [slice()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/slice) : 배열의 특정 인덱스에 있는 값을 반환 (배열의 내용이 변환되지 않음)
-- [splice()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) : 배열의 특정 인덱스에 있는 값을 변경 또는 삭제 (배열의 내용이 변경됨)
-- [pop()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/pop) : 배열의 마지막 인덱스의 값을 꺼냄 (배열의 내용이 변경됨)
-- [shift()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/shift) : 배열의 첫번째 인덱스의 값을 꺼냄 (배열의 내용이 변경됨)
+### [push()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/push)
+
+`push()`는 배열에 데이터를 추가할 때 사용하며, 맨 끝 인덱스부터 추가됩니다. 
+
+```javascript
+let arr = [];
+arr.push(2); // [2]
+arr.push(4); // [2, 4]
+arr.push(1); // [2, 4, 1] 
+arr.push(5); // [2, 4, 1, 5]
+```
+
+### [slice()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/slice)
+
+`slice()`는 배열의 특정 인덱스에 있는 값을 반환하며 새로운 배열을 반환합니다. 그래서 원본 배열의 내용은 바뀌지 않습니다. 
+
+매개변수가 1개이면, 해당 인덱스부터 배열의 마지막까지의 모든 요소들을 포함한 새로운 배열을 반환합니다. 매개변수가 2개일 경우, 첫번째 매개변수는 기존 배열의 시작점(인덱스)을 지정하는 것이고, 두번째 매개변수는 배열의 종료 지점(인덱스)을 뜻합니다. 이때는 시작 지점에 있는 요소를 포함하여, 종료 지점에 있는 요소를 제외하고 그 사이의 요소들을 반환합니다. 
+
+```javascript
+const fruits = ['apple', 'banana', 'orange', 'peach', 'grape']
+
+console.log(fruits.slice(2)); // ['orange', 'peach', 'grape']
+console.log(fruits.slice(2, 4)); // ['orange', 'peach']
+console.log(fruits.slice(1, -1)); // ['banana', orange', 'peach']
+```
+
+
+
+### [splice()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/splice) 
+
+`splice()`는 배열의 특정 인덱스에 있는 값을 변경하거나 또는 삭제됩니다. `splice()`는 원본 배열의 내용을 변경합니다.
+
+`splice()`는 최소 2개의 매개변수가 필요합니다. 첫번째 매개변수는 배열의 변경을 시작할 인덱스를 말합니다. 두번째 매개변수는 배열에서 몇 개의 요소를 제거할지 지정합니다. 만약 세번째 매개변수를 지정하지 않으면 요소를 제거하고, 세번째 혹은 그 뒤에 여러 매개변수가 존재한다면 새로 추가할 요소들을 나타냅니다. 
+
+예를 들어, `animals.splice(1, 0, 'reindeer')` 을 살펴보면, 첫번째 매개변수가 1이기 때문에 배열의 변경이 첫 번째 인덱스부터 시작되고, 두번째 매개변수가 0이므로 아무 요소도 제거되지 않습니다. 세번째 매개변수에 `'reindeer'`이 있기 때문에 변경이 시작되는 첫번째 인덱스에 해당 요소가 추가됩니다. 
+
+```javascript
+const animals = ['tiger', 'lion', 'rabbit', 'gorilla']
+animals.splice(1, 0, 'reindeer'); // ['tiger', 'reindeer', 'lion', 'rabbit', 'gorilla']
+animals.splice(4, 2, 'turtle', 'hippo'); //['tiger', 'reindeer', 'lion', 'rabbit', 'turtle', 'hippo']
+
+```
+
+
+
+### [pop()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/pop)
+
+`pop()`은 배열의 마지막 인덱스의 값을 꺼내고, 해당 값을 리턴합니다. `pop()`은 배열의 내용을 변경합니다.
+
+```javascript
+let things = ['presents', 'vitamins', 'scissors', 'bags'];
+let popped = things.pop();
+console.log(popped); // 'bags'
+console.log(things); // ['presents', 'vitamins', 'scissors']
+```
+
+
+
+### [shift()](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Global_Objects/Array/shift) 
+
+`shift()`는 배열의 첫번째 인덱스의 값을 꺼내며, 해당 값을 리턴합니다. `shift()`는 배열의 내용을 변경합니다. 
+
+```javascript
+let numbers = [1, 2, 3, 4, 5];
+let firstElement = numbers.shift();
+console.log(firstElement); // 1
+console.log(numbers); // [2, 3, 4, 5]
+```
