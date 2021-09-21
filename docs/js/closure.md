@@ -104,29 +104,28 @@ add(); // 2
 ## private 변수
 일반적으로 프로그래밍에서 외부에서 사용하지 않거나 접근하면 안 되는 변수와 함수는 `private`로 선언하여 사용합니다. 자바스크립트에서는 private 변수를 나타내는 별도의 문법이 없지만 클로져를 활용하여 구현할 수 있습니다.
 ```js
-function Account() {
-  let _money = 0
+var fund = (function() {
+  var money = 0;
   return {
     deposit: function(amount) {
-      _money += amount 
+      money += amount;
     },
     withdraw: function(amount) {
-      _money -= amount
+      money -= amount;
     },
     getMoney: function() {
-      return _money;
+      return money;
     }
   }
-}
+}());
 
-const fund = Account()
-fund.deposit(100) // +100
-fund.deposit(100) // +100
-console.log(fund.getMoney()); // 200
-fund._money = 100000          // private 변수로 변경되지 않는다. 
-console.log(fund.getMoney()); // 200
+fund.deposit(100); // 100
+fund.deposit(100); // 100
+fund.getMoney();   // 200
+fund.money = 100000; // private 변수로 변경되지 않는다. 
+fund.getMoney();   // 200
 ```
-위 코드에 나온 `Account` 함수 내부의 `_money` 변수는 함수 내에서 제공한 `deposit`, `withdraw`, `getMoney`를 사용하는 것 외에 접근하는 방법이 없습니다. 이렇게 클로져를 활용하면 외부에서 변수에 직접 접근하는 것을 제한하는 private 변수를 구현할 수 있습니다.
+위 코드에서 호출된 함수 내부의 `money` 변수는 함수 내에서 제공한 `deposit`, `withdraw`, `getMoney`를 사용하는 것 외에 접근하는 방법이 없습니다. 이렇게 클로져를 활용하면 외부에서 변수에 직접 접근하는 것을 제한하는 private 변수를 구현할 수 있습니다.
 
 ## 함수형 프로그래밍
 
