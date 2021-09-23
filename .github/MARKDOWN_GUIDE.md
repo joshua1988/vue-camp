@@ -38,7 +38,7 @@ n(1 ≤ n ≤ 6)개의 `#` + 공백 + 텍스트
 ###### h6
 ```
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 # h1
 
@@ -86,7 +86,7 @@ I really like using Markdown. I think I'll use it to format all of my documents 
 Unless the paragraph is in a list, don’t indent paragraphs with spaces or tabs. Don't put tabs or spaces in front of your paragraphs. Keep lines left-aligned like this.
 ```
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 I really like using Markdown. I think I'll use it to format all of my documents from now on.
 
@@ -121,7 +121,7 @@ Unless the paragraph is in a list, don’t indent paragraphs with spaces or tabs
 두 번째 줄입니다.
 ```
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 #### 후행 공백
 
@@ -161,7 +161,7 @@ _기울임(Italic)_ 표현하는 방법 2
 ~~취소선~~ 표현하는 방법
 ```
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 **굵게(Bold)** 표현하는 방법 1
 
@@ -223,7 +223,7 @@ _기울임(Italic)_ 표현하는 방법 2
 > > The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
 ```
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 #### 인용문
 
@@ -278,7 +278,7 @@ _기울임(Italic)_ 표현하는 방법 2
 - Fourth item
 ```
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 #### 순서 있는 목록
 
@@ -405,7 +405,7 @@ At the command prompt, type `nano`.
 ```
 ````
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 #### 인라인
 
@@ -459,7 +459,7 @@ n(n >= 3)개의 `*`/`-`/`_` + 줄바꿈
 _____
 ```
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 ***
 
@@ -510,7 +510,7 @@ vue@example.com
 > 3. 스페이스 개수만큼 `-`로 변경 "#마크다운Markdown-가이드"
 > 4. 대문자 -> 소문자 "#마크다운markdown-가이드"
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 #### 링크 텍스트
 
@@ -572,7 +572,7 @@ vue@example.com
 <img src="https://avatars.githubusercontent.com/u/3272748?v=4" width="100" height="100">
 ```
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 #### 삽입
 
@@ -627,7 +627,7 @@ vue@example.com
 * This would be a bullet in an unordered list.
 ```
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 \* Without the backslash, this would be a bullet in an unordered list.
 
@@ -675,7 +675,7 @@ vue@example.com
 | 내용 9 | 내용 10 | 내용 11 | 내용 12 |
 ```
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 #### 기본값 (왼쪽 정렬)
 
@@ -712,7 +712,7 @@ vue@example.com
 - [x] 체크된 항목
 ```
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 - [ ] 체크되지 않은 항목
 - [x] 체크된 항목
@@ -746,7 +746,7 @@ Here's a simple footnote,[^1] and here's a longer one.[^bignote]
     Add as many paragraphs as you like.
 ```
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 ![실행 결과](https://user-images.githubusercontent.com/52729559/132097808-b914920f-38ea-4d86-8ce5-e7d821ca1c95.png)
 
@@ -773,7 +773,7 @@ short code ([여기](https://github.com/ikatyang/emoji-cheat-sheet/blob/master/R
 마크다운 정복 :tada: 축하합니다 🎉
 ```
 
-### 📌 실행 결과
+### ✨ 실행 결과
 
 마크다운 정복 :tada: 축하합니다 🎉
 
