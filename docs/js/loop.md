@@ -95,9 +95,9 @@ hi
 for of 반복문은 ES6에 추가된 구문으로서, 반복 가능한(iterable) 속성을 가지는 컬렉션에 사용하기 좋은 반복문입니다.
 
 ::: tip
-반복 가능한(iterable) 속성은 아래의 조건을 만족합니다.
+반복 가능한(iterable) 속성은 아래의 두 조건을 만족합니다.
 1) 객체가 [Symbol.iterator] 메서드를 가지고 있어야 합니다.
-2) [Symbol.iterator] 메서드는 iterator 객체를 반환해야 합니다.
+2) [Symbol.iterator] 메서드는 iterator 객체를 반환해야 합니다. 
 :::
 
 또한 반복 가능하지 않은 객체에 대한 for of 반복문 사용은 아래와 같이 에러를 일으킬 수 있습니다.
@@ -119,8 +119,7 @@ for (var prop of obj) {
 ```js
 Uncaught TypeError: obj is not iterable
 ```
-
-::: tip
+:::tip
 반복 가능하지 않은 객체에 대한 반복문 접근 에러에 대해서는 [이 자료](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Errors/is_not_iterable)를 참고하여 해결할 수 있습니다. 
 :::
 
