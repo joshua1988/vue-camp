@@ -1,1 +1,1 @@
-yarn add
+yarn insert

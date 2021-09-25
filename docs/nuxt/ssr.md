@@ -98,3 +98,4 @@ SSR의 초기 화면 렌더링 절차
 
 - [Nuxt Server Side Rendering](https://nuxtjs.org/docs/2.x/concepts/server-side-rendering)
 - [Vue SSR Guide](https://ssr.vuejs.org/#what-is-server-side-rendering-ssr)
+- [Nuxt.js 시작하기 - 인프런](https://www.inflearn.com/course/넉스트-시작하기?inst=cc965820)
