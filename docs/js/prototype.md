@@ -27,7 +27,7 @@ dunder는 'double underscore'의 줄임말
 참고 : ["프로토타입 상속" 문서 '\_\_proto\_\_는 [[Prototype]]용 getter·setter입니다.' 부분](https://ko.javascript.info/prototype-inheritance)  
 :::
 
-### prototype 프로퍼티와 **proto** 프로퍼티
+### prototype 프로퍼티와 **\_\_proto\_\_** 프로퍼티
 
 바로 위 예제에서 사용한 예제를 다르게 표현하면 다음의 new 키워드를 사용하는 문장과 동일합니다.
 
