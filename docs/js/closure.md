@@ -127,6 +127,10 @@ fund.getMoney();   // 200
 ```
 위 코드에서 호출된 함수 내부의 `money` 변수는 함수 내에서 제공한 `deposit`, `withdraw`, `getMoney`를 사용하는 것 외에 접근하는 방법이 없습니다. 이렇게 클로져를 활용하면 외부에서 변수에 직접 접근하는 것을 제한하는 private 변수를 구현할 수 있습니다.
 
+::: tip
+기존의 자바스크립트에는 `private` 변수를 선언하는 문법이 없었지만, 2021년 Class에서 `private` 필드와 메서드를 지원하는 새로운 표준이 추가되었습니다. 아래 MDN 문서를 참고하시기 바랍니다.  
+[MDN Web Docs - Private class features](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
+::: 
 ## 함수형 프로그래밍
 
 함수형 프로그래밍이란 특정 기능을 구현하기 위해서 **함수의 내부 로직은 변경하지 않은 상태로 여러 개의 함수를 조합하여 결과 값을 도출하는 프로그래밍 패턴**을 의미합니다. 커링(currying)이 함수형 프로그래밍의 대표적인 예입니다. 코드로 보겠습니다.
