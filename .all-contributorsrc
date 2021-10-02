@@ -1,5 +1,5 @@
 {
-  "projectName": "Cracking Vue.js",
+  "projectName": "vue-camp",
   "projectOwner": "joshua1988",
   "repoType": "github",
   "repoHost": "https://github.com",
@@ -117,7 +117,8 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/75518683?v=4",
       "profile": "https://github.com/Parkjju",
       "contributions": [
-        "doc"
+        "doc",
+        "tool"
       ]
     },
     {
@@ -126,7 +127,9 @@
       "avatar_url": "https://avatars.githubusercontent.com/u/19399338?v=4",
       "profile": "https://seongsilyoo.medium.com/",
       "contributions": [
-        "doc"
+        "doc",
+        "bug",
+        "code"
       ]
     },
     {
@@ -148,6 +151,106 @@
       "contributions": [
         "doc",
         "review"
+      ]
+    },
+    {
+      "login": "minseo999",
+      "name": "MINSEO",
+      "avatar_url": "https://avatars.githubusercontent.com/u/76725982?v=4",
+      "profile": "https://github.com/minseo999",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "scl2589",
+      "name": "Chae Lin Shin",
+      "avatar_url": "https://avatars.githubusercontent.com/u/25967949?v=4",
+      "profile": "https://github.com/scl2589",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "sewonkimm",
+      "name": "SeWonKim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/30452963?v=4",
+      "profile": "https://sewonkimm.github.io/",
+      "contributions": [
+        "doc",
+        "tool"
+      ]
+    },
+    {
+      "login": "juicyjusung",
+      "name": "juicyjusung",
+      "avatar_url": "https://avatars.githubusercontent.com/u/46892438?v=4",
+      "profile": "https://juicylog.com/",
+      "contributions": [
+        "tool"
+      ]
+    },
+    {
+      "login": "Seungwoo321",
+      "name": "Seungwoo321",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13829929?v=4",
+      "profile": "https://seungwoo321.github.io/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "daaaayeah",
+      "name": "Daye Lee",
+      "avatar_url": "https://avatars.githubusercontent.com/u/52729559?v=4",
+      "profile": "https://github.com/daaaayeah",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "kwonET",
+      "name": "Bomi Kwon",
+      "avatar_url": "https://avatars.githubusercontent.com/u/49463954?v=4",
+      "profile": "https://github.com/kwonET",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "zwonlala",
+      "name": "jiwonSong",
+      "avatar_url": "https://avatars.githubusercontent.com/u/13375734?v=4",
+      "profile": "https://velog.io/@zwonlala",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "hananumber1",
+      "name": "HanaKim",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21152295?v=4",
+      "profile": "https://github.com/hananumber1",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "pozafly",
+      "name": "Sun Tae Hwang",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59427983?v=4",
+      "profile": "https://pozafly.github.io/",
+      "contributions": [
+        "doc"
+      ]
+    },
+    {
+      "login": "mlsh1112",
+      "name": "LeeSeohyun",
+      "avatar_url": "https://avatars.githubusercontent.com/u/59257758?v=4",
+      "profile": "https://velog.io/@mlsh1112",
+      "contributions": [
+        "doc"
       ]
     }
   ],
