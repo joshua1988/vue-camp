@@ -74,10 +74,14 @@ arr.push(5); // [2, 4, 1, 5]
 
 `slice()`는 배열의 특정 인덱스에 있는 값을 반환하며 새로운 배열을 반환합니다. 그래서 원본 배열의 내용은 바뀌지 않습니다. 
 
+```javascript
+arr.slice([begin[, end]])
+```
+
 매개변수가 1개이면, 해당 인덱스부터 배열의 마지막까지의 모든 요소들을 포함한 새로운 배열을 반환합니다. 매개변수가 2개일 경우, 첫 번째 매개변수는 기존 배열의 시작점(인덱스)을 지정하는 것이고, 두 번째 매개변수는 배열의 종료 지점(인덱스)을 뜻합니다. 이때는 시작 지점에 있는 요소를 포함하여, 종료 지점에 있는 요소를 제외하고 그 사이의 요소들을 반환합니다. 
 
 ```javascript
-const fruits = ['apple', 'banana', 'orange', 'peach', 'grape']
+const fruits = ['apple', 'banana', 'orange', 'peach', 'grape'];
 
 console.log(fruits.slice(2)); // ['orange', 'peach', 'grape']
 console.log(fruits.slice(2, 4)); // ['orange', 'peach']
@@ -90,12 +94,16 @@ console.log(fruits.slice(1, -1)); // ['banana', orange', 'peach']
 
 `splice()`는 배열의 특정 인덱스에 있는 값을 변경하거나 또는 삭제됩니다. `splice()`는 원본 배열의 내용을 변경합니다.
 
+```javascript
+array.splice(start[, deleteCount[, item1[, item2[, ...]]]])
+```
+
 `splice()`는 최소 2개의 매개변수가 필요합니다. 첫 번째 매개변수는 배열의 변경을 시작할 인덱스를 말합니다. 두 번째 매개변수는 배열에서 몇 개의 요소를 제거할지 지정합니다. 만약 세 번째 매개변수를 지정하지 않으면 요소를 제거하고, 세 번째 혹은 그 뒤에 여러 매개변수가 존재한다면 새로 추가할 요소들을 나타냅니다. 
 
 예를 들어, `animals.splice(1, 0, 'reindeer')` 을 살펴보면, 첫 번째 매개변수가 1이기 때문에 배열의 변경이 첫 번째 인덱스부터 시작되고, 두 번째 매개변수가 0이므로 아무 요소도 제거되지 않습니다. 세 번째 매개변수에 `'reindeer'`이 있기 때문에 변경이 시작되는 첫 번째 인덱스에 해당 요소가 추가됩니다. 
 
 ```javascript
-const animals = ['tiger', 'lion', 'rabbit', 'gorilla']
+const animals = ['tiger', 'lion', 'rabbit', 'gorilla'];
 animals.splice(1, 0, 'reindeer'); // ['tiger', 'reindeer', 'lion', 'rabbit', 'gorilla']
 animals.splice(4, 2, 'turtle', 'hippo'); //['tiger', 'reindeer', 'lion', 'rabbit', 'turtle', 'hippo']
 
@@ -145,7 +153,7 @@ console.log(map1); // [4, 5, 6, 7]
 
 ### **[filter()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/filter)**
 
-`filter()`은 주어진 함수의 조건에 맞는 요소들만 모아 새로운 배열을 반환합니다. 
+`filter()`은 콜백 함수의 조건에 맞는 요소들만 모아 새로운 배열을 반환합니다. 
 
 ```javascript
 const array = ['earphones', 'handcream', 'grape', 'tv', 'books', 'sandwiches'];
@@ -159,22 +167,61 @@ console.log(result); //['earphones', 'handcream', 'grape', 'books', 'sandwiches'
 
 `reduce()`는 배열을 순회하면서 각 요소에 대해 리듀서 함수를 실행해 해당 함수의 반환값을 **누적**할 때 자주 사용합니다. 
 
-리듀서 함수는 4개의 인자를 가집니다. 첫 번째 인자는 누산기 (accumulator)입니다. 함수의 반환값을 누적합니다. 두 번째 인자는 처리할 현재 요소를 말하며, 세 번째 인자는 처리할 요소의 인덱스를 나타냅니다. 
+```javascript
+reduce((accumulator, currentValue, currentIndex, array) => { ... }, initialValue)
+```
 
-함수 뒤에는 누산기의 초깃값을 추가해야 합니다. 이 초깃값을 따로 추가하지 않는다면 기존 배열의 첫 번째 값을 뜻하며, 인덱스는 0이 아닌 1부터 시작합니다. 
+리듀서 함수는 4개의 인자를 가집니다. 첫 번째 인자는 누산기 (accumulator)입니다. 누산기는 함수의 반환값을 누적합니다. 두 번째 인자는 처리할 현재 요소를 말하며, 세 번째 인자는 처리할 요소의 인덱스를 나타냅니다. 
 
-가장 자주 사용하는 예로는 모든 배열의 합을 구할 때 사용합니다. 아래 예시에서는 초깃값을 0으로 두었기 때문에 `acc`의 초깃값은 0이 되고, 배열의 첫 번째 요소부터 차례대로 `acc`에 자신의 값인 `cur`을 더해갑니다. 이를 통해 최종적으로 반환되는 값은 `numbers` 배열의 요소인 1부터 5까지 더한 15입니다. 
+함수 뒤에는 누산기의 초깃값을 추가할 수 있습니다. 이 초깃값을 따로 추가하지 않는다면 기존 배열의 첫 번째 값을 뜻하며, 인덱스는 0이 아닌 1부터 시작합니다. 
+
+가장 기본적인 예로는 모든 배열의 합을 구할 때 사용합니다. 아래 예시에서는 초깃값을 0으로 두었기 때문에 `acc`의 초깃값은 0이 되고, 배열의 첫 번째 요소부터 차례대로 `acc`에 자신의 값인 `cur`을 더해갑니다. 이를 통해 최종적으로 반환되는 값은 `numbers` 배열의 요소인 1부터 5까지 더한 15입니다. 
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
-const result = numbers.reduce((acc, cur, idx) => { return acc += cur }, 0) // 15
+const result = numbers.reduce((acc, cur, idx) => { return acc += cur }, 0); // 15
 ```
+
+또한, 특성에 따라 분류할 때 사용할 수 있습니다. 아래 예시에서는 사람의 나이에 따라 분류합니다. 나이를 키로 삼아, 누산기에 나이가 있는지 확인하고, 없으면 초기화합니다. 이후, 리스트에 해당 나이를 키로 가진 오브젝트를 추가합니다. 이를 통해 나이에 따라 사람들을 분류합니다. 
+
+```javascript
+const people = [
+    { name: 'Lee', age: 25 },
+    { name: 'Kim', age: 30 },
+    { name: 'Choi', age: 25},
+    { name: 'Shin', age: 30}
+]
+
+function groupBy(peopleArray, property) {
+   return peopleArray.reduce((acc, cur) => {
+        // 나이를 기준으로 분류한다. 
+        const key = cur[property]; 
+        if (!acc[key]) {
+            acc[key] = [];
+        }
+        acc[key].push(cur);
+        return acc; 
+	}, {}); 
+}
+
+const groupedPeople = groupBy(people, 'age');
+console.log(groupedPeople);
+/*
+Object { 
+	25: Array [Object { name: "Lee", age: 25 }, Object { name: "Choi", age: 25 }], 
+	30: Array [Object { name: "Kim", age: 30 }, Object { name: "Shin", age: 30 }] 
+}
+*/
+
+```
+
+
 
 
 
 ### **[forEach()](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach)**
 
-`forEach()`는 각각의 요소에 대하여 주어진 콜백 함수를 실행해 배열 요소의 인덱스와 값에 접근할 수 있습니다. `forEach()`는 배열을 변경하지 않습니다. 
+`forEach()`는 각각의 요소에 대하여 주어진 콜백 함수를 실행해 배열 요소의 인덱스와 값에 접근할 수 있습니다.  반환값이 없기 때문에 아래 예시처럼 순회하며 연산을 하고, 다른 배열에 조작할 때 사용합니다. `forEach()`는 배열을 변경하지 않습니다. 
 
 ```javascript
 const numbers = [1, 2, 3, 4, 5];
@@ -185,11 +232,13 @@ numbers.forEach(number => console.log(number));
 // 4
 // 5
 
-// 다른 배열에 복사하기
-const copied = []
-numbers.forEach(function(number){
-    copied.push(number)
-})
-console.log(copied) // [1, 2, 3, 4, 5]
+const odd = []; 
+const even = [];
+numbers.forEach(function(number) {
+    number % 2 ? odd.push(number) : even.push(number)
+});
+console.log(odd); // [1, 3, 5]
+console.log(even); // [2, 4]
+
 ```
 
