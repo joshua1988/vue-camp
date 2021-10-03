@@ -114,12 +114,21 @@ module.exports = {
           {
             title: 'Maximizing Reusability',
             collapsable: false,
-            children: ['/reuse/slots', '/reuse/scoped-slot', '/reuse/mixins', '/reuse/plugins', '/reuse/mixins-vs-hoc'],
+            children: ['/reuse/slots', '/reuse/scoped-slot', 'reuse/v-slot', '/reuse/mixins', '/reuse/plugins', '/reuse/mixins-vs-hoc'],
           },
           {
             title: 'Vue.js in Legacy Projects',
             collapsable: false,
             children: ['/legacy/jquery-to-vue', '/legacy/form', '/legacy/datepicker', '/legacy/chart'],
+          },
+          {
+              title: 'Vue.js with D3',
+              collapsable: false,
+              children: [
+                  '/d3/d3',
+                  '/d3/vue-with-d3',
+                  '/d3/tutorial'
+              ]
           },
           {
             title: 'State Management',
