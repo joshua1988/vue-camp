@@ -397,3 +397,44 @@ it("adds todo when listens '추가하기' click event", async () => {
   - getByTestId
 
 간단한 내용을 정리해봤습니다. 쿼리 우선순위에 대한 좀 더 자세한 내용은 [여기](https://testing-library.com/docs/queries/about/#priority)를 참고해주세요.
+
+자, 이제 `@testing-library/vue`와 `@testing-library/jest-dom` 를 설치해보겠습니다.
+```bash
+npm install --save-dev @testing-library/vue @testing-library/jest-dom
+```
+
+이제 커스텀 매쳐를 활용하기 위한 사전작업을 해보겠습니다. 커스텀 매쳐를 사용하기 위해서 모든 테스트파일에서 가져오기를 하는 것이 번거롭습니다. 그렇기 때문에 jest의 환경설정을 통해 모든 파일에서 `@testing-library/jest-dom`를 가져오기 합니다.
+```js
+// /jest.setup.js
+import "@testing-library/jest-dom";
+```
+
+```js{417}
+// /jest.config.js
+module.exports = {
+  preset: "@vue/cli-plugin-unit-jest",
+  testMatch: ["**/src/**/*.(test|spec).js"],
+  setupFilesAfterEnv: ["./jest.setup.js"],
+};
+```
+
+이제 현재 테스트 코드를 간단한게 바꿔서 작성을 한번 해보겠습니다.
+```js
+  // Before: App.test.js
+  it("renders title", () => {
+    const wrapper = shallowMount(App);
+
+    expect(wrapper.find("h1").text()).toMatch("Todo App");
+  });
+```
+```js
+  // After: App.test.js 
+  it("renders title", () => {
+    const { getByRole } = render(App);
+
+    expect(getByRole("heading", { name: "Todo App" })).toBeInTheDocument();
+  });
+```
+
+Before버전보다 After버전이 코드의 가독성이 훨씬 좋아진 것을 볼 수 있다. 커스텀 매쳐를 통해 assert문을 말이 되게 작성할 수 있어 가독성면에서 매우 효과적입니다.
+
