@@ -24,6 +24,7 @@ module.exports = {
     docsRepo: 'joshua1988/vue-camp',
     docsDir: 'docs',
     editLinks: true,
+    smoothScroll: true,
     locales: {
       '/': {
         selectText: '언어',
