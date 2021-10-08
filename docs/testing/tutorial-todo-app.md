@@ -120,6 +120,7 @@ package.json에 `test:unit` 스크립트에  `--watchAll` 옵션을 추가해주
 
 프로젝트 준비가 끝났으니 Todo App을 구현해보겠습니다. 우리가 구현해야 되는 기능들은 다음과 같으며 차례대로 구현합니다.
 - 할 일 추가하기
+- 테스트 코드 리팩토링
 - 할 일 체크하기
 - 할 일 삭제하기
 
@@ -354,3 +355,45 @@ it("adds todo when listens '추가하기' click event", async () => {
 ```
 
 인풋 태그에 할 일을 타이핑하고 "추가하기" 버튼이 클릭 됐을 때 타이핑한 할 일이 화면에 출력 되는지 테스트합니다.
+
+## 테스트 코드 리팩토링
+
+테스트 코드를 작성하다 보니 몇 가지 아쉬운 점들이 보입니다.
+1. assert문이 잘 읽히지 않습니다.
+2. `@vue/test-utils`에서 제공하는 쿼리 관련 api들의 기능이 제한적입니다.
+
+1번과 같은 경우는 `@testing-library/jest-dom`을 활용하면 커스텀 매쳐를 사용할 수 있습니다. 예를 들어 `toBeInTheDocument`와 같은 매쳐를 사용하면 테스트 코드 작성도 더 쉬워지고 assert문이 "말이 되게" 작성할 수 있습니다. 더 자세한 내용은 [여기](https://github.com/testing-library/jest-dom)를 참고해주세요.
+
+2번과 같은 경우는 `@testing-library/vue`를 사용하면 더 많은 기능의 쿼리 api들을 사용할 수 있습니다. 해당 라이브러리는 내부적으로 `@vue/test-utils`를 사용하고 있습니다. 이 라이브러리를 사용하면 variants, queries로 이루어진 쿼리 관련 api들을 사용할 수 있습니다. 아래에 간단하게 사용법을 정리해보겠습니다.
+
+- variants
+  - getBy: 조건에 일치하는 DOM 엘리먼트 반환
+  - getAllBy: 조건에 일치하는 DOM 엘리먼트 여러 개 반환
+  - queryBy: 조건에 일치하는 DOM 엘리먼트 반환
+  - queryAllBy: 조건에 일치하는 DOM 엘리먼트 여러 개 반환
+  - findBy: 조건에 일치하는 DOM 엘리먼트 하나가 나타날 때 까지 기다렸다가 해당 DOM을 선택하는 Promise를 반환
+  - findAllBy: 조건에 일치하는 DOM 엘리먼트 여러 개가 나타날 때까지 기다렸다가 해당 DOM을 선택하는 Promise를 반환
+  - getBy, queryBy, findBy 차이점
+    - getBy는 그냥 단순히 찾을 때 사용. 못 찾으면 오류 반환
+    - queryBy는 없는 것을 찾을 때 사용. 못 찾으면 오류 반환X
+    - findBy는 비동기 통신 이후 찾을 때 사용. 기본 timeout인 4500ms 이후에도 나타나지 않으면 에러가 발생
+
+- queries
+  - ByLabelText: label이 있는 input의 label내용으로 input을 선택
+  - ByPlaceholderText: placeholder 값으로 input 및 textarea 를 선택
+  - ByText: 엘리먼트가 가지고 있는 텍스트 값으로 DOM을 선택
+  - ByAltText: alt 속성을 가지고 있는 엘리먼트 (주로 img)를 선택
+  - ByTitle: title 속성을 가지고 있는 DOM 혹은 title 엘리먼트를 지니고 있는 SVG를 선택
+  - ByDisplayValue: input, textarea, select가 지니고 있는 현재 값을 가지고 엘리먼트를 선택
+
+- query 우선순위
+  - getByRole
+  - getByLabelText
+  - getByPlaceholderText
+  - getByText
+  - getByDisplayValue
+  - getByAltText
+  - getByTitle
+  - getByTestId
+
+간단한 내용을 정리해봤습니다. 쿼리 우선순위에 대한 좀 더 자세한 내용은 [여기](https://testing-library.com/docs/queries/about/#priority)를 참고해주세요.
