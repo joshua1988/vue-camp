@@ -8,7 +8,13 @@ module.exports = {
     ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: 'apple-touch-icon', href: '/images/icons/152x.png' }],
     ['link', { rel: 'mask-icon', href: '/logo.png', color: '#ffffff' }],
-    ['meta', { name: 'msapplication-TileImage', content: '/images/icons/144x.png' }],
+    [
+      'meta',
+      {
+        name: 'msapplication-TileImage',
+        content: '/images/icons/144x.png',
+      },
+    ],
     ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }],
   ],
   locales: {
@@ -24,6 +30,7 @@ module.exports = {
     docsRepo: 'joshua1988/vue-camp',
     docsDir: 'docs',
     editLinks: true,
+    smoothScroll: true,
     locales: {
       '/': {
         selectText: '언어',
@@ -62,6 +69,7 @@ module.exports = {
               '/js/string',
               // '/js/number',
               '/js/object',
+              '/js/collection',
               '/js/array',
               '/js/loop',
               '/js/operator',
@@ -115,7 +123,14 @@ module.exports = {
           {
             title: 'Maximizing Reusability',
             collapsable: false,
-            children: ['/reuse/slots', '/reuse/scoped-slot', 'reuse/v-slot', '/reuse/mixins', '/reuse/plugins', '/reuse/mixins-vs-hoc'],
+            children: [
+              '/reuse/slots',
+              '/reuse/scoped-slot',
+              'reuse/v-slot',
+              '/reuse/mixins',
+              '/reuse/plugins',
+              '/reuse/mixins-vs-hoc',
+            ],
           },
           {
             title: 'Vue.js in Legacy Projects',
