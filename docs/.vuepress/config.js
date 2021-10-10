@@ -5,10 +5,19 @@ module.exports = {
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
+    [
+      'meta',
+      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
+    ],
     ['link', { rel: 'apple-touch-icon', href: '/images/icons/152x.png' }],
     ['link', { rel: 'mask-icon', href: '/logo.png', color: '#ffffff' }],
-    ['meta', { name: 'msapplication-TileImage', content: '/images/icons/144x.png' }],
+    [
+      'meta',
+      {
+        name: 'msapplication-TileImage',
+        content: '/images/icons/144x.png',
+      },
+    ],
     ['meta', { name: 'msapplication-TileColor', content: '#ffffff' }],
   ],
   locales: {
@@ -24,6 +33,7 @@ module.exports = {
     docsRepo: 'joshua1988/vue-camp',
     docsDir: 'docs',
     editLinks: true,
+    smoothScroll: true,
     locales: {
       '/': {
         selectText: '언어',
@@ -33,7 +43,8 @@ module.exports = {
         lastUpdated: '최종 변경일',
         serviceWorker: {
           updatePopup: {
-            message: '새 컨텐츠가 등록되었습니다. 새로고침 버튼을 눌러주세요 😄',
+            message:
+              '새 컨텐츠가 등록되었습니다. 새로고침 버튼을 눌러주세요 😄',
             buttonText: '새로고침',
           },
         },
@@ -110,26 +121,40 @@ module.exports = {
           {
             title: 'Template Syntax',
             collapsable: false,
-            children: ['/syntax/methods', '/syntax/computed', '/syntax/watch', '/syntax/filters', '/syntax/form'],
+            children: [
+              '/syntax/methods',
+              '/syntax/computed',
+              '/syntax/watch',
+              '/syntax/filters',
+              '/syntax/form',
+            ],
           },
           {
             title: 'Maximizing Reusability',
             collapsable: false,
-            children: ['/reuse/slots', '/reuse/scoped-slot', 'reuse/v-slot', '/reuse/mixins', '/reuse/plugins', '/reuse/mixins-vs-hoc'],
+            children: [
+              '/reuse/slots',
+              '/reuse/scoped-slot',
+              'reuse/v-slot',
+              '/reuse/mixins',
+              '/reuse/plugins',
+              '/reuse/mixins-vs-hoc',
+            ],
           },
           {
             title: 'Vue.js in Legacy Projects',
             collapsable: false,
-            children: ['/legacy/jquery-to-vue', '/legacy/form', '/legacy/datepicker', '/legacy/chart'],
+            children: [
+              '/legacy/jquery-to-vue',
+              '/legacy/form',
+              '/legacy/datepicker',
+              '/legacy/chart',
+            ],
           },
           {
-              title: 'Vue.js with D3',
-              collapsable: false,
-              children: [
-                  '/d3/d3',
-                  '/d3/vue-with-d3',
-                  '/d3/tutorial'
-              ]
+            title: 'Vue.js with D3',
+            collapsable: false,
+            children: ['/d3/d3', '/d3/vue-with-d3', '/d3/tutorial'],
           },
           {
             title: 'State Management',
@@ -187,7 +212,13 @@ module.exports = {
           {
             title: 'Typescript',
             collapsable: false,
-            children: ['/ts/intro', '/ts/with-vue', '/ts/pdecorator', '/ts/vuex', '/ts/refs'],
+            children: [
+              '/ts/intro',
+              '/ts/with-vue',
+              '/ts/pdecorator',
+              '/ts/vuex',
+              '/ts/refs',
+            ],
           },
           {
             title: 'Nuxt',
@@ -209,12 +240,20 @@ module.exports = {
           {
             title: 'PWA',
             collapsable: false,
-            children: ['/pwa/cli-pwa-plugin', '/pwa/workbox', '/pwa/workbox-caching'],
+            children: [
+              '/pwa/cli-pwa-plugin',
+              '/pwa/workbox',
+              '/pwa/workbox-caching',
+            ],
           },
           {
             title: 'Deployment',
             collapsable: false,
-            children: ['/deploy/intro', '/deploy/env-setup', '/deploy/cli3-rules'],
+            children: [
+              '/deploy/intro',
+              '/deploy/env-setup',
+              '/deploy/cli3-rules',
+            ],
           },
           {
             title: 'Webpack',
@@ -257,6 +296,16 @@ module.exports = {
       '@vuepress/google-analytics',
       {
         ga: 'UA-87965695-1',
+      },
+    ],
+    ['@vuepress/last-updated', true],
+    ['reading-progress', true],
+    [
+      'vuepress-plugin-code-copy',
+      true,
+      {
+        color: '#3eaf7c',
+        backgroundColor: '#3eaf7c',
       },
     ],
     [require('./plugins/custom-back-to-top/')],
