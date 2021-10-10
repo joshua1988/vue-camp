@@ -260,11 +260,11 @@ module.exports = {
             collapsable: false,
             children: ['/webpack/project-setup'],
           },
-          {
-            title: 'ESLint & Prettier',
-            collapsable: false,
-            children: ['/format/official'],
-          },
+		  {
+			title: 'Package Manager',
+			collapsable: false,
+			children: ['/packageManager/npm-vs-yarn'],
+		  },
           {
             title: 'VuePress',
             collapsable: false,
