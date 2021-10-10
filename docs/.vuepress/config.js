@@ -255,6 +255,16 @@ module.exports = {
         ga: 'UA-87965695-1',
       },
     ],
+    ['@vuepress/last-updated', true],
+    ['reading-progress', true],
+    [
+      'vuepress-plugin-code-copy',
+      true,
+      {
+        color: '#3eaf7c',
+        backgroundColor: '#3eaf7c',
+      },
+    ],
     [require('./plugins/custom-back-to-top/')],
   ],
 };
