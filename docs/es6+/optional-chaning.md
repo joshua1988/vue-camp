@@ -48,14 +48,21 @@ const postcode = userInfo.address?.postcode;
 
 ```js
 const userInfo = {
-	...
+  name: {
+    first: 'Hong',
+    last: 'Gildong',
+  },
+  address: {
+    city: 'Seoul',
+    postcode: '04377',
+  },
   getInfo: () => userInfo,
-}
+};
 
-userInfo.getInfo?.()
+userInfo.getInfo?.();
 // userInfo object
 
-userInfo.setInfo?.()
+userInfo.setInfo?.();
 // undefined
 ```
 
@@ -63,15 +70,18 @@ userInfo.setInfo?.()
 
 ```js
 const userInfo = {
-	...
-	address: {
-		city: "Seoul",
-		postcode: "04377",
-	}
-}
-const key = "city"
+  name: {
+    first: 'Hong',
+    last: 'Gildong',
+  },
+  address: {
+    city: 'Seoul',
+    postcode: '04377',
+  },
+};
+const key = 'city';
 
-console.log(userInfo.address?.[key])
+console.log(userInfo.address?.[key]);
 // Seoul
 ```
 
@@ -79,19 +89,28 @@ console.log(userInfo.address?.[key])
 
 ## 널 병합 연산자(`??`)와 같이 활용하기
 
+옵셔널 체이닝과 널 병합 연산자(`??`)를 사용하여 특정 속성의 값의 유무를 판별하고 기본 값을 정의할 수 있습니다.
+
 ```js
 const userInfo = {
-	...
+	name: {
+    first: 'Hong',
+    last: 'Gildong',
+  },
 	address: {
-		city: "Seoul",
-		postcode: "04377",
+		city: 'Seoul,
+		postcode: '04377',
 	}
 }
 
-const city = userInfo.address?.city ?? "New York"
+const city = userInfo.address?.city ?? 'New York'
 ```
 
-옵셔널 체이닝으로 객체의 속성 값을 확인하고 `undefined` 가 반환되면 [널 병합 연산자(`??`)](/es6+/nullish-coalescing-operator.html)를 통해 기본 값을 제공할 수 있습니다.
+위 코드에서 `city`의 값은 `??` 연산자의 왼쪽 항의 옵셔널 체이닝으로 객체 속성 값의 유무를 확인한 값이 `null`또는 `undefined`이면 `??` 연산자의 오른쪽 항의 `New York`이 기본 값으로 적용됩니다.
+
+::: tip
+위 코드에서 사용된 `??` 연산자에 대한 자세한 내용은 [널 병합 연산자(`??`) 포스팅](/es6+/nullish-coalescing-operator.html)을 참고하세요.
+:::
 
 ::: warning
 옵셔널 체이닝을 남용하지 않도록 주의해주세요.
