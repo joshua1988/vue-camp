@@ -232,6 +232,7 @@ module.exports = {
               '/nuxt/layouts',
               '/nuxt/data-fetching',
               '/nuxt/store',
+              '/nuxt/middleware',
               '/nuxt/deployment',
               '/nuxt/meta-tags',
               '/nuxt/nuxt-axios',
