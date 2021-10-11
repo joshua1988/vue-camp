@@ -91,4 +91,122 @@ new VueRouter({
 
 ## 기타 라우터 옵션과 기법
 
-위의 내용으로도 간단한 라우팅을 구현할 수 있습니다. 기타 라우터 API와 실무에서 자주 사용되는 라우터 옵션들은 뒤의 [라우터 고급 기법]()에서 알아보겠습니다.
+위의 내용으로도 간단한 라우팅을 구현할 수 있습니다. 이번 단락에서는 기타 라우터 API와 실무에서 자주 사용되는 라우터 옵션들을 알아보도록 하겠습니다.  
+
+### 동적 라우트 매칭 
+동적 라우트 매칭(Dynamic Route Matching)은 특정 패턴을 가진 경로들을 동일한 컴포넌트에 매핑해야 할 경우 사용하는 기법입니다.  
+동적 라우트 매칭의 예시로 다음과 같은 라우터가 정의되었다고 가정합니다.  
+```js
+new VueRouter({
+  routes: [
+    { path: '/resume/:year', component: ResumeComponent }
+  ]
+})
+```
+위 코드와 같이 라우터를 정의하면 `path`에서 콜론(`:`)으로 시작하는 부분(동적 세그먼트)이 다르더라도 같은 경로에 매핑됩니다.  
+따라서 `/resume/2020`과 `/resume/2021` 같은 URL이 모두 `ResumeComponent` 컴포넌트를 보여주게 됩니다.  
+또한 `:year` 에 해당하는 값은 다음과 같이 해당 컴포넌트에서 `this.$route.params` 를 통해 가져와서 활용할 수 있습니다. 
+```html
+<!-- ResumeComponent.vue -->
+<template>
+  <h1>{{ $route.params.year }}</h1>
+</template>
+```
+
+### 컴포넌트에 props 전달하기 
+앞서 동적 라우트 매칭에서 살펴본 것처럼 컴포넌트에서 `$route`를 사용하는 경우, 컴포넌트가 라우터 속성에 의존하게 되어 특정 URL에서만 사용된다는 문제점이 있습니다.  
+이 의존성 해제를 위해 컴포넌트와 라우터 속성을 분리하려면 속성 `props`에 `true`를 전달해줍니다. 
+```js
+new VueRouter({
+  routes: [
+    { path: '/resume/:year', component: ResumeComponent, props: true }
+  ]
+})
+```
+위 코드와 같이 `props`가 `true`로 적용되면 `:year`에 해당하는 부분이 `year`라는 `props`로 전달됩니다.  
+이를 통해 컴포넌트를 라우터 속성에 의존하지 않고 재사용할 수 있게 됩니다.  
+```html{3,8}
+<!-- ResumeComponent.vue -->
+<template>
+  <h1>{{ year }}</h1>
+</template>
+
+<script>
+export default {
+  props: ['year']
+}
+</script>
+```
+
+### 라우터 네비게이션 메서드  
+라우터 API에는 `<router-link>`로 웹 페이지 이동을 위한 `<a>` 태그를 만드는 방법 외에도 프로그래밍적으로 페이지를 이동할 수 있는 메서드가 있습니다.  
+Vue 인스턴스 내부에서 라우터 인스턴스에 접근하려면 `$router`를 사용하면 됩니다.
+#### router.push()
+```javascript
+router.push(location, onComplete?, onAbort?)
+```
+`<router-link>`의 `to` 속성과 같습니다. 히스토리에 현재 페이지를 저장한 뒤 인자로 전달받은 URL(`location`)로 이동합니다. 
+```javascript
+// string 전달
+this.$router.push('home'); 
+
+// object 전달  
+this.$router.push({ path: 'home' }); 
+
+const postId = "1";
+this.$router.push({ path: `/posts/${postId}` }); // → /posts/1
+
+// query와 함께 전달 
+this.$router.push({ path: 'user', query: { id: 'captain' } }); // → /user?id=captain
+```
+`onComplete`와 `onAbort`는 콜백 함수로, `onComplete`는 네비게이션이 성공적으로 완료되었을 경우 호출되고, `onAbort`는 현재 네비게이션이 완료되기 전 동일한 경로로 이동하거나 다른 경로로 이동될 때 호출됩니다.  
+```javascript
+export default {
+  methods: {
+    click() {
+      this.$router.push("/home", this.completeHandler, this.abortHandler);
+    },
+    completeHandler() {
+      console.log("complete");
+    },
+    abortHandler() {
+      console.log("abort");
+    },
+  },
+};
+```
+#### router.replace()
+```javascript
+router.replace(location, onComplete?, onAbort?)
+```
+히스토리에 현재 페이지를 저장하지 않고 이동합니다. 그래서 히스토리에 경로가 남지 않으므로 백스페이스키를 눌렀을 때 원래 페이지로 돌아올 수 없습니다. 이름에 나타나듯이 현재 페이지가 다른 페이지로 대체되는 것입니다.  
+사용하는 매개변수는 `router.push` 메서드와 같습니다.   
+
+```javascript
+this.$router.replace('home');
+```
+#### router.go()
+```javascript
+router.go(n)
+```
+히스토리 스택에서 앞 또는 뒤로 전달된 인자(정수)만큼 이동합니다. 
+```javascript
+this.$router.go(-1); // 이전 페이지로 이동
+
+this.$router.go(1);  // 다음 페이지로 이동 
+```
+### 라우터 메타 필드
+라우터를 정의할 때 `meta` 필드를 통해 원하는 메타 정보를 입력할 수 있습니다. 로그인이 필요한 라우팅인지 아닌지 구분해야 하는 경우에 활용될 수 있습니다.  
+로그인 필요 여부 처리 방법에 대해서는 [네비게이션 가드 문서](../advanced/navigation-guard.md#네비게이션-가드로-인증-정보-확인)를 참고하시기 바랍니다.
+
+```javascript
+new VueRouter({
+  routes: [
+    // authRequired: true 라는 메타 필드 입력
+    { path: '/orders', component: OrdersComponent, meta: { authRequired: true } }
+  ]
+})
+```
+
+### 코드 분할  
+Webpack과 같은 번들러를 이용해 앱을 제작하면 파일이 커져 페이지 로드 시간이 오래 걸릴 수 있습니다. 처음에 렌더링에 필요한 모든 파일을 로드하는 것보다 경로에 맞춰 당장 렌더링이 필요한 파일만 로드하는 것이 효율적일 것입니다. 이때 사용하는 기법이 **코드 분할**입니다. 자세한 내용은 [라우터의 코드 분할 문법](../advanced/code-splitting.md#라우터의-코드-분할-문법)을 참고하시기 바랍니다. 
