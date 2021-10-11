@@ -25,7 +25,9 @@ Prettier를 프로젝트에 세팅하는 방법과 commit 전에 전체 코드�
 }
 ```
 
-각 옵션의 의미는 [prettier 공식 사이트](https://prettier.io/docs/en/options.html)에서 확인 부탁드리겠습니다.
+:::tip
+각 옵션에 대해 자세히 알고 싶다면 [prettier 공식 사이트](https://prettier.io/docs/en/options.html)를 참고하세요.
+:::
 
 ## vscode에서 prettier 설치 및 실행하기
 
@@ -43,7 +45,12 @@ Prettier를 프로젝트에 세팅하는 방법과 commit 전에 전체 코드�
 
 ## husky를 사용하여 commit 전에 prettier 전체 파일에 적용하기
 
-허스키(husky)를 사용하면 프리티어를 설치하지 않아도 commit 전에 lint-staged에 설정된 파일 중에 변경된 파일을 대상으로 자동으로 포맷팅하여 commit 합니다.
+허스키(husky)를 사용하면 Prettier를 설치하지 않아도 commit 전에 lint-staged에 설정된 파일 중에 변경된 파일을 대상으로 자동으로 포맷팅하여 commit 합니다.
+
+:::tip
+husky는 git hook을 쉽게 관리할 수 있는 도구입니다. git push, commit 등이 시행되기 전이나 후에 원하는 스크립트를 실행시켜줍니다.
+더 자세한 내용을 알고 싶다면 [husky 공식 사이트](https://typicode.github.io/husky/)를 참고하세요.
+:::
 
 1. 위에서 설명드린 `포맷팅할 prettier 설정파일 생성하기`을 만듭니다.
 
@@ -103,4 +110,4 @@ chmod ug+x ./husky/*
 chmod ug+x .git/hooks/*
 ```
 
-7. vscode 재부팅 후 다시 파일 변경 후 commit 합니다.
+7. vscode를 재부팅하고 다시 파일을 변경하여 commit 합니다.
