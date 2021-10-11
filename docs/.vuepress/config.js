@@ -80,7 +80,7 @@ module.exports = {
               '/js/function',
               '/js/this',
               '/js/prototype',
-			  '/js/scope',
+			        '/js/scope',
               '/js/closure',
             ],
           },
