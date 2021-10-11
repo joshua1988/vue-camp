@@ -263,7 +263,7 @@ module.exports = {
           {
             title: 'ESLint & Prettier',
             collapsable: false,
-            children: ['/format/official'],
+            children: ['/format/official', '/format/prettier'],
           },
           {
             title: 'VuePress',
