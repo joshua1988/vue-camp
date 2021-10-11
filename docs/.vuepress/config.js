@@ -274,7 +274,6 @@ module.exports = {
     ['reading-progress', true],
     [
       'vuepress-plugin-code-copy',
-      true,
       {
         color: '#3eaf7c',
         backgroundColor: '#3eaf7c',
