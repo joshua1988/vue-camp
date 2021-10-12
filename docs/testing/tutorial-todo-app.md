@@ -398,7 +398,7 @@ it("adds todo when listens '추가하기' click event", async () => {
   - getByTitle
   - getByTestId
 
-간단한 내용을 정리해봤습니다. 쿼리 우선순위에 대한 좀 더 자세한 내용은 [여기](https://testing-library.com/docs/queries/about/#priority)를 참고해주세요.
+간단히 쿼리 관련 api들을 정리해봤습니다. 쿼리 우선순위에 대한 좀 더 자세한 내용은 [여기](https://testing-library.com/docs/queries/about/#priority)를 참고해주세요.
 
 자, 이제 `@testing-library/vue`와 `@testing-library/jest-dom` 를 설치해보겠습니다.
 ```bash
