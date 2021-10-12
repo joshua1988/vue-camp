@@ -99,6 +99,7 @@ module.exports = {
               '/es6/modules',
               '/es6/nullish-coalescing-operator',
               '/es6/default-parameter',
+              '/es6/class',
             ],
           },
           {
