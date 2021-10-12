@@ -377,6 +377,7 @@ it("adds todo when listens '추가하기' click event", async () => {
     - getBy는 그냥 단순히 찾을 때 사용. 못 찾으면 오류 반환
     - queryBy는 없는 것을 찾을 때 사용. 못 찾으면 오류 반환X
     - findBy는 비동기 통신 이후 찾을 때 사용. 기본 timeout인 4500ms 이후에도 나타나지 않으면 에러가 발생
+<br />
 
 - queries
   - ByLabelText: label이 있는 input의 label내용으로 input을 선택
@@ -385,6 +386,7 @@ it("adds todo when listens '추가하기' click event", async () => {
   - ByAltText: alt 속성을 가지고 있는 엘리먼트 (주로 img)를 선택
   - ByTitle: title 속성을 가지고 있는 DOM 혹은 title 엘리먼트를 지니고 있는 SVG를 선택
   - ByDisplayValue: input, textarea, select가 지니고 있는 현재 값을 가지고 엘리먼트를 선택
+<br />
 
 - query 우선순위
   - getByRole
@@ -436,5 +438,55 @@ module.exports = {
   });
 ```
 
-Before버전보다 After버전이 코드의 가독성이 훨씬 좋아진 것을 볼 수 있다. 커스텀 매쳐를 통해 assert문을 말이 되게 작성할 수 있어 가독성면에서 매우 효과적입니다.
+Before버전보다 After버전이 코드의 가독성이 훨씬 좋아진 것을 볼 수 있습니다. 커스텀 매쳐를 통해 assert문을 말이 되게 작성할 수 있어 가독성면에서 매우 효과적입니다. 이때까지 진행한 코드는 [여기서]() 확인하실 수 있습니다.
+
+이제 이때까지 작성했던 테스트 코드들을 전부 리팩토링을 진행해보겠습니다.
+
+```js
+import { render, fireEvent } from "@testing-library/vue";
+
+import App from "./App.vue";
+
+describe("App", () => {
+  it("renders title", () => {
+    const { getByRole } = render(App);
+
+    expect(getByRole("heading", { name: "Todo App" })).toBeInTheDocument();
+  });
+
+  it("renders label, input", () => {
+    // getByLabelText를 사용하면 label과 input이 연결돼 있는지도 체크해줍니다.
+    const { getByLabelText } = render(App);
+
+    expect(getByLabelText("할 일 작성")).toBeInTheDocument();
+  });
+
+  it("renders button", () => {
+    const { getByRole } = render(App);
+
+    expect(getByRole("button", { name: "추가하기" })).toBeInTheDocument();
+  });
+
+  it("changes input value when listens input event", async () => {
+    const { getByRole, getByDisplayValue } = render(App);
+
+    // fireEvent를 사용하면 event를 실행시킬 수 있습니다. input 이벤트의 경우 update를 사용합니다.
+    await fireEvent.update(getByRole("textbox"), "아무것도 안하기");
+
+    // 화면에서 보이는 input 값을 확인하기 위해선 getByDisplayValue를 사용하면 됩니다.
+    expect(getByDisplayValue("아무것도 안하기")).toBeInTheDocument();
+  });
+
+  it("adds todo when listens '추가하기' click event", async () => {
+    const { getByRole, getByText } = render(App);
+
+    await fireEvent.update(getByRole("textbox"), "아무것도 안하기");
+    await fireEvent.click(getByRole("button", { name: "추가하기" }));
+
+    expect(getByText("아무것도 안하기")).toBeInTheDocument();
+  });
+});
+```
+
+테스트 코드를 리팩토링한 최종 코드는 [여기서]() 확인하실 수 있습니다.
 
