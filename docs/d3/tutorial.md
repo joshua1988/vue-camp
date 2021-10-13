@@ -186,7 +186,7 @@ export default {
 
 ### 끝내기
 
-마지막으로 원본을 참고해서 스타일링을 더하고 마크업을 추가합니다.
+마지막으로 npm 페이지를 참고해서 스타일링을 더하고 마크업을 추가했습니다.
 
 [실행해보기](https://codesandbox.io/s/vuecamp-d3withvue1-m9se1?file=/src/components/VueLineChart.vue)
 
