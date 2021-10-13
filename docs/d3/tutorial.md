@@ -188,7 +188,7 @@ export default {
 
 마지막으로 npm 페이지를 참고해서 스타일링을 더하고 마크업을 추가했습니다.
 
-[실행해보기](https://codesandbox.io/s/vuecamp-d3withvue1-m9se1?file=/src/components/VueLineChart.vue)
+[실행해보기](https://codesandbox.io/s/vuecamp-d3withvuetutorial-rwnuv?file=/src/components/SparkLine.vue)
 
 <iframe src="https://codesandbox.io/embed/vuecamp-d3withvuetutorial-rwnuv?fontsize=14&hidenavigation=1&theme=dark&view=preview"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
