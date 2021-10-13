@@ -106,10 +106,10 @@ const userInfo = {
 const city = userInfo.address?.city ?? 'New York';
 ```
 
-위 코드에서 `city`의 값은 `??` 연산자의 왼쪽 항인 옵셔널 체이닝으로 객체 속성 값 유무를 확인한 값이 `null`또는 `undefined`이면 `??` 연산자의 오른쪽 항의 `New York`이 기본 값으로 적용됩니다.
+위 코드에서 `city`의 값은 널 병합 연산자(`??`)의 왼쪽 항인 옵셔널 체이닝으로 객체 속성 값 유무를 확인한 값이 `null`또는 `undefined`이면 널 병합 연산자(`??`)의 오른쪽 항인 `New York`이 기본 값으로 적용됩니다.
 
 ::: tip
-위 코드에서 사용된 `??` 연산자에 대한 자세한 내용은 [널 병합 연산자(`??`) 포스팅](/es6+/nullish-coalescing-operator.html)을 참고하세요.
+널 병합 연산자(`??`)에 대한 자세한 내용은 [널 병합 연산자(`??`) 포스팅](/es6+/nullish-coalescing-operator.html)을 참고하세요.
 :::
 
 ::: warning
