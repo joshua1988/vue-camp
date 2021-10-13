@@ -10,9 +10,7 @@ title: Tutorial
 
 위 이미지는 Vue의 npm 페이지로 동그라미 친 부분은 주별 다운로드 횟수 추이를 시각화하여 보여주고 있습니다.
 
-### 스파크 라인 그리기
-
-#### 데이터 생성하기
+### 데이터 준비
 
 패키지 다운로드 횟수 추이를 시각화한 차트 영역을 살펴보면 전일부터 364일간의 일별 다운로드 횟수를 요일 상관없이 7일씩 합쳐서 총 52주치의 데이터임을 알 수 있습니다.
 
@@ -46,9 +44,9 @@ export const fetchData = () => {
 }
 ```
 
-#### 스파크 라인 스타일링
+### 스파크 라인 그리기
 
-SVG 영역의 전체 크기를 조정하고 선을 그리는 path 요소 외에 영역을 그리는 path 요소를 추가한 다음 스파크 라인 느낌을 살리는 스타일링을 더해줍니다.
+이전에 진행한 샘플 코드에서 SVG 영역의 전체 크기를 조정하고 선을 그리는 path 요소 외에 영역을 그리는 path 요소를 추가한 다음 스파크 라인 느낌을 살리는 스타일링을 더해줍니다.
 
 ```html{10-15,54-59}
 <template>
@@ -77,7 +75,7 @@ SVG 영역의 전체 크기를 조정하고 선을 그리는 path 요소 외에 
 
 <script>
 import * as d3 from 'd3'
-import { fetchData} from './data-vue'
+import { fetchData } from './data-vue'
 export default {
     data () {
         return {
@@ -139,7 +137,7 @@ npm 패키지 페이지의 마크업을 참고해서 커서로 사용되는 요�
 
 <script>
 import * as d3 from 'd3'
-import { fetchData} from './data-vue'
+import { fetchData } from './data-vue'
 export default {
     data () {
         return {
