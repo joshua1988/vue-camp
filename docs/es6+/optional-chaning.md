@@ -93,17 +93,17 @@ console.log(userInfo.address?.[key]);
 
 ```js
 const userInfo = {
-	name: {
+  name: {
     first: 'Hong',
     last: 'Gildong',
   },
-	address: {
-		city: 'Seoul,
-		postcode: '04377',
-	}
-}
+  address: {
+    city: 'Seoul',
+    postcode: '04377',
+  },
+};
 
-const city = userInfo.address?.city ?? 'New York'
+const city = userInfo.address?.city ?? 'New York';
 ```
 
 위 코드에서 `city`의 값은 `??` 연산자의 왼쪽 항인 옵셔널 체이닝으로 객체 속성 값 유무를 확인한 값이 `null`또는 `undefined`이면 `??` 연산자의 오른쪽 항의 `New York`이 기본 값으로 적용됩니다.
