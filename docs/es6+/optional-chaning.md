@@ -106,7 +106,7 @@ const userInfo = {
 const city = userInfo.address?.city ?? 'New York';
 ```
 
-위 코드에서 `city`의 값은 널 병합 연산자(`??`)의 왼쪽 항인 옵셔널 체이닝으로 객체 속성 값 유무를 확인한 값이 `null`또는 `undefined`이면 널 병합 연산자(`??`)의 오른쪽 항인 `New York`이 기본 값으로 적용됩니다.
+위 코드에서 `city`의 값은 널 병합 연산자(`??`)의 왼쪽 항인 옵셔널 체이닝으로 검증한 객체의 속성 값이 `null`또는 `undefined`이면 널 병합 연산자(`??`)의 오른쪽 항인 `New York`이 기본 값으로 적용됩니다.
 
 ::: tip
 널 병합 연산자(`??`)에 대한 자세한 내용은 [널 병합 연산자(`??`) 포스팅](/es6+/nullish-coalescing-operator.html)을 참고하세요.
@@ -116,4 +116,4 @@ const city = userInfo.address?.city ?? 'New York';
 옵셔널 체이닝을 남용하지 않도록 주의해주세요.
 :::
 
-옵셔널 체이닝(`?.`)은 존재하지 않아도 괜찮은 대상에만 사용해야 합니다. 위 예제 코드에서 `userInfo` 는 반드시 존재해야 하지만 `address` 값은 필수값이 아닙니다. 그러므로 `userInfo.address?.city` 를 사용하는 것은 바람직하지만 `userInfo?.address?.city` 는 바람직하지 않습니다. 이렇게 사용하게 된다면 `userInfo` 값이 없을 때 바로 에러를 발생시키지 못해 추후 디버깅에 어려움을 겪을 수 있습니다.
+옵셔널 체이닝(`?.`)은 존재하지 않아도 괜찮은 대상에만 사용해야 합니다. 위 예제 코드에서 `userInfo`는 반드시 존재해야 하지만 `address`는 필수값이 아닙니다. 그러므로 `userInfo.address?.city` 이렇게 사용하는 것은 바람직하지만 `userInfo?.address?.city` 는 바람직하지 않습니다. 이렇게 사용하게 된다면 `userInfo`의 값이 올바르지 않을 때 즉시 에러를 발생시키지 못해 추후 디버깅에 어려움을 겪을 수 있습니다.
