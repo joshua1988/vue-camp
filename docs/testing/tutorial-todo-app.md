@@ -470,7 +470,7 @@ describe("App", () => {
   it("changes input value when listens input event", async () => {
     const { getByRole, getByDisplayValue } = render(App);
 
-    // fireEvent를 사용하면 event를 실행시킬 수 있습니다. input 이벤트의 경우 update를 사용합니다.
+    // fireEvent를 사용하면 event를 발생시킬 수 있습니다. input 이벤트의 경우 update를 사용합니다.
     await fireEvent.update(getByRole("textbox"), "아무것도 안하기");
 
     // 화면에서 보이는 input 값을 확인하기 위해선 getByDisplayValue를 사용하면 됩니다.
