@@ -262,6 +262,11 @@ module.exports = {
                         collapsable: false,
                         children: ['/vuepress/learning-note'],
                     },
+                    {
+                        title: 'Vite',
+                        collapsable: false,
+                        children: ['/vite/intro'],
+                    },
                 ],
             },
         },
