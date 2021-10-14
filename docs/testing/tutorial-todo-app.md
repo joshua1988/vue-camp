@@ -421,20 +421,14 @@ module.exports = {
 ```
 
 이제 현재 테스트 코드를 간단한게 바꿔서 작성을 한번 해보겠습니다.
-```js
-  // Before: App.test.js
+```diff
+  // App.test.js
   it("renders title", () => {
-    const wrapper = shallowMount(App);
+-   const wrapper = shallowMount(App);
++   const { getByRole } = render(App);
 
-    expect(wrapper.find("h1").text()).toMatch("Todo App");
-  });
-```
-```js
-  // After: App.test.js 
-  it("renders title", () => {
-    const { getByRole } = render(App);
-
-    expect(getByRole("heading", { name: "Todo App" })).toBeInTheDocument();
+-   expect(wrapper.find("h1").text()).toMatch("Todo App");
++   expect(getByRole("heading", { name: "Todo App" })).toBeInTheDocument();
   });
 ```
 
