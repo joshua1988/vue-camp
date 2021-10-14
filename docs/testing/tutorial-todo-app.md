@@ -366,37 +366,37 @@ it("adds todo when listens '추가하기' click event", async () => {
 
 2번과 같은 경우는 `@testing-library/vue`를 사용하면 더 많은 기능의 쿼리 api들을 사용할 수 있습니다. 해당 라이브러리는 내부적으로 `@vue/test-utils`를 사용하고 있습니다. 이 라이브러리를 사용하면 variants, queries로 이루어진 쿼리 관련 api들을 사용할 수 있습니다. 아래에 간단하게 사용법을 정리해보겠습니다.
 
-- variants
-  - getBy: 조건에 일치하는 DOM 엘리먼트 반환
-  - getAllBy: 조건에 일치하는 DOM 엘리먼트 여러 개 반환
-  - queryBy: 조건에 일치하는 DOM 엘리먼트 반환
-  - queryAllBy: 조건에 일치하는 DOM 엘리먼트 여러 개 반환
-  - findBy: 조건에 일치하는 DOM 엘리먼트 하나가 나타날 때 까지 기다렸다가 해당 DOM을 선택하는 Promise를 반환
-  - findAllBy: 조건에 일치하는 DOM 엘리먼트 여러 개가 나타날 때까지 기다렸다가 해당 DOM을 선택하는 Promise를 반환
-  - getBy, queryBy, findBy 차이점
-    - getBy는 그냥 단순히 찾을 때 사용. 못 찾으면 오류 반환
-    - queryBy는 없는 것을 찾을 때 사용. 못 찾으면 오류 반환X
-    - findBy는 비동기 통신 이후 찾을 때 사용. 기본 timeout인 4500ms 이후에도 나타나지 않으면 에러가 발생
+| Variant                         | Description                                                                                                                                                                                                                       |
+|---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| getBy                           | 조건에 일치하는 DOM element                                                                                                                                                                                                      |
+| getAllBy                        | 조건에 일치하는 DOM element 여러 개 반환                                                                                                                                                                                         |
+| queryBy                         | 조건에 일치하는 DOM element                                                                                                                                                                                                      |
+| queryAllBy                      | 조건에 일치하는 DOM element 여러 개 반환                                                                                                                                                                                         |
+| findBy                          | 조건에 일치하는 DOM element 하나가 나타날 때 까지 기다렸다가 해당 DOM을 선택하는 Promise를 반환                                                                                                                                  |
+| findAllBy                       | 조건에 일치하는 DOM element 여러 개가 나타날 때까지 기다렸다가 해당 DOM을 선택하는 Promise를 반환                                                                                                                                |
+| getBy, queryBy,  findBy  차이점 | - getBy는 그냥 단순히 찾을 때 사용. 못 찾으면 오류 반환 <br/> - queryBy는 없는 것을 찾을 때 사용. 못 찾으면 오류 반환X <br/> - findBy는 비동기 통신 이후 찾을 때 사용. 기본 timeout인 4500ms 이후에도 나타나지 않으면 에러가 발생 |
 <br />
 
-- queries
-  - ByLabelText: label이 있는 input의 label내용으로 input을 선택
-  - ByPlaceholderText: placeholder 값으로 input 및 textarea 를 선택
-  - ByText: 엘리먼트가 가지고 있는 텍스트 값으로 DOM을 선택
-  - ByAltText: alt 속성을 가지고 있는 엘리먼트 (주로 img)를 선택
-  - ByTitle: title 속성을 가지고 있는 DOM 혹은 title 엘리먼트를 지니고 있는 SVG를 선택
-  - ByDisplayValue: input, textarea, select가 지니고 있는 현재 값을 가지고 엘리먼트를 선택
+| Query             | Description                                                             |
+|-------------------|-------------------------------------------------------------------------|
+| ByLabelText       | label의 텍스트 값으로 label를 찾고 해당 label과 연결된 element를 찾음                         |
+| ByPlaceholderText | input 및 textarea 중 해당 placeholder속성 값을 가진 element를 찾음                               |
+| ByText            | element중 해당 텍스트 값과 일치하는 element를 찾음                          |
+| ByAltText         | element중 해당 alt속성 값을 가진 element를 찾음                                    |
+| ByTitle           | element중 해당 title속성 값을 가진 element 또는 title element를 가지고 있는 SVG를 찾음 |
+| ByDisplayValue    | input, textarea, select 중 해당 value속성 값을 가진 element 찾음        |
 <br />
 
-- query 우선순위
-  - getByRole
-  - getByLabelText
-  - getByPlaceholderText
-  - getByText
-  - getByDisplayValue
-  - getByAltText
-  - getByTitle
-  - getByTestId
+**query 우선순위**
+  1. getByRole
+  2. getByLabelText
+  3. getByPlaceholderText
+  4. getByText
+  5. getByDisplayValue
+  6. getByAltText
+  7. getByTitle
+  8. getByTestId
+<br />
 
 간단히 쿼리 관련 api들을 정리해봤습니다. 쿼리 우선순위에 대한 좀 더 자세한 내용은 [여기](https://testing-library.com/docs/queries/about/#priority)를 참고해주세요.
 
