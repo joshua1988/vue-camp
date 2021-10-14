@@ -368,23 +368,25 @@ it("adds todo when listens '추가하기' click event", async () => {
 
 | Variant                         | Description                                                                                                                                                                                                                       |
 |---------------------------------|-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
-| getBy                           | 조건에 일치하는 DOM element                                                                                                                                                                                                      |
-| getAllBy                        | 조건에 일치하는 DOM element 여러 개 반환                                                                                                                                                                                         |
-| queryBy                         | 조건에 일치하는 DOM element                                                                                                                                                                                                      |
-| queryAllBy                      | 조건에 일치하는 DOM element 여러 개 반환                                                                                                                                                                                         |
-| findBy                          | 조건에 일치하는 DOM element 하나가 나타날 때 까지 기다렸다가 해당 DOM을 선택하는 Promise를 반환                                                                                                                                  |
-| findAllBy                       | 조건에 일치하는 DOM element 여러 개가 나타날 때까지 기다렸다가 해당 DOM을 선택하는 Promise를 반환                                                                                                                                |
-| getBy, queryBy,  findBy  차이점 | - getBy는 그냥 단순히 찾을 때 사용. 못 찾으면 오류 반환 <br/> - queryBy는 없는 것을 찾을 때 사용. 못 찾으면 오류 반환X <br/> - findBy는 비동기 통신 이후 찾을 때 사용. 기본 timeout인 4500ms 이후에도 나타나지 않으면 에러가 발생 |
+| getBy                           | 조건에 일치하는 element 반환                                                                                                                                                                                                     |
+| getAllBy                        | 조건에 일치하는 element 여러 개 반환                                                                                                                                                                                         |
+| queryBy                         | 조건에 일치하는 element 반환                                                                                                                                                                                                     |
+| queryAllBy                      | 조건에 일치하는 element 여러 개 반환                                                                                                                                                                                         |
+| findBy                          | 조건에 일치하는 element 하나가 나타날 때 까지 기다렸다가 해당 element을 선택하는 Promise를 반환                                                                                                                                  |
+| findAllBy                       | 조건에 일치하는 element 여러 개가 나타날 때까지 기다렸다가 해당 element를 선택하는 Promise를 반환                                                                                                                                |
+| getBy, queryBy,  findBy  차이점 | - getBy는 단순히 element를 찾을 때 사용. 못 찾으면 오류 반환 <br/> - queryBy는 없는 element를 찾을 때 사용. 못 찾으면 오류 반환X <br/> - findBy는 비동기 통신 이후 찾을 때 사용. 기본 timeout인 4500ms 이후에도 나타나지 않으면 에러가 발생 |
 <br />
 
 | Query             | Description                                                             |
 |-------------------|-------------------------------------------------------------------------|
-| ByLabelText       | label의 텍스트 값으로 label를 찾고 해당 label과 연결된 element를 찾음                         |
-| ByPlaceholderText | input 및 textarea 중 해당 placeholder속성 값을 가진 element를 찾음                               |
-| ByText            | element중 해당 텍스트 값과 일치하는 element를 찾음                          |
-| ByAltText         | element중 해당 alt속성 값을 가진 element를 찾음                                    |
-| ByTitle           | element중 해당 title속성 값을 가진 element 또는 title element를 가지고 있는 SVG를 찾음 |
-| ByDisplayValue    | input, textarea, select 중 해당 value속성 값을 가진 element 찾음        |
+| ByRole       | 주어진 역할을 가진 element를 찾음 |
+| ByLabelText       | 해당 텍스트 값을 지닌 label를 찾고 해당 label과 연결된 element를 찾음 |
+| ByPlaceholderText | input 및 textarea 중 해당 placeholder속성 값을 가진 element를 찾음 |
+| ByText            | 해당 textContent값을 가진 element를 찾음 |
+| ByDisplayValue    | input, textarea, select 중 해당 value속성 값을 가진 element 찾음 |
+| ByAltText         | 해당 alt속성 값을 가진 element를 찾음 |
+| ByTitle           | 해당 title속성 값을 가진 element 또는 title element를 가지고 있는 SVG를 찾음 |
+| ByTestId    | 해당 data-testid속성 값을 가진 element를 찾음 |
 <br />
 
 **query 우선순위**
@@ -420,9 +422,8 @@ module.exports = {
 };
 ```
 
-이제 현재 테스트 코드를 간단한게 바꿔서 작성을 한번 해보겠습니다.
-```diff
-  // App.test.js
+이제 현재 App.test.js파일의 테스트 코드를 간단한게 바꿔서 작성을 한번 해보겠습니다.
+```diff 
   it("renders title", () => {
 -   const wrapper = shallowMount(App);
 +   const { getByRole } = render(App);
