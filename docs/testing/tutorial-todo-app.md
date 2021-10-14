@@ -407,12 +407,12 @@ npm install --save-dev @testing-library/vue @testing-library/jest-dom
 
 이제 커스텀 매쳐를 활용하기 위한 사전작업을 해보겠습니다. 커스텀 매쳐를 사용하기 위해서 모든 테스트파일에서 가져오기를 하는 것이 번거롭습니다. 그렇기 때문에 jest의 환경설정을 통해 모든 파일에서 `@testing-library/jest-dom`를 가져오기 합니다.
 ```js
-// /jest.setup.js
+// jest.setup.js
 import "@testing-library/jest-dom";
 ```
 
 ```js{417}
-// /jest.config.js
+// jest.config.js
 module.exports = {
   preset: "@vue/cli-plugin-unit-jest",
   testMatch: ["**/src/**/*.(test|spec).js"],
