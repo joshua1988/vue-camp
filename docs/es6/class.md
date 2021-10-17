@@ -22,7 +22,7 @@ const myclass = new MyClass();
 생성자(constructor)는 클래스의 인스턴스를 생성하고 초기화하는 메서드입니다.
 
 ```js
-class MyClass{
+class MyClass {
     constructor(firstname,lastname){
         this.firstname = firstname;
         this.lastname = lastname;
