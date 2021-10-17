@@ -135,7 +135,7 @@ module.exports = {
                         children: [
                             '/reuse/slots',
                             '/reuse/scoped-slot',
-                            'reuse/v-slot',
+                            '/reuse/v-slot',
                             '/reuse/mixins',
                             '/reuse/plugins',
                             '/reuse/mixins-vs-hoc',
