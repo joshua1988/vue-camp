@@ -33,6 +33,7 @@ module.exports = {
         docsRepo: 'joshua1988/vue-camp',
         docsDir: 'docs',
         editLinks: true,
+        smoothScroll: true,
         locales: {
             '/': {
                 selectText: '언어',
@@ -72,13 +73,14 @@ module.exports = {
                             '/js/string',
                             // '/js/number',
                             '/js/object',
+                            '/js/collection',
                             '/js/array',
                             '/js/loop',
                             '/js/operator',
                             '/js/function',
-                            '/js/scope',
                             '/js/this',
                             '/js/prototype',
+                            '/js/scope',
                             '/js/closure',
                         ],
                     },
@@ -133,6 +135,7 @@ module.exports = {
                         children: [
                             '/reuse/slots',
                             '/reuse/scoped-slot',
+                            '/reuse/v-slot',
                             '/reuse/mixins',
                             '/reuse/plugins',
                             '/reuse/mixins-vs-hoc',
@@ -147,6 +150,11 @@ module.exports = {
                             '/legacy/datepicker',
                             '/legacy/chart',
                         ],
+                    },
+                    {
+                        title: 'Vue.js with D3',
+                        collapsable: false,
+                        children: ['/d3/d3', '/d3/vue-with-d3', '/d3/tutorial'],
                     },
                     {
                         title: 'State Management',
@@ -224,6 +232,7 @@ module.exports = {
                             '/nuxt/layouts',
                             '/nuxt/data-fetching',
                             '/nuxt/store',
+                            '/nuxt/middleware',
                             '/nuxt/deployment',
                             '/nuxt/meta-tags',
                             '/nuxt/nuxt-axios',
@@ -255,12 +264,17 @@ module.exports = {
                     {
                         title: 'ESLint & Prettier',
                         collapsable: false,
-                        children: ['/format/official'],
+                        children: ['/format/official', '/format/prettier'],
                     },
                     {
                         title: 'VuePress',
                         collapsable: false,
                         children: ['/vuepress/learning-note'],
+                    },
+                    {
+                        title: 'Vite',
+                        collapsable: false,
+                        children: ['/vite/intro'],
                     },
                 ],
             },
@@ -273,16 +287,33 @@ module.exports = {
             },
         },
     },
-    plugins: {
-        '@vuepress/pwa': {
-            serviceWorker: true,
-        },
-        '@vuepress/google-analytics': {
-            ga: 'UA-87965695-1',
-        },
-        '@vuepress/back-to-top': true,
-        'reading-progress': true,
-        'vuepress-plugin-code-copy': true,
-        '@vuepress/last-updated': true,
-    },
+    plugins: [
+        [
+            '@vuepress/pwa',
+            {
+                serviceWorker: true,
+                updatePopup: {
+                    message: '새 컨텐츠가 등록되었습니다. 새로고침 버튼을 눌러주세요 😄',
+                    buttonText: '새로고침',
+                },
+            }
+        ],
+        [
+            '@vuepress/google-analytics',
+            {
+                ga: 'UA-87965695-1',
+            },
+        ],
+        ['@vuepress/last-updated', true],
+        ['reading-progress', true],
+        [
+            'vuepress-plugin-code-copy',
+            true,
+            {
+                color: '#3eaf7c',
+                backgroundColor: '#3eaf7c',
+            },
+        ],
+        [require('./plugins/custom-back-to-top/')],
+    ],
 };
