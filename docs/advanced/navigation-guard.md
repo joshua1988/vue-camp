@@ -14,7 +14,7 @@ title: Navigation Guard
 
 ## 전역 가드
 
-전역 가드는 모든 라우팅에 적용되는 네비게이션 가드입니다. 아래는 전역 가드를 설정하는 코드입니다.
+전역 가드는 모든 라우팅에 적용되는 네비게이션 가드입니다. 라우터의 `beforeEach`라는 메소드를 통해 전역가드의 로직을 설정할 수 있습니다. 아래는 전역 가드를 설정하는 예시 코드입니다.
 
 ```js
 var router = new VueRouter();
@@ -37,7 +37,7 @@ router.beforeEach(function(to, from, next) {
 <br/>
 `next(false)`: 라우팅 취소
 <br/>
-`next('/')`: 라우트 우회
+`next('/')`: 특정 라우트로 진입 (`route.push`처럼 진입하고자 하는 경로 지정 가능. [참조](https://router.vuejs.org/guide/essentials/navigation.html#router-push-location-oncomplete-onabort))
 :::
 
 :::warning
