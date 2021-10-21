@@ -115,7 +115,7 @@ export default {
 
 ### 커서 이벤트 추가하기
 
-npm 패키지 페이지의 마크업을 참고해서 커서로 사용되는 요소인 `line`과 `circle`을 추가합니다. 기본적으로 커서를 보여주지 않기 위해 좌표 값으로 -1000을 가지는 `data` 변수를 정의합니다. 마우스 이벤트가 발생할 때는 커서를 이동시켜서 보여주기 위해 좌표값이 필요합니다. `path` 데이터 값을 구할 때 사용한 `xScale`과 `yScale`을 활용해서 `xPoint`, `yPoint`를 계산하고 `methods`의 각 기능들을 추가합니다.
+npm 패키지 페이지의 마크업을 참고해서 커서로 사용되는 요소인 `line`과 `circle`을 추가합니다. 기본적으로 커서를 보여주지 않기 위해 좌표 값으로 -1000을 가지는 변수를 `data`에 정의합니다. 마우스를 차트 영역에 올렸을 때 커서를 보여주기 위한 좌표값은 `path` 데이터 값을 구할 때 사용한 `xScale`과 `yScale`을 활용해서 `xPoint`, `yPoint`로 각각 구합니다. 기본값으로 -1000을 가지는 `data`의 좌표 값 변수를 새로운 좌표 값으로 업데이트하는 이벤트 핸들러를 `methods`에 만들어줍니다.
 
 ```html{5-14,26-28,34-39,41-60}
 <template>
@@ -184,7 +184,9 @@ export default {
 
 ### 끝내기
 
-마지막으로 npm 페이지를 참고해서 스타일링을 더하고 마크업을 추가했습니다.
+마지막으로 npm 페이지를 참고해서 스타일링과 마크업을 더하고 `methods`에 정의한 이벤트 핸들러를 보완합니다.
+
+### 전체코드
 
 [실행해보기](https://codesandbox.io/s/vuecamp-d3withvuetutorial-rwnuv?file=/src/components/SparkLine.vue)
 
@@ -194,8 +196,6 @@ export default {
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
-
-### 전체코드
 
 ```html
 <template>
@@ -242,7 +242,10 @@ export default {
       </svg>
       <p class="downloads--count">
         {{
-          downloadValue || weeklyDownloads[weeklyDownloads.length - 1].downloads
+          downloadValue ||
+          weeklyDownloads[weeklyDownloads.length - 1].downloads
+            .toString()
+            .replace(/\B(?=(\d{3})+(?!\d))/g, ",")
         }}
       </p>
     </div>
@@ -252,6 +255,7 @@ export default {
 <script>
 import * as d3 from "d3";
 import { fetchData } from "./data-vue";
+// import { fetchData } from "./data-vue-pivottable";
 export default {
   data() {
     return {
@@ -261,7 +265,7 @@ export default {
       cx: -1000,
       cy: -1000,
       downloadTitle: "Weekly Downloads",
-      downloadValue: 0,
+      downloadValue: null,
     };
   },
   computed: {
@@ -309,7 +313,7 @@ export default {
     },
     resetText() {
       this.downloadTitle = "Weekly Downloads";
-      this.downloadValue = 0;
+      this.downloadValue = null;
     },
     mousemoveHandler(event) {
       const pointIndex = this.xPoint.findIndex((d) => event.layerX <= d);
@@ -322,7 +326,9 @@ export default {
         this.cy = this.yPoint[pointIndex];
 
         this.downloadTitle = this.weeklyDownloads[pointIndex].label;
-        this.downloadValue = this.weeklyDownloads[pointIndex].downloads;
+        this.downloadValue = this.weeklyDownloads[pointIndex].downloads
+          .toString()
+          .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
       }
     },
     mouseoutHandler() {
