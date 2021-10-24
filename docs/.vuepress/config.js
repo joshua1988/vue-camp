@@ -5,10 +5,7 @@ module.exports = {
     ['link', { rel: 'manifest', href: '/manifest.json' }],
     ['meta', { name: 'theme-color', content: '#3eaf7c' }],
     ['meta', { name: 'apple-mobile-web-app-capable', content: 'yes' }],
-    [
-      'meta',
-      { name: 'apple-mobile-web-app-status-bar-style', content: 'black' },
-    ],
+    ['meta', { name: 'apple-mobile-web-app-status-bar-style', content: 'black' }],
     ['link', { rel: 'apple-touch-icon', href: '/images/icons/152x.png' }],
     ['link', { rel: 'mask-icon', href: '/logo.png', color: '#ffffff' }],
     [
@@ -43,8 +40,7 @@ module.exports = {
         lastUpdated: '최종 변경일',
         serviceWorker: {
           updatePopup: {
-            message:
-              '새 컨텐츠가 등록되었습니다. 새로고침 버튼을 눌러주세요 😄',
+            message: '새 컨텐츠가 등록되었습니다. 새로고침 버튼을 눌러주세요 😄',
             buttonText: '새로고침',
           },
         },
@@ -78,27 +74,28 @@ module.exports = {
               '/js/loop',
               '/js/operator',
               '/js/function',
-              '/js/scope',
               '/js/this',
               '/js/prototype',
+              '/js/scope',
               '/js/closure',
             ],
           },
           {
-            title: 'ES6',
+            title: 'ES6+',
             collapsable: true,
             children: [
-              '/es6/const-let',
-              '/es6/fat-arrow',
-              '/es6/enhanced-object-literals',
-              '/es6/spread-operator',
-              '/es6/template-literal',
-              '/es6/destructuring',
-              '/es6/promise',
-              '/es6/async-await',
-              '/es6/modules',
-              '/es6/nullish-coalescing-operator',
-              '/es6/default-parameter',
+              '/es6+/const-let',
+              '/es6+/fat-arrow',
+              '/es6+/enhanced-object-literals',
+              '/es6+/spread-operator',
+              '/es6+/template-literal',
+              '/es6+/destructuring',
+              '/es6+/promise',
+              '/es6+/async-await',
+              '/es6+/modules',
+              '/es6+/nullish-coalescing-operator',
+              '/es6+/default-parameter',
+              '/es6+/optional-chaning',
             ],
           },
           {
@@ -121,13 +118,7 @@ module.exports = {
           {
             title: 'Template Syntax',
             collapsable: false,
-            children: [
-              '/syntax/methods',
-              '/syntax/computed',
-              '/syntax/watch',
-              '/syntax/filters',
-              '/syntax/form',
-            ],
+            children: ['/syntax/methods', '/syntax/computed', '/syntax/watch', '/syntax/filters', '/syntax/form'],
           },
           {
             title: 'Maximizing Reusability',
@@ -135,7 +126,7 @@ module.exports = {
             children: [
               '/reuse/slots',
               '/reuse/scoped-slot',
-              'reuse/v-slot',
+              '/reuse/v-slot',
               '/reuse/mixins',
               '/reuse/plugins',
               '/reuse/mixins-vs-hoc',
@@ -144,12 +135,7 @@ module.exports = {
           {
             title: 'Vue.js in Legacy Projects',
             collapsable: false,
-            children: [
-              '/legacy/jquery-to-vue',
-              '/legacy/form',
-              '/legacy/datepicker',
-              '/legacy/chart',
-            ],
+            children: ['/legacy/jquery-to-vue', '/legacy/form', '/legacy/datepicker', '/legacy/chart'],
           },
           {
             title: 'Vue.js with D3',
@@ -212,13 +198,7 @@ module.exports = {
           {
             title: 'Typescript',
             collapsable: false,
-            children: [
-              '/ts/intro',
-              '/ts/with-vue',
-              '/ts/pdecorator',
-              '/ts/vuex',
-              '/ts/refs',
-            ],
+            children: ['/ts/intro', '/ts/with-vue', '/ts/pdecorator', '/ts/vuex', '/ts/refs'],
           },
           {
             title: 'Nuxt',
@@ -232,6 +212,7 @@ module.exports = {
               '/nuxt/layouts',
               '/nuxt/data-fetching',
               '/nuxt/store',
+              '/nuxt/middleware',
               '/nuxt/deployment',
               '/nuxt/meta-tags',
               '/nuxt/nuxt-axios',
@@ -240,20 +221,12 @@ module.exports = {
           {
             title: 'PWA',
             collapsable: false,
-            children: [
-              '/pwa/cli-pwa-plugin',
-              '/pwa/workbox',
-              '/pwa/workbox-caching',
-            ],
+            children: ['/pwa/cli-pwa-plugin', '/pwa/workbox', '/pwa/workbox-caching'],
           },
           {
             title: 'Deployment',
             collapsable: false,
-            children: [
-              '/deploy/intro',
-              '/deploy/env-setup',
-              '/deploy/cli3-rules',
-            ],
+            children: ['/deploy/intro', '/deploy/env-setup', '/deploy/cli3-rules'],
           },
           {
             title: 'Webpack',
@@ -263,17 +236,22 @@ module.exports = {
           {
             title: 'ESLint & Prettier',
             collapsable: false,
-            children: ['/format/official'],
+            children: ['/format/official', '/format/prettier'],
           },
           {
             title: 'Package Manager',
             collapsable: false,
-            children: ['/packageManager/npm-vs-yarn'],
+            children: ['/package-manager/npm-vs-yarn'],
           },
           {
             title: 'VuePress',
             collapsable: false,
             children: ['/vuepress/learning-note'],
+          },
+          {
+            title: 'Vite',
+            collapsable: false,
+            children: ['/vite/intro'],
           },
         ],
       },
@@ -307,7 +285,6 @@ module.exports = {
     ['reading-progress', true],
     [
       'vuepress-plugin-code-copy',
-      true,
       {
         color: '#3eaf7c',
         backgroundColor: '#3eaf7c',

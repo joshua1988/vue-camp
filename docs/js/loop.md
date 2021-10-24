@@ -89,3 +89,77 @@ for (var key in obj) {
 hi
 []
 ```
+
+## for of
+
+for of 반복문은 ES6에 추가된 구문으로서, 반복 가능한(iterable) 속성을 가지는 컬렉션에 사용하기 좋은 반복문입니다.
+
+::: tip 
+반복 가능한(iterable) 속성은 아래의 두 조건을 만족합니다.
+1) 객체가 [Symbol.iterator] 메서드를 가지고 있어야 합니다.
+2) [Symbol.iterator] 메서드는 iterator 객체를 반환해야 합니다. 
+:::
+
+또한 반복 가능하지 않은 객체에 대한 for of 반복문 사용은 아래와 같이 에러를 일으킬 수 있습니다.
+
+```js
+var obj = {
+    num: 10,
+    str: 'hi',
+    arr: [],
+}
+
+for (var prop of obj) {
+    console.log(prop, obj[prop]); 
+}
+```
+
+코드의 결과는 아래와 같습니다.
+
+```js
+Uncaught TypeError: obj is not iterable
+```
+:::tip 
+반복 가능하지 않은 객체에 대한 반복문 접근 에러에 대해서는 [이 자료](https://developer.mozilla.org/ko/docs/Web/JavaScript/Reference/Errors/is_not_iterable)를 참고하여 해결할 수 있습니다. 
+:::
+
+## for of vs for in 
+
+아래의 예시코드를 통해 for in 반복문과 for of 반복문을 비교하면서 알아보겠습니다.
+
+```js
+var arr = [10,20,30]
+```
+
+위 배열을 각각 for of와 for in 반복문으로 순회하면 아래와 같습니다.
+
+```js
+// 배열을 각각 순회하는 경우
+for (var num of arr) {
+    console.log(num); 
+}
+for (var num in arr) {
+    console.log(num); 
+}
+```
+
+각 코드의 결과는 아래와 같습니다.
+
+```js
+// 배열을 각각 순회하는 경우
+// for of 반복문의 콘솔
+10 20 30 
+
+// for in 반복문의 콘솔
+0 1 2
+```
+
+앞서 살펴본 코드를 통해 for in이 배열의 인덱스에 접근하는 반면 for of는 배열의 값 자체에 접근하는 것을 알 수 있습니다.
+for in은 객체의 속성을 순회하기 때문에, 배열의 속성이자 key에 해당하는 index를 반환하며 순회한 것입니다.
+반면 for of는 반복 가능한 배열의 요소를 순회하기 때문에, data를 직접 순회한 것입니다.
+
+::: tip 
+for in VS for of
+- for in : 객체의 열거 가능한 속성에 대해 반복합니다.
+- for of : 반복 가능한 속성을 가지는 컬렉션(Arrays, Objects, Map, ...)에 대해 반복합니다. 
+:::

@@ -5,12 +5,12 @@ title: Introduction
 # Cracking Vue.js
 
 이 사이트는 Vue.js로 웹 서비스를 개발할 때 필요한 지식을 모아놓은 사이트입니다.
-[기본적인 자바스크립트 개념](/js/object.html)부터 [Vue.js 기본](vue/instance.html), [실무 지식](reuse/slots.html)까지 모두 정리해 놓았습니다.
+[기본적인 자바스크립트 개념](/js/variable.html)부터 [Vue.js 기본](vue/instance.html), [실무 지식](reuse/slots.html)까지 모두 정리해 놓았습니다.
 
 ### 📖 입문
 
 - [자바스크립트 기본](/js/variable.html)
-- [ES6](/es6/const-let.html)
+- [ES6+](/es6+/const-let.html)
 - [Vue.js 기본](/vue/instance.html)
 
 ### 📖 중급
@@ -31,5 +31,5 @@ title: Introduction
 
 - [Typescript](/ts/intro.html)
 - [Nuxt](/nuxt/intro.html)
-- [npm vs yarn](/packageManager/npm-vs-yarn.html)
 - [VuePress](/vuepress/learning-note.html)
+- [npm vs yarn](/packageManager/npm-vs-yarn.html)

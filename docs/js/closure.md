@@ -99,8 +99,38 @@ add(); // 2
 
 위와 같이 코드를 실행했을 때 동작하는 이유가 무엇일까요? 그건 바로 `addCounter()`라는 함수가 반환한 함수를 `add`라는 변수에 담아놨기 때문에 `add` 변수 자체가 함수처럼 동작하는 것입니다. 기술 용어로 정확히 표현하자면 "**add 변수가 addCounter()가 반환한 함수를 참조하고 있다**" 입니다.
 
-이처럼 함수의 실행이 끝나고 나서도 함수 안의 변수를 참조할 수 있는게 바로 클로져입니다. 이러한 패턴을 응용하면 자바스크립트에 없는 private 변수나 함수형 프로그래밍을 할 수 있습니다.
+이처럼 함수의 실행이 끝나고 나서도 함수 안의 변수를 참조할 수 있는게 바로 클로져입니다. 이러한 패턴을 응용하면 private 변수를 만들거나 함수형 프로그래밍을 할 수 있습니다.
 
+## private 변수
+일반적으로 프로그래밍에서 외부에서 사용하지 않거나 접근하면 안 되는 변수와 함수는 `private`로 선언하여 사용합니다. 클로져를 활용하여 `private` 변수를 구현하는 방법을 알아보겠습니다.  
+```js
+var fund = (function() {
+  var money = 0;
+  return {
+    deposit: function(amount) {
+      money += amount;
+    },
+    withdraw: function(amount) {
+      money -= amount;
+    },
+    getMoney: function() {
+      return money;
+    }
+  }
+}());
+
+fund.deposit(100); // 100
+fund.deposit(100); // 200
+fund.getMoney();   // 200
+fund.money = 100000; // private 변수로 변경되지 않는다. 
+fund.getMoney();   // 200
+```
+위 코드에서 호출된 함수 내부의 `money` 변수는 함수 내에서 제공한 `deposit`, `withdraw`, `getMoney`를 사용하는 것 외에 접근하는 방법이 없습니다. 이렇게 클로져를 활용하면 외부에서 변수에 직접 접근하는 것을 제한하는 private 변수를 구현할 수 있습니다.
+
+::: tip
+기존의 자바스크립트에는 `private` 변수를 선언하는 문법이 없었지만, 2021년 Class에서 `private` 필드와 메서드를 지원하는 새로운 표준이 추가되었습니다. 아래 MDN 문서를 참고하시기 바랍니다.  
+[MDN Web Docs - Private class features](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/Private_class_fields)
+::: 
 ## 함수형 프로그래밍
 
 함수형 프로그래밍이란 특정 기능을 구현하기 위해서 **함수의 내부 로직은 변경하지 않은 상태로 여러 개의 함수를 조합하여 결과 값을 도출하는 프로그래밍 패턴**을 의미합니다. 커링(currying)이 함수형 프로그래밍의 대표적인 예입니다. 코드로 보겠습니다.
