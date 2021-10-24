@@ -113,6 +113,13 @@ export default {
 </script>
 ```
 
+<iframe src="https://codesandbox.io/embed/vuecamp-d3withvuetutorial1-ttwf6?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSparkLine.vue&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="VueCamp_D3WithVueTutorial1"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
+
 ### 커서 이벤트 추가하기
 
 npm 패키지 페이지의 마크업을 참고해서 커서로 사용되는 요소인 `line`과 `circle`을 추가합니다. 기본적으로 커서를 보여주지 않기 위해 좌표 값으로 -1000을 가지는 변수를 `data`에 정의합니다. 마우스를 차트 영역에 올렸을 때 커서를 보여주기 위한 좌표값은 `path` 데이터 값을 구할 때 사용한 `xScale`과 `yScale`을 활용해서 `xPoint`, `yPoint`로 각각 구합니다. 기본값으로 -1000을 가지는 `data`의 좌표 값 변수를 새로운 좌표 값으로 업데이트하는 이벤트 핸들러를 `methods`에 만들어줍니다.
@@ -182,20 +189,16 @@ export default {
 </script>
 ```
 
-### 끝내기
-
-마지막으로 npm 페이지를 참고해서 스타일링과 마크업을 더하고 `methods`에 정의한 이벤트 핸들러를 보완합니다.
-
-### 전체코드
-
-[실행해보기](https://codesandbox.io/s/vuecamp-d3withvuetutorial-rwnuv?file=/src/components/SparkLine.vue)
-
-<iframe src="https://codesandbox.io/embed/vuecamp-d3withvuetutorial-rwnuv?fontsize=14&hidenavigation=1&theme=dark&view=preview"
+<iframe src="https://codesandbox.io/embed/vuecamp-d3withvuetutorial2-liiv5?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSparkLine.vue&theme=dark"
      style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
-     title="VueCamp_D3WithVueTutorial"
+     title="VueCamp_D3WithVueTutorial2"
      allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
      sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
    ></iframe>
+
+### 끝내기
+
+마지막으로 npm 페이지를 참고해서 스타일링과 마크업을 더하고 `methods`에 정의한 이벤트 핸들러를 보완합니다.
 
 ```html
 <template>
@@ -370,6 +373,13 @@ export default {
 }
 </style>
 ```
+
+<iframe src="https://codesandbox.io/embed/vuecamp-d3withvuetutorial3-rwnuv?fontsize=14&hidenavigation=1&module=%2Fsrc%2Fcomponents%2FSparkLine.vue&theme=dark"
+     style="width:100%; height:500px; border:0; border-radius: 4px; overflow:hidden;"
+     title="VueCamp_D3WithVueTutorial3"
+     allow="accelerometer; ambient-light-sensor; camera; encrypted-media; geolocation; gyroscope; hid; microphone; midi; payment; usb; vr; xr-spatial-tracking"
+     sandbox="allow-forms allow-modals allow-popups allow-presentation allow-same-origin allow-scripts"
+   ></iframe>
 
 ## D3 Gallery 예제
 
