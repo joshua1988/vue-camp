@@ -32,3 +32,4 @@ title: Introduction
 - [Typescript](/ts/intro.html)
 - [Nuxt](/nuxt/intro.html)
 - [VuePress](/vuepress/learning-note.html)
+- [npm vs yarn](/packageManager/npm-vs-yarn.html)
