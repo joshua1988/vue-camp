@@ -230,7 +230,12 @@ export default {
           y2="40"
           stroke-width="2"
         ></line>
-        <circle class="sparkline--spot" :cx="cx" :cy="cy" r="2"></circle>
+        <circle
+          class="sparkline--spot"
+          :cx="cx"
+          :cy="cy"
+          r="2"
+        ></circle>
         <rect
           class="sparkline--interaction-layer"
           style="fill: transparent; stroke: transparent"
@@ -255,7 +260,6 @@ export default {
 <script>
 import * as d3 from "d3";
 import { fetchData } from "./data-vue";
-// import { fetchData } from "./data-vue-pivottable";
 export default {
   data() {
     return {
@@ -306,34 +310,32 @@ export default {
     },
   },
   methods: {
-    hideCusor() {
+    resetGraph() {
       this.lineX = -1000;
       this.cx = -1000;
       this.cy = -1000;
-    },
-    resetText() {
       this.downloadTitle = "Weekly Downloads";
       this.downloadValue = null;
+    },
+    updateGraph(pointIndex) {
+      this.lineX = this.xPoint[pointIndex];
+      this.cx = this.xPoint[pointIndex];
+      this.cy = this.yPoint[pointIndex];
+      this.downloadTitle = this.weeklyDownloads[pointIndex].label;
+      this.downloadValue = this.weeklyDownloads[pointIndex].downloads
+        .toString()
+        .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
     mousemoveHandler(event) {
       const pointIndex = this.xPoint.findIndex((d) => event.layerX <= d);
       if (pointIndex < 0) {
-        this.hideCusor();
-        this.resetText();
+        this.resetGraph();
       } else {
-        this.lineX = this.xPoint[pointIndex];
-        this.cx = this.xPoint[pointIndex];
-        this.cy = this.yPoint[pointIndex];
-
-        this.downloadTitle = this.weeklyDownloads[pointIndex].label;
-        this.downloadValue = this.weeklyDownloads[pointIndex].downloads
-          .toString()
-          .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+        this.updateGraph(pointIndex);
       }
     },
     mouseoutHandler() {
-      this.hideCusor();
-      this.resetText();
+      this.resetGraph();
     },
   },
 };
