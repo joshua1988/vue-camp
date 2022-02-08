@@ -13,8 +13,17 @@ title: Router
 ### CDN 방식
 
 ```html
-<script src="https://unpkg.com/vue-router/dist/vue-router.js">
+<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+<script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js">
 ```
+
+:::danger
+2022년 2월 7일부터 Vue.js 라이브러리와 Vue Router 라이브러리의 CDN 주소는 Vue 3 기반의 라이브러리 코드를 들고 옵니다. 따라서, Vue 2로 학습하고 개발하시는 분들은 위와 같이 3.5.3 버전을 사용해 주세요 :)
+:::
+
+:::tip
+위 변경 사항이 궁금하시면 다음 글을 참고해 보세요 :) [Vue 3, 기본 버전이 되다](https://joshua1988.github.io/web-development/vuejs/vue3-as-default/)
+:::
 
 ### NPM 방식
 
