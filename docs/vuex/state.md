@@ -25,7 +25,7 @@ new Vuex.Store({
 위 `message` 상태 값을 컴포넌트에서 접근하기 위해서는 아래와 같이 코딩합니다.
 
 ```html
-<div>{{ this.$store.state.message }}</div>
+<div>{{ $store.state.message }}</div>
 ```
 
 코드를 실행하면 화면에 Hello Vue.js가 출력됩니다.
