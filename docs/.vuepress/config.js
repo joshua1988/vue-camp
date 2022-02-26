@@ -67,7 +67,7 @@ module.exports = {
             children: [
               '/js/variable',
               '/js/string',
-              // '/js/number',
+              '/js/condition',
               '/js/object',
               '/js/collection',
               '/js/array',
