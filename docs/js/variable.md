@@ -41,6 +41,28 @@ a = false;
 console.log(a); // false
 ```
 
+## 변수명 규칙
+
+변수명은 영어와 한글 모두 사용할 수 있습니다. 숫자도 사용할 수는 있지만 숫자로 시작되어선 안됩니다. `$`, `_` 등의 특수문자를 사용할 수 있고 대소문자가 구분됩니다.
+
+```js
+// 가능한 변수명
+var myName;
+var 내이름;
+var 내첫번째이름;
+var _a;
+var $won;
+```
+
+변수명에 [예약어](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Lexical_grammar#reserved_keywords_as_of_ecmascript_2015)를 사용할 수 없습니다.
+
+```js
+// 불가능한 변수명
+var 1이름;
+var continue;
+var function;
+```
+
 ## 변수의 타입 확인하기 - typeof
 
 앞에서 본 것처럼 `a`라는 변수의 값은 숫자, 문자열, 진위 값 순서로 변경되었습니다. 여기서는 다행히 할당한 값을 쉽게 구분할 수 있었지만 실제로 코딩하다보면 아래와 같이 쉽게 타입을 추측하기가 어렵습니다.
