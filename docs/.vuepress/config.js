@@ -49,6 +49,14 @@ module.exports = {
             text: '📖 개발 가이드',
             link: '/textbook',
           },
+          {
+            text: '📹  온라인 강의',
+            link: 'https://www.inflearn.com/course/age-of-vuejs?inst=72986832&utm_source=blog&utm_medium=githubio&utm_campaign=captianpangyo&utm_term=banner',
+          },
+          {
+            text: '📆  직접 물어보기',
+            link: 'https://www.youtube.com/watch?v=fL39Yg2H0ig',
+          },
           // TODO: Vue 3 관련 글 정리 후 게재
           // {
           //   text: '💻 Vue 3',
@@ -57,6 +65,10 @@ module.exports = {
           {
             text: '💬 프런트엔드 개발',
             link: '/front-dev',
+          },
+          {
+            text: '📝  더 많은 글 보기',
+            link: 'https://joshua1988.github.io/',
           },
         ],
         sidebar: [
