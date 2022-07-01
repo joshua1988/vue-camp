@@ -102,7 +102,7 @@ export default {
 
 ```html
 <template>
-  <svg :width="500" :height="300">
+  <svg :width="width" :height="height">
     <path fill="none" stroke="#76BF8A" stroke-width="3" :d="path"></path>
   </svg>
 </template>
@@ -113,6 +113,9 @@ export default {
   data() {
     return {
       data: [90, 72, 75, 25, 10, 92],
+      width: 500,
+      height: 300,
+      padding: 20,
     };
   },
   computed: {
@@ -128,11 +131,11 @@ export default {
     xScale() {
       return d3
         .scaleLinear()
-        .range([20, 480])
+        .range([this.padding, this.width - this.padding])
         .domain(d3.extent(this.data, (d, i) => i));
     },
     ySclae() {
-      return d3.scaleLinear().range([280, 20]).domain([0, 100]);
+      return d3.scaleLinear().range([this.height - this.padding, this.padding]).domain([0, 100]);
     },
   },
 };
