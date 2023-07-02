@@ -274,3 +274,7 @@ setup() {
 
 - `onRenderTracked` : 렌더 함수 안에 존재하는 리액티브 디펜던시가 최초로 접근되었을 때 호출된다. 디버깅에 유용한 훅
 - `onRenderTriggered` : 렌더링이 새로 되었을 때 호출된다. 화면을 다시 그린 이유가 어떤건지 디버깅하기 좋다.
+
+## VSCode 확장 플러그인
+
+- [Vue VSCode Snippets](https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets) : vbc(vbase-css)를 치고 탭을 누르면 컴포넌트 기본 코드로 자동 완성
