@@ -49,10 +49,10 @@ module.exports = {
             text: '📖 개발 가이드',
             link: '/textbook',
           },
-          // {
-          //   text: '💬 프런트엔드 개발',
-          //   link: '/front-dev',
-          // },
+          {
+            text: '💬 프런트엔드 개발',
+            link: '/front-dev',
+          },
           {
             text: '🎁 타입스크립트 신규 도서 출간',
             link: 'https://www.yes24.com/Product/Goods/119410497'
