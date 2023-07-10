@@ -278,3 +278,4 @@ setup() {
 ## VSCode 확장 플러그인
 
 - [Vue VSCode Snippets](https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets) : vbc(vbase-css)를 치고 탭을 누르면 컴포넌트 기본 코드로 자동 완성
+

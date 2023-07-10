@@ -50,7 +50,7 @@ module.exports = {
             link: '/textbook',
           },
           {
-            text: '💬 프런트엔드 개발',
+            text: '💬 프론트엔드 개발',
             link: '/front-dev',
           },
           {
