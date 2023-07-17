@@ -68,3 +68,16 @@ new Vue({
   }
 })
 ```
+
+:::tip
+Vue 3에서 전역 컴포넌트를 등록하는 문법은 다음과 같습니다.
+
+```js
+const app = createApp({});
+
+// 전역 컴포넌트 등록
+app.component('app-header', {
+  template: '<h1>Header Component</h1>'
+});
+```
+:::
