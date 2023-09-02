@@ -50,3 +50,18 @@ new Vue({
 - [watch](/syntax/watch.html) : data에서 정의한 속성이 변화했을 때 추가 동작을 수행할 수 있게 정의하는 속성
 
 이외에도 각 속성에 대한 자세한 설명은 관련된 챕터에서 확인할 수 있습니다.
+
+:::tip
+위 인스턴스 옵션 속성은 Vue 3에서도 동일하게 사용할 수 있습니다. 아래 코드를 참고하세요 :)
+
+```js
+Vue.createApp({
+    el: ,
+  template: ,
+  data: ,
+  methods: ,
+  created: ,
+  watch: ,
+});
+```
+:::
