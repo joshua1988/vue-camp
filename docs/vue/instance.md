@@ -56,7 +56,6 @@ new Vue({
 
 ```js
 Vue.createApp({
-    el: ,
   template: ,
   data: ,
   methods: ,
