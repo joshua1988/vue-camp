@@ -1,5 +1,5 @@
 ---
-title: npm VS yarn
+title: NPM vs Yarn
 ---
 
 # npm과 yarn
