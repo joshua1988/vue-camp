@@ -51,5 +51,8 @@
   "resolutions": {
     "webpack-dev-middleware": "3.6.0"
   },
-  "dependencies": {}
+  "dependencies": {},
+  "engines": {
+    "node": "14.19.3"
+  }
 }
