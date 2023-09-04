@@ -1,0 +1,65 @@
+{
+  "short_name": "Cracking Vue.js",
+  "name": "Cracking Vue.js",
+  "icons": [
+    {
+      "src": "images/icons/72x.png",
+      "type": "image/png",
+      "sizes": "72x72"
+    },
+    {
+      "src": "images/icons/96x.png",
+      "type": "image/png",
+      "sizes": "96x96"
+    },
+    {
+      "src": "images/icons/120x.png",
+      "type": "image/png",
+      "sizes": "120x120"
+    },
+    {
+      "src": "images/icons/128x.png",
+      "type": "image/png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "images/icons/144x.png",
+      "type": "image/png",
+      "sizes": "144x144"
+    },
+    {
+      "src": "images/icons/152x.png",
+      "type": "image/png",
+      "sizes": "152x152"
+    },
+    {
+      "src": "images/icons/167x.png",
+      "type": "image/png",
+      "sizes": "167x167"
+    },
+    {
+      "src": "images/icons/180x.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "images/icons/192x.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "images/icons/384x.png",
+      "type": "image/png",
+      "sizes": "384x384"
+    },
+    {
+      "src": "images/icons/512x.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "theme_color": "#3eaf7c",
+  "background_color": "#fcfefe",
+  "display": "standalone",
+  "start_url": "/vue-camp/"
+}
