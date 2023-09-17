@@ -20,8 +20,11 @@ title: Instance Lifecycle
 
 뷰의 라이프 사이클을 이해해야 하는 이유는 바로 라이프 사이클 훅 때문입니다. 라이프 사이클 훅으로 인스턴스의 특정 시점에 원하는 로직을 구현할 수 있습니다.
 
-예를 들어, 컴포넌트가 생성되자마자 데이터를 서버에서 받아오고 싶으면 created나 beforeMount 라이프 사이클 훅을 사용할 수 있습니다. 아래 코드는 인스턴스가 생성되자마자 액시오스로 HTTP GET 요청을 보내 데이터를 받아오는 코드입니다.
+예를 들어, 컴포넌트가 생성되자마자 데이터를 서버에서 받아오고 싶으면 created나 beforeMount 라이프 사이클 훅을 사용할 수 있습니다. 
+아래 코드는 인스턴스가 생성되자마자 액시오스로 HTTP GET 요청을 보내 데이터를 받아오는 코드입니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new Vue({
   methods: {
@@ -34,6 +37,23 @@ new Vue({
   }
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+Vue.createApp({
+  methods: {
+    fetchData() {
+      axios.get(url);
+    }
+  },
+  created: function() {
+    this.fetchData();
+  }
+})
+```
+</code-block>
+</code-group>
 
 ### 자주 사용되는 라이프 사이클 훅 목록
 
