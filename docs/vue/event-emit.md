@@ -28,6 +28,8 @@ this.$emit('이벤트 명');
 
 그럼 위의 예시 코드를 참고하여 간단한 이벤트 발신, 수신 코드를 짜보겠습니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js {5,17}
 // 하위 컴포넌트 : childComponent
 var childComponent = {
@@ -57,6 +59,39 @@ new Vue({
   <child-component v-on:update="showAlert"></child-component>
 </div>
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js {5,17}
+// 하위 컴포넌트 : childComponent
+var childComponent = {
+  methods: {
+    sendEvent: function() {
+      this.$emit('update');
+    }
+  }
+}
+
+// 상위 컴포넌트 : root 컴포넌트
+Vue.createApp({
+  components: {
+    'child-component': childComponent
+  },
+  methods: {
+    showAlert: function() {
+      alert('event received');
+    }
+  }
+}).mount('#app')
+```
+
+```html {2}
+<div id="app">
+  <child-component v-on:update="showAlert"></child-component>
+</div>
+```
+</code-block>
+</code-group>
 
 위 코드는 하위 컴포넌트인 childComponent에서 `sendEvent()` 메서드가 실행되면 `update`라는 이벤트가 발생되고,
 이를 상위 컴포넌트인 루트 컴포넌트의 `v-on` 디렉티브로 이벤트를 받아 `showAlert()` 메서드를 실행하는 코드입니다.
