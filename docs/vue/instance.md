@@ -10,16 +10,37 @@ title: Instance
 
 인스턴스는 아래와 같이 생성할 수 있습니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new Vue();
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+Vue.createApp();
+```
+</code-block>
+</code-group>
 
 인스턴스를 생성하고 나면 아래와 같이 인스턴스 안에 어떤 속성과 API가 있는지 콘솔 창에서 확인할 수 있습니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 var vm = new Vue();
 console.log(vm);
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+var app = Vue.createApp();
+console.log(app);
+```
+</code-block>
+</code-group>
 
 크롬 개발자 도구를 열고 Console 패널을 확인하면 아래와 같은 결과가 나옵니다.
 
@@ -31,6 +52,8 @@ console.log(vm);
 
 인스턴스에서 사용할 수 있는 속성과 API는 다음과 같습니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new Vue({
   el: ,
@@ -41,6 +64,20 @@ new Vue({
   watch: ,
 });
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+Vue.createApp({
+  template: ,
+  data: ,
+  methods: ,
+  created: ,
+  watch: ,
+});
+```
+</code-block>
+</code-group>
 
 - el : 인스턴스가 그려지는 화면의 시작점 (특정 HTML 태그)
 - [template](/vue/template.html) : 화면에 표시할 요소 (HTML, CSS 등)
@@ -52,15 +89,15 @@ new Vue({
 이외에도 각 속성에 대한 자세한 설명은 관련된 챕터에서 확인할 수 있습니다.
 
 :::tip
-위 인스턴스 옵션 속성은 Vue 3에서도 동일하게 사용할 수 있습니다. 아래 코드를 참고하세요 :)
+Vue 3에서는 `el` 속성을 사용하지 않고 `mount()` API만 사용합니다 :smile:
 
 ```js
-Vue.createApp({
-  template: ,
-  data: ,
-  methods: ,
-  created: ,
-  watch: ,
-});
+// Vue 2
+new Vue({
+  el: '#app'
+})
+
+// Vue 3
+Vue.createApp().mount('#app');
 ```
 :::
