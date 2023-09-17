@@ -56,6 +56,8 @@ title: Form Handling
 
 로그인 버튼을 클릭하면 `loginUser()` 메서드가 실행됩니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new Vue({
   methods: {
@@ -70,6 +72,25 @@ new Vue({
   }
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+Vue.createApp({
+  methods: {
+    loginUser() {
+      var email = this.$refs.email.value;
+      var password = this.$refs.password.value;
+      axios.post('/login', {
+        email: email,
+        password: password
+      });
+    }
+  }
+})
+```
+</code-block>
+</code-group>
 
 이메일과 비밀번호 값을 받아 HTTP POST 요청을 날려서 로그인 인증 과정을 거칩니다.
 
@@ -88,13 +109,31 @@ new Vue({
 </div>
 ```
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new Vue({
-  data: {
-    email: ''
+  data() {
+    return {
+      email: ''
+    }
   }
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+Vue.createApp({
+  data() {
+    return {
+      email: ''
+    }
+  }
+})
+```
+</code-block>
+</code-group>
 
 인풋 박스의 입력 값은 모두 v-model 디렉티브를 이용하여 `email` 이라는 뷰 인스턴스 데이터에 연결합니다.
 
@@ -108,11 +147,15 @@ new Vue({
 </div>
 ```
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new Vue({
-  data: {
-    email: ''
-  },
+  data() {
+    return {
+      email: ''
+    }
+  }
   computed: {
     emailValidation: function() {
       return this.email.length > 10 ? `` : `Length must be over 10`;
@@ -120,5 +163,24 @@ new Vue({
   }
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+Vue.createApp({
+  data() {
+    return {
+      email: ''
+    }
+  }
+  computed: {
+    emailValidation: function() {
+      return this.email.length > 10 ? `` : `Length must be over 10`;
+    }
+  }
+})
+```
+</code-block>
+</code-group>
 
 위와 같이 삼항 연산자를 이용해서 글자가 10개 이하면 계속 경고 표시가 뜨는 computed 속성을 구현하면 됩니다. 10글자 이하일 때는 계속 `<small>` 태그 안에 글자의 길이가 10 이상이어야 한다는 안내 문자가 표시됩니다.
