@@ -12,29 +12,60 @@ title: Router
 
 ### CDN 방식
 
+NPM으로 프로젝트를 생성하지 않고 HTML 파일에서 라우터를 사용하려면 아래 CDN 링크를 추가합니다.
+
+<code-group>
+<code-block title="Vue 2">
 ```html
-<script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-<script src="https://unpkg.com/vue-router@3.5.3/dist/vue-router.js">
+<script src="https://unpkg.com/vue@2"></script>
+<script src="https://unpkg.com/vue-router@3"></script>
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```html
+<script src="https://unpkg.com/vue@3"></script>
+<script src="https://unpkg.com/vue-router@4"></script>
+```
+</code-block>
+</code-group>
 
 :::danger
-2022년 2월 7일부터 Vue.js 라이브러리와 Vue Router 라이브러리의 CDN 주소는 Vue 3 기반의 라이브러리 코드를 들고 옵니다. 따라서, Vue 2로 학습하고 개발하시는 분들은 위와 같이 3.5.3 버전을 사용해 주세요 :)
-:::
+2022년 2월 7일부터 Vue.js 라이브러리와 Vue Router 라이브러리의 CDN 주소는 Vue 3 기반의 라이브러리 코드를 들고 옵니다. 따라서, Vue 2로 학습하고 개발하시는 분들은 위와 같이 3.x 버전을 사용해 주세요 :smile:
 
-:::tip
-위 변경 사항이 궁금하시면 다음 글을 참고해 보세요 :) [Vue 3, 기본 버전이 되다](https://joshua1988.github.io/web-development/vuejs/vue3-as-default/)
+위 변경 사항이 궁금하시면 아래 글을 참고해 보세요 :smile: <br>
+[Vue 3, 기본 버전이 되다(클릭)](https://joshua1988.github.io/web-development/vuejs/vue3-as-default/)
 :::
 
 ### NPM 방식
 
+[Vue CLI](/vue/cli)로 프로젝트를 생성하거나 NPM 기반으로 프로젝트를 생성한다면 아래 명령어를 사용합니다.
+
+<code-group>
+<code-block title="Vue 2">
 ```bash
-npm install vue-router
+npm install vue-router@3
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```bash
+npm install vue-router@4
+```
+</code-block>
+</code-group>
+
+:::tip
+- Vue 2 사용자 : 뷰 라우터 버전 3 사용
+- Vue 3 사용자 : 뷰 라우터 버전 4 사용
+:::
 
 ## 뷰 라우터 등록
 
 뷰 라우터를 설치하고 나면 아래 코드와 같이 라우터 인스턴스를 하나 생성하고 뷰 인스턴스에 등록합니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 // 라우터 인스턴스 생성
 var router = new VueRouter({
@@ -46,6 +77,21 @@ new Vue({
   router: router
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+// 라우터 인스턴스 생성
+var router = VueRouter.createRouter({
+  // 라우터 옵션
+})
+
+// 인스턴스에 라우터 인스턴스를 등록
+var app = Vue.createApp();
+app.use(router).mount('#app');
+```
+</code-block>
+</code-group>
 
 ## 뷰 라우터 옵션
 
@@ -56,6 +102,8 @@ new Vue({
 
 그럼 위 옵션으로 라우터를 정의해보겠습니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new VueRouter({
   mode: 'history',
@@ -65,6 +113,21 @@ new VueRouter({
   ]
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js{2,3}
+VueRouter.createRouter({
+  // Vue 3는 mode 속성 대신 history 속성 사용
+  history: VueRouter.createWebHistory(),
+  routes: [
+    { path: '/login', component: LoginComponent },
+    { path: '/home', component: HomeComponent }
+  ]
+})
+```
+</code-block>
+</code-group>
 
 위 코드는 라우팅을 할 때 URL에 `#` 값을 제거하고, URL 값이 `/login`과 `/home`일 때 각각 로그인 컴포넌트와 홈 컴포넌트를 뿌려줍니다.
 
