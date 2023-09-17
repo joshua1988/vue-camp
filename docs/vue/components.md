@@ -12,11 +12,26 @@ title: Components
 
 컴포넌트를 생성하는 코드 형식은 아래와 같습니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 Vue.component('컴포넌트 이름', {
   // 컴포넌트 내용
 });
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+// 인스턴스 생성
+var app = Vue.createApp();
+
+app.component('컴포넌트 이름', {
+  // 컴포넌트 내용
+});
+```
+</code-block>
+</code-group>
 
 ## 컴포넌트 생성 후 표시하기
 
@@ -48,36 +63,59 @@ div 태그에 뷰 인스턴스가 생성되어 있다는 가정하에 위 템플
 
 컴포넌트를 등록하는 방법은 크게 2가지가 있습니다. 앞에서 살펴본 방식은 전역 컴포넌트를 등록하는 방법입니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 // 전역 컴포넌트 등록
 Vue.component('app-header', {
   template: '<h1>Header Component</h1>'
 });
 ```
+</code-block>
 
-또 다른 방법은 지역 컴포넌트로 등록하는 방법이 있습니다. 앞에서 사용한 컴포넌트 내용을 가지고 그대로 지역 컴포넌트로 등록하면 아래와 같습니다.
-
+<code-block title="Vue 3">
 ```js
-var appHeader = {
-  template: '<h1>Header Component</h1>'
-}
-
-new Vue({
-  components: {
-    'app-header': appHeader
-  }
-})
-```
-
-:::tip
-Vue 3에서 전역 컴포넌트를 등록하는 문법은 다음과 같습니다.
-
-```js
-const app = createApp({});
+// 인스턴스 생성
+var app = Vue.createApp();
 
 // 전역 컴포넌트 등록
 app.component('app-header', {
   template: '<h1>Header Component</h1>'
 });
 ```
-:::
+</code-block>
+</code-group>
+
+또 다른 방법은 지역 컴포넌트로 등록하는 방법이 있습니다. 앞에서 사용한 컴포넌트 내용을 가지고 그대로 지역 컴포넌트로 등록하면 아래와 같습니다.
+
+<code-group>
+<code-block title="Vue 2">
+```js
+var appHeader = {
+  template: '<h1>Header Component</h1>'
+}
+
+new Vue({
+  // 지역 컴포넌트 등록
+  components: {
+    'app-header': appHeader
+  }
+})
+```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+var appHeader = {
+  template: '<h1>Header Component</h1>'
+}
+
+Vue.createApp({
+  // 지역 컴포넌트 등록
+  components: {
+    'app-header': appHeader
+  }
+})
+```
+</code-block>
+</code-group>
