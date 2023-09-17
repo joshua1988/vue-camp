@@ -121,7 +121,13 @@ Vue.js 2.6 버전부터 Named Slots 문법이 바뀌었습니다.
 </template>
 
 <!-- 이후(2.6 이상) -->
+<!-- 1. 풀네임 -->
 <template v-slot:header>
+  <h1>First Header</h1>
+</template>
+
+<!-- 2. 약식 문법 -->
+<template #header>
   <h1>First Header</h1>
 </template>
 ```
