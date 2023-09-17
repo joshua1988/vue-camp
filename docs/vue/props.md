@@ -28,6 +28,8 @@ var childComponent = {
 
 그럼 위의 코드 형식을 참고하여 실제 프롭스 속성을 구현한 코드를 보겠습니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js {3,14}
 // 하위 컴포넌트 : childComponent
 var childComponent = {
@@ -53,3 +55,32 @@ new Vue({
   <!-- 위의 출력 결과는 hello vue.js -->
 </div>
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js {3,14}
+// 하위 컴포넌트 : childComponent
+var childComponent = {
+  props: ['propsdata'],
+  template: '<p>{{ propsdata }}</p>'
+}
+
+// 상위 컴포넌트 : root 컴포넌트
+Vue.createApp({
+  components: {
+    'child-component': childComponent
+  },
+  data: {
+    message: 'hello vue.js'
+  }
+}).mount('#app');
+```
+
+```html {2}
+<div id="app">
+  <child-component v-bind:propsdata="message"></child-component>
+  <!-- 위의 출력 결과는 hello vue.js -->
+</div>
+```
+</code-block>
+</code-group>
