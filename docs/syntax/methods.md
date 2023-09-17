@@ -10,6 +10,8 @@ title: Methods
 
 메서드를 선언하는 방법은 아래와 같습니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new Vue({
   methods: {
@@ -17,6 +19,18 @@ new Vue({
   }
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+Vue.createApp({
+  methods: {
+    // ..
+  }
+})
+```
+</code-block>
+</code-group>
 
 ## 메서드 예시 1 - 기본
 
@@ -26,6 +40,8 @@ new Vue({
 <button v-bind:click="clickButton">click me</button>
 ```
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new Vue({
   methods: {
@@ -35,6 +51,20 @@ new Vue({
   }
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+Vue.createApp({
+  methods: {
+    clickButton() {
+      alert('clicked');
+    }
+  }
+})
+```
+</code-block>
+</code-group>
 
 위의 click me 버튼을 클릭하면 경고창이 뜨면서 clicked 라는 메시지가 표시됩니다.
 
@@ -48,10 +78,14 @@ new Vue({
 
 위처럼 Refresh 라는 버튼을 하나 만들고 클릭 했을 때 `displayProducts()` 메서드가 수행될 수 있게 디렉티브로 연결합니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new Vue({
-  data: {
-    products: []
+  data() {
+    return {
+      products: []
+    }
   },
   methods: {
     displayProducts() {
@@ -68,5 +102,32 @@ new Vue({
   }
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+Vue.createApp({
+  data() {
+    return {
+      products: []
+    }
+  },
+  methods: {
+    displayProducts() {
+      this.fetchData();
+      // ..
+    },
+    fetchData() {
+      axios.get('/products').then(function(response) {
+        this.products = response.data;
+      }).catch(function(error) {
+        alert(error);
+      });
+    }
+  }
+})
+```
+</code-block>
+</code-group>
 
 Refresh 버튼을 클릭하고 나면 `displayProducts()` 메서드가 `fetchData()`를 호출합니다. 이런 식으로 메서드를 연결해서 사용할 수도 있으며 이렇게 하면 특정 기능 별로 메서드를 분리할 수 있어 코드를 중복해서 작성하지 않고 재활용하기가 수월합니다.
