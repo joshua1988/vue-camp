@@ -32,6 +32,8 @@ npm install axios
 </div>
 ```
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new Vue({
   el: '#app',
@@ -48,6 +50,26 @@ new Vue({
   }
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+Vue.createApp({
+  methods: {
+    fetchData: function() {
+      axios.get('https://jsonplaceholder.typicode.com/users/')
+        .then(function(response) {
+          console.log(response);
+        })
+        .catch(function(error) {
+          console.log(error);
+        });
+    }
+  }
+}).mount('#app')
+```
+</code-block>
+</code-group>
 
 위 코드는 get data 버튼을 클릭했을 때 사용자 정보를 받아오는 코드입니다. 실행하면 사용자 정보가 브라우저 개발자 도구의 콘솔에 출력됩니다.
 
