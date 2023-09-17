@@ -14,6 +14,8 @@ title: Template
 <div>{{ message }}</div>
 ```
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new Vue({
   data: {
@@ -21,6 +23,20 @@ new Vue({
   }
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+Vue.createApp({
+  data() {
+    return {
+      message: 'Hello Vue.js'
+    }
+  }
+})
+```
+</code-block>
+</code-group>
 
 div 태그에 콧수염 괄호를 이용해 뷰 인스턴스의 `message` 속성을 연결했습니다. 코드를 실행하면 화면에 Hello Vue.js라는 코드가 출력됩니다.
 
@@ -34,6 +50,8 @@ div 태그에 콧수염 괄호를 이용해 뷰 인스턴스의 `message` 속성
 </div>
 ```
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new Vue({
   data: {
@@ -41,6 +59,20 @@ new Vue({
   }
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+Vue.createApp({
+  data() {
+    return {
+      show: false
+    }
+  }
+})
+```
+</code-block>
+</code-group>
 
 위의 코드는 `show`라는 데이터 속성 값에 따라 Vue.js 텍스트가 출력되거나 되지 않는 코드입니다. 또 다른 사례를 살펴보겠습니다.
 
@@ -50,6 +82,8 @@ new Vue({
 </ul>
 ```
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 new Vue({
   data: {
@@ -57,6 +91,20 @@ new Vue({
   }
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+Vue.createApp({
+  data() {
+    return {
+      items: ['shirts', 'jeans', 'hats']
+    }
+  }
+})
+```
+</code-block>
+</code-group>
 
 v-for 디렉티브를 활용하면 데이터 속성의 개수만큼 화면의 요소를 반복하여 출력할 수 있습니다. 목록을 표시해야 할 때 유용하게 사용할 수 있는 기능입니다.
 
