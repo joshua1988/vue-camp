@@ -55,3 +55,9 @@ sum(10, [20]);
 실행 시점에서 유연하게 타입을 바꾸는 자바스크립트의 특징이 때로는 이와 같이 예기치 못한 동작과 에러를 발생시킬 수 있습니다. 하지만, 타입스크립트를 사용함으로써 이런 에러들을 미리 잡아낼 수 있죠.
 
 이처럼 **브라우저에서 실행하고 잘못된 결과를 확인하기 전에 미리 컴파일(코드 변환) 시점에 타입 변환으로 인한 에러를 검출할 수 있는 것**이 타입스크립트의 장점입니다.
+
+## 타입스크립트에 대해 더 자세히 알고 싶다면?
+
+- [캡틴판교의 타입스크립트 핸드북](https://joshua1988.github.io/ts/)
+- [캡틴판교의 쉽게 시작하는 타입스크립트 도서](https://www.yes24.com/Product/Goods/119410497)
+- [캡틴판교의 타입스크립트 입문 강의](https://www.inflearn.com/course/%ED%83%80%EC%9E%85%EC%8A%A4%ED%81%AC%EB%A6%BD%ED%8A%B8-%EC%9E%85%EB%AC%B8?inst=f1ae9299&utm_source=blog&utm_medium=githubio&utm_campaign=captianpangyo&utm_term=banner)
