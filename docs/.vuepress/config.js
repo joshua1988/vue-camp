@@ -21,7 +21,7 @@ module.exports = {
     '/': {
       lang: 'ko',
       title: 'Cracking Vue.js',
-      description: 'JavaScript, Vue.js, Nuxt.js',
+      description: 'JavaScript, Vue.js, Nuxt.js and TypeScript',
     },
   },
   themeConfig: {

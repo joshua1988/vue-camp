@@ -29,7 +29,7 @@ title: Introduction
 
 ### 📖 기타
 
-- [Typescript](/ts/intro.html)
+- [TypeScript](/ts/intro.html)
 - [Nuxt](/nuxt/intro.html)
 - [VuePress](/vuepress/learning-note.html)
-- [npm vs yarn](/packageManager/npm-vs-yarn.html)
+- [NPM vs Yarn](/package-manager/npm-vs-yarn.html)
