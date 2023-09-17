@@ -89,7 +89,7 @@ Vue.createApp({
 이외에도 각 속성에 대한 자세한 설명은 관련된 챕터에서 확인할 수 있습니다.
 
 :::tip
-Vue 3에서는 `el` 속성을 사용하지 않고 `mount()` API만 사용합니다 :smile:
+Vue 3에서는 `el` 속성을 사용하지 않고 `mount()` API만 사용합니다.
 
 ```js
 // Vue 2
@@ -100,4 +100,6 @@ new Vue({
 // Vue 3
 Vue.createApp().mount('#app');
 ```
+
+Vue 3의 `mount()` API는 Vue 2의 [$mount() API](https://v2.vuejs.org/v2/api/#vm-mount)와 역할이 같습니다  :smile:
 :::
