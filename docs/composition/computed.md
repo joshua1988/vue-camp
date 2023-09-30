@@ -2,9 +2,10 @@
 title: Computed API
 ---
 
-# computed 속성
+# computed API
 
-이 페이지에서는 컴포지션(Composition API)에서 컴퓨티드 속성을 어떻게 사용할 수 있는지 살펴보겠습니다.
+컴퓨티드(computed) API는 컴포지션(Composition API) 안에서 사용된 컴퓨티드 속성을 의미합니다. 이 페이지에서는 컴포지션에서 
+컴퓨티드 속성을 어떻게 사용할 수 있는지 살펴보겠습니다.
 
 :::tip
 컴퓨티드(computed) 속성은 뷰에서 자주 사용되는 속성입니다. 템플릿 표현식의 코드를 간결하게 해주고 API에서 받은 데이터를 가공할 때 연산 로직을 단순화 해줍니다. 컴퓨티드 속성에 대해 자세히 알아보고 싶다면 다음 링크를 확인해 보세요. [computed 속성이란?](/syntax/computed.html)
@@ -68,3 +69,8 @@ export default {
 
 [컴포지션의 .value](/reuse/composition.html#ref-두-번째-특징-value)
 :::
+
+## 용어 정리
+
+- 컴퓨티드 속성 : Vue 2에서 사용하던 컴퓨티드 속성
+- 컴퓨티드 API : 컴포지션 스타일로 작성된 setup 안에서의 컴퓨티드 속성
