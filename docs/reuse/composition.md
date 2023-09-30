@@ -126,7 +126,7 @@ createApp({
 
 뷰 인스턴스 옵션 속성으로 제공되는 `data`를 쓸거냐 그렇지 않고 별도의 `ref` 라는 API를 임포트해서 `setup` 안에서 사용할거냐의 차이가 있습니다.
 
-## ref 특징 1
+## ref 첫 번째 특징 - setup 함수에서 꼭 반환하기
 
 `setup` 안에서 `ref`로 선언된 값은 항상 반환해 줘야 템플릿 표현식 또는 같은 인스턴스(컴포넌트) 내의 다른 로직에서 접근할 수 있습니다.
 
@@ -164,6 +164,37 @@ createApp({
 });
 ```
 
-## ref 특징 2
+## ref 두 번째 특징 - `.value`
 
+`ref`로 선언된 값을 setup 함수 안에서 다룰 때는 `.value`를 사용해야 합니다. 아래 예시 코드를 보겠습니다.
+
+```html
+<script>
+export default {
+  setup() {
+    // data
+    const message = ref('hi');
+    
+    // methods
+    const changeMessage = () => {
+      message.value = 'Hello';
+    };
+
+    return { message, changeMessage }
+  }
+}
+</script>
+```
+
+위 코드는 `message` 라는 데이터를 선언하고 `changeMessage`라는 메서드 함수로 `message` 데이터의 값을 `Hello`로 바꾸는 코드입니다. 여기서 `changeMessage` 함수를 보면 `message` 값을 바로 바꾸는 것이 아니라 `.value` 라는 값에 접근하여 변경하였습니다.
+
+이처럼 `setup` 함수 내에서 `ref`로 선언된 값을 읽거나 변경할 때는 `.value` 값을 다뤄야 합니다. 위 코드의 `setup` 함수에서 반환된 `message`는 템플릿 표현식에서 아래와 같이 접근할 수 있습니다.
+
+```html
+<template>
+  <p>{{ message }}</p>
+</template>
+```
+
+왜 `setup` 함수 안에서는 `.value`로 메시지 값을 접근했는데 템플릿 표현식에서는 `message` 값을 그대로 사용했을까요? 그 이유는 바로 뷰 내부적으로 `message` 안에 있는 `value` 값을 꺼내어 템플릿 표현식에 연결해 주기 때문입니다. 이러한 동작은 기존의 Vue 2에서 개발하던 경험을 크게 해치지 않기 위해 고안된 장치라고 볼 수 있습니다.
 
