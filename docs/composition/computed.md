@@ -1,5 +1,5 @@
 ---
-title: Computed in Composition
+title: Computed API
 ---
 
 # computed 속성
@@ -10,7 +10,7 @@ title: Computed in Composition
 컴퓨티드(computed) 속성은 뷰에서 자주 사용되는 속성입니다. 템플릿 표현식의 코드를 간결하게 해주고 API에서 받은 데이터를 가공할 때 연산 로직을 단순화 해줍니다. 컴퓨티드 속성에 대해 자세히 알아보고 싶다면 다음 링크를 확인해 보세요. [computed 속성이란?](/syntax/computed.html)
 :::
 
-## 컴포지션 안에서의 컴퓨티드 속성
+## computed API 소개
 
 인스턴스 옵션 속성 방식으로 작성한 컴퓨티드 속성 코드입니다.
 
