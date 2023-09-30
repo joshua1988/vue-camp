@@ -6,7 +6,7 @@ title: Composition API
 
 컴포지션(Composition API)은 컴포넌트 코드 재사용성을 높여주는 API입니다. Vue 2에서 [플러그인 형태로 지원](https://github.com/vuejs/composition-api)되다가 Vue 3부터 라이브러리 공식 API로 채택되었습니다.
 
-:::tips
+:::tip
 여기서 말하는 플러그인이란 [뷰 플러그인](https://joshua1988.github.io/vue-camp/reuse/plugins.html)을 의미합니다.
 :::
 
@@ -71,7 +71,8 @@ export default {
 `setup`은 컴포지션 스타일로 코드를 작성하기 위해 꼭 선언해 주어야 하는 옵션입니다. 컴포넌트 옵션 속성이기 때문에 아래와 같이 싱글 파일 컴포넌트나 뷰 인스턴스 안에 바로 선언할 수 있습니다.
 
 ```js
-createApp({
+// 뷰 인스턴스
+Vue.createApp({
   setup() {
     // ...
   }
@@ -79,14 +80,15 @@ createApp({
 ```
 
 ```html
+<!-- 싱글파일 컴포넌트 -->
 <template>
-  <!-- .. -->
+  <!-- ... -->
 </template>
 
 <script>
 export default {
   setup() {
-    // ..
+    // ...
   }
 }
 </script>
@@ -100,14 +102,16 @@ export default {
 
 ```js
 // 뷰 인스턴스 옵션 스타일
-createApp({
+Vue.createApp({
   data() {
     return {
       message: ''
     }
   }
 });
+```
 
+```js
 // 뷰 컴포지션 스타일
 import { ref } from 'vue';
 
@@ -124,7 +128,7 @@ createApp({
 
 ## ref 특징 1
 
-`setup` 안에서 `ref`로 선언된 값은 항상 반환해 줘야 템플릿 표현식 또는 같은 인스턴스 내의 다른 로직에서 접근할 수 있습니다.
+`setup` 안에서 `ref`로 선언된 값은 항상 반환해 줘야 템플릿 표현식 또는 같은 인스턴스(컴포넌트) 내의 다른 로직에서 접근할 수 있습니다.
 
 ```js{7,11}
 import { ref } from 'vue';
@@ -143,9 +147,9 @@ createApp({
 });
 ```
 
-만약 아래와 같이 `setup` 함수에서 `ref`로 선언된 값을 지정하지 않는다면 컴포넌트에서 인식하지 못해 에러가 발생할 겁니다.
+만약 아래와 같이 `setup` 함수에서 `ref`로 선언된 값을 반환하지 않는다면 컴포넌트에서 인식하지 못해 에러가 발생할 겁니다.
 
-```js{11}
+```js{9}
 import { ref } from 'vue';
 
 createApp({

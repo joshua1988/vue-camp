@@ -54,12 +54,12 @@ module.exports = {
             link: '/front-dev',
           },
           {
-            text: '🎁 타입스크립트 신규 도서 출간',
-            link: 'https://www.yes24.com/Product/Goods/119410497'
-          },
-          {
             text: '📹  온라인 강의',
             link: 'https://www.inflearn.com/course/age-of-vuejs?inst=72986832&utm_source=blog&utm_medium=githubio&utm_campaign=captianpangyo&utm_term=banner',
+          },
+          {
+            text: '🎁 타입스크립트 신규 도서 출간',
+            link: 'https://www.yes24.com/Product/Goods/119410497'
           },
           {
             text: '📆  직접 물어보기',
@@ -140,6 +140,7 @@ module.exports = {
             title: 'Maximizing Reusability',
             collapsable: false,
             children: [
+              '/reuse/composition',
               '/reuse/slots',
               '/reuse/scoped-slot',
               '/reuse/v-slot',
