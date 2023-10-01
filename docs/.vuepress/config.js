@@ -150,7 +150,7 @@ module.exports = {
             ],
           },
           {
-            title: 'Composition API (More)',
+            title: 'Composition API 🆕',
             collapsable: false,
             children: [
               '/composition/computed',

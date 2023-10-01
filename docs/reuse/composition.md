@@ -1,8 +1,8 @@
 ---
-title: Composition API
+title: Composition API 🆕
 ---
 
-# 컴포지션 API
+# 컴포지션 API <Badge text="Vue 2"/><Badge text="Vue 3"/>
 
 컴포지션(Composition API)은 컴포넌트 코드 재사용성을 높여주는 API입니다. Vue 2에서 [플러그인 형태로 지원](https://github.com/vuejs/composition-api)되다가 Vue 3부터 라이브러리 공식 API로 채택되었습니다. 따라서, 아래 개념은 Vue 2와 Vue 3에서 모두 사용할 수 있습니다 :)
 

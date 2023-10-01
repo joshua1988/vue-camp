@@ -1,8 +1,8 @@
 ---
-title: Computed API
+title: Computed API 🆕
 ---
 
-# computed API
+# computed API <Badge text="Vue 3"/>
 
 컴퓨티드(computed) API는 컴포지션(Composition API) 안에서 사용된 컴퓨티드 속성을 의미합니다. 이 페이지에서는 컴포지션에서 
 컴퓨티드 속성을 어떻게 사용할 수 있는지 살펴보겠습니다.

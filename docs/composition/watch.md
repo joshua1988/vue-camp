@@ -1,8 +1,8 @@
 ---
-title: Watch API
+title: Watch API 🆕
 ---
 
-# watch API
+# watch API <Badge text="Vue 3"/>
 
 watch API는 컴포지션(Composition API) 안에서 사용된 [watch 속성](/syntax/watch.html)을 의미합니다. 이 페이지에서는 컴포지션에서 
 watch 속성을 어떻게 사용할 수 있는지 살펴보겠습니다.
