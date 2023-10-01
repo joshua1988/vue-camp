@@ -154,6 +154,7 @@ module.exports = {
             collapsable: false,
             children: [
               '/composition/computed',
+              '/composition/watch',
             ],
           },
           {
