@@ -81,10 +81,6 @@ Vue.createApp({
 
 ```html
 <!-- 싱글파일 컴포넌트 -->
-<template>
-  <!-- ... -->
-</template>
-
 <script>
 export default {
   setup() {
