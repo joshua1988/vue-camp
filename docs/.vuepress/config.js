@@ -144,8 +144,8 @@ module.exports = {
               '/reuse/slots',
               '/reuse/scoped-slot',
               '/reuse/v-slot',
-              '/reuse/mixins',
               '/reuse/plugins',
+              '/reuse/mixins',
               '/reuse/mixins-vs-hoc',
             ],
           },
@@ -156,6 +156,7 @@ module.exports = {
               '/composition/computed',
               '/composition/watch',
               '/composition/lifecycle',
+              '/composition/props',
             ],
           },
           {
