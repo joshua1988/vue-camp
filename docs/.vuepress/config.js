@@ -157,6 +157,7 @@ module.exports = {
               '/composition/watch',
               '/composition/lifecycle',
               '/composition/props',
+              '/composition/event-emit',
             ],
           },
           {
