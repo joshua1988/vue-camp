@@ -8,7 +8,7 @@ title: Event Emit - setup() 🆕
 
 ## 컴포넌트 이벤트 발생 
 
-기존에 컴포넌트에서 이벤트를 발생시키는 방법은 [$emit() API](/vue/event-emit)였습니다.
+기존에 인스턴스 옵션 속성으로 이벤트를 발생시키는 방법은 [$emit() API](/vue/event-emit)였습니다.
 
 ```html
 <script>
