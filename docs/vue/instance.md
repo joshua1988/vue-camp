@@ -1,5 +1,5 @@
 ---
-title: Instance
+title: Instance 🆕
 ---
 
 # 뷰 인스턴스
