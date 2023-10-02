@@ -57,3 +57,8 @@ export default {
 ```
 
 앞에서 살펴본 코드와 동일하게 변화를 감지할 데이터를 watch API의 첫 번째 인자로 선언하고, 두 번째 인자에 실행될 로직을 적었습니다.
+
+## 용어 정리
+
+- watch 속성 : Vue 2에서 사용하던 watch 속성
+- watch API : 컴포지션 스타일로 작성된 setup 안에서의 watch 속성
