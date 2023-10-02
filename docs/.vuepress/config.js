@@ -155,6 +155,7 @@ module.exports = {
             children: [
               '/composition/computed',
               '/composition/watch',
+              '/composition/lifecycle',
             ],
           },
           {
