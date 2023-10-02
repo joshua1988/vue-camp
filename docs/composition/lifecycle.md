@@ -4,7 +4,7 @@ title: Lifecycle API 🆕
 
 # Lifecycle API <Badge text="Vue 3" />
 
-라이프사이클(Lifecycle) API란 컴포지션(Composition API) 안에서 사용된 [인스턴스 라이프사이클 훅](/vue/life-cycle.html#라이프-사이클-훅)을 의미합니다. 이 페이지에서는 컴포지션에서 인스턴스 라이프사이클 훅을 정의하는 방법을 알아보겠습니다.
+라이프사이클(Lifecycle) API란 컴포지션(Composition API)에서 사용된 [인스턴스 라이프사이클 훅](/vue/life-cycle.html#라이프-사이클-훅)을 의미합니다. 이 페이지에서는 컴포지션에서 인스턴스 라이프사이클 훅을 정의하는 방법을 알아보겠습니다.
 
 :::tip 용어정리
 - 인스턴스 라이프사이클 훅 : 컴포넌트 생명 주기에 따라 특정 로직을 실행할 수 있는 속성 함수. `created()`, `beforeMount()` 등
