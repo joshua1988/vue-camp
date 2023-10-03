@@ -158,6 +158,7 @@ module.exports = {
               '/composition/lifecycle',
               '/composition/props',
               '/composition/event-emit',
+              '/composition/script-setup',
             ],
           },
           {
