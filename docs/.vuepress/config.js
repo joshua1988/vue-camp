@@ -159,7 +159,7 @@ module.exports = {
               '/composition/props',
               '/composition/event-emit',
               {
-                title: '<script setup>',
+                title: '<script setup> 🆕',
                 path: '/composition/script-setup',
               }
             ],
