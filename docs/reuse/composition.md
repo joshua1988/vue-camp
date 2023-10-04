@@ -194,3 +194,11 @@ export default {
 
 왜 `setup` 함수 안에서는 `.value`로 메시지 값을 접근했는데 템플릿 표현식에서는 `message` 값을 그대로 사용했을까요? 그 이유는 바로 뷰 내부적으로 `message` 안에 있는 `value` 값을 꺼내어 템플릿 표현식에 연결해 주기 때문입니다. 이러한 동작은 기존의 Vue 2에서 개발하던 경험을 크게 해치지 않기 위해 고안된 장치라고 볼 수 있습니다.
 
+## 참고 자료
+
+컴포지션에 대해 더 자세히 알아보고 싶다면 다음 링크를 참고하세요.
+
+- [Composition Computed API](/composition/computed)
+- [Composition Watch API](/composition/watch)
+- [Composition Lifecycle API](/composition/lifecycle)
+- [Props in Composition](/composition/props)
