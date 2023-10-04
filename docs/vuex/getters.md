@@ -30,7 +30,7 @@ new Vuex.Store({
 getters 속성은 컴포넌트에서 아래와 같이 접근합니다.
 
 ```html
-<div>{{ this.$store.getters.reverseMessage }}</div>
+<div>{{ $store.getters.reverseMessage }}</div>
 ```
 
 코드를 실행하면 화면에 sj.euV olleH가 출력됩니다.
