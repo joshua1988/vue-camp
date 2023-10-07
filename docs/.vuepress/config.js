@@ -66,10 +66,10 @@ module.exports = {
             link: 'https://www.youtube.com/watch?v=fL39Yg2H0ig',
           },
           // TODO: Vue 3 관련 글 정리 후 게재
-          {
-            text: '💻 Vue 3',
-            link: '/vue3',
-          },
+          // {
+          //   text: '💻 Vue 3',
+          //   link: '/vue3',
+          // },
           // {
           //   text: '📝  더 많은 글 보기',
           //   link: 'https://joshua1988.github.io/',
