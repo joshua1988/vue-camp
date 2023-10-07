@@ -55,7 +55,7 @@ module.exports = {
           },
           {
             text: '📹  온라인 강의',
-            link: 'https://www.inflearn.com/course/age-of-vuejs?inst=72986832&utm_source=blog&utm_medium=githubio&utm_campaign=captianpangyo&utm_term=banner',
+            link: 'https://www.inflearn.com/users/54224/@captain',
           },
           {
             text: '🎁 타입스크립트 신규 도서 출간',
