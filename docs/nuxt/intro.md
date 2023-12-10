@@ -60,3 +60,11 @@ npm run dev
 ```
 
 명령어 실행 창에 안내된 주소를 브라우저에 입력하고 결과를 확인합니다.
+
+## Nuxt를 쉽게 배울 수 있는 온라인 강의
+
+글보다 더 쉽고 빠르게 배울 수 있는 온라인 강의를 안내합니다.
+
+<a href="https://inf.run/UC26" target="_blank">
+  <img src="./images/nuxt.png" alt="Nuxt 시작하기 인프런 온라인 강의" />
+</a>
