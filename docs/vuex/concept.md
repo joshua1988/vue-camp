@@ -63,8 +63,7 @@ export const store = new Vuex.Store({
 <code-block title="Vue 3">
 ```js
 // store.js
-import Vue from 'vue';
-import Vuex from 'vuex';
+import { createStore } from 'vuex'
 
 export const store = createStore({
   // ..
@@ -86,7 +85,7 @@ import { store } from './store.js';
 
 new Vue({
   store: store
-})
+});
 ```
 </code-block>
 
