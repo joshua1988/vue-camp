@@ -45,6 +45,8 @@ npm install vuex --save
 
 뷰엑스를 등록하기 위해서는 뷰 라우터와 마찬가지로 뷰 스토어를 하나 생성해야 합니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 // store.js
 import Vue from 'vue';
@@ -56,9 +58,27 @@ export const store = new Vuex.Store({
   // ..
 });
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+// store.js
+import Vue from 'vue';
+import Vuex from 'vuex';
+
+export const store = createStore({
+  // ..
+});
+```
+</code-block>
+</code-group>
+
+
 
 뷰 스토어를 하나 생성하고 나서 ES6 import/export 문법으로 main.js 파일의 인스턴스에 주입합니다.
 
+<code-group>
+<code-block title="Vue 2">
 ```js
 // main.js
 import Vue from 'vue';
@@ -68,6 +88,21 @@ new Vue({
   store: store
 })
 ```
+</code-block>
+
+<code-block title="Vue 3">
+```js
+// main.js
+import { createApp } from 'vue';
+import Vue from 'vue';
+import { store } from "./store.js";
+
+createApp(App).use(store).mount('#app');
+```
+</code-block>
+</code-group>
+
+Vue 3에서 Vuex를 사용하는 경우에는 인스턴스에 주입하는게 아니라 인스턴스에 체이닝 하는 형태로 설정합니다. 자세한 내용은 위 코드를 참고하세요.
 
 ## 뷰엑스 구조도
 
