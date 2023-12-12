@@ -175,7 +175,7 @@ module.exports = {
             children: ['/d3/d3', '/d3/vue-with-d3', '/d3/tutorial'],
           },
           {
-            title: 'State Management',
+            title: 'State Management - Vuex',
             collapsable: false,
             children: [
               '/vuex/concept',
@@ -186,6 +186,13 @@ module.exports = {
               '/vuex/helper',
               '/vuex/modules',
               '/vuex/state-vs-data',
+            ],
+          },
+          {
+            title: 'State Management - Pinia 🆕',
+            collapsable: false,
+            children: [
+              '/pinia/intro',
             ],
           },
           {
