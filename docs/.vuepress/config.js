@@ -193,6 +193,7 @@ module.exports = {
             collapsable: false,
             children: [
               '/pinia/intro',
+              '/pinia/store',
             ],
           },
           {
