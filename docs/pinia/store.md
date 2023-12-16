@@ -31,6 +31,8 @@ state를 정의할 때 객체 형태가 아니라 화살표 함수를 사용합�
 
 앞에서 선언한 스토어를 컴포넌트에서 사용해 보겠습니다.
 
+<code-group>
+<code-block title="Vue 3">
 ```html
 <!-- App.vue -->
 <template>
@@ -49,6 +51,30 @@ export default defineComponent({
 });
 </script>
 ```
+</code-block>
+
+<code-block title="Vue 2">
+```html
+<!-- App.vue -->
+<template>
+  <p>{{ store.message }}</p>
+</template>
+
+<script>
+import { useStore } from './store/index';
+
+export default {
+  setup() {
+    const store = useStore();
+    return { store };
+  }
+};
+</script>
+```
+</code-block>
+</code-group>
+
+
 
 위 코드는 App 컴포넌트에서 스토어의 상태를 화면에 표시한 코드입니다. 피니아는 이처럼 스토어를 사용하기 위해서 컴포지션 API인 [setup API](../reuse/composition.html#setup)을 꼭 사용해야 합니다. `setup()` 안에서 반환된 store는 템플릿 표현식에서 사용할 수 있기 때문에 `store.message`의 최종 결과는 앞에서 정의한 'Hello Pinia'가 됩니다.
 

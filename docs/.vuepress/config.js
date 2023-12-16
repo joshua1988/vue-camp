@@ -194,6 +194,7 @@ module.exports = {
             children: [
               '/pinia/intro',
               '/pinia/store',
+              '/pinia/state',
             ],
           },
           {
