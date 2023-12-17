@@ -1,14 +1,14 @@
 ---
-title: State 🆕
+title: Getters 🆕
 ---
 
-# State
+# Getters
 
-상태(state)는 여러 컴포넌트에서 공유되는 데이터(data 속성)를 의미합니다.
+getters는 여러 컴포넌트에서 사용할 수 있는 [컴퓨티드(computed) 속성](../syntax/computed.md)을 의미합니다.
 
-## state 선언
+## getters 선언
 
-피니아 스토어 안에서 다음과 같이 화살표 함수 형태로 정의합니다.
+getters는 다음과 같이 정의합니다. 뷰엑스에서 정의하던 방식과 같습니다.
 
 ```js
 export const useStore = defineStore('app', {
@@ -16,13 +16,18 @@ export const useStore = defineStore('app', {
     return {
       count: 0
     }
+  },
+  getters: {
+    doubleCount(state) {
+      return state * 2;
+    }
   }
 });
 ```
 
-## state 사용
+## getters 사용
 
-컴포넌트의 setup() 함수 안에서 반환한 값으로 상태를 접근합니다.
+앞에서 선언한 getters는 컴포넌트에서 아래와 같이 사용합니다.
 
 <code-group>
 <code-block title="Vue 3">
@@ -50,6 +55,6 @@ export default {
 
 ```html
 <template>
-  <p>{{ store.count }}</p>
+  <p>{{ store.doubleCount }}</p>
 </template>
 ```

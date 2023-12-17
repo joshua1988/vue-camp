@@ -195,6 +195,7 @@ module.exports = {
               '/pinia/intro',
               '/pinia/store',
               '/pinia/state',
+              '/pinia/getters',
             ],
           },
           {

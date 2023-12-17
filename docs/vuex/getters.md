@@ -4,7 +4,7 @@ title: Getters
 
 # getters
 
-getters 속성은 computed 속성과 매칭되는 기술 요소입니다. 상태(state) 값이 변경되었을 때 변화에 따른 차이를 자동으로 반영하여 값을 계산해줍니다. 
+getters 속성은 computed 속성과 같은 역할을 합니다. 상태(state) 값이 변경되었을 때 변화에 따른 차이를 자동으로 반영하여 값을 계산해줍니다. 
 
 ## getters 선언
 
