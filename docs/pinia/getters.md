@@ -8,7 +8,7 @@ getters는 여러 컴포넌트에서 사용할 수 있는 [컴퓨티드(computed
 
 ## getters 선언
 
-getters는 다음과 같이 정의합니다. 뷰엑스에서 정의하던 방식과 같습니다.
+getters는 다음과 같이 정의합니다. 뷰엑스에서 정의하던 방식과 동일하게 첫 번째 파라미터로 state를 접근하여 값을 조작합니다.
 
 ```js
 export const useStore = defineStore('app', {
