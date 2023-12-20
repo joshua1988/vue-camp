@@ -48,7 +48,7 @@ sidebar: auto
 - 자바스크립트 비동기 처리 패턴
   - [Callback](https://joshua1988.github.io/web-development/javascript/javascript-asynchronous-operation/)
   - [Promise](https://joshua1988.github.io/web-development/javascript/promise-for-beginners/)
-  - [Async & Await](es6/async-await.html)
+  - [Async & Await](https://joshua1988.github.io/web-development/javascript/js-async-await/)
 - [HTTP 프로토콜](https://joshua1988.github.io/web-development/web-protocols/#http-hyper-text-transfer-protocol)
   - [크롬 개발자 도구의 Network 패널 사용법](https://developer.chrome.com/docs/devtools/network/)
   - HTTP Request
