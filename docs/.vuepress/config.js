@@ -262,6 +262,14 @@ module.exports = {
             ],
           },
           {
+            title: 'Nuxt 3 🆕',
+            collapsable: false,
+            children: [
+              '/nuxt3/intro',
+              '/nuxt3/data-fetching',
+            ],
+          },
+          {
             title: 'PWA',
             collapsable: false,
             children: ['/pwa/cli-pwa-plugin', '/pwa/workbox', '/pwa/workbox-caching'],
