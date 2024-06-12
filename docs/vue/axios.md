@@ -142,20 +142,16 @@ axios.delete('books/3')
 
 `method`는 요청을 할 때 사용할 요청 메서드입니다. `method`의 기본값은 get입니다.
 
+```javascript
+method: 'get'
+```
+
 ### url
 
 `url`은 액시오스 요청에 사용될 서버의 URL을 말합니다. 
 
 ```javascript
 url: '/books'
-```
-
-### method
-
-`method`는 요청을 할 때 사용할 요청 메소드입니다. `method`의 기본값은 get 입니다.
-
-```javascript
-method: 'get'
 ```
 
 ### baseURL 
