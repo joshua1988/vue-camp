@@ -94,8 +94,26 @@ SSR의 초기 화면 렌더링 절차
 서버 사이드 렌더링의 경우 컴포넌트가 최초로 생성되는 시점이 브라우저 위가 아니라 Node.js 환경이기 때문에 `beforeCreate`나 `created`에서 브라우저 객체를 접근할 수 없습니다. 대신 `beforeMount`나 `mounted`에서 `window`와 `document`를 접근할 수 있습니다 :)
 :::
 
-## 참고 자료
+## 온라인 강의로 쉽게 배우는 서버 사이드 렌더링
 
-- [Nuxt Server Side Rendering](https://nuxtjs.org/docs/2.x/concepts/server-side-rendering)
-- [Vue SSR Guide](https://ssr.vuejs.org/#what-is-server-side-rendering-ssr)
-- [Nuxt.js 시작하기 - 인프런](https://www.inflearn.com/course/넉스트-시작하기?inst=cc965820)
+<div style="display: grid; gap: 24px 16px; grid-template-columns: repeat(2, minmax(0px, 1fr)); margin-top: 16px">
+  <div>
+    <a href="https://inf.run/UC26" target="_blank">
+      <img src="./images/nuxt.png" alt="Nuxt 시작하기 인프런 온라인 강의" />
+    </a>
+    <a href="https://inf.run/UC26" target="_blank">
+      <span style="display: block; margin-top: 4px">Nuxt.js 시작하기</span>
+    </a>
+  </div>
+  <div>
+    <a href="https://inf.run/eTqGZ" target="_blank">
+      <img 
+        src="https://joshua1988.github.io/images/posts/web/inflearn/age-of-next.png" 
+        alt="캡틴판교의 Next.js 시작하기 강의"
+      />
+    </a>
+    <a href="https://inf.run/eTqGZ" target="_blank">
+      <span style="display: block; margin-top: 4px">Next.js 시작하기</span>
+    </a>
+  </div>
+</div>
