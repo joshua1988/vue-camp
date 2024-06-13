@@ -33,3 +33,32 @@ title: Introduction
 - [Nuxt](/nuxt/intro.html)
 - [VuePress](/vuepress/learning-note.html)
 - [NPM vs Yarn](/package-manager/npm-vs-yarn.html)
+
+## 온라인 강의 학습 로드맵
+
+<div style="display: grid; gap: 24px 16px; grid-template-columns: repeat(3, minmax(0px, 1fr)); margin-top: 16px">
+  <div>
+    <a href="https://www.inflearn.com/roadmaps/3" target="_blank">
+      <img 
+        src="https://cdn.inflearn.com/public/roadmaps/9e01471f-904e-4299-af24-a36ec202bf77/roadmap-3-b.png?w=260&f=avif" 
+        alt="Vue.js 프론트엔드 개발 강의 학습 로드맵" 
+      />
+    </a>
+  </div>
+  <div>
+    <a href="https://www.inflearn.com/roadmaps/746" target="_blank">
+      <img 
+        src="https://joshua1988.github.io/images/posts/web/inflearn/vue3-roadmap.png" 
+        alt="Vue 3 완벽 마스터 로드맵" 
+      />
+    </a>
+  </div>
+  <div>
+    <a href="https://www.inflearn.com/roadmaps/466" target="_blank">
+      <img 
+        src="https://joshua1988.github.io/images/posts/web/inflearn/vue-ts-roadmap.png" 
+        alt="Vue.js + TypeScript 학습 로드맵" 
+      />
+    </a>
+  </div>
+</div>

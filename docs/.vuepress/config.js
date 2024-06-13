@@ -54,8 +54,8 @@ module.exports = {
             link: '/front-dev',
           },
           {
-            text: '📹  온라인 강의',
-            link: 'https://www.inflearn.com/users/54224/@captain',
+            text: '📹  Vue.js 학습 로드맵',
+            link: 'https://www.inflearn.com/users/54224/roadmaps',
           },
           {
             text: '👥 카카오톡 오픈 채팅방',
