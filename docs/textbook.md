@@ -44,6 +44,9 @@ title: Introduction
         alt="Vue.js 프론트엔드 개발 강의 학습 로드맵" 
       />
     </a>
+    <a href="https://inf.run/UC26" target="_blank">
+      <span style="display: block; margin-top: 4px">Vue.js 개발자 학습 로드맵</span>
+    </a>
   </div>
   <div>
     <a href="https://www.inflearn.com/roadmaps/746" target="_blank">
@@ -52,6 +55,9 @@ title: Introduction
         alt="Vue 3 완벽 마스터 로드맵" 
       />
     </a>
+    <a href="https://www.inflearn.com/roadmaps/746" target="_blank">
+      <span style="display: block; margin-top: 4px">Vue 3 완벽 마스터 로드맵</span>
+    </a>
   </div>
   <div>
     <a href="https://www.inflearn.com/roadmaps/466" target="_blank">
@@ -59,6 +65,9 @@ title: Introduction
         src="https://joshua1988.github.io/images/posts/web/inflearn/vue-ts-roadmap.png" 
         alt="Vue.js + TypeScript 학습 로드맵" 
       />
+    </a>
+    <a href="https://www.inflearn.com/roadmaps/466" target="_blank">
+      <span style="display: block; margin-top: 4px">Vue + TypeScript 로드맵</span>
     </a>
   </div>
 </div>
