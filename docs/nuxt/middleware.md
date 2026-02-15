@@ -96,7 +96,7 @@ export default {
 인증을 받지 못한 경우 로그인 페이지로 리다이렉트 시킬 수 있습니다.
 
 ```js
-// middleware/auth.vue
+// middleware/auth.js
 export default function({ store, redirect }) {
   if (!store.state.auth) {
     return redirect("/login");
