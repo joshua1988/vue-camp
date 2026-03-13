@@ -330,7 +330,7 @@ export default {
         .replace(/\B(?=(\d{3})+(?!\d))/g, ",");
     },
     mousemoveHandler(event) {
-      const pointIndex = this.xPoint.findIndex((d) => event.layerX <= d);
+      const pointIndex = this.xPoint.findIndex((d) => event.layerX - this.width <= d);
       if (pointIndex < 0) {
         this.resetGraph();
       } else {
